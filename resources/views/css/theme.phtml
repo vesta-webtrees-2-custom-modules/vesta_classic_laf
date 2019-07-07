@@ -1,0 +1,143 @@
+/*
+adjustments as suggested here
+https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-support-for-bigger-monitors#70135
+*/
+
+@media (min-width:576px){.container{max-width:540px}}
+@media (min-width:768px){.container{max-width:720px}}
+@media (min-width:1024px){.container{max-width:974px}}
+@media (min-width:1280px){.container{max-width:1220px}}
+@media (min-width:1400px){.container{max-width:1340px}}
+@media (min-width:1600px){.container{max-width:1540px}}
+@media (min-width:1680px){.container{max-width:1620px}}
+@media (min-width:1920px){.container{max-width:1860px}}
+@media (min-width:2560px){.container{max-width:2500px}}
+
+/* 
+individual: title
+*/
+
+[dir] .mb-4, [dir] .my-4 {
+  margin-bottom: 0.25rem !important;
+  /* original values:
+  margin-bottom: 1.5rem !important;
+  */
+}
+
+/* 
+individual: name parts
+IndividualController.formatNameRecord 
+*/
+
+[dir] .btn-link {
+  padding: .125rem .125rem;
+  /* original values:
+  padding: .25rem .25rem;
+  */
+}
+
+[dir] .card-header {
+  padding: .25rem .75rem;
+  /* original values:
+  padding: .75rem 1.25rem;
+  */
+}
+
+[dir] .card-body {
+  padding: .25rem .75rem;
+  /* original values:
+  padding: 1.25rem;
+  */
+}
+
+[dir] dl {
+  margin-bottom: 0rem;
+  /* original values:
+  margin-bottom: 1rem;
+  */
+}
+
+dl dd {
+  display: inline;
+}
+
+dl dd:after{
+  display: block;
+  content: '';
+}
+
+dl dt{
+  display: inline-block;
+  margin-right: 2ch;
+}
+
+/* 
+everywhere: do not use sex icon images
+*/
+
+.wt-icon-sex-m {
+	content: none;
+	color: #31639c;
+}
+
+.wt-icon-sex-f {
+	content: none;
+	color: #9c3163;
+}
+
+.wt-icon-sex-u {
+	content: none;
+}
+
+/* 
+individual: sex icon
+*/
+
+.vt_gender .wt-icon-sex-m,.vt_gender .wt-icon-sex-f,.vt_gender .wt-icon-sex-u {
+  width: 0.8em;
+	height: 0.8em;
+  font-size: 1.5rem !important;
+}
+
+/* 
+individual: tabs
+*/
+
+[dir] .pt-4, [dir] .py-4 {
+  padding-top: .25rem !important;
+  padding-bottom: .25rem !important;
+  /* original values:
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  */
+}
+
+[dir] .table {
+  margin-bottom: 0rem;
+  /* original values:
+  margin-bottom: 1rem;
+  */
+}
+
+[dir] .table td, [dir] .table th {
+  padding: .25rem;
+  /* original values:
+  padding: .75rem;
+  */
+}
+
+[dir] label {
+  margin-bottom: 0rem;
+  /* original values:
+  margin-bottom: .5rem;
+  */
+}
+
+[dir] caption {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  /* original values:
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  */
+}
