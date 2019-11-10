@@ -1,13 +1,33 @@
-<?php use Fisharebest\Webtrees\Auth; ?>
-<?php use Fisharebest\Webtrees\Functions\FunctionsPrint; ?>
-<?php use Fisharebest\Webtrees\I18N; ?>
-<?php use Fisharebest\Webtrees\View; ?>
+<?php
+
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Functions\FunctionsPrint;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\PendingChangesAcceptRecord;
+use Fisharebest\Webtrees\Http\RequestHandlers\PendingChangesRejectRecord;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Individual;
+use Fisharebest\Webtrees\View;
+use Illuminate\Support\Collection;
+
+/**
+ * @var Individual $individual
+ * @var string     $user_link
+ * @var int        $count_names
+ * @var Collection $sidebars
+ * @var Collection $individual_media
+ * @var Collection $name_records
+ * @var Collection $sex_records
+ * @var Collection $tabs
+ */
+?>
 
 <?php if ($individual->isPendingDeletion()) : ?>
     <?php if (Auth::isModerator($individual->tree())) : ?>
         <?= view('components/alert-warning-dismissible', [
             'alert' => /* I18N: %1$s is “accept”, %2$s is “reject”. These are links. */
-                I18N::translate('This individual has been deleted. You should review the deletion and then %1$s or %2$s it.', '<a href="#" class="alert-link" onclick="accept_changes(\'' . e($individual->xref()) . '\', \'' . e($individual->tree()->name()) . '\');">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'accept') . '</a>', '<a href="#" class="alert-link" onclick="reject_changes(\'' . e($individual->xref()) . '\', \'' . e($individual->tree()->name()) . '\');">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'reject') . '</a>') . ' ' . FunctionsPrint::helpLink('pending_changes'),
+                I18N::translate('This individual has been deleted. You should review the deletion and then %1$s or %2$s it.', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesAcceptRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'accept') . '</a>', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesRejectRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'reject') . '</a>') . ' ' . FunctionsPrint::helpLink('pending_changes'),
         ]) ?>
     <?php elseif (Auth::isEditor($individual->tree())) : ?>
         <?= view('components/alert-warning-dismissible', ['alert' => I18N::translate('This individual has been deleted. The deletion will need to be reviewed by a moderator.') . ' ' . FunctionsPrint::helpLink('pending_changes')]) ?>
@@ -16,7 +36,7 @@
     <?php if (Auth::isModerator($individual->tree())) : ?>
         <?= view('components/alert-warning-dismissible', [
             'alert' => /* I18N: %1$s is “accept”, %2$s is “reject”. These are links. */
-                I18N::translate('This individual has been edited. You should review the changes and then %1$s or %2$s them.', '<a href="#" class="alert-link" onclick="accept_changes(\'' . e($individual->xref()) . '\', \'' . e($individual->tree()->name()) . '\');">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'accept') . '</a>', '<a href="#" class="alert-link" onclick="reject_changes(\'' . e($individual->xref()) . '\', \'' . e($individual->tree()->name()) . '\');">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'reject') . '</a>') . ' ' . FunctionsPrint::helpLink('pending_changes'),
+                I18N::translate('This individual has been edited. You should review the changes and then %1$s or %2$s them.', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesAcceptRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'accept') . '</a>', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesRejectRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'reject') . '</a>') . ' ' . FunctionsPrint::helpLink('pending_changes'),
         ]) ?>
     <?php elseif (Auth::isEditor($individual->tree())) : ?>
         <?= view('components/alert-warning-dismissible', ['alert' => I18N::translate('This individual has been edited. The changes need to be reviewed by a moderator.') . ' ' . FunctionsPrint::helpLink('pending_changes')]) ?>
@@ -25,7 +45,7 @@
 
 <div class="d-flex mb-4">
     <h2 class="wt-page-title mx-auto">
-        <?= $individual->fullName() ?><?= $user_link ?>
+        <?= $individual->fullName() ?><?= $user_link ?> 
         
         <?php
         //[RC] adjusted replaces $sex_records which are generated via IndividualController.formatSexRecord
@@ -58,30 +78,19 @@
             }
 
             if ($individual->canEdit()) {
-                $edit_links = '<a class="btn btn-link" href="' . e(route('edit-fact', ['xref' => $individual->xref(), 'fact_id' => $fact->id(), 'ged' => $individual->tree()->name()])) . '" title="' . I18N::translate('Edit the gender') . '">' . view('icons/edit') . '<span class="sr-only">' . I18N::translate('Edit the gender') . '</span></a>';
+                $edit_links = '<a class="btn btn-link" href="' . e(route(EditFact::class, ['xref' => $individual->xref(), 'fact_id' => $fact->id(), 'tree' => $individual->tree()->name()])) . '" title="' . I18N::translate('Edit the gender') . '">' . view('icons/edit') . '<span class="sr-only">' . I18N::translate('Edit the gender') . '</span></a>';
             } else {
                 $edit_links = '';
             }
-
-            /*
-            echo '
-              <div class="' . $container_class . '">
-                <div class="card-header" role="tab" id="name-header-add">
-                  <div class="card-title mb-0">
-                    <b>' . I18N::translate('Gender') . '</b> ' . $sex . $edit_links . '
-                  </div>
-                </div>
-              </div>';
-            */
           
             echo '<span class="vt_gender '.$container_class.'" title="'.$sex.'">'.$icon.$edit_links.'</span>,';
-          }        
+          }
         ?>
         
         <?= $individual->getLifeSpan() ?> <?= $age ?>
     </h2>
     <?php if ($individual->canEdit()) : ?>
-        <?= view('individual-page-menu', ['individual' => $individual, 'count_names' => $count_names, 'count_sex' => $count_sex]) ?>
+        <?= view('individual-page-menu', ['individual' => $individual, 'count_names' => $count_names, 'count_sex' => $count_sex, 'tree' => $tree]) ?>
     <?php endif ?>
 </div>
 
@@ -93,66 +102,54 @@
     <div class="<?= $sidebars->isEmpty() ? 'col-sm-12' : 'col-sm-9' ?>">
         <div class="row mb-4">
             <!-- Individual images -->
-            <?php
-            //[RC] adjusted from
-            //<div class="col-sm-3">
-            ?>
-            <div class="col-sm-2">
-                <?php if (empty($individual_media)) : ?>
-                    <i class="wt-individual-silhouette wt-individual-silhouette-<?= strtolower($individual->sex()) ?>"></i>
-                <?php elseif (count($individual_media) === 1) : ?>
-                    <?= $individual_media[0]->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
-                <?php else : ?>
-                    <div id="individual-images" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner">
-                            <?php foreach ($individual_media as $n => $media_file) : ?>
-                                <div class="carousel-item <?= $n === 0 ? 'active' : '' ?>">
-                                    <?= $media_file->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
-                                </div>
-                            <?php endforeach ?>
-                        </div>
-                        <a class="carousel-control-prev" href="#individual-images" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only"><?= I18N::translate('previous') ?></span>
-                        </a>
-                        <a class="carousel-control-next" href="#individual-images" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only"><?= I18N::translate('next') ?></span>
-                        </a>
-                    </div>
-
-                <?php endif ?>
-
+            <?php if ($individual_media->isNotEmpty() || $tree->getPreference('USE_SILHOUETTE') === '1') : ?>
                 <?php
-                //[RC] adjusted - why are these even here and not on the Media tab??
-                //for now moved, into the edit menu
+                //[RC] adjusted from
+                //<div class="col-sm-3">
                 ?>
-                <?php if (false) /*(Auth::isEditor($individual->tree()))*/ : ?>
-                    <?php if ($individual->facts(['OBJE'])->count() > 1) : ?>
-                        <div>
-                            <a href="<?= e(route('reorder-media', ['ged' => $individual->tree()->name(), 'xref' => $individual->xref()])) ?>">
-                                <?= view('icons/reorder') ?>
-                                <?= I18N::translate('Re-order media') ?>
+                <div class="col-sm-2">
+                    <?php if ($individual_media->isEmpty()) : ?>
+                        <div class="img-thumbnail">
+                            <i class="wt-individual-silhouette wt-individual-silhouette-<?= strtolower($individual->sex()) ?>"></i>
+                        </div>
+                    <?php elseif ($individual_media->count() === 1) : ?>
+                        <?= $individual_media->first()->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                    <?php else : ?>
+                        <div id="individual-images" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner">
+                                <?php foreach ($individual_media as $n => $media_file) : ?>
+                                    <div class="carousel-item <?= $n === 0 ? 'active' : '' ?>">
+                                        <?= $media_file->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                            <a class="carousel-control-prev" href="#individual-images" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only"><?= I18N::translate('previous') ?></span>
+                            </a>
+                            <a class="carousel-control-next" href="#individual-images" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only"><?= I18N::translate('next') ?></span>
                             </a>
                         </div>
                     <?php endif ?>
-
-                    <?php if ($individual->tree()->getPreference('MEDIA_UPLOAD') >= Auth::accessLevel($individual->tree())) : ?>
-                        <div>
-                            <a href="<?= e(route('add-fact', ['ged' => $individual->tree()->name(), 'xref' => $individual->xref(), 'fact' => 'OBJE'])) ?>">
+                    
+                    <?php
+                    //[RC] adjusted - why is these even here and not on the Media tab??
+                    //for now moved, anyway also available in the edit menu
+                    ?>
+                    <?php if (false) /*(Auth::isEditor($individual->tree()))*/ : ?>
+                        <div class="text-center">
+                            <a href="<?= e(route(AddNewFact::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref(), 'fact' => 'OBJE'])) ?>">
                                 <?= I18N::translate('Add a media object') ?>
                             </a>
                         </div>
                     <?php endif ?>
-                <?php endif ?>
-            </div>
+                </div>
+            <?php endif ?>
 
             <!-- Name accordion -->
-            <?php
-            //[RC] adjusted from
-            //<div class="col-sm-9">
-            ?>
-            <div class="col-sm-10" id="individual-names" role="tablist">
+            <div class="col-sm" id="individual-names" role="tablist">
                 <?php foreach ($name_records as $name_record) : ?>
                     <?= $name_record ?>
                 <?php endforeach ?>
@@ -169,7 +166,7 @@
             <ul class="nav nav-tabs flex-wrap">
                 <?php foreach ($tabs as $tab) : ?>
                     <li class="nav-item">
-                        <a class="nav-link<?= $tab->isGrayedOut($individual) ? ' text-muted' : '' ?>" data-toggle="tab" role="tab" data-href="<?= e(route('individual-tab', ['xref' => $individual->xref(), 'ged' => $individual->tree()->name(), 'module' => $tab->name()])) ?>" href="#<?= $tab->name() ?>">
+                        <a class="nav-link<?= $tab->isGrayedOut($individual) ? ' text-muted' : '' ?>" data-toggle="tab" role="tab" data-href="<?= e(route('module', ['module' => $tab->name(), 'action' => 'Tab', 'tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) ?>" href="#<?= $tab->name() ?>">
                             <?= $tab->tabTitle() ?>
                         </a>
                     </li>
@@ -178,8 +175,7 @@
             <div class="tab-content">
                 <?php foreach ($tabs as $tab) : ?>
                     <div id="<?= $tab->name() ?>" class="tab-pane fade wt-ajax-load" role="tabpanel"><?php if (!$tab->canLoadAjax()) :
-                        ?><?= $tab->getTabContent($individual) ?><?php
-                             endif ?></div>
+                        ?><?= $tab->getTabContent($individual) ?><?php endif ?></div>
                 <?php endforeach ?>
             </div>
         </div>

@@ -77,7 +77,6 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
 
       // Replace an existing view with our own version.
       View::registerCustomView('::individual-page', $this->name() . '::individual-page');
-      View::registerCustomView('::individual-page-menu', $this->name() . '::individual-page-menu');
   }
   
   public function headContent(): string
