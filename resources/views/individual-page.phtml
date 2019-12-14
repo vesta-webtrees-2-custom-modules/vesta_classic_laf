@@ -56,17 +56,17 @@ use Illuminate\Support\Collection;
                 case 'M':
                     $sex = I18N::translate('Male');
                     $container_class = 'male_gender';
-                    $icon = view('icons/sex-M');
+                    $icon = view('icons/sex', ['sex' => 'M']);
                     break;
                 case 'F':
                     $sex = I18N::translate('Female');
                     $container_class = 'female_gender';
-                    $icon = view('icons/sex-F');
+                    $icon = view('icons/sex', ['sex' => 'F']);
                     break;
                 default:
                     $sex = I18N::translateContext('unknown gender', 'Unknown');
                     $container_class = 'unknown_gender';
-                    $icon = view('icons/sex-U');
+                    $icon = view('icons/sex', ['sex' => 'U']);
                     break;
             }
 
@@ -87,7 +87,7 @@ use Illuminate\Support\Collection;
           }
         ?>
         
-        <?= $individual->getLifeSpan() ?> <?= $age ?>
+        <?= $individual->lifespan() ?> <?= $age ?>
     </h2>
     <?php if ($individual->canEdit()) : ?>
         <?= view('individual-page-menu', ['individual' => $individual, 'count_names' => $count_names, 'count_sex' => $count_sex, 'tree' => $tree]) ?>
