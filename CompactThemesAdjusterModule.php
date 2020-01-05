@@ -27,7 +27,7 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
   }
 
   public function customModuleVersion(): string {
-    return '2.0.0.2';
+    return '2.0.1.1';
   }
 
   public function customModuleLatestVersionUrl(): string {
