@@ -150,7 +150,14 @@ use Illuminate\Support\Collection;
             <!-- Name accordion -->
             <div class="col-sm" id="individual-names" role="tablist">
                 <?php foreach ($name_records as $name_record) : ?>
-                    <?= $name_record ?>
+                    <?php
+                      //undo grid layout changes in main webtrees from 03.01.2020 (see IndividualPage.php)                    
+                      $name_record = str_replace("<dl class=\"row mb-0\">", "<dl>", $name_record);
+                      $name_record = str_replace("<dt class=\"col-md-4 col-lg-3\">", "<dt class=\"label\">", $name_record);
+                      $name_record = str_replace("<dd class=\"col-md-8 col-lg-9\">", "<dd class=\"field\">", $name_record);
+                      
+                      echo $name_record;
+                    ?>
                 <?php endforeach ?>
                 
                 <!-- [RC] moved elsewhere
