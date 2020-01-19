@@ -21,6 +21,7 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
     * The key-value pairs of the name parts are inline
     * Gender information is moved to the header (as an icon)
     * Media edit controls is moved to the edit menu (a better place for these edit controls may be the Media tab itself)
+* The module now optionaly displays nicknames as in webtrees 1.x (before the surname). See [here](https://github.com/fisharebest/webtrees/issues/1401) for the related discussion.
 * Note that this module itself is not a theme: The webtrees user will not be able to switch between the compact and the regular layout!
 
 default 'webtrees' theme   |  adjusted 'webtrees' theme
@@ -31,7 +32,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.1.1
+* Current version: 2.0.1.2
 * Based on and tested with webtrees 2.0.1. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Download the zipped module [here](https://cissee.de/adjuster.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>

@@ -2,22 +2,32 @@
 
 namespace CompactThemes;
 
+use Cissee\WebtreesExt\IndividualNameHandler;
 use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\AbstractModule;
+use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
 use Fisharebest\Webtrees\View;
+use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Illuminate\Support\Str;
+use Vesta\ControlPanel\ControlPanelUtils;
+use Vesta\ControlPanel\Model\ControlPanelCheckbox;
+use Vesta\ControlPanel\Model\ControlPanelPreferences;
+use Vesta\ControlPanel\Model\ControlPanelSection;
+use Vesta\ControlPanel\Model\ControlPanelSubsection;
+use function app;
+use function redirect;
 use function response;
 use function route;
 use function view;
 
-class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustomInterface, ModuleGlobalInterface {
+class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustomInterface, ModuleConfigInterface, ModuleGlobalInterface {
   
   use ModuleCustomTrait;
   use ModuleGlobalTrait;
@@ -27,7 +37,7 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
   }
 
   public function customModuleVersion(): string {
-    return '2.0.1.1';
+    return '2.0.1.2';
   }
 
   public function customModuleLatestVersionUrl(): string {
@@ -77,6 +87,13 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
 
       // Replace an existing view with our own version.
       View::registerCustomView('::individual-page', $this->name() . '::individual-page');
+      
+      $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
+      
+      $handler = app(IndividualNameHandler::class);
+      $handler->setNickBeforeSurn($nickBeforeSurn);
+      //must explicitly register in otrder to re-use elsewhere! (this is a bit surprising ...)
+      app()->instance(IndividualNameHandler::class, $handler);      
   }
   
   public function headContent(): string
@@ -176,5 +193,74 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
         'Expires' => $expiry_date,
     ];
     return response($content, 200, $headers);
+  }
+    
+  public function getConfigLink(): string {
+    return route('module', [
+        'module' => $this->name(),
+        'action' => 'Admin',
+    ]);
+  }
+
+  public function getAdminAction(ServerRequestInterface $request): ResponseInterface {
+    return response($this->editConfig());
+  }
+
+  public function postAdminAction(ServerRequestInterface $request): ResponseInterface {
+    $this->saveConfig($request);
+
+    $url = route('module', [
+        'module' => $this->name(),
+        'action' => 'Admin',
+    ]);
+
+    return redirect($url);
+  }
+  
+  protected function editConfig() {
+    ob_start();
+    $utils = new ControlPanelUtils($this);
+    $utils->printPrefs($this->createPrefs(), $this->name());
+    $prefs = ob_get_clean();
+
+    $innerHtml = "";
+    $innerHtml .= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => I18N::translate('Control panel'), route('modules') => I18N::translate('Modules'), $this->title()]]);
+    $innerHtml .= "<h1>" . $this->title() . "</h1>";
+    $innerHtml .= "<p class=\"text-muted\">" . $this->description() . "</p>";
+    $innerHtml .= "<p class=\"text-muted\">" . I18n::translate("Also includes further adjustments which allow to preserve some webtrees 1.x functionality.") . "</p>";
+    $innerHtml .= $prefs;
+
+    // Insert the view into the (main) layout
+    $html = View::make('layouts/administration', [
+                'title' => $this->title(),
+                'content' => $innerHtml
+    ]);
+
+    return $html;
+  }
+  
+  protected function saveConfig(ServerRequestInterface $request) {
+    $utils = new ControlPanelUtils($this);
+    $utils->savePostData($request, $this->createPrefs());
+  }
+  
+  protected function createPrefs() {
+    
+    $sub[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Nicknames'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Display nicknames before surnames'),
+                /* I18N: Module Configuration */I18N::translate('Handle nicknames as in webtrees 1.x, instead of appending them to the name.') . ' ' .
+                /* I18N: Module Configuration */I18N::translate('Note that this doesn\'t affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names.'),
+                'NICK_BEFORE_SURN',
+                '1')));
+    
+    $sections = array();
+    $sections[] = new ControlPanelSection(
+            /* I18N: Module Configuration */I18N::translate('Individuals'),
+            '',
+            $sub);
+    
+    return new ControlPanelPreferences($sections);
   }
 }
