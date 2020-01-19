@@ -47,7 +47,7 @@ use Illuminate\Support\Collection;
         <?= $individual->fullName() ?><?= $user_link ?> 
         
         <?php
-        //[RC] adjusted replaces $sex_records which are generated via IndividualController.formatSexRecord
+        //[RC] adjusted replaces $sex_records which are generated via IndividualPage.formatSexRecord
         foreach ($individual->facts(['SEX']) as $n => $fact) {
             $individual = $fact->record();
 
@@ -89,6 +89,15 @@ use Illuminate\Support\Collection;
         <?= $individual->lifespan() ?> <?= $age ?>
     </h2>
     <?php if ($individual->canEdit()) : ?>
+        <?php
+          //ongoing changes in webtrees, remove after next webtrees release 2.0.2!
+          if (!isset($count_names)) {
+            $count_names = 0;
+          }
+          if (!isset($count_sex)) {
+            $count_sex = 0;
+          }
+        ?>
         <?= view('individual-page-menu', ['individual' => $individual, 'count_names' => $count_names, 'count_sex' => $count_sex, 'tree' => $tree]) ?>
     <?php endif ?>
 </div>
