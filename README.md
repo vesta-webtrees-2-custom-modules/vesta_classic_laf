@@ -32,8 +32,8 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.2.1
-* Based on and tested with webtrees 2.0.2. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
+* Current version: 2.0.3.1
+* Based on and tested with webtrees 2.0.3. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Download the zipped module [here](https://cissee.de/adjuster.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/ric2016/compact_themes_adjuster/issues>

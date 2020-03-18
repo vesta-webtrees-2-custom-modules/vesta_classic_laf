@@ -2,8 +2,11 @@
 
 namespace CompactThemes;
 
+use Cissee\WebtreesExt\CustomIndividualFactory;
+use Cissee\WebtreesExt\CustomTreeService;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\Contracts\IndividualFactoryInterface;
 use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\AbstractModule;
@@ -12,6 +15,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
+use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\View;
 use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
@@ -28,7 +32,10 @@ use function route;
 use function view;
 
 class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustomInterface, ModuleConfigInterface, ModuleGlobalInterface {
-  
+    
+  use VestaModuleCustomTrait {
+    VestaModuleCustomTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
+  }
   use ModuleCustomTrait;
   use ModuleGlobalTrait;
   
@@ -37,11 +44,11 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
   }
 
   public function customModuleVersion(): string {
-    return '2.0.2.1';
+    return file_get_contents(__DIR__ . '/latest-version.txt');
   }
 
   public function customModuleLatestVersionUrl(): string {
-    return 'https://cissee.de';
+    return 'https://raw.githubusercontent.com/ric2016/compact_themes_adjuster/master/latest-version.txt';
   }
 
   public function customModuleSupportUrl(): string {
@@ -92,8 +99,17 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
       
       $handler = app(IndividualNameHandler::class);
       $handler->setNickBeforeSurn($nickBeforeSurn);
-      //must explicitly register in otrder to re-use elsewhere! (this is a bit surprising ...)
-      app()->instance(IndividualNameHandler::class, $handler);      
+      //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
+      app()->instance(IndividualNameHandler::class, $handler);
+      
+      //TODO - requires the develop-branch
+      //once this is fixed, adjust text in module config!
+      //$cache = app('cache.array');
+      //app()->instance(IndividualFactoryInterface::class, new CustomIndividualFactory($cache));
+      
+      //experimental, could be used to redefine tree e.g. for xref handling as in webtrees 1.x
+      //see https://www.webtrees.net/index.php/en/forum/help-for-2-0/33978-identities-in-gedcom-file#74475
+      //app()->instance(TreeService::class, new CustomTreeService());
   }
   
   public function headContent(): string
@@ -249,7 +265,7 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
     $sub[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Nicknames'),
             array(new ControlPanelCheckbox(
-                /* I18N: Module Configuration */I18N::translate('Display nicknames before surnames'),
+                /* I18N: Module Configuration */I18N::translate('Display nicknames before surnames - Caution: Functionality is currently broken due to ongoing changes in webtrees core code.'),
                 /* I18N: Module Configuration */I18N::translate('Handle nicknames as in webtrees 1.x, instead of appending them to the name.') . ' ' .
                 /* I18N: Module Configuration */I18N::translate('Note that this doesn\'t affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names.'),
                 'NICK_BEFORE_SURN',

@@ -2,22 +2,34 @@
 
 declare(strict_types=1);
 
-namespace Fisharebest\Webtrees;
+namespace Cissee\WebtreesExt;
 
+use Cissee\WebtreesExt\IndividualNameHandler;
 use Closure;
 use Exception;
 use Fisharebest\ExtCalendar\GregorianCalendar;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\Date;
+use Fisharebest\Webtrees\Family;
+use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodePedi;
 use Fisharebest\Webtrees\Http\RequestHandlers\IndividualPage;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Media;
+use Fisharebest\Webtrees\MediaFile;
+use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\User;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Collection;
-use Cissee\WebtreesExt\IndividualNameHandler;
 use stdClass;
+use function app;
 
 /**
  * A GEDCOM individual (INDI) object.
  */
-class Individual extends GedcomRecord
+class Individual extends \Fisharebest\Webtrees\Individual
 {
     public const RECORD_TYPE = 'INDI';
 
@@ -94,7 +106,7 @@ class Individual extends GedcomRecord
      * @throws Exception
      * @return Individual|null
      */
-    public static function getInstance(string $xref, Tree $tree, string $gedcom = null): ?Individual
+    public static function getInstance(string $xref, Tree $tree, string $gedcom = null): ?\Fisharebest\Webtrees\Individual
     {
         $record = parent::getInstance($xref, $tree, $gedcom);
 
@@ -816,7 +828,7 @@ class Individual extends GedcomRecord
      *
      * @return Individual|null
      */
-    public function getCurrentSpouse(): ?Individual
+    public function getCurrentSpouse(): ?\Fisharebest\Webtrees\Individual
     {
         $family = $this->spouseFamilies()->last();
 
@@ -1158,7 +1170,7 @@ class Individual extends GedcomRecord
         $full = '<span class="NAME" dir="auto" translate="no">' . preg_replace('/\/([^\/]*)\//', '<span class="SURN">$1</span>', e($full)) . '</span>';
         // Localise quotation marks around the nickname
         $full = preg_replace_callback('/&quot;([^&]*)&quot;/', static function (array $matches): string {
-            return I18N::translate('“%s”', $matches[1]);
+            return '<q class="wt-nickname">' . $matches[1] . '</q>';
         }, $full);
 
         // A suffix of “*” indicates a preferred name
