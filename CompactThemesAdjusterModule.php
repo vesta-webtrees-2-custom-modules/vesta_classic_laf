@@ -3,10 +3,9 @@
 namespace CompactThemes;
 
 use Cissee\WebtreesExt\CustomIndividualFactory;
-use Cissee\WebtreesExt\CustomTreeService;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Fisharebest\Webtrees\Carbon;
-use Fisharebest\Webtrees\Contracts\IndividualFactoryInterface;
+use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\AbstractModule;
@@ -15,7 +14,6 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
-use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\View;
 use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
@@ -33,11 +31,9 @@ use function view;
 
 class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustomInterface, ModuleConfigInterface, ModuleGlobalInterface {
     
-  use VestaModuleCustomTrait {
+  use ModuleCustomTrait, ModuleGlobalTrait, VestaModuleCustomTrait {
     VestaModuleCustomTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
   }
-  use ModuleCustomTrait;
-  use ModuleGlobalTrait;
   
   public function customModuleAuthorName(): string {
     return 'Richard Cissée';
@@ -102,10 +98,8 @@ class CompactThemesAdjusterModule extends AbstractModule implements ModuleCustom
       //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
       app()->instance(IndividualNameHandler::class, $handler);
       
-      //TODO - requires the develop-branch
-      //once this is fixed, adjust text in module config!
-      //$cache = app('cache.array');
-      //app()->instance(IndividualFactoryInterface::class, new CustomIndividualFactory($cache));
+      $cache = app('cache.array');
+      Factory::individual(new CustomIndividualFactory($cache));
       
       //experimental, could be used to redefine tree e.g. for xref handling as in webtrees 1.x
       //see https://www.webtrees.net/index.php/en/forum/help-for-2-0/33978-identities-in-gedcom-file#74475

@@ -6,16 +6,18 @@ namespace Cissee\WebtreesExt;
 
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Closure;
-use Exception;
 use Fisharebest\ExtCalendar\GregorianCalendar;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date;
+use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodePedi;
 use Fisharebest\Webtrees\Http\RequestHandlers\IndividualPage;
 use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Media;
 use Fisharebest\Webtrees\MediaFile;
 use Fisharebest\Webtrees\Place;
@@ -23,13 +25,12 @@ use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\User;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Collection;
-use stdClass;
 use function app;
 
 /**
  * A GEDCOM individual (INDI) object.
  */
-class Individual extends \Fisharebest\Webtrees\Individual
+class IndividualExt extends Individual
 {
     public const RECORD_TYPE = 'INDI';
 
@@ -47,28 +48,16 @@ class Individual extends \Fisharebest\Webtrees\Individual
     /**
      * A closure which will create a record from a database row.
      *
+     * @deprecated since 2.0.4.  Will be removed in 2.1.0 - Use Factory::individual()
+     *
      * @param Tree $tree
      *
      * @return Closure
      */
     public static function rowMapper(Tree $tree): Closure
     {
-        return static function (stdClass $row) use ($tree): Individual {
-            $individual = Individual::getInstance($row->i_id, $tree, $row->i_gedcom);
-            assert($individual instanceof Individual);
-
-            // Some queries include the names table.
-            // For these we must select the specified name.
-            if (($row->n_num ?? null) !== null) {
-                $individual = clone $individual;
-                $individual->setPrimaryName($row->n_num);
-
-                return $individual;
+        return Factory::individual()->mapper($tree);
             }
-
-            return $individual;
-        };
-    }
 
     /**
      * A closure which will compare individuals by birth date.
@@ -99,22 +88,17 @@ class Individual extends \Fisharebest\Webtrees\Individual
      * we just receive the XREF. For bulk records (such as lists
      * and search results) we can receive the GEDCOM data as well.
      *
+     * @deprecated since 2.0.4.  Will be removed in 2.1.0 - Use Factory::individual()
+     *
      * @param string      $xref
      * @param Tree        $tree
      * @param string|null $gedcom
      *
-     * @throws Exception
      * @return Individual|null
      */
-    public static function getInstance(string $xref, Tree $tree, string $gedcom = null): ?\Fisharebest\Webtrees\Individual
+    public static function getInstance(string $xref, Tree $tree, string $gedcom = null): ?Individual
     {
-        $record = parent::getInstance($xref, $tree, $gedcom);
-
-        if ($record instanceof self) {
-            return $record;
-        }
-
-        return null;
+        return Factory::individual()->make($xref, $tree, $gedcom);
     }
 
     /**
@@ -135,7 +119,7 @@ class Individual extends \Fisharebest\Webtrees\Individual
             ->get();
 
         foreach ($rows as $row) {
-            self::getInstance($row->xref, $tree, $row->gedcom);
+            Factory::individual()->make($row->xref, $tree, $row->gedcom);
         }
     }
 
@@ -215,7 +199,7 @@ class Individual extends \Fisharebest\Webtrees\Individual
     {
         static $cache = null;
 
-        $user_individual = self::getInstance($target->tree->getUserPreference(Auth::user(), User::PREF_TREE_ACCOUNT_XREF), $target->tree);
+        $user_individual = Factory::individual()->make($target->tree->getUserPreference(Auth::user(), User::PREF_TREE_ACCOUNT_XREF), $target->tree);
         if ($user_individual) {
             if (!$cache) {
                 $cache = [
@@ -300,7 +284,7 @@ class Individual extends \Fisharebest\Webtrees\Individual
         // Just show the 1 FAMC/FAMS tag, not any subtags, which may contain private data
         preg_match_all('/\n1 (?:FAMC|FAMS) @(' . Gedcom::REGEX_XREF . ')@/', $this->gedcom, $matches, PREG_SET_ORDER);
         foreach ($matches as $match) {
-            $rela = Family::getInstance($match[1], $this->tree);
+            $rela = Factory::family()->make($match[1], $this->tree);
             if ($rela && ($SHOW_PRIVATE_RELATIONSHIPS || $rela->canShow($access_level))) {
                 $rec .= $match[0];
             }
@@ -311,22 +295,6 @@ class Individual extends \Fisharebest\Webtrees\Individual
         }
 
         return $rec;
-    }
-
-    /**
-     * Fetch data from the database
-     *
-     * @param string $xref
-     * @param int    $tree_id
-     *
-     * @return string|null
-     */
-    protected static function fetchGedcomRecord(string $xref, int $tree_id): ?string
-    {
-        return DB::table('individuals')
-            ->where('i_id', '=', $xref)
-            ->where('i_file', '=', $tree_id)
-            ->value('i_gedcom');
     }
 
     /**
@@ -434,15 +402,15 @@ class Individual extends \Fisharebest\Webtrees\Individual
      */
     public function findHighlightedMediaFile(): ?MediaFile
     {
-        foreach ($this->facts(['OBJE']) as $fact) {
+        $fact = $this->facts(['OBJE'])
+            ->first(static function (Fact $fact): bool {
             $media = $fact->target();
-            if ($media instanceof Media) {
-                foreach ($media->mediaFiles() as $media_file) {
-                    if ($media_file->isImage() && !$media_file->isExternal()) {
-                        return $media_file;
-                    }
-                }
-            }
+
+                return $media instanceof Media && $media->firstImageFile() instanceof MediaFile;
+            });
+
+        if ($fact instanceof Fact && $fact->target() instanceof Media) {
+            return $fact->target()->firstImageFile();
         }
 
         return null;
@@ -828,7 +796,7 @@ class Individual extends \Fisharebest\Webtrees\Individual
      *
      * @return Individual|null
      */
-    public function getCurrentSpouse(): ?\Fisharebest\Webtrees\Individual
+    public function getCurrentSpouse(): ?Individual
     {
         $family = $this->spouseFamilies()->last();
 
@@ -906,7 +874,9 @@ class Individual extends \Fisharebest\Webtrees\Individual
             }
         }
 
-        return $step_families->unique();
+        return $step_families->uniqueStrict(static function (Family $family): string {
+            return $family->xref();
+        });
     }
 
     /**
