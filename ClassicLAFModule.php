@@ -44,7 +44,7 @@ class ClassicLAFModule extends AbstractModule implements
   }
 
   public function customModuleLatestVersionUrl(): string {
-    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/classic_laf/master/latest-version.txt';
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_classic_laf/master/latest-version.txt';
   }
 
   public function customModuleSupportUrl(): string {

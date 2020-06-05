@@ -1,8 +1,11 @@
 
 # ⚶ Vesta Classic Look & Feel (Webtrees 2 Custom Module)
 
-This [webtrees](https://www.webtrees.net/) custom module adjusts all themes and other features, providing a look & feel closer to the webtrees 1.x version. The project’s website is [cissee.de](https://cissee.de). 
+This [webtrees](https://www.webtrees.net/) custom module adjusts all themes and other features, providing a look & feel closer to the webtrees 1.x version. 
+The project’s website is [cissee.de](https://cissee.de). 
+
 The module was formerly known as 'Compact Themes Adjuster'. It is now part of the Vesta suite.
+
 This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
 ## Contents
