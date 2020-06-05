@@ -1,6 +1,6 @@
 <?php
 
-namespace CompactThemes;
+namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Fisharebest\Webtrees\Webtrees;
 
@@ -14,4 +14,4 @@ if (defined("WT_VERSION")) {
 
 require_once __DIR__ . '/autoload.php';
 
-return app(CompactThemesAdjusterModule::class);
+return app(ClassicLAFModule::class);

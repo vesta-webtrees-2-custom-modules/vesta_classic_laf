@@ -1,8 +1,8 @@
 
-# Compact Themes Adjuster (Webtrees 2 Custom Module)
+# ⚶ Vesta Classic Look & Feel (Webtrees 2 Custom Module)
 
-This [webtrees](https://www.webtrees.net/) custom module adjusts all themes, providing a more compact layout similar to the webtrees 1.x version. The project’s website is [cissee.de](https://cissee.de). 
-
+This [webtrees](https://www.webtrees.net/) custom module adjusts all themes and other features, providing a look & feel closer to the webtrees 1.x version. The project’s website is [cissee.de](https://cissee.de). 
+The module was formerly known as 'Compact Themes Adjuster'. It is now part of the Vesta suite.
 This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
 ## Contents
@@ -14,6 +14,8 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
 ### Features<a name="features"/>
 
+#### Layout
+
 * The overall width is adjusted for larger resolutions, as suggested [here](https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-support-for-bigger-monitors#70135)
 * Currently, mainly the individual page is adjusted further:
     * Smaller sidebar
@@ -21,7 +23,6 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
     * The key-value pairs of the name parts are inline
     * Gender information is moved to the header (as an icon)
     * Media edit controls is moved to the edit menu (a better place for these edit controls may be the Media tab itself)
-* The module now optionaly displays nicknames as in webtrees 1.x (before the surname). See [here](https://github.com/fisharebest/webtrees/issues/1401) for the related discussion.
 * Note that this module itself is not a theme: The webtrees user will not be able to switch between the compact and the regular layout!
 
 default 'webtrees' theme   |  adjusted 'webtrees' theme
@@ -30,24 +31,29 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 * Further suggestions are very welcome!
 
+#### Functionality
+
+* The module optionaly displays nicknames as in webtrees 1.x (before the surname). See [here](https://github.com/fisharebest/webtrees/issues/1401) for the related discussion.
+* The module allows to use xrefs with specific prefixes, as in webtrees 1.x. See [e.g. here](https://www.webtrees.net/index.php/en/forum/help-for-2-0/33978-identities-in-gedcom-file) for the related discussion.
+
 ### Download<a name="download"/>
 
-* Current version: 2.0.4.0
-* Based on and tested with webtrees 2.0.4. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
-* Download the zipped module [here](https://cissee.de/adjuster.latest.zip).
+* Current version: 2.0.5.0.0
+* Based on and tested with webtrees 2.0.5. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
+* Requires the ⚶ Vesta Common module ('vesta_common').
+* Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
-* Issues also via <https://github.com/ric2016/compact_themes_adjuster/issues>
+* Issues also via <https://github.com/vesta-webtrees-2-custom-modules/classic_laf/issues>
+ 
+### Installation<a name="installation"/>
 
-### Installation
-
-* Unzip the files and copy them to the modules_v4 folder of your webtrees installation.
-* Enable the module via Control Panel -> All modules -> Compact Themes Adjuster.
+* Unzip the files and copy them to the modules_v4 folder of your webtrees installation. All related modules are included in the zip file. It's safe to overwrite the respective directories if they already exist (they are bundled with other custom modules as well), as long as other custom models using these dependencies are also upgraded to their respective latest versions.
+* Enable the main module via Control Panel -> Modules -> Module Administration -> ⚶ Vesta Classic Look & Feel. After that, you may configure some options.
 
 ### License<a name="license"/>
 
-* **compact_themes_adjuster: a webtrees custom module**
-* Copyright (C) 2019 - 2020 Richard Cissée
-
+* **vesta_classic_look_and_feel: a webtrees custom module**
+* Copyright (C) 2020 Richard Cissée
 * Derived from **webtrees** - Copyright (C) 2010 to 2019 webtrees development team.
 
 This program is free software: you can redistribute it and/or modify
