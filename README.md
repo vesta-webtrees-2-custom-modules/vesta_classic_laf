@@ -36,12 +36,12 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 #### Functionality
 
-* The module optionaly displays nicknames as in webtrees 1.x (before the surname). See [here](https://github.com/fisharebest/webtrees/issues/1401) for the related discussion.
+* The module optionally displays nicknames as in webtrees 1.x (before the surname). See [here](https://github.com/fisharebest/webtrees/issues/1401) for the related discussion.
 * The module allows to use xrefs with specific prefixes, as in webtrees 1.x. See [e.g. here](https://www.webtrees.net/index.php/en/forum/help-for-2-0/33978-identities-in-gedcom-file) for the related discussion.
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.5.0.0
+* Current version: 2.0.5.0.2
 * Based on and tested with webtrees 2.0.5. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Requires the ⚶ Vesta Common module ('vesta_common').
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
