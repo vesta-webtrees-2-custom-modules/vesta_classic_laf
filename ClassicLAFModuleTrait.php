@@ -2,12 +2,13 @@
 
 namespace Cissee\Webtrees\Module\ClassicLAF;
 
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
-use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
+use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
 
 trait ClassicLAFModuleTrait {
 
@@ -38,32 +39,32 @@ trait ClassicLAFModuleTrait {
                 'CUSTOM_PREFIXES',
                 '0'),
                 new ControlPanelTextbox(
-                        I18N::translate('Individual'),
+                        MoreI18N::xlate('Individual'),
                         null,
                         'GEDCOM_ID_PREFIX',
                         'I'),
                 new ControlPanelTextbox(
-                        I18N::translate('Family'),
+                        MoreI18N::xlate('Family'),
                         null,
                         'FAM_ID_PREFIX',
                         'F'),
                 new ControlPanelTextbox(
-                        I18N::translate('Source'),
+                        MoreI18N::xlate('Source'),
                         null,
                         'SOURCE_ID_PREFIX',
                         'S'),
                 new ControlPanelTextbox(
-                        I18N::translate('Repository'),
+                        MoreI18N::xlate('Repository'),
                         null,
                         'REPO_ID_PREFIX',
                         'R'),
                 new ControlPanelTextbox(
-                        I18N::translate('Media Object'),
+                        MoreI18N::xlate('Media Object'),
                         null,
                         'MEDIA_ID_PREFIX',
                         'M'),
                 new ControlPanelTextbox(
-                        I18N::translate('Note'),
+                        MoreI18N::xlate('Note'),
                         null,
                         'NOTE_ID_PREFIX',
                         'N')),
@@ -80,11 +81,11 @@ trait ClassicLAFModuleTrait {
     
     $sections = array();
     $sections[] = new ControlPanelSection(
-            /* I18N: Module Configuration */I18N::translate('General'),
+            /* I18N: Module Configuration */MoreI18N::xlate('General'),
             '',
             $xrefs);
     $sections[] = new ControlPanelSection(
-            /* I18N: Module Configuration */I18N::translate('Individuals'),
+            /* I18N: Module Configuration */MoreI18N::xlate('Individuals'),
             '',
             $individuals);
     

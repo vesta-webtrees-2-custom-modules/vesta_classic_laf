@@ -50,18 +50,9 @@ class ClassicLAFModule extends AbstractModule implements
   public function customModuleSupportUrl(): string {
     return 'https://cissee.de';
   }
-
-  public function description(): string {
-    return $this->getShortDescription();
-  }
-
+    
   public function resourcesFolder(): string {
     return __DIR__ . '/resources/';
-  }
-
-  public function customTranslations(string $language): array {
-    //TODO
-    return [];
   }
   
   public function onBoot(): void {
