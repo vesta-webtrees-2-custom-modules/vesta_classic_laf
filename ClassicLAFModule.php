@@ -2,10 +2,13 @@
 
 namespace Cissee\Webtrees\Module\ClassicLAF;
 
+use Aura\Router\Route;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\CustomTreeService;
+use Cissee\WebtreesExt\Http\RequestHandlers\EditFactAdjusted;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Fisharebest\Webtrees\Factory;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditFact;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleConfigTrait;
@@ -15,6 +18,10 @@ use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
 use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\View;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaModuleTrait;
 use function app;
 use function route;
@@ -22,7 +29,8 @@ use function route;
 class ClassicLAFModule extends AbstractModule implements 
   ModuleCustomInterface, 
   ModuleConfigInterface,
-  ModuleGlobalInterface {
+  ModuleGlobalInterface/*,
+  MiddlewareInterface*/ {
 
   use ModuleCustomTrait, ModuleConfigTrait, ModuleGlobalTrait, VestaModuleTrait {
     VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
@@ -59,6 +67,9 @@ class ClassicLAFModule extends AbstractModule implements
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
 
+    // basic layout for edit dialogs
+    View::registerCustomView('::layouts/stripped', $this->name() . '::layouts/stripped');
+    
     // Replace an existing view with our own version.
     View::registerCustomView('::individual-page', $this->name() . '::individual-page');
 
@@ -93,4 +104,24 @@ class ClassicLAFModule extends AbstractModule implements
         'action' => 'Admin',
     ]);
   }
+  
+  /*
+  public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
+    $route = $request->getAttribute('route');
+    assert($route instanceof Route);
+    
+    //TODO lots of others
+    if ($route->handler === EditFact::class) {
+      //TODO requires WrapHandler update! Otherwise no effect.
+      //discussed in https://github.com/fisharebest/webtrees/issues/3339
+      $route->handler(EditFactAdjusted::class);
+      
+      //not even required, $request is mutable
+      //$request = $request->withAttribute('route', $route);
+    }
+    
+    // Generate the response.
+    return $handler->handle($request);
+  }
+  */
 }

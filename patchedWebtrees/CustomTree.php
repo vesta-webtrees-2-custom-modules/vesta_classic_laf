@@ -91,6 +91,9 @@ class CustomTree extends Tree {
       return $xref;
   }
   
+  //always returns GedcomRecord - not one of its subclasses!
+  //despite doc on Tree.createRecord stating
+  //@return GedcomRecord|Individual|Family|Location|Note|Source|Repository|Media|Submitter|Submission
   public function createRecord(string $gedcom): GedcomRecord
   {
       if (!Str::startsWith($gedcom, '0 @@ ')) {
@@ -139,8 +142,40 @@ class CustomTree extends Tree {
             throw new InvalidArgumentException('CustomTree::createFamily(' . $gedcom . ') does not begin 0 @@ FAM');
         }
 
-        //[RC] adjusted - why doesn't Tree just use createRecord anyway?
-        return $this->createRecord($gedcom);
+        //[RC] adjusted
+        if (preg_match('/^0 @@ (' . Gedcom::REGEX_TAG . ')/', $gedcom, $match)) {
+          $type = $match[1];
+        } else {
+          throw new Exception('Invalid argument to CustomTree::createRecord(' . $gedcom . ')');
+        }
+
+        $xref   = $this->getNewXrefByType($type);
+        $gedcom = '0 @' . $xref . '@ ' . Str::after($gedcom, '0 @@ ');
+
+        // Create a change record
+        $today = strtoupper(date('d M Y'));
+        $now   = date('H:i:s');
+        $gedcom .= "\n1 CHAN\n2 DATE " . $today . "\n3 TIME " . $now . "\n2 _WT_USER " . Auth::user()->userName();
+
+        // Create a pending change
+        DB::table('change')->insert([
+            'gedcom_id'  => $this->id(), //[RC] adjusted
+            'xref'       => $xref,
+            'old_gedcom' => '',
+            'new_gedcom' => $gedcom,
+            'user_id'    => Auth::id(),
+        ]);
+
+        // Accept this pending change
+        if (Auth::user()->getPreference(User::PREF_AUTO_ACCEPT_EDITS)) {
+            $record = Factory::family()->new($xref, $gedcom, null, $this);
+
+            app(PendingChangesService::class)->acceptRecord($record);
+
+            return $record;
+        }
+
+        return Factory::family()->new($xref, '', $gedcom, $this);
     }
     
   public function createIndividual(string $gedcom): GedcomRecord
@@ -149,8 +184,40 @@ class CustomTree extends Tree {
             throw new InvalidArgumentException('CustomTree::createIndividual(' . $gedcom . ') does not begin 0 @@ INDI');
         }
         
-        //[RC] adjusted - why doesn't Tree just use createRecord anyway?
-        return $this->createRecord($gedcom);
+        //[RC] adjusted
+        if (preg_match('/^0 @@ (' . Gedcom::REGEX_TAG . ')/', $gedcom, $match)) {
+          $type = $match[1];
+        } else {
+          throw new Exception('Invalid argument to CustomTree::createRecord(' . $gedcom . ')');
+        }
+
+        $xref   = $this->getNewXrefByType($type);
+        $gedcom = '0 @' . $xref . '@ ' . Str::after($gedcom, '0 @@ ');
+
+        // Create a change record
+        $today = strtoupper(date('d M Y'));
+        $now   = date('H:i:s');
+        $gedcom .= "\n1 CHAN\n2 DATE " . $today . "\n3 TIME " . $now . "\n2 _WT_USER " . Auth::user()->userName();
+
+        // Create a pending change
+        DB::table('change')->insert([
+            'gedcom_id'  => $this->id(), //[RC] adjusted
+            'xref'       => $xref,
+            'old_gedcom' => '',
+            'new_gedcom' => $gedcom,
+            'user_id'    => Auth::id(),
+        ]);
+
+        // Accept this pending change
+        if (Auth::user()->getPreference(User::PREF_AUTO_ACCEPT_EDITS)) {
+            $record = Factory::individual()->new($xref, $gedcom, null, $this);
+
+            app(PendingChangesService::class)->acceptRecord($record);
+
+            return $record;
+        }
+
+        return Factory::individual()->new($xref, '', $gedcom, $this);
     }
   
   public function createMediaObject(string $gedcom): Media
@@ -159,7 +226,43 @@ class CustomTree extends Tree {
             throw new InvalidArgumentException('CustomTree::createMediaObject(' . $gedcom . ') does not begin 0 @@ OBJE');
         }
         
-        //[RC] adjusted - why doesn't Tree just use createRecord anyway?
-        return $this->createRecord($gedcom);
+        if (!Str::startsWith($gedcom, '0 @@ INDI')) {
+            throw new InvalidArgumentException('CustomTree::createIndividual(' . $gedcom . ') does not begin 0 @@ INDI');
+        }
+        
+        //[RC] adjusted
+        if (preg_match('/^0 @@ (' . Gedcom::REGEX_TAG . ')/', $gedcom, $match)) {
+          $type = $match[1];
+        } else {
+          throw new Exception('Invalid argument to CustomTree::createRecord(' . $gedcom . ')');
+        }
+
+        $xref   = $this->getNewXrefByType($type);
+        $gedcom = '0 @' . $xref . '@ ' . Str::after($gedcom, '0 @@ ');
+
+        // Create a change record
+        $today = strtoupper(date('d M Y'));
+        $now   = date('H:i:s');
+        $gedcom .= "\n1 CHAN\n2 DATE " . $today . "\n3 TIME " . $now . "\n2 _WT_USER " . Auth::user()->userName();
+
+        // Create a pending change
+        DB::table('change')->insert([
+            'gedcom_id'  => $this->id(), //[RC] adjusted
+            'xref'       => $xref,
+            'old_gedcom' => '',
+            'new_gedcom' => $gedcom,
+            'user_id'    => Auth::id(),
+        ]);
+
+        // Accept this pending change
+        if (Auth::user()->getPreference(User::PREF_AUTO_ACCEPT_EDITS)) {
+            $record = Factory::media()->new($xref, $gedcom, null, $this);
+
+            app(PendingChangesService::class)->acceptRecord($record);
+
+            return $record;
+        }
+
+        return Factory::media()->new($xref, '', $gedcom, $this);
     }
 }
