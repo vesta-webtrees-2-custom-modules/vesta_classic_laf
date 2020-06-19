@@ -31,7 +31,32 @@ trait ClassicLAFModuleTrait {
   }
 
   protected function createPrefs() {
-    $xrefs[] = new ControlPanelSubsection(
+    
+    $layout[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Overall width'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Use available space'),
+                /* I18N: Module Configuration */I18N::translate('The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space.'),
+                'FULL_WIDTH', //TODO: css
+                '1')));
+    
+    $layout[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Individual page'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Use compact layout'),
+                /* I18N: Module Configuration */I18N::translate('Several adjustments - See Readme for details.'),
+                'COMPACT_INDI_PAGE', //TODO: css
+                '1')));
+    
+    $layout[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Edit dialogs'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Use compact layout'),
+                /* I18N: Module Configuration */I18N::translate('Display all edit dialogs using a more compact layout, which also omits the standard header and footer.'),
+                'COMPACT_EDIT',
+                '1')));
+    
+    $general[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('XREF prefixes'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Custom prefixes'),
@@ -79,11 +104,24 @@ trait ClassicLAFModuleTrait {
                 'NICK_BEFORE_SURN',
                 '1')));
     
+    //for now not configurable
+    new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Layout'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Use compact layout for individual page'),
+                /* I18N: Module Configuration */I18N::translate('...'),
+                'COMPACT_INDI',
+                '1')));
+    
     $sections = array();
+    $sections[] = new ControlPanelSection(
+            /* I18N: Module Configuration */I18N::translate('Layout'),
+            '',
+            $layout);
     $sections[] = new ControlPanelSection(
             /* I18N: Module Configuration */MoreI18N::xlate('General'),
             '',
-            $xrefs);
+            $general);
     $sections[] = new ControlPanelSection(
             /* I18N: Module Configuration */MoreI18N::xlate('Individuals'),
             '',

@@ -20,18 +20,19 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 #### Layout
 
 * The overall width is adjusted for larger resolutions, as suggested [here](https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-support-for-bigger-monitors#70135)
-* Currently, mainly the individual page is adjusted further:
+* The individual page is adjusted further:
     * Smaller sidebar
     * Less padding between elements
     * The key-value pairs of the name parts are inline
     * Gender information is moved to the header (as an icon)
     * Media edit controls is moved to the edit menu (a better place for these edit controls may be the Media tab itself)
-* Note that this module itself is not a theme: The webtrees user will not be able to switch between the compact and the regular layout!
 
 default 'webtrees' theme   |  adjusted 'webtrees' theme
 :-------------------------:|:-------------------------:
 ![Screenshot](individual.png) | ![Screenshot](individual_compact.png)
 
+* All edit dialogs are also displayed in a more compact layout.
+* Note that this module itself is not a theme: The webtrees user will not be able to switch between the compact and the regular layout! All layout adjustments are globally configurable though.
 * Further suggestions are very welcome!
 
 #### Functionality
@@ -41,8 +42,8 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.5.2.0
-* Based on and tested with webtrees 2.0.5. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
+* Current version: 2.0.6.0.0
+* Based on and tested with webtrees 2.0.6. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Requires the ⚶ Vesta Common module ('vesta_common').
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>

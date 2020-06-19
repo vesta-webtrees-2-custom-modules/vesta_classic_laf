@@ -5,10 +5,12 @@ namespace Cissee\Webtrees\Module\ClassicLAF;
 use Aura\Router\Route;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\CustomTreeService;
-use Cissee\WebtreesExt\Http\RequestHandlers\EditFactAdjusted;
 use Cissee\WebtreesExt\IndividualNameHandler;
+use DOMDocument;
+use DOMXPath;
+use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Factory;
-use Fisharebest\Webtrees\Http\RequestHandlers\EditFact;
+use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleConfigTrait;
@@ -20,6 +22,7 @@ use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\View;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaModuleTrait;
@@ -29,8 +32,8 @@ use function route;
 class ClassicLAFModule extends AbstractModule implements 
   ModuleCustomInterface, 
   ModuleConfigInterface,
-  ModuleGlobalInterface/*,
-  MiddlewareInterface*/ {
+  ModuleGlobalInterface,
+  MiddlewareInterface {
 
   use ModuleCustomTrait, ModuleConfigTrait, ModuleGlobalTrait, VestaModuleTrait {
     VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
@@ -67,11 +70,12 @@ class ClassicLAFModule extends AbstractModule implements
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
 
-    // basic layout for edit dialogs
-    View::registerCustomView('::layouts/stripped', $this->name() . '::layouts/stripped');
+    $compactIndividualPage = boolval($this->getPreference('COMPACT_INDI_PAGE', '1'));    
     
-    // Replace an existing view with our own version.
-    View::registerCustomView('::individual-page', $this->name() . '::individual-page');
+    if ($compactIndividualPage) {
+      // Replace an existing view with our own version.
+      View::registerCustomView('::individual-page', $this->name() . '::individual-page');      
+    }
 
     $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
 
@@ -86,7 +90,7 @@ class ClassicLAFModule extends AbstractModule implements
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
     app()->instance(TreeService::class, new CustomTreeService($customPrefixes?$this:null));      
     
-    $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 2);
+    $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 3);
   }
   
   public function headContent(): string {
@@ -97,7 +101,17 @@ class ClassicLAFModule extends AbstractModule implements
     return [
         'css/theme.css' => 'css/theme'];
   }
+  
+  public function assetAdditionalHash(string $asset): string {
+    //view is dynamic - we have to hash properly!
     
+    //$compactEdit is switched elsewhere    
+    $fullWidth = boolval($this->getPreference('FULL_WIDTH', '1'));
+    $compactIndividualPage = boolval($this->getPreference('COMPACT_INDI_PAGE', '1'));
+    
+    return "FULL_WIDTH:" . $fullWidth . ";COMPACT_INDI_PAGE:" . $compactIndividualPage . ";";
+  }
+  
   public function getConfigLink(): string {
     return route('module', [
         'module' => $this->name(),
@@ -105,23 +119,95 @@ class ClassicLAFModule extends AbstractModule implements
     ]);
   }
   
-  /*
   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
-    $route = $request->getAttribute('route');
-    assert($route instanceof Route);
     
-    //TODO lots of others
+    /*
     if ($route->handler === EditFact::class) {
       //TODO requires WrapHandler update! Otherwise no effect.
       //discussed in https://github.com/fisharebest/webtrees/issues/3339
-      $route->handler(EditFactAdjusted::class);
+      $route->handler(EditFactAdjusted::class); //note - we could use a single wrapper class for all targets here, no need to have one per target
       
       //not even required, $request is mutable
       //$request = $request->withAttribute('route', $route);
     }
+    //seems easier, but certainly less elegant, to strip header and footer from generated html
+    */
     
-    // Generate the response.
-    return $handler->handle($request);
+    $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
+    
+    $response = $handler->handle($request);
+    
+    if ($strippedEdit && ($response->getStatusCode() === StatusCodeInterface::STATUS_OK)) {
+      $route = $request->getAttribute('route');
+      assert($route instanceof Route);
+      $route_middleware = $route->extras['middleware'] ?? [];
+
+      $strip = false;
+      foreach ($route_middleware as $middleware) {
+        //all edit routes have this middleware, see WebRoutes.php
+        //$middleware is a string, not an instance of AuthEditor!
+        if ($middleware === AuthEditor::class) {
+          $strip = true;
+          break;
+        }
+      }
+
+      if ($strip) {
+        $html = $response->getBody()->__toString();
+        $content = self::strippedLayout($html);
+        $stream_factory = app(StreamFactoryInterface::class);
+        $stream = $stream_factory->createStream($content);
+        $response = $response->withBody($stream);
+
+        //adjust header
+        $response = $response->withHeader('Content-Length', (string) strlen($content));
+      }
+    }    
+            
+    return $response;
   }
-  */
+  
+  public static function strippedLayout(string $html): string {
+    $dom=new DOMDocument();
+    $dom->validateOnParse = false;
+    $internalErrors = libxml_use_internal_errors(true);
+    $dom->loadHTML($html);
+    libxml_use_internal_errors($internalErrors);
+    $xpath = new DOMXPath($dom);
+    $nodes = $xpath->query('//header');
+
+    if (!empty($nodes)) {
+      foreach ($nodes as $node) {        
+        $node->parentNode->removeChild($node);
+      }
+    }
+    
+    $nodes = $xpath->query('//footer');
+
+    if (!empty($nodes)) {
+      foreach ($nodes as $node) {
+        $node->parentNode->removeChild($node);
+      }
+    }
+
+    //also strip the cookie-warning script (added via footer), the respective element as been stripped
+    $nodes = $xpath->query('//script[contains(text(), "cookie-warning")]');
+
+    if (!empty($nodes)) {
+      foreach ($nodes as $node) {
+        $node->parentNode->removeChild($node);
+      }
+    }
+
+    //adjust container to allow additional css styling
+    $nodes = $xpath->query('//div[@class = "container wt-main-container"]');
+
+    if (!empty($nodes)) {
+      foreach ($nodes as $node) {
+        $node->setAttribute("class", "container edit-container wt-main-container");
+      }
+    }
+    
+    return $dom->saveHTML();
+  }
 }
