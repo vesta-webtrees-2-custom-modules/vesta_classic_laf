@@ -153,14 +153,18 @@ class ClassicLAFModule extends AbstractModule implements
       }
 
       if ($strip) {
-        $html = $response->getBody()->__toString();
-        $content = self::strippedLayout($html);
-        $stream_factory = app(StreamFactoryInterface::class);
-        $stream = $stream_factory->createStream($content);
-        $response = $response->withBody($stream);
+        //must not adjust json responses
+        $contentType = $response->getHeaderLine("Content-Type");
+        if (substr($contentType, 0, strlen("text/html")) === "text/html") {
+          $html = $response->getBody()->__toString();
+          $content = self::strippedLayout($html);
+          $stream_factory = app(StreamFactoryInterface::class);
+          $stream = $stream_factory->createStream($content);
+          $response = $response->withBody($stream);
 
-        //adjust header
-        $response = $response->withHeader('Content-Length', (string) strlen($content));
+          //adjust header
+          $response = $response->withHeader('Content-Length', (string) strlen($content));
+        }
       }
     }    
             
