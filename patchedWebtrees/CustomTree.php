@@ -226,10 +226,6 @@ class CustomTree extends Tree {
             throw new InvalidArgumentException('CustomTree::createMediaObject(' . $gedcom . ') does not begin 0 @@ OBJE');
         }
         
-        if (!Str::startsWith($gedcom, '0 @@ INDI')) {
-            throw new InvalidArgumentException('CustomTree::createIndividual(' . $gedcom . ') does not begin 0 @@ INDI');
-        }
-        
         //[RC] adjusted
         if (preg_match('/^0 @@ (' . Gedcom::REGEX_TAG . ')/', $gedcom, $match)) {
           $type = $match[1];

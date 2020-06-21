@@ -175,7 +175,10 @@ class ClassicLAFModule extends AbstractModule implements
     $dom=new DOMDocument();
     $dom->validateOnParse = false;
     $internalErrors = libxml_use_internal_errors(true);
-    $dom->loadHTML($html);
+    
+    //have to prefix to force utf-8 (relevant e.g. for modals)
+    //cf https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly
+    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
     libxml_use_internal_errors($internalErrors);
     $xpath = new DOMXPath($dom);
     $nodes = $xpath->query('//header');
@@ -212,6 +215,9 @@ class ClassicLAFModule extends AbstractModule implements
       }
     }
     
-    return $dom->saveHTML();
+    //using $dom->saveHTML(); replaces utf-8 special characters with html entities
+    //cf https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly
+    //doctype also has to be restored explicitly
+    return '<!DOCTYPE html>' . $dom->saveHTML($dom->documentElement);
   }
 }
