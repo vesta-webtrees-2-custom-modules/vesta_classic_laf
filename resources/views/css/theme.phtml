@@ -227,6 +227,31 @@ make long names, small display sizes etc behave better - all this should probabl
 edit dialogs
 */
 
+/*
+more space for names (should use this regardless of compact layout?)
+also pad and border etc like a form-control
+(maybe just use class form-control?)
+*/
+.edit-container input.NAME, .edit-container input._MARNM {
+  width: calc(100% - 25px);
+  
+  height: calc(1.5em + 2px);
+  
+  padding-top: 0.1rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.5rem;
+
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+/*
+compact layout
+*/
+
 .edit-container .form-control {
   height: calc(1.5em + 2px);
   /* original values:

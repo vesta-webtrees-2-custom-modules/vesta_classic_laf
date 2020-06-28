@@ -40,11 +40,13 @@ trait ClassicLAFModuleTrait {
                 'FULL_WIDTH', //TODO: css
                 '1')));
     
+    $link = '<a href="https://github.com/vesta-webtrees-2-custom-modules/vesta_classic_laf">'.I18N::translate('Readme').'</a>';
+    
     $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Individual page'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Use compact layout'),
-                /* I18N: Module Configuration */I18N::translate('Several adjustments - See Readme for details.'),
+                /* I18N: Module Configuration */I18N::translate('Several adjustments - See %1$s for details.', $link),
                 'COMPACT_INDI_PAGE', //TODO: css
                 '1')));
     
@@ -84,7 +86,7 @@ trait ClassicLAFModuleTrait {
                         'REPO_ID_PREFIX',
                         'R'),
                 new ControlPanelTextbox(
-                        MoreI18N::xlate('Media Object'),
+                        MoreI18N::xlate('Media object'),
                         null,
                         'MEDIA_ID_PREFIX',
                         'M'),
@@ -92,7 +94,15 @@ trait ClassicLAFModuleTrait {
                         MoreI18N::xlate('Note'),
                         null,
                         'NOTE_ID_PREFIX',
-                        'N')),
+                        'N'),
+                
+                //objects of this type may be handled via custom modules
+                new ControlPanelTextbox(
+                        MoreI18N::xlate('Location'),
+                        null,
+                        'LOCATION_ID_PREFIX',
+                        'L')),
+            
             /* I18N: Module Configuration */I18N::translate('In a family tree, each record has an internal reference number (called an "XREF") such as "F123" or "R14". You can choose the prefix that will be used whenever new XREFs are created.'));
 
     $individuals[] = new ControlPanelSubsection(

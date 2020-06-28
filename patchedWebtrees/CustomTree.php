@@ -44,6 +44,7 @@ class CustomTree extends Tree {
     'NOTE' => 'NOTE_ID_PREFIX',
     'SOUR' => 'SOURCE_ID_PREFIX',
     'REPO' => 'REPO_ID_PREFIX',
+    '_LOC' => 'LOCATION_ID_PREFIX',
   );
     
   public function getNewXrefByType(?string $type): string
@@ -59,7 +60,6 @@ class CustomTree extends Tree {
       //[RC] taken from webtrees 1.x and adjusted
       //Fallback: Use the first non-underscore character
       $prefix = substr(trim($type, '_'), 0, 1);
-      //TODO: actually make configurable
       if (($type === null) || ($this->module === null)) {
         $prefix = 'X';
       } else if (array_key_exists($type, self::$type_to_preference)) {
