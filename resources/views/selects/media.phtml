@@ -1,0 +1,7 @@
+<?php foreach ($media->mediaFiles() as $media_file) : ?>
+    <?php
+    //[RC] adjusted: do not 'crop'
+    ?>
+    <?= $media_file->displayImage(30, 40, 'contain', []) ?>
+<?php endforeach ?>
+<?= $media->fullName();

@@ -1,0 +1,13 @@
+<?php
+
+use Fisharebest\Webtrees\MediaFile;
+
+?>
+
+<?php if ($individual->findHighlightedMediaFile() instanceof MediaFile) : ?>
+    <?php
+    //[RC] adjusted: do not 'crop'
+    ?>
+    <?= $individual->findHighlightedMediaFile()->displayImage(30, 40, 'contain', []) ?>
+<?php endif; ?>
+<?= $individual->fullName() ?>, <?= $individual->lifespan() ?>

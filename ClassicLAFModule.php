@@ -66,15 +66,22 @@ class ClassicLAFModule extends AbstractModule implements
     return __DIR__ . '/resources/';
   }
   
-  public function onBoot(): void {
+  public function onBoot(): void {    
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
 
     $compactIndividualPage = boolval($this->getPreference('COMPACT_INDI_PAGE', '1'));    
+    $cropThumbnails = boolval($this->getPreference('CROP_THUMBNAILS', '1'));
     
-    if ($compactIndividualPage) {
+    if ($compactIndividualPage || !$cropThumbnails) {
       // Replace an existing view with our own version.
       View::registerCustomView('::individual-page', $this->name() . '::individual-page');      
+    }
+    
+    if (!$cropThumbnails) {
+      View::registerCustomView('::chart-box', $this->name() . '::chart-box');
+      View::registerCustomView('::selects/individual', $this->name() . '::selects/individual');
+      View::registerCustomView('::selects/media', $this->name() . '::selects/media');
     }
 
     $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
@@ -85,7 +92,7 @@ class ClassicLAFModule extends AbstractModule implements
     app()->instance(IndividualNameHandler::class, $handler);
 
     $cache = app('cache.array');
-    Factory::individual(new CustomIndividualFactory($cache));
+    Factory::individual(new CustomIndividualFactory($cache, $compactIndividualPage, $cropThumbnails));
 
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
     app()->instance(TreeService::class, new CustomTreeService($customPrefixes?$this:null));      

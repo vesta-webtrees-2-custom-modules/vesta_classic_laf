@@ -44,7 +44,32 @@ class IndividualExt extends Individual
 
     /** @var Date The estimated date of death */
     private $estimated_death_date;
-
+    
+    protected $compactIndividualPage;
+    protected $cropThumbnails;
+    
+    public function compactIndividualPage(): bool {
+      return $this->compactIndividualPage;
+    }
+    
+    public function cropThumbnails(): bool {
+      return $this->cropThumbnails;
+    }
+    
+    public function __construct(
+            string $xref, 
+            string $gedcom, 
+            ?string $pending, 
+            Tree $tree, 
+            bool $compactIndividualPage, 
+            bool $cropThumbnails)
+    {
+        parent::__construct($xref, $gedcom, $pending, $tree);
+        
+        $this->compactIndividualPage = $compactIndividualPage;
+        $this->cropThumbnails = $cropThumbnails;
+    }
+    
     /**
      * A closure which will create a record from a database row.
      *
