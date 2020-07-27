@@ -214,12 +214,7 @@ use Illuminate\Support\Collection;
             <ul class="nav nav-tabs flex-wrap" role="tablist">
                 <?php foreach ($tabs as $tab) : ?>
                     <li class="nav-item" role="presentation">
-                        <?php
-                          //[RC] adjusted for webtrees #3429
-                        ?>
-                        <a class="nav-link<?= $tab->isGrayedOut($individual) ? ' text-muted' : '' ?>" data-toggle="tab" role="tab" <?php if ($tab->canLoadAjax()) :
-                        ?>data-href="<?= e(route('module', ['module' => $tab->name(), 'action' => 'Tab', 'tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) ?>" <?php
-                             endif ?>href="#<?= $tab->name() ?>">
+                        <a class="nav-link<?= $tab->isGrayedOut($individual) ? ' text-muted' : '' ?>" data-toggle="tab" role="tab" data-href="<?= e(route('module', ['module' => $tab->name(), 'action' => 'Tab', 'tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) ?>" href="#<?= $tab->name() ?>">
                             <?= $tab->tabTitle() ?>
                         </a>
                     </li>
@@ -277,7 +272,7 @@ use Illuminate\Support\Collection;
   // Bootstrap tabs - load content dynamically using AJAX
   $('a[data-toggle="tab"][data-href]').on('show.bs.tab', function () {
       let target = $(this.hash + ':empty');
-      if (target) {
+      if (target.length > 0) {
           // Start the download immediately...
           let download = fetch(this.dataset.href);
 

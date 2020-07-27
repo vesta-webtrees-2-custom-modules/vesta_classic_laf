@@ -3,8 +3,8 @@
 namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Aura\Router\Route;
+use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
-use Cissee\WebtreesExt\CustomTreeService;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use DOMDocument;
 use DOMXPath;
@@ -18,7 +18,6 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
-use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\View;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -95,7 +94,9 @@ class ClassicLAFModule extends AbstractModule implements
     Factory::individual(new CustomIndividualFactory($cache, $compactIndividualPage, $cropThumbnails));
 
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
-    app()->instance(TreeService::class, new CustomTreeService($customPrefixes?$this:null));      
+    if ($customPrefixes) {
+      Factory::xref(new CustomXrefFactory($this));
+    }
     
     $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 3);
   }
