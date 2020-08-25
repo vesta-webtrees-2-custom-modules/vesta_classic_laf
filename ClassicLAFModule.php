@@ -159,7 +159,7 @@ class ClassicLAFModule extends AbstractModule implements
           break;
         }
       }
-
+      
       if ($strip) {
         //must not adjust json responses
         $contentType = $response->getHeaderLine("Content-Type");
@@ -205,7 +205,7 @@ class ClassicLAFModule extends AbstractModule implements
       }
     }
 
-    //also strip the cookie-warning script (added via footer), the respective element as been stripped
+    //also strip the cookie-warning script (added via footer), the respective element has been stripped
     $nodes = $xpath->query('//script[contains(text(), "cookie-warning")]');
 
     if (!empty($nodes)) {
@@ -220,6 +220,16 @@ class ClassicLAFModule extends AbstractModule implements
     if (!empty($nodes)) {
       foreach ($nodes as $node) {
         $node->setAttribute("class", "container edit-container wt-main-container");
+      }
+    }
+    
+    //TODO: only keep this after next webtrees release (2.0.8)
+    //WEBTREES-DEV
+    $nodes = $xpath->query('//div[@class = "container-lg wt-main-container"]');
+
+    if (!empty($nodes)) {
+      foreach ($nodes as $node) {
+        $node->setAttribute("class", "container-lg edit-container wt-main-container");
       }
     }
     
