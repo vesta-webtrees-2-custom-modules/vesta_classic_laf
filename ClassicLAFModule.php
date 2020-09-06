@@ -77,6 +77,10 @@ class ClassicLAFModule extends AbstractModule implements
       View::registerCustomView('::individual-page', $this->name() . '::individual-page');      
     }
     
+    if ($compactIndividualPage) {
+      View::registerCustomView('::individual-name', $this->name() . '::individual-name');      
+    }
+    
     if (!$cropThumbnails) {
       View::registerCustomView('::chart-box', $this->name() . '::chart-box');
       View::registerCustomView('::selects/individual', $this->name() . '::selects/individual');

@@ -127,8 +127,8 @@ trait ClassicLAFModuleTrait {
     new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Layout'),
             array(new ControlPanelCheckbox(
-                /* I18N: Module Configuration */I18N::translate('Use compact layout for individual page'),
-                /* I18N: Module Configuration */I18N::translate('...'),
+                /* I18N: Module Configuration */'Use compact layout for individual page',
+                /* I18N: Module Configuration */'...',
                 'COMPACT_INDI',
                 '1')));
     
