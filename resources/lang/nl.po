@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-06-15 22:34+0200\n"
+"POT-Creation-Date: 2020-09-06 11:56+0200\n"
 "PO-Revision-Date: 2020-06-16 14:16+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
@@ -18,62 +18,67 @@ msgstr ""
 "X-Generator: Poedit 2.3.1\n"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:112
-msgid "..."
-msgstr "..."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:20 ClassicLAFModuleTrait.php:26
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Een module die alle thema's en andere functies aanpast, waardoor uitstraling en gevoel dichter bij de webtrees 1.x versie komt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:62
+#: ClassicLAFModuleTrait.php:64
+msgid "Crop Thumbnails"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:73
 msgid "Custom prefixes"
 msgstr "Aangepaste voorvoegsels"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:57
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle bewerkingsdialogen weergeven met een compactere indeling, waarbij ook de standaard kop- en voettekst wordt weggelaten."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:101
+#: ClassicLAFModuleTrait.php:120
 msgid "Display nicknames before surnames"
 msgstr "Geef roepnamen weer voor achternamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:52
+#: ClassicLAFModuleTrait.php:54
 msgid "Edit dialogs"
 msgstr "Bewerkingsdialogen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:102
+#: ClassicLAFModuleTrait.php:121
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Behandel roepnamen zoals in webtrees 1.x, d.w.z. toon ze voor de achternaam."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:96
+#: ClassicLAFModuleTrait.php:62
+msgid "Image Thumbnails"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:115
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "In een stamboom heeft elk record een intern referentienummer (een \"XREF\" genoemd) zoals \"F123\" of \"R14\". U kunt het voorvoegsel kiezen dat wordt gebruikt wanneer er nieuwe XREF's worden gemaakt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:44
+#: ClassicLAFModuleTrait.php:46
 msgid "Individual page"
 msgstr "Persoonspagina"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:109 ClassicLAFModuleTrait.php:118
+#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:137
 msgid "Layout"
 msgstr "Indeling"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:99
+#: ClassicLAFModuleTrait.php:118
 msgid "Nicknames"
 msgstr "Roepnamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:103
+#: ClassicLAFModuleTrait.php:122
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Merk op dat dit geen invloed heeft op GEDCOM-naamvelden die al een roepnaam bevatten, d.w.z. u kunt de roepnaam altijd expliciet plaatsen voor specifieke namen."
 
@@ -82,6 +87,10 @@ msgstr "Merk op dat dit geen invloed heeft op GEDCOM-naamvelden die al een roepn
 msgid "Overall width"
 msgstr "Totale breedte"
 
+#: ClassicLAFModuleTrait.php:43
+msgid "Readme"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:28
 #, php-format
@@ -89,9 +98,10 @@ msgid "Requires the '%1$s Vesta Common' module."
 msgstr "Vereist de module '%1$s Vesta Algemeen'."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:47
-msgid "Several adjustments - See Readme for details."
-msgstr "Verschillende aanpassingen - Zie Readme voor meer informatie."
+#: ClassicLAFModuleTrait.php:49
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
@@ -104,17 +114,12 @@ msgid "Use available space"
 msgstr "Beschikbare ruimte gebruiken"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:46 ClassicLAFModuleTrait.php:54
+#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:56
 msgid "Use compact layout"
 msgstr "Compacte indeling gebruiken"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:111
-msgid "Use compact layout for individual page"
-msgstr "Compacte indeling gebruiken voor persoonspagina"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:63
+#: ClassicLAFModuleTrait.php:74
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in plaats van alle XREF's vooraf te laten gaan met 'X'."
 
@@ -131,6 +136,26 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Klassieke uitstraling & gevoel: Optie om aangepaste voorvoegsel-XREF's te gebruiken, zoals in webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:60
+#: ClassicLAFModuleTrait.php:65
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+#, php-format
+msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:71
 msgid "XREF prefixes"
 msgstr "XREF-voorvoegsels"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Several adjustments - See Readme for details."
+#~ msgstr "Verschillende aanpassingen - Zie Readme voor meer informatie."
+
+#~ msgid "Use compact layout for individual page"
+#~ msgstr "Compacte indeling gebruiken voor persoonspagina"
