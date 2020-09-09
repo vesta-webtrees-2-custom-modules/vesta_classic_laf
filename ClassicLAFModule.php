@@ -65,7 +65,8 @@ class ClassicLAFModule extends AbstractModule implements
     return __DIR__ . '/resources/';
   }
   
-  public function onBoot(): void {    
+  public function onBoot(): void {
+    
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
 
