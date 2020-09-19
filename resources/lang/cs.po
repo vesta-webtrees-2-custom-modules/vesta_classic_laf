@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-06 11:56+0200\n"
+"POT-Creation-Date: 2020-09-19 15:43+0200\n"
 "PO-Revision-Date: 2020-06-20 19:07+0200\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: \n"
@@ -19,114 +19,124 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:20 ClassicLAFModuleTrait.php:26
+#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Modul upravující všechny motivy a další funkce tak, aby se jejich vzhled podobal webtrees verse 1.x."
 
+#: resources/views/individual-name.phtml:65
+msgid "Are you sure you want to delete this fact?"
+msgstr ""
+
+#: resources/views/individual-name.phtml:59
+#: resources/views/individual-name.phtml:61
+msgid "Copy"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:64
+#: ClassicLAFModuleTrait.php:65
 msgid "Crop Thumbnails"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:73
+#: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
 msgstr "Vlastní předpony"
 
+#: resources/views/individual-name.phtml:67
+#: resources/views/individual-name.phtml:69
+msgid "Delete this name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:57
+#: ClassicLAFModuleTrait.php:58
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Zobrazit všechny dialogy úprav v kompaktním rozvržení, které také vynechá standardní záhlaví a zápatí."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:120
+#: ClassicLAFModuleTrait.php:121
 msgid "Display nicknames before surnames"
 msgstr "Zobrazovat přezdívku před příjmením"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:54
+#: ClassicLAFModuleTrait.php:55
 msgid "Edit dialogs"
 msgstr "Dialogy úprav"
 
+#: resources/views/individual-name.phtml:54
+#: resources/views/individual-name.phtml:56
+msgid "Edit the name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:121
+#: ClassicLAFModuleTrait.php:122
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Zacházet s přezdívkami stejně jako ve webtrees 1.x, t. zn. zobrazovat je před příjmením."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:62
+#: ClassicLAFModuleTrait.php:63
 msgid "Image Thumbnails"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:115
+#: ClassicLAFModuleTrait.php:116
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "V rodokmenu má každý záznam interní referenční číslo (zvané XREF), jako třeba \"F123\"  nebo \"R14\". Zde můžete zvolit předponu, která se použije při vytvoření nového XREF."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:46
+#: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
 msgstr "Stránka jednotlivce"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:137
+#: ClassicLAFModuleTrait.php:129 ClassicLAFModuleTrait.php:138
 msgid "Layout"
 msgstr "Rozvržení"
 
+#: resources/views/individual-name.phtml:44
+#: resources/views/individual-name.phtml:78
+msgid "Name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:118
+#: ClassicLAFModuleTrait.php:119
 msgid "Nicknames"
 msgstr "Přezdívky"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:122
+#: ClassicLAFModuleTrait.php:123
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Toto se netýká těch polí jmen v GEDCOM, která už obsahují přezdívku, t. zn. že vždy můžete umístit přezdívku explicitně u daného jména."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:36
+#: ClassicLAFModuleTrait.php:37
 msgid "Overall width"
 msgstr "Celá šířka"
 
-#: ClassicLAFModuleTrait.php:43
-msgid "Readme"
-msgstr ""
-
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:28
-#, php-format
-msgid "Requires the '%1$s Vesta Common' module."
-msgstr "Vyžaduje modul '%1$s Vesta Common'."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:49
+#: ClassicLAFModuleTrait.php:50
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:39
+#: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr "Standardní rozvržení centruje většinu stránek a plýtvá místem zvláště na širokých obrazovkách. Tato volba umožňuje využít většinu dostupného místa."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:38
+#: ClassicLAFModuleTrait.php:39
 msgid "Use available space"
 msgstr "Využít dostupné místo"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:56
+#: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
 msgid "Use compact layout"
 msgstr "Použít kompaktní rozvržení"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:75
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Použít vlastní předpony pro XREF jako ve webtrees 1.x, namísto předpony 'X' pro všechna XREF."
-
-#: ClassicLAFModuleTrait.php:16
-msgid "Vesta Classic Look & Feel"
-msgstr ""
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -137,20 +147,23 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Classic Look & Feel: umožňuje nastavit vlastní předpony XREF, jako ve webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:66
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:67
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:71
+#: ClassicLAFModuleTrait.php:72
 msgid "XREF prefixes"
 msgstr "Předpony XREF"
+
+#~ msgid "Requires the '%1$s Vesta Common' module."
+#~ msgstr "Vyžaduje modul '%1$s Vesta Common'."
 
 #~ msgid "Several adjustments - See Readme for details."
 #~ msgstr "Několik úprav - podrobnosti v Readme."

@@ -48,6 +48,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/vesta-webtrees-2-custom-modules/classic_laf/issues>
+* Translations may be contributed via weblate: <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/>
  
 ### Installation<a name="installation"/>
 

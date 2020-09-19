@@ -4,6 +4,7 @@ namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
+use Vesta\CommonI18N;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
@@ -13,7 +14,7 @@ use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
 trait ClassicLAFModuleTrait {
 
   protected function getMainTitle() {
-    return I18N::translate('Vesta Classic Look & Feel');
+    return CommonI18N::titleVestaCLAF();
   }
 
   public function getShortDescription() {
@@ -25,7 +26,7 @@ trait ClassicLAFModuleTrait {
     $description[] = 
             /* I18N: Module Configuration */I18N::translate('A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version.');
     $description[] = 
-            /* I18N: Module Configuration */I18N::translate('Requires the \'%1$s Vesta Common\' module.', $this->getVestaSymbol());
+            CommonI18N::requires1(CommonI18N::titleVestaCommon());
     
     return $description;
   }
@@ -40,7 +41,7 @@ trait ClassicLAFModuleTrait {
                 'FULL_WIDTH', //TODO: css
                 '1')));
     
-    $link = '<a href="https://github.com/vesta-webtrees-2-custom-modules/vesta_classic_laf">'.I18N::translate('Readme').'</a>';
+    $link = '<a href="https://github.com/vesta-webtrees-2-custom-modules/vesta_classic_laf">'.CommonI18N::readme().'</a>';
     
     $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Individual page'),

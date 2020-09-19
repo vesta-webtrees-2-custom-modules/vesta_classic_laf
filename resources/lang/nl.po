@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-06 11:56+0200\n"
+"POT-Creation-Date: 2020-09-19 15:43+0200\n"
 "PO-Revision-Date: 2020-09-12 20:36+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,114 +19,124 @@ msgstr ""
 "X-Generator: Weblate 4.3-dev\n"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:20 ClassicLAFModuleTrait.php:26
+#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Een module die alle thema's en andere functies aanpast, waardoor uitstraling en gevoel dichter bij de webtrees 1.x versie komt."
 
+#: resources/views/individual-name.phtml:65
+msgid "Are you sure you want to delete this fact?"
+msgstr ""
+
+#: resources/views/individual-name.phtml:59
+#: resources/views/individual-name.phtml:61
+msgid "Copy"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:64
+#: ClassicLAFModuleTrait.php:65
 msgid "Crop Thumbnails"
 msgstr "Miniaturen bijsnijden"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:73
+#: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
 msgstr "Aangepaste voorvoegsels"
 
+#: resources/views/individual-name.phtml:67
+#: resources/views/individual-name.phtml:69
+msgid "Delete this name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:57
+#: ClassicLAFModuleTrait.php:58
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle bewerkingsdialogen weergeven met een compactere indeling, waarbij ook de standaard kop- en voettekst wordt weggelaten."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:120
+#: ClassicLAFModuleTrait.php:121
 msgid "Display nicknames before surnames"
 msgstr "Geef roepnamen weer voor achternamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:54
+#: ClassicLAFModuleTrait.php:55
 msgid "Edit dialogs"
 msgstr "Bewerkingsdialogen"
 
+#: resources/views/individual-name.phtml:54
+#: resources/views/individual-name.phtml:56
+msgid "Edit the name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:121
+#: ClassicLAFModuleTrait.php:122
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Behandel roepnamen zoals in webtrees 1.x, d.w.z. toon ze voor de achternaam."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:62
+#: ClassicLAFModuleTrait.php:63
 msgid "Image Thumbnails"
 msgstr "Afbeeldingsminiaturen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:115
+#: ClassicLAFModuleTrait.php:116
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "In een stamboom heeft elk record een intern referentienummer (een \"XREF\" genoemd) zoals \"F123\" of \"R14\". U kunt het voorvoegsel kiezen dat wordt gebruikt wanneer er nieuwe XREF's worden gemaakt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:46
+#: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
 msgstr "Persoonspagina"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:137
+#: ClassicLAFModuleTrait.php:129 ClassicLAFModuleTrait.php:138
 msgid "Layout"
 msgstr "Indeling"
 
+#: resources/views/individual-name.phtml:44
+#: resources/views/individual-name.phtml:78
+msgid "Name"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:118
+#: ClassicLAFModuleTrait.php:119
 msgid "Nicknames"
 msgstr "Roepnamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:122
+#: ClassicLAFModuleTrait.php:123
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Merk op dat dit geen invloed heeft op GEDCOM-naamvelden die al een roepnaam bevatten, d.w.z. u kunt de roepnaam altijd expliciet plaatsen voor specifieke namen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:36
+#: ClassicLAFModuleTrait.php:37
 msgid "Overall width"
 msgstr "Totale breedte"
 
-#: ClassicLAFModuleTrait.php:43
-msgid "Readme"
-msgstr "Leesmij"
-
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:28
-#, php-format
-msgid "Requires the '%1$s Vesta Common' module."
-msgstr "Vereist de module '%1$s Vesta Algemeen'."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:49
+#: ClassicLAFModuleTrait.php:50
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschillende aanpassingen - Zie %1$s voor meer informatie."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:39
+#: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr "De standaardindeling centreert de meeste pagina's waardoor er veel ruimte wordt verspild, vooral op brede beeldschermen. Met deze optie kan het grootste deel van de beschikbare ruimte worden benut."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:38
+#: ClassicLAFModuleTrait.php:39
 msgid "Use available space"
 msgstr "Beschikbare ruimte gebruiken"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:56
+#: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
 msgid "Use compact layout"
 msgstr "Compacte indeling gebruiken"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:75
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in plaats van alle XREF's vooraf te laten gaan met 'X'."
-
-#: ClassicLAFModuleTrait.php:16
-msgid "Vesta Classic Look & Feel"
-msgstr "Vesta Klassieke uitstraling & gevoel"
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -138,26 +147,35 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Klassieke uitstraling & gevoel: Optie om aangepaste voorvoegsel-XREF's te gebruiken, zoals in webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:66
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees snijdt miniaturen bij om afbeeldingen te produceren met een consistente breedte en hoogte. Dit is een probleem als u afbeeldingen hebt van personen met een niet-standaard aspectverhouding, waarbij het hoofd van de betreffende persoon niet gecentreerd is en daarom mogelijk wordt afgesneden. Schakel deze optie uit om deze gevallen te behandelen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:67
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr "Wanneer u deze optie wijzigt, moet u uw miniatuurcache handmatig opnieuw instellen door de map %1$s te verwijderen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:71
+#: ClassicLAFModuleTrait.php:72
 msgid "XREF prefixes"
 msgstr "XREF-voorvoegsels"
 
 #~ msgid "..."
 #~ msgstr "..."
 
+#~ msgid "Readme"
+#~ msgstr "Leesmij"
+
+#~ msgid "Requires the '%1$s Vesta Common' module."
+#~ msgstr "Vereist de module '%1$s Vesta Algemeen'."
+
 #~ msgid "Several adjustments - See Readme for details."
 #~ msgstr "Verschillende aanpassingen - Zie Readme voor meer informatie."
 
 #~ msgid "Use compact layout for individual page"
 #~ msgstr "Compacte indeling gebruiken voor persoonspagina"
+
+#~ msgid "Vesta Classic Look & Feel"
+#~ msgstr "Vesta Klassieke uitstraling & gevoel"
