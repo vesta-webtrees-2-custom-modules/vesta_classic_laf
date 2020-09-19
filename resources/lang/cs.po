@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 15:43+0200\n"
-"PO-Revision-Date: 2020-06-20 19:07+0200\n"
-"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2020-09-19 15:21+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -80,7 +81,10 @@ msgstr ""
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:116
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
-msgstr "V rodokmenu má každý záznam interní referenční číslo (zvané XREF), jako třeba \"F123\"  nebo \"R14\". Zde můžete zvolit předponu, která se použije při vytvoření nového XREF."
+msgstr ""
+"V rodokmenu má každý záznam interní referenční číslo (zvané XREF), jako "
+"třeba \"F123\" nebo \"R14\". Zde můžete zvolit předponu, která se použije "
+"při vytvoření nového XREF."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:47
