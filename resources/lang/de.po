@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 15:43+0200\n"
+"POT-Creation-Date: 2020-09-19 19:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,6 @@ msgstr ""
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
 
-#: resources/views/individual-name.phtml:65
-msgid "Are you sure you want to delete this fact?"
-msgstr ""
-
-#: resources/views/individual-name.phtml:59
-#: resources/views/individual-name.phtml:61
-msgid "Copy"
-msgstr ""
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
 msgid "Crop Thumbnails"
@@ -40,11 +31,6 @@ msgstr "Vorschaubilder beschneiden"
 #: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
 msgstr "Benutzerdefiniert"
-
-#: resources/views/individual-name.phtml:67
-#: resources/views/individual-name.phtml:69
-msgid "Delete this name"
-msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -60,11 +46,6 @@ msgstr "Spitznamen vor Nachnamen anzeigen"
 #: ClassicLAFModuleTrait.php:55
 msgid "Edit dialogs"
 msgstr "Dialoge bearbeiten"
-
-#: resources/views/individual-name.phtml:54
-#: resources/views/individual-name.phtml:56
-msgid "Edit the name"
-msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:122
@@ -90,11 +71,6 @@ msgstr "Einzelne Seite"
 #: ClassicLAFModuleTrait.php:129 ClassicLAFModuleTrait.php:138
 msgid "Layout"
 msgstr "Layout"
-
-#: resources/views/individual-name.phtml:44
-#: resources/views/individual-name.phtml:78
-msgid "Name"
-msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:119
