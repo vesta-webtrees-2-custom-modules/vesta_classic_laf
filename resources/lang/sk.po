@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 19:17+0200\n"
-"PO-Revision-Date: 2020-10-05 15:26+0000\n"
+"PO-Revision-Date: 2020-10-09 12:26+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
@@ -40,22 +40,25 @@ msgstr "Využiť priestor, ktorý je k dispozícii"
 #: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr ""
+"Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množstvo plochy "
+"hlavne na širokých displejoch. Táto voľba umožňuje využiť väčšinu "
+"použiteľnej plochy."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
-msgstr ""
+msgstr "Stránka osoby"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
 msgid "Use compact layout"
-msgstr ""
+msgstr "Použiť kompaktný vzhľad"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:50
 #, php-format
 msgid "Several adjustments - See %1$s for details."
-msgstr ""
+msgstr "Rôzne úpravy - pozri %1$s pre viac detailov."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
