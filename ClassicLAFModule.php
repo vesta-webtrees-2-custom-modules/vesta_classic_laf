@@ -9,7 +9,6 @@ use Cissee\WebtreesExt\IndividualNameHandler;
 use DOMDocument;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
-use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
@@ -18,6 +17,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -95,12 +95,12 @@ class ClassicLAFModule extends AbstractModule implements
     //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
     app()->instance(IndividualNameHandler::class, $handler);
 
-    $cache = app('cache.array');
-    Factory::individual(new CustomIndividualFactory($cache, $compactIndividualPage, $cropThumbnails));
+    $cache = Registry::cache()->array();
+    Registry::individualFactory(new CustomIndividualFactory($cache, $compactIndividualPage, $cropThumbnails));
 
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
     if ($customPrefixes) {
-      Factory::xref(new CustomXrefFactory($this));
+      Registry::xrefFactory(new CustomXrefFactory($this));
     }
     
     $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 3);
@@ -219,17 +219,6 @@ class ClassicLAFModule extends AbstractModule implements
       }
     }
 
-    //adjust container to allow additional css styling
-    $nodes = $xpath->query('//div[@class = "container wt-main-container"]');
-
-    if (!empty($nodes)) {
-      foreach ($nodes as $node) {
-        $node->setAttribute("class", "container edit-container wt-main-container");
-      }
-    }
-    
-    //TODO: only keep this after next webtrees release (2.0.8)
-    //WEBTREES-DEV
     $nodes = $xpath->query('//div[@class = "container-lg wt-main-container"]');
 
     if (!empty($nodes)) {

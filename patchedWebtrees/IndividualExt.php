@@ -11,7 +11,6 @@ use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date;
 use Fisharebest\Webtrees\Fact;
-use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodePedi;
@@ -21,11 +20,13 @@ use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Media;
 use Fisharebest\Webtrees\MediaFile;
 use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\User;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Collection;
 use function app;
+use function intdiv;
 
 /**
  * A GEDCOM individual (INDI) object.
@@ -81,8 +82,8 @@ class IndividualExt extends Individual
      */
     public static function rowMapper(Tree $tree): Closure
     {
-        return Factory::individual()->mapper($tree);
-            }
+        return Registry::individualFactory()->mapper($tree);
+    }
 
     /**
      * A closure which will compare individuals by birth date.
@@ -123,7 +124,7 @@ class IndividualExt extends Individual
      */
     public static function getInstance(string $xref, Tree $tree, string $gedcom = null): ?Individual
     {
-        return Factory::individual()->make($xref, $tree, $gedcom);
+        return Registry::individualFactory()->make($xref, $tree, $gedcom);
     }
 
     /**
@@ -144,7 +145,7 @@ class IndividualExt extends Individual
             ->get();
 
         foreach ($rows as $row) {
-            Factory::individual()->make($row->xref, $tree, $row->gedcom);
+            Registry::individualFactory()->make($row->xref, $tree, $row->gedcom);
         }
     }
 
@@ -224,7 +225,7 @@ class IndividualExt extends Individual
     {
         static $cache = null;
 
-        $user_individual = Factory::individual()->make($target->tree->getUserPreference(Auth::user(), User::PREF_TREE_ACCOUNT_XREF), $target->tree);
+        $user_individual = Registry::individualFactory()->make($target->tree->getUserPreference(Auth::user(), User::PREF_TREE_ACCOUNT_XREF), $target->tree);
         if ($user_individual) {
             if (!$cache) {
                 $cache = [
@@ -309,7 +310,7 @@ class IndividualExt extends Individual
         // Just show the 1 FAMC/FAMS tag, not any subtags, which may contain private data
         preg_match_all('/\n1 (?:FAMC|FAMS) @(' . Gedcom::REGEX_XREF . ')@/', $this->gedcom, $matches, PREG_SET_ORDER);
         foreach ($matches as $match) {
-            $rela = Factory::family()->make($match[1], $this->tree);
+            $rela = Registry::familyFactory()->make($match[1], $this->tree);
             if ($rela && ($SHOW_PRIVATE_RELATIONSHIPS || $rela->canShow($access_level))) {
                 $rec .= $match[0];
             }
