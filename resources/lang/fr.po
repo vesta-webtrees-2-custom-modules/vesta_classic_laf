@@ -8,49 +8,57 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 19:17+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-10-25 17:26+0000\n"
+"Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr ""
+"Un module ajustant tous les thèmes et autres fonctionnalités, offrant un "
+"look & feel plus proche de la version webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
 msgid "Overall width"
-msgstr ""
+msgstr "Largeur globale"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
 msgid "Use available space"
-msgstr ""
+msgstr "Utiliser l'espace disponible"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr ""
+"La mise en page standard centre la plupart des pages, gaspillant beaucoup "
+"d'espace, en particulier sur les écrans larges. Cette option permet "
+"d'utiliser la majeure partie de l'espace disponible."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
-msgstr ""
+msgstr "Page individuelle"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
 msgid "Use compact layout"
-msgstr ""
+msgstr "Utiliser une mise en page compacte"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:50
 #, php-format
 msgid "Several adjustments - See %1$s for details."
-msgstr ""
+msgstr "Plusieurs ajustements - Voir %1$s pour plus de détails."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -65,38 +73,47 @@ msgstr ""
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:63
 msgid "Image Thumbnails"
-msgstr ""
+msgstr "Vignettes d'image"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
 msgid "Crop Thumbnails"
-msgstr ""
+msgstr "Recadrer les vignettes"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr ""
+"Webtrees rogne les vignettes afin de produire des images avec une largeur et "
+"une hauteur cohérentes. Ceci est problématique si vous avez des images "
+"d'individus avec un rapport hauteur / largeur non standard, où la tête de la "
+"personne concernée n'est pas centrée et peut donc être coupée. "
+"Désélectionnez cette option pour gérer ces cas."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr ""
+"Lorsque vous basculez cette option, vous devrez réinitialiser votre cache de "
+"vignettes manuellement en supprimant le dossier %1$s ."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "XREF prefixes"
-msgstr ""
+msgstr "préfixes XREF"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
-msgstr ""
+msgstr "préfixes personnalisés"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr ""
+"Utilisez des préfixes personnalisés pour les XREF comme dans webtrees 1.x, "
+"au lieu de préfixer tous les XREF avec «X»."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:116
