@@ -6,7 +6,6 @@ use Aura\Router\Route;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\IndividualNameHandler;
-use DOMDocument;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
@@ -19,6 +18,7 @@ use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
+use IvoPetkov\HTML5DOMDocument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -185,7 +185,13 @@ class ClassicLAFModule extends AbstractModule implements
   }
   
   public static function strippedLayout(string $html): string {
-    $dom=new DOMDocument();
+    //$dom=new DOMDocument(); //doesn't handle HTML 5 entities , such as &utilde; correctly
+    //see https://stackoverflow.com/questions/43469435/phps-domdocument-appears-to-not-recognize-certain-html-entities-how-can-i-incl
+    //and https://3v4l.org/tMXTt
+    
+    //fix #31 by using HTML5DOMDocument instead of DOMDocument
+    $dom=new HTML5DOMDocument();
+    
     $dom->validateOnParse = false;
     $internalErrors = libxml_use_internal_errors(true);
     
