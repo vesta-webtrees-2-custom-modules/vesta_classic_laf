@@ -88,10 +88,14 @@ class ClassicLAFModule extends AbstractModule implements
       View::registerCustomView('::selects/media', $this->name() . '::selects/media');
     }
 
-    $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
-
     $handler = app(IndividualNameHandler::class);
+    
+    $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
     $handler->setNickBeforeSurn($nickBeforeSurn);
+
+    $appendXref = boolval($this->getPreference('APPEND_XREF', '0'));
+    $handler->setAppendXref($appendXref);
+    
     //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
     app()->instance(IndividualNameHandler::class, $handler);
 
@@ -103,7 +107,7 @@ class ClassicLAFModule extends AbstractModule implements
       Registry::xrefFactory(new CustomXrefFactory($this));
     }
     
-    $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 3);
+    $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 4);
   }
   
   public function headContent(): string {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 19:17+0200\n"
+"POT-Creation-Date: 2020-12-28 15:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:130
+msgid "Append XREFs to names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -36,6 +41,11 @@ msgstr "Benutzerdefiniert"
 #: ClassicLAFModuleTrait.php:58
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle Bearbeitungsdialoge in einem kompakteren Layout anzeigen, in dem u.a. die Seitenkopfzeile und -fußzeile entfällt."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:131
+msgid "Display an individual's XREF after the name."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
@@ -68,7 +78,7 @@ msgid "Individual page"
 msgstr "Einzelne Seite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:129 ClassicLAFModuleTrait.php:138
+#: ClassicLAFModuleTrait.php:137 ClassicLAFModuleTrait.php:146
 msgid "Layout"
 msgstr "Layout"
 
@@ -136,6 +146,11 @@ msgstr "Wenn Sie diese Option umschalten, müssen Sie den Cache der Vorschaubild
 #: ClassicLAFModuleTrait.php:72
 msgid "XREF prefixes"
 msgstr "Präfix für XREFs"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:128
+msgid "XREFs"
+msgstr ""
 
 #~ msgid "Readme"
 #~ msgstr "Readme"

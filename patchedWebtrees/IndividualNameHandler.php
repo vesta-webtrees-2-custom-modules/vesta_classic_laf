@@ -5,9 +5,14 @@ namespace Cissee\WebtreesExt;
 class IndividualNameHandler {
   
   protected $nickBeforeSurn = false;
+  protected $appendXref = false;
           
   public function setNickBeforeSurn(bool $nickBeforeSurn) {
     $this->nickBeforeSurn = $nickBeforeSurn;
+  }
+
+  public function setAppendXref(bool $appendXref) {
+    $this->appendXref = $appendXref;
   }
   
   public function addNick(string $nameForDisplay, string $nick): string {
@@ -25,6 +30,14 @@ class IndividualNameHandler {
       //same logic as in original webtrees 2.x
       return $nameForDisplay . ' "' . $nick . '"';
     }
+  }
+  
+  public function addXref(string $nameForDisplay, string $xref): string {
+    if (!$this->appendXref or ('xref' == $xref)) {
+      //'xref' indicates fake record, cf individual-name.phtml
+      return $nameForDisplay;
+    }
+    return $nameForDisplay . ' (' . $xref . ')';
   }
 }
 

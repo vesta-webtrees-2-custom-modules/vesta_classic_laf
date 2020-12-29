@@ -123,6 +123,14 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */I18N::translate('Note that this doesn\'t affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names.'),
                 'NICK_BEFORE_SURN',
                 '1')));
+
+    $individuals[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('XREFs'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
+                /* I18N: Module Configuration */I18N::translate('Display an individual\'s XREF after the name.'),
+                'APPEND_XREF',
+                '0')));
     
     //for now not configurable
     new ControlPanelSubsection(

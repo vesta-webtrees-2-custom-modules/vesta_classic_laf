@@ -1142,6 +1142,9 @@ class IndividualExt extends Individual
 
         //[RC] adjusted
         $fullForFullNN = $full;
+
+        //[RC] adjusted: logic is configurable
+        $handler = app(IndividualNameHandler::class);
         
         // GEDCOM 5.5.1 nicknames should be specificied in a NICK field
         // GEDCOM 5.5   nicknames should be specified in the NAME field, surrounded by quotes
@@ -1149,11 +1152,11 @@ class IndividualExt extends Individual
             // A NICK field is present, but not included in the NAME.  Show it at the end.
             $fullForFullNN .= ' "' . $NICK . '"';
             
-            //[RC] adjusted: logic is configurable
-            $handler = app(IndividualNameHandler::class);
             $full = $handler->addNick($full, $NICK);
         }
 
+        $full = $handler->addXref($full, $this->xref());
+        
         // Remove slashes - they don’t get displayed
         // $fullNN keeps the @N.N. placeholders, for the database
         // $full is for display on-screen
@@ -1232,4 +1235,27 @@ class IndividualExt extends Individual
             $this->formatFirstMajorFact(Gedcom::BIRTH_EVENTS, 1) .
             $this->formatFirstMajorFact(Gedcom::DEATH_EVENTS, 1);
     }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    
+    /*
+    public function facts(
+        array $filter = [],
+        bool $sort = false,
+        int $access_level = null,
+        bool $ignore_deleted = false
+    ): Collection {
+      $facts = parent::facts($filter, $sort, $access_level, $ignore_deleted);      
+      
+      //xref as rin (displayed by IndividualMetadataModule)
+      //see discussion here: https://www.webtrees.net/index.php/en/forum/help-for-2-0/35212-displaying-xref-ids-somewhere
+      //TODO: do not add if RIN is already set!
+      //TODO: make configurable
+      $gedcom = "1 RIN " . $this->xref();
+      $rin = new VirtualFact($gedcom, $this, 'x');
+      $facts[] = $rin;
+      
+      return $facts;
+    }
+    */
 }
