@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-12-28 15:28+0100\n"
-"PO-Revision-Date: 2020-09-12 20:36+0000\n"
+"PO-Revision-Date: 2021-01-02 11:29+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -26,7 +27,7 @@ msgstr "Een module die alle thema's en andere functies aanpast, waardoor uitstra
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:130
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "XREF's toevoegen aan namen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -46,12 +47,12 @@ msgstr "Alle bewerkingsdialogen weergeven met een compactere indeling, waarbij o
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:131
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Toon de XREF van een persoon achter de naam."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
 msgid "Display nicknames before surnames"
-msgstr "Geef roepnamen weer voor achternamen"
+msgstr "Toon roepnamen voor achternamen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -151,7 +152,7 @@ msgstr "XREF-voorvoegsels"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128
 msgid "XREFs"
-msgstr ""
+msgstr "XREF's"
 
 #~ msgid "..."
 #~ msgstr "..."
