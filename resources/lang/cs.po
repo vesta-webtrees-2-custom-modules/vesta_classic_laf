@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-12-28 15:28+0100\n"
+"POT-Creation-Date: 2021-01-03 16:49+0100\n"
 "PO-Revision-Date: 2020-11-10 22:28+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Modul upravující všechny motivy a další funkce tak, aby se jejich vzhled podobal webtrees verse 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:130
+#: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
 msgstr ""
 
@@ -37,6 +37,11 @@ msgstr "Oříznout náhledové obrázky"
 #: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
 msgstr "Vlastní předpony"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:139
+msgid "Display a family's XREF after the name."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -79,7 +84,7 @@ msgid "Individual page"
 msgstr "Stránka jednotlivce"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:137 ClassicLAFModuleTrait.php:146
+#: ClassicLAFModuleTrait.php:145 ClassicLAFModuleTrait.php:154
 msgid "Layout"
 msgstr "Rozvržení"
 
@@ -149,7 +154,7 @@ msgid "XREF prefixes"
 msgstr "Předpony XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128
+#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
 msgstr ""
 

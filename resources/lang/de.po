@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-12-28 15:28+0100\n"
+"POT-Creation-Date: 2021-01-03 16:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:130
+#: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
 msgstr ""
 
@@ -36,6 +36,11 @@ msgstr "Vorschaubilder beschneiden"
 #: ClassicLAFModuleTrait.php:74
 msgid "Custom prefixes"
 msgstr "Benutzerdefiniert"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:139
+msgid "Display a family's XREF after the name."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -78,7 +83,7 @@ msgid "Individual page"
 msgstr "Einzelne Seite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:137 ClassicLAFModuleTrait.php:146
+#: ClassicLAFModuleTrait.php:145 ClassicLAFModuleTrait.php:154
 msgid "Layout"
 msgstr "Layout"
 
@@ -148,7 +153,7 @@ msgid "XREF prefixes"
 msgstr "Präfix für XREFs"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128
+#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
 msgstr ""
 

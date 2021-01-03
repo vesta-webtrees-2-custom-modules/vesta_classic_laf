@@ -58,7 +58,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 ### License<a name="license"/>
 
 * **vesta_classic_look_and_feel: a webtrees custom module**
-* Copyright (C) (C) 2020 – 2021 Richard Cissée
+* Copyright (C) 2020 – 2021 Richard Cissée
 * Derived from **webtrees** - Copyright 2020 webtrees development team.
 * Dutch translations provided by TheDutchJewel.
 * Czech translations provided by Josef Prause.

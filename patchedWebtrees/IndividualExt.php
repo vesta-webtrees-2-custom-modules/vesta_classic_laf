@@ -1155,7 +1155,8 @@ class IndividualExt extends Individual
             $full = $handler->addNick($full, $NICK);
         }
 
-        $full = $handler->addXref($full, $this->xref());
+        //moved to fullName(): we don'T want this e.g. when using individual name for family name
+        //$full = $handler->addXref($full, $this->xref());
         
         // Remove slashes - they don’t get displayed
         // $fullNN keeps the @N.N. placeholders, for the database
@@ -1258,4 +1259,14 @@ class IndividualExt extends Individual
       return $facts;
     }
     */
+    
+    public function fullName(): string
+    {
+        //[RC] adjusted: logic is configurable
+        $handler = app(IndividualNameHandler::class);
+        
+        $full = parent::fullName();
+        $full = $handler->addXref($full, $this->xref());
+        return $full;
+    }
 }

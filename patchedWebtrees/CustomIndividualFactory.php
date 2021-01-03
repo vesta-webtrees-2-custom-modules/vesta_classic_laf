@@ -16,11 +16,10 @@ class CustomIndividualFactory extends IndividualFactory implements IndividualFac
     protected $cropThumbnails;
     
     public function __construct(
-            Cache $cache, 
             bool $compactIndividualPage, 
             bool $cropThumbnails)
     {
-        parent::__construct($cache);
+        parent::__construct();
         $this->compactIndividualPage = $compactIndividualPage;
         $this->cropThumbnails = $cropThumbnails;
     }

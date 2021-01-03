@@ -4,7 +4,9 @@ namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Aura\Router\Route;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
+use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
+use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
@@ -88,19 +90,23 @@ class ClassicLAFModule extends AbstractModule implements
       View::registerCustomView('::selects/media', $this->name() . '::selects/media');
     }
 
-    $handler = app(IndividualNameHandler::class);
+    $individualNameHandler = app(IndividualNameHandler::class);
     
     $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
-    $handler->setNickBeforeSurn($nickBeforeSurn);
-
-    $appendXref = boolval($this->getPreference('APPEND_XREF', '0'));
-    $handler->setAppendXref($appendXref);
+    $individualNameHandler->setNickBeforeSurn($nickBeforeSurn);
+    $appendXrefIndi = boolval($this->getPreference('APPEND_XREF', '0'));
+    $individualNameHandler->setAppendXref($appendXrefIndi);
+    
+    $familyNameHandler = app(FamilyNameHandler::class);
+    $appendXrefFam = boolval($this->getPreference('APPEND_XREF_FAM', '0'));
+    $familyNameHandler->setAppendXref($appendXrefFam);
     
     //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
-    app()->instance(IndividualNameHandler::class, $handler);
+    app()->instance(IndividualNameHandler::class, $individualNameHandler);
+    app()->instance(FamilyNameHandler::class, $familyNameHandler);
 
-    $cache = Registry::cache()->array();
-    Registry::individualFactory(new CustomIndividualFactory($cache, $compactIndividualPage, $cropThumbnails));
+    Registry::individualFactory(new CustomIndividualFactory($compactIndividualPage, $cropThumbnails));
+    Registry::familyFactory(new CustomFamilyFactory());
 
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
     if ($customPrefixes) {

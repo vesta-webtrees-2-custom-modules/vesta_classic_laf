@@ -132,6 +132,14 @@ trait ClassicLAFModuleTrait {
                 'APPEND_XREF',
                 '0')));
     
+    $families[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('XREFs'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
+                /* I18N: Module Configuration */I18N::translate('Display a family\'s XREF after the name.'),
+                'APPEND_XREF_FAM',
+                '0')));
+    
     //for now not configurable
     new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Layout'),
@@ -154,6 +162,10 @@ trait ClassicLAFModuleTrait {
             /* I18N: Module Configuration */MoreI18N::xlate('Individuals'),
             '',
             $individuals);
+    $sections[] = new ControlPanelSection(
+            /* I18N: Module Configuration */MoreI18N::xlate('Families'),
+            '',
+            $families);
     
     return new ControlPanelPreferences($sections);
   }
