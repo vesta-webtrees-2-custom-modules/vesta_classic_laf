@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-01-03 16:49+0100\n"
-"PO-Revision-Date: 2020-12-20 15:29+0000\n"
+"PO-Revision-Date: 2021-01-04 12:29+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -26,7 +27,7 @@ msgstr "Modul upravujúci všetky motívy a ostatné vlastnosti. Poskytuje vzhľ
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Pripojiť XREF k menám"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -41,7 +42,7 @@ msgstr "Vlastné prefixy"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:139
 msgid "Display a family's XREF after the name."
-msgstr ""
+msgstr "Zobraziť XREF rodiny po mene."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -51,7 +52,7 @@ msgstr "Zobraziť všetky dialógy úprav v kompaktnejšom vzhľade, ktorý sú�
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:131
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Zobraziť XREF osoby po mene."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
@@ -140,7 +141,11 @@ msgstr "Vesta Classic Look & Feel: Možnosť používať vlastné prefixy XREF, 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
-msgstr "webtrees orezáva náhľady obrázkov tak, aby sa obrázky zobrazovali v konzistentnej šírke a výške. Ak máte obrázky osôb s neštandradným pomerom strán a tvár osoby nie je v strede môže prísť k nesprávnemu orezaniu. Zrušte túto voľbu, ak chcete, aby nedošlo k orezaniu náhľadu."
+msgstr ""
+"webtrees orezáva náhľady obrázkov tak, aby sa obrázky zobrazovali v "
+"konzistentnej šírke a výške. Ak máte obrázky osôb s neštandardným pomerom "
+"strán a tvár osoby nie je v strede môže prísť k nesprávnemu orezaniu. Zrušte "
+"túto voľbu, ak chcete, aby nedošlo k orezaniu náhľadu."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
@@ -156,4 +161,4 @@ msgstr "XREF prefixy"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
-msgstr ""
+msgstr "XREF"
