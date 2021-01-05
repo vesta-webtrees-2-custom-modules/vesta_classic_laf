@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-01-03 16:49+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-01-06 01:29+0000\n"
+"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -25,7 +27,7 @@ msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Anfügen der XREFs zu Namen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -40,7 +42,7 @@ msgstr "Benutzerdefiniert"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:139
 msgid "Display a family's XREF after the name."
-msgstr ""
+msgstr "Anzeigen des Familien-XREF nach dem Namen."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -50,7 +52,7 @@ msgstr "Alle Bearbeitungsdialoge in einem kompakteren Layout anzeigen, in dem u.
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:131
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Anzeigen des persönlichen XREF nach dem Namen."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
@@ -131,6 +133,8 @@ msgstr "Verwenden Sie benutzerdefinierte Präfixe für XREFs wie in Webtrees 1.x
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
 msgstr ""
+"Vesta Classic Look & Feel: Früher bekannt als 'Compact Themes Adjuster'. "
+"Jetzt Teil der Vesta suite."
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
@@ -155,7 +159,7 @@ msgstr "Präfix für XREFs"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
-msgstr ""
+msgstr "XREFs"
 
 #~ msgid "Readme"
 #~ msgstr "Readme"
