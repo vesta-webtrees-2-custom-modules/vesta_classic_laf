@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-01-03 16:49+0100\n"
 "PO-Revision-Date: 2021-01-09 15:58+0000\n"
-"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
@@ -139,8 +139,8 @@ msgstr ""
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
 msgstr ""
-"Vesta Classic Look & Feel: Einstellung zur Verwendung von "
-"benutzerdefinierten vorangestellten XREFs wie in webtrees 1.x."
+"Vesta Classic Look & Feel: Einstellung zur Verwendung von benutzerdefinieren "
+"Präfixen für XREFs, wie in Webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
