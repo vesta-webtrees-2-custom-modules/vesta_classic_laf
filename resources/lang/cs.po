@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-01-03 16:49+0100\n"
-"PO-Revision-Date: 2020-11-10 22:28+0000\n"
+"PO-Revision-Date: 2021-01-19 11:32+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -26,7 +27,7 @@ msgstr "Modul upravující všechny motivy a další funkce tak, aby se jejich v
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Připojit XREF ke jménům"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -41,7 +42,7 @@ msgstr "Vlastní předpony"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:139
 msgid "Display a family's XREF after the name."
-msgstr ""
+msgstr "Zobrazit XREF rodiny za jménem."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -51,7 +52,7 @@ msgstr "Zobrazit všechny dialogy úprav v kompaktním rozvržení, které také
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:131
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Zobrazit XREF osoby za jménem."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
@@ -141,12 +142,18 @@ msgstr "Vesta Classic Look & Feel: umožňuje nastavit vlastní předpony XREF, 
 #: ClassicLAFModuleTrait.php:66
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr ""
+"Webtrees ořezává náhledové obrázky s cílem vytvořit obrázky se stálým "
+"poměrem šířky a výšky. U portrétů osob s nestandardním poměrem stran může "
+"nastat problém, když hlava osoby není uprostřed, takže se částečně odřeže. "
+"Tomu zamezíte zrušením této volby."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr ""
+"Když změníte toto nastavení, musíte ručně vymazat cache náhledových obrázků "
+"odstraněním složky %1$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
@@ -156,7 +163,7 @@ msgstr "Předpony XREF"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
-msgstr ""
+msgstr "XREF"
 
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Vyžaduje modul '%1$s Vesta Common'."
