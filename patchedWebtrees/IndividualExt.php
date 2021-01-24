@@ -1155,7 +1155,7 @@ class IndividualExt extends Individual
             $full = $handler->addNick($full, $NICK);
         }
 
-        //moved to fullName(): we don'T want this e.g. when using individual name for family name
+        //moved to fullName(): we don't want this e.g. when using individual name for family name
         //$full = $handler->addXref($full, $this->xref());
         
         // Remove slashes - they don’t get displayed
