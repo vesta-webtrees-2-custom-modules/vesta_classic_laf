@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-01-03 16:49+0100\n"
-"PO-Revision-Date: 2020-11-16 20:28+0000\n"
-"Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
+"PO-Revision-Date: 2021-02-01 16:41+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -26,7 +27,7 @@ msgstr "Un module ajustant tous les thèmes et autres fonctionnalités, offrant 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Ajouter les XREF aux noms"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -41,7 +42,7 @@ msgstr "préfixes personnalisés"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:139
 msgid "Display a family's XREF after the name."
-msgstr ""
+msgstr "Afficher le XREF d'une famille après le nom."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:58
@@ -51,7 +52,7 @@ msgstr "Affichez toutes les boîtes de dialogue d'édition en utilisant une disp
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:131
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Afficher le XREF d'un individu après son nom."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:121
@@ -156,4 +157,4 @@ msgstr "préfixes XREF"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
 msgid "XREFs"
-msgstr ""
+msgstr "XREFs"
