@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-01-03 16:49+0100\n"
+"POT-Creation-Date: 2021-03-07 13:19+0100\n"
 "PO-Revision-Date: 2021-01-09 08:32+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,57 +24,67 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "En modul som justerer alle temaer og andre funksjoner, og gir en utseende og opplevelse nærmere webtrees 1.x-versjonen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
+#: ClassicLAFModuleTrait.php:136 ClassicLAFModuleTrait.php:144
 msgid "Append XREFs to names"
 msgstr "Tilføy XREF-er i navn"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:56
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:71
 msgid "Crop Thumbnails"
 msgstr "Beskjær miniatyrbilder"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:80
 msgid "Custom prefixes"
 msgstr "Egendefinerte prefikser"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:139
+#: ClassicLAFModuleTrait.php:145
 msgid "Display a family's XREF after the name."
 msgstr "Vis en families XREF etter navnet."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:58
+#: ClassicLAFModuleTrait.php:64
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Vis alle redigeringsdialoger ved hjelp av et mer kompakt oppsett, som også utelater standard topptekst og bunntekst."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:131
+#: ClassicLAFModuleTrait.php:137
 msgid "Display an individual's XREF after the name."
 msgstr "Vis en persons XREF etter navnet."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:121
+#: ClassicLAFModuleTrait.php:127
 msgid "Display nicknames before surnames"
 msgstr "Vis kallenavn før etternavn"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:61
 msgid "Edit dialogs"
 msgstr "Redigere dialogbokser"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:122
+#: ClassicLAFModuleTrait.php:55
+msgid "Expand first sidebar"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:128
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Håndter kallenavn som i webtrees 1.x, det vil si; vis dem før etternavnet."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:63
+#: ClassicLAFModuleTrait.php:69
 msgid "Image Thumbnails"
 msgstr "Miniatyrbilder"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:116
+#: ClassicLAFModuleTrait.php:122
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "I et slektstre har hver oppføring et internt referansenummer (kalt en \"XREF\") for eksempel \"F123\" eller \"R14\". Du kan velge prefikset som skal brukes når nye XREFs opprettes."
 
@@ -85,17 +94,17 @@ msgid "Individual page"
 msgstr "Personside"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:145 ClassicLAFModuleTrait.php:154
+#: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:160
 msgid "Layout"
 msgstr "Utseende"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:119
+#: ClassicLAFModuleTrait.php:125
 msgid "Nicknames"
 msgstr "Kallenavn"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:123
+#: ClassicLAFModuleTrait.php:129
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Vær oppmerksom på at dette ikke påvirker GEDCOM-navnefelt som allerede inneholder et kallenavn, det vil si at du alltid kan plassere kallenavnet eksplisitt for bestemte navn."
 
@@ -105,7 +114,7 @@ msgid "Overall width"
 msgstr "Total bredde"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:50
+#: ClassicLAFModuleTrait.php:51
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Flere justeringer - Se %1$s for detaljer."
@@ -121,12 +130,12 @@ msgid "Use available space"
 msgstr "Bruk tilgjengelig plass"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
+#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:63
 msgid "Use compact layout"
 msgstr "Bruke kompakt utseende"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:75
+#: ClassicLAFModuleTrait.php:81
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Bruk egendefinerte prefikser for XREFs som i webtrees 1.x, i stedet for å prefiks alle XREFs med 'X'."
 
@@ -139,22 +148,22 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Classic Look &amp; Feel: Mulighet til å bruke tilpassede prefiks xrefs, som i webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:72
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees beskjærer miniatyrbilder for å produsere bilder med en konsekvent bredde og høyde. Dette er problematisk hvis du har bilder av individals med et ikke-standard sideforhold, hvor hodet til den respektive personen ikke er sentrert og derfor kan kuttes av. Fjern merket for dette alternativet for å håndtere disse tilfellene."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:73
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr "Når du bytter til dette alternativet, må du tilbakestille miniatyrbufferen manuelt ved å slette mappen %1$s."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:72
+#: ClassicLAFModuleTrait.php:78
 msgid "XREF prefixes"
 msgstr "XREF prefikser"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
+#: ClassicLAFModuleTrait.php:134 ClassicLAFModuleTrait.php:142
 msgid "XREFs"
 msgstr "XREF-er"

@@ -45,11 +45,17 @@ trait ClassicLAFModuleTrait {
     
     $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Individual page'),
-            array(new ControlPanelCheckbox(
+            array(
+                new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Use compact layout'),
                 /* I18N: Module Configuration */I18N::translate('Several adjustments - See %1$s for details.', $link),
                 'COMPACT_INDI_PAGE', //TODO: css
-                '1')));
+                '1'),
+                new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Expand first sidebar'),
+                /* I18N: Module Configuration */I18N::translate('Check to always expand the first sidebar, rather than the \'Family navigator\' sidebar.'),
+                'EXPAND_FIRST_SIDEBAR',
+                '0')));
     
     $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Edit dialogs'),

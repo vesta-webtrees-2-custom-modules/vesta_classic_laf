@@ -2,7 +2,6 @@
 
 namespace Cissee\WebtreesExt;
 
-use Fisharebest\Webtrees\Cache;
 use Fisharebest\Webtrees\Contracts\IndividualFactoryInterface;
 use Fisharebest\Webtrees\Factories\IndividualFactory;
 use Fisharebest\Webtrees\Individual;
@@ -11,17 +10,15 @@ use Fisharebest\Webtrees\Tree;
 class CustomIndividualFactory extends IndividualFactory implements IndividualFactoryInterface {
     
     private const TYPE_CHECK_REGEX = '/^0 @[^@]+@ ' . Individual::RECORD_TYPE . '/';
-
-    protected $compactIndividualPage;
-    protected $cropThumbnails;
+    
+    /** @var IndividualExtSettings */
+    protected $settings;
     
     public function __construct(
-            bool $compactIndividualPage, 
-            bool $cropThumbnails)
+            IndividualExtSettings $settings)
     {
         parent::__construct();
-        $this->compactIndividualPage = $compactIndividualPage;
-        $this->cropThumbnails = $cropThumbnails;
+        $this->settings = $settings;
     }
     
     public function make(string $xref, Tree $tree, string $gedcom = null): ?Individual
@@ -35,13 +32,13 @@ class CustomIndividualFactory extends IndividualFactory implements IndividualFac
             }
             $xref = $this->extractXref($gedcom ?? $pending, $xref);
 
-            return new IndividualExt($xref, $gedcom ?? '', $pending, $tree, $this->compactIndividualPage, $this->cropThumbnails);
+            return new IndividualExt($xref, $gedcom ?? '', $pending, $tree, $this->settings);
         });
     }
   
     public function new(string $xref, string $gedcom, ?string $pending, Tree $tree): Individual
     {
-        return new IndividualExt($xref, $gedcom, $pending, $tree, $this->compactIndividualPage, $this->cropThumbnails);
+        return new IndividualExt($xref, $gedcom, $pending, $tree, $this->settings);
     }
 }
 

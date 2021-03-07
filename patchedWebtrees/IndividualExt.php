@@ -46,15 +46,11 @@ class IndividualExt extends Individual
     /** @var Date The estimated date of death */
     private $estimated_death_date;
     
-    protected $compactIndividualPage;
-    protected $cropThumbnails;
+    /** @var IndividualExtSettings */
+    protected $settings;
     
-    public function compactIndividualPage(): bool {
-      return $this->compactIndividualPage;
-    }
-    
-    public function cropThumbnails(): bool {
-      return $this->cropThumbnails;
+    public function settings(): IndividualExtSettings {
+      return $this->settings;
     }
     
     public function __construct(
@@ -62,13 +58,11 @@ class IndividualExt extends Individual
             string $gedcom, 
             ?string $pending, 
             Tree $tree, 
-            bool $compactIndividualPage, 
-            bool $cropThumbnails)
+            IndividualExtSettings $settings)
     {
         parent::__construct($xref, $gedcom, $pending, $tree);
         
-        $this->compactIndividualPage = $compactIndividualPage;
-        $this->cropThumbnails = $cropThumbnails;
+        $this->settings = $settings;
     }
     
     /**

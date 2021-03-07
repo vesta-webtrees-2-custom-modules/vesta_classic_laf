@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-01-03 16:49+0100\n"
+"POT-Creation-Date: 2021-03-07 13:19+0100\n"
 "PO-Revision-Date: 2021-01-09 15:58+0000\n"
 "Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,57 +24,67 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:130 ClassicLAFModuleTrait.php:138
+#: ClassicLAFModuleTrait.php:136 ClassicLAFModuleTrait.php:144
 msgid "Append XREFs to names"
 msgstr "Anfügen der XREFs zu Namen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:56
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:71
 msgid "Crop Thumbnails"
 msgstr "Vorschaubilder beschneiden"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:80
 msgid "Custom prefixes"
 msgstr "Benutzerdefiniert"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:139
+#: ClassicLAFModuleTrait.php:145
 msgid "Display a family's XREF after the name."
 msgstr "Anzeigen des Familien-XREF nach dem Namen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:58
+#: ClassicLAFModuleTrait.php:64
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle Bearbeitungsdialoge in einem kompakteren Layout anzeigen, in dem u.a. die Seitenkopfzeile und -fußzeile entfällt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:131
+#: ClassicLAFModuleTrait.php:137
 msgid "Display an individual's XREF after the name."
 msgstr "Anzeigen des persönlichen XREF nach dem Namen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:121
+#: ClassicLAFModuleTrait.php:127
 msgid "Display nicknames before surnames"
 msgstr "Spitznamen vor Nachnamen anzeigen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:61
 msgid "Edit dialogs"
 msgstr "Dialoge bearbeiten"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:122
+#: ClassicLAFModuleTrait.php:55
+msgid "Expand first sidebar"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:128
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Spitznamen wie in Webtrees 1.x behandeln, also vor dem Nachnamen anzeigen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:63
+#: ClassicLAFModuleTrait.php:69
 msgid "Image Thumbnails"
 msgstr "Vorschaubilder"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:116
+#: ClassicLAFModuleTrait.php:122
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "In einem Stammbaum hat jeder Datensatz eine interne Referenznummer (als \"XREF\" bezeichnet) wie z.B. \"F123\" oder \"R14\". Sie können Präfixe definieren, welche dann bei der Erstellung neuer XREFs verwendet werden."
 
@@ -85,17 +94,17 @@ msgid "Individual page"
 msgstr "Einzelne Seite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:145 ClassicLAFModuleTrait.php:154
+#: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:160
 msgid "Layout"
 msgstr "Layout"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:119
+#: ClassicLAFModuleTrait.php:125
 msgid "Nicknames"
 msgstr "Spitznamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:123
+#: ClassicLAFModuleTrait.php:129
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Beachten Sie, dass diese Einstellung keine Auswirkungen auf GEDCOM-Namensfelder hat, die bereits einen Spitznamen enthalten. Sie können den Spitznamen für einzelne Namen somit immer explizit positionieren."
 
@@ -105,7 +114,7 @@ msgid "Overall width"
 msgstr "Gesamtbreite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:50
+#: ClassicLAFModuleTrait.php:51
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschiedene Anpassungen - Siehe %1$s für Details."
@@ -121,45 +130,41 @@ msgid "Use available space"
 msgstr "Verfügbaren Platz nutzen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:49 ClassicLAFModuleTrait.php:57
+#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:63
 msgid "Use compact layout"
 msgstr "Kompaktes Layout verwenden"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:75
+#: ClassicLAFModuleTrait.php:81
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Verwenden Sie benutzerdefinierte Präfixe für XREFs wie in Webtrees 1.x, anstatt allen XREFs das Präfix \"X\" voranzustellen."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
-msgstr ""
-"Vesta Classic Look & Feel: Früher bekannt als 'Compact Themes Adjuster'. "
-"Jetzt Teil der Vesta suite."
+msgstr "Vesta Classic Look & Feel: Früher bekannt als 'Compact Themes Adjuster'. Jetzt Teil der Vesta suite."
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
-msgstr ""
-"Vesta Classic Look & Feel: Einstellung zur Verwendung von benutzerdefinieren "
-"Präfixen für XREFs, wie in Webtrees 1.x."
+msgstr "Vesta Classic Look & Feel: Einstellung zur Verwendung von benutzerdefinieren Präfixen für XREFs, wie in Webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:72
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees beschneidet Vorschaubilder, um Bilder mit einer einheitlichen Breite und Höhe zu erzeugen. Dies ist problematisch, wenn Sie Bilder von Personen mit einem nicht standardisierten Seitenverhältnis verwenden, bei denen der Kopf der jeweiligen Person nicht zentriert ist und daher möglicherweise abgeschnitten wird. Deaktivieren Sie diese Option, um solche Fälle besser zu behandeln."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:73
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr "Wenn Sie diese Option umschalten, müssen Sie den Cache der Vorschaubilder manuell zurücksetzen, indem Sie den Ordner %1$s löschen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:72
+#: ClassicLAFModuleTrait.php:78
 msgid "XREF prefixes"
 msgstr "Präfix für XREFs"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:128 ClassicLAFModuleTrait.php:136
+#: ClassicLAFModuleTrait.php:134 ClassicLAFModuleTrait.php:142
 msgid "XREFs"
 msgstr "XREFs"
 

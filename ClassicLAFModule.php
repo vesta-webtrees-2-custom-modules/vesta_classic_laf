@@ -7,6 +7,7 @@ use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
+use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
@@ -74,6 +75,7 @@ class ClassicLAFModule extends AbstractModule implements
 
     $compactIndividualPage = boolval($this->getPreference('COMPACT_INDI_PAGE', '1'));    
     $cropThumbnails = boolval($this->getPreference('CROP_THUMBNAILS', '1'));
+    $expandFirstSidebar = boolval($this->getPreference('EXPAND_FIRST_SIDEBAR', '0'));
     
     if ($compactIndividualPage || !$cropThumbnails) {
       // Replace an existing view with our own version.
@@ -105,7 +107,9 @@ class ClassicLAFModule extends AbstractModule implements
     app()->instance(IndividualNameHandler::class, $individualNameHandler);
     app()->instance(FamilyNameHandler::class, $familyNameHandler);
 
-    Registry::individualFactory(new CustomIndividualFactory($compactIndividualPage, $cropThumbnails));
+    Registry::individualFactory(new CustomIndividualFactory(
+            new IndividualExtSettings($compactIndividualPage, $cropThumbnails, $expandFirstSidebar)));
+    
     Registry::familyFactory(new CustomFamilyFactory());
 
     $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
