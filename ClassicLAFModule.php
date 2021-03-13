@@ -211,7 +211,11 @@ class ClassicLAFModule extends AbstractModule implements
     
     //have to prefix to force utf-8 (relevant e.g. for modals)
     //cf https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly
-    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+
+    //fix #43
+    //webtrees uses hash of fact contents as id, which results in invalid html in case of repeated facts!
+    //this should be handled differently in webtrees. Until then, ALLOW_DUPLICATE_IDS
+    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html, HTML5DOMDocument::ALLOW_DUPLICATE_IDS);
     libxml_use_internal_errors($internalErrors);
     $xpath = new DOMXPath($dom);
     $nodes = $xpath->query('//header');
