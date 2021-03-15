@@ -9,6 +9,8 @@ use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
+use Cissee\WebtreesExt\Module\ModuleMetaInterface;
+use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
@@ -32,18 +34,19 @@ use function app;
 use function route;
 
 class ClassicLAFModule extends AbstractModule implements 
-  ModuleCustomInterface, 
+  ModuleCustomInterface,
+  ModuleMetaInterface, 
   ModuleConfigInterface,
   ModuleGlobalInterface,
   MiddlewareInterface {
 
-  use ModuleCustomTrait, ModuleConfigTrait, ModuleGlobalTrait, VestaModuleTrait {
+  use ModuleCustomTrait, ModuleMetaTrait, ModuleConfigTrait, ModuleGlobalTrait, VestaModuleTrait {
     VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
-    VestaModuleTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
     VestaModuleTrait::getAssetAction insteadof ModuleCustomTrait;
-    VestaModuleTrait::assetUrl insteadof ModuleCustomTrait;
-    
+    VestaModuleTrait::assetUrl insteadof ModuleCustomTrait;    
     VestaModuleTrait::getConfigLink insteadof ModuleConfigTrait;
+    ModuleMetaTrait::customModuleVersion insteadof ModuleCustomTrait;
+    ModuleMetaTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
   }
 
   use ClassicLAFModuleTrait;
@@ -52,14 +55,14 @@ class ClassicLAFModule extends AbstractModule implements
     return 'Richard Cissée';
   }
 
-  public function customModuleVersion(): string {
-    return file_get_contents(__DIR__ . '/latest-version.txt');
+  public function customModuleMetaDatasJson(): string {
+    return file_get_contents(__DIR__ . '/metadata.json');
+  } 
+  
+  public function customModuleLatestMetaDatasJsonUrl(): string {
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_classic_laf/master/metadata.json';
   }
-
-  public function customModuleLatestVersionUrl(): string {
-    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_classic_laf/master/latest-version.txt';
-  }
-
+  
   public function customModuleSupportUrl(): string {
     return 'https://cissee.de';
   }
