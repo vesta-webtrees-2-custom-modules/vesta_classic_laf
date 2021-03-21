@@ -27,8 +27,8 @@ class IndividualNameHandler {
 				return substr($nameForDisplay, 0, $pos) . '"' . $nick . '" ' . substr($nameForDisplay, $pos);
 			}
     } else {
-      //same logic as in original webtrees 2.x
-      return $nameForDisplay . ' "' . $nick . '"';
+      //same logic as in original webtrees 2.x, which has now changed to: 'don't display at all!'
+      return $nameForDisplay;
     }
   }
   

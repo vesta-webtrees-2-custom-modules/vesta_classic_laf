@@ -3,5 +3,11 @@
 		"version": "2.0.13.0.0",
 		"from": "2.0.12",
 		"to": "2.1"
+	},
+	{
+		"version": "2.0.13.1.0",
+		"from": "2.0.12",
+		"to": "2.1",
+		"changelog": ["Handling of nicknames aligned with main webtrees."]
 	}
 ]

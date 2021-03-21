@@ -145,7 +145,7 @@ class IndividualExt extends Individual {
 
         // Add placeholder for unknown given name
         if (!$GIVN) {
-            $GIVN = '@P.N.';
+            $GIVN = self::PRAENOMEN_NESCIO;
             $pos  = (int) strpos($full, '/');
             $full = substr($full, 0, $pos) . '@P.N. ' . substr($full, $pos);
         }
@@ -153,15 +153,11 @@ class IndividualExt extends Individual {
         //[RC] adjusted
         $fullForFullNN = $full;
 
-        //[RC] adjusted: logic is configurable
-        $handler = app(IndividualNameHandler::class);
-        
-        // GEDCOM 5.5.1 nicknames should be specificied in a NICK field
-        // GEDCOM 5.5   nicknames should be specified in the NAME field, surrounded by quotes
+        //[RC] adjusted: logic is configurable        
         if ($NICK && strpos($full, '"' . $NICK . '"') === false) {
-            // A NICK field is present, but not included in the NAME.  Show it at the end.
-            $fullForFullNN .= ' "' . $NICK . '"';
-            
+            // A NICK field is present, but not included in the NAME.
+            // we may have to handle it specifically            
+            $handler = app(IndividualNameHandler::class);
             $full = $handler->addNick($full, $NICK);
         }
 
@@ -174,8 +170,8 @@ class IndividualExt extends Individual {
         $fullNN = str_replace('/', '', $fullForFullNN);
 
         // Insert placeholders for any missing/unknown names
-        $full = str_replace('@N.N.', I18N::translateContext('Unknown surname', '…'), $full);
-        $full = str_replace('@P.N.', I18N::translateContext('Unknown given name', '…'), $full);
+        $full = str_replace(self::NOMEN_NESCIO, I18N::translateContext('Unknown surname', '…'), $full);
+        $full = str_replace(self::PRAENOMEN_NESCIO, I18N::translateContext('Unknown given name', '…'), $full);
         // Format for display
         $full = '<span class="NAME" dir="auto" translate="no">' . preg_replace('/\/([^\/]*)\//', '<span class="SURN">$1</span>', e($full)) . '</span>';
         // Localise quotation marks around the nickname
@@ -217,58 +213,6 @@ class IndividualExt extends Individual {
             ];
         }
     }
-
-    /**
-     * Extract names from the GEDCOM record.
-     *
-     * @return void
-     */
-    public function extractNames(): void
-    {
-        $access_level = $this->canShowName() ? Auth::PRIV_HIDE : Auth::accessLevel($this->tree);
-
-        $this->extractNamesFromFacts(
-            1,
-            'NAME',
-            $this->facts(['NAME'], false, $access_level)
-        );
-    }
-
-    /**
-     * Extra info to display when displaying this record in a list of
-     * selection items or favorites.
-     *
-     * @return string
-     */
-    public function formatListDetails(): string
-    {
-        return
-            $this->formatFirstMajorFact(Gedcom::BIRTH_EVENTS, 1) .
-            $this->formatFirstMajorFact(Gedcom::DEATH_EVENTS, 1);
-    }
-    
-    ////////////////////////////////////////////////////////////////////////////
-    
-    /*
-    public function facts(
-        array $filter = [],
-        bool $sort = false,
-        int $access_level = null,
-        bool $ignore_deleted = false
-    ): Collection {
-      $facts = parent::facts($filter, $sort, $access_level, $ignore_deleted);      
-      
-      //xref as rin (displayed by IndividualMetadataModule)
-      //see discussion here: https://www.webtrees.net/index.php/en/forum/help-for-2-0/35212-displaying-xref-ids-somewhere
-      //TODO: do not add if RIN is already set!
-      //TODO: make configurable
-      $gedcom = "1 RIN " . $this->xref();
-      $rin = new VirtualFact($gedcom, $this, 'x');
-      $facts[] = $rin;
-      
-      return $facts;
-    }
-    */
     
     public function fullName(): string
     {
