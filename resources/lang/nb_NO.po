@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 13:19+0100\n"
-"PO-Revision-Date: 2021-03-08 17:02+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2021-03-21 16:28+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -31,7 +31,6 @@ msgstr "Tilføy XREF-er i navn"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
-#, fuzzy
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
 "Sjekk for å alltid utvide første sidefelt, snarere enn "
