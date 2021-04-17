@@ -14,6 +14,7 @@ use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
+use Fisharebest\Webtrees\Http\RequestHandlers\SearchReplacePage;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleConfigTrait;
@@ -171,14 +172,21 @@ class ClassicLAFModule extends AbstractModule implements
       $route = $request->getAttribute('route');
       assert($route instanceof Route);
       $route_middleware = $route->extras['middleware'] ?? [];
-
+      
       $strip = false;
-      foreach ($route_middleware as $middleware) {
-        //all edit routes have this middleware, see WebRoutes.php
-        //$middleware is a string, not an instance of AuthEditor!
-        if ($middleware === AuthEditor::class) {
-          $strip = true;
-          break;
+      //$route_handler is a string, not an instance of AuthEditor!
+      $route_handler = $route->handler;
+      if ($route_handler === SearchReplacePage::class) {
+        //special - not a regular edit dialog:
+        //more consistent look & feel if displayed just like other searches (issue #49)
+      } else {
+        foreach ($route_middleware as $middleware) {
+          //all edit routes have this middleware, see WebRoutes.php
+          //$middleware is a string, not an instance of AuthEditor!
+          if ($middleware === AuthEditor::class) {
+            $strip = true;
+            break;
+          }
         }
       }
       
