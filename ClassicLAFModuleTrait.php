@@ -56,12 +56,18 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */I18N::translate('Check to always expand the first sidebar, rather than the \'Family navigator\' sidebar.'),
                 'EXPAND_FIRST_SIDEBAR',
                 '0')));
+
+    $ext = '';
+    if (!ClassicLAFModuleTRait::checkLibxml()) {
+      $ext = ' ';
+      $ext .= /* I18N: Module Configuration */I18N::translate('Attention: This setting currently won\'t have any effect in your system, because it requires a newer libxml version (at least %1$s).', '2.9.3');
+    }
     
     $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Edit dialogs'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Use compact layout'),
-                /* I18N: Module Configuration */I18N::translate('Display all edit dialogs using a more compact layout, which also omits the standard header and footer.'),
+                /* I18N: Module Configuration */I18N::translate('Display all edit dialogs using a more compact layout, which also omits the standard header and footer.') . $ext,
                 'COMPACT_EDIT',
                 '1')));
     
@@ -174,5 +180,13 @@ trait ClassicLAFModuleTrait {
             $families);
     
     return new ControlPanelPreferences($sections);
+  }
+  
+  public static function checkLibxml(): bool {
+    if (!defined('LIBXML_VERSION')) {
+      return false;
+    }
+    //issue #51
+    return (LIBXML_VERSION > 20902);
   }
 }

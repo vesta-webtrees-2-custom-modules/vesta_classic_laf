@@ -162,9 +162,14 @@ class ClassicLAFModule extends AbstractModule implements
       //$request = $request->withAttribute('route', $route);
     }
     //seems easier, but certainly less elegant, to strip header and footer from generated html
+    //although this is error-prone (see issue #51), better solution would be to make the default layout configurable
     */
     
     $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
+    
+    if (!ClassicLAFModuleTrait::checkLibxml()) {
+      $strippedEdit = false;
+    }
     
     $response = $handler->handle($request);
     
