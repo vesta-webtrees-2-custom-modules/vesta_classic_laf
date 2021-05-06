@@ -327,12 +327,16 @@ compact layout
 padding-left: 2px;
 }
 
-/* Have nav items (such as menu items) on top of main items (such as leaflet controls) */
-
-main {
-    z-index: 500;
-}
+/* 
+  Have nav items (such as menu items) on top of main items (such as leaflet controls).
+  (but do not set a z-index for main: we must keep it at auto, 
+  so that .modal and .modal-backdrop stack properly - 
+  with a z-index set on main, they currently end up in different stacking contexts,
+  which is apparently unintended. It seems that a cleaner solution would be to have
+  the .modal-backdrop within main as well)
+*/
 
 header {
-    z-index: 1000;
+    z-index: 10000;
 }
+

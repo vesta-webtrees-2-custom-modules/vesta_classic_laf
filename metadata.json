@@ -46,5 +46,11 @@
 		"from": "2.0.12",
 		"to": "2.0.17",
 		"changelog": ["Small layout fix."]
+	},
+	{
+		"version": "2.0.16.0.3",
+		"from": "2.0.12",
+		"to": "2.0.17",
+		"changelog": ["Small layout fix."]
 	}
 ]
