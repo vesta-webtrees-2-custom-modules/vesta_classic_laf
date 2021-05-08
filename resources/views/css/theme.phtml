@@ -328,15 +328,18 @@ padding-left: 2px;
 }
 
 /* 
-  Have nav items (such as menu items) on top of main items (such as leaflet controls).
-  (but do not set a z-index for main: we must keep it at auto, 
+  Put the header (including as menu items) 
+  on top of other specific z-indexed items (such as leaflet controls, which are at 1000),
+  but below modal stuff (which starts at 1040)
+
+  (do not set a z-index for main: we must keep it at auto, 
   so that .modal and .modal-backdrop stack properly - 
   with a z-index set on main, they currently end up in different stacking contexts,
-  which is apparently unintended. It seems that a cleaner solution would be to have
-  the .modal-backdrop within main as well)
+  which is apparently unintended. 
+  It seems that a cleaner solution would be to put them into a single hierarchy)
 */
 
 header {
-    z-index: 10000;
+    z-index: 1010;
 }
 
