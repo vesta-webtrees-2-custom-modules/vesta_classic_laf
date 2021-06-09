@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 13:19+0100\n"
-"PO-Revision-Date: 2021-01-19 11:32+0000\n"
+"PO-Revision-Date: 2021-06-08 21:33+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -32,6 +33,8 @@ msgstr "Připojit XREF ke jménům"
 #: ClassicLAFModuleTrait.php:56
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
+"Zaškrtněte, aby se vždy rozbalil první postranní panel, nikoli postranní "
+"panel \"Rodinný navigátor\"."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:71
@@ -71,7 +74,7 @@ msgstr "Dialogy úprav"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
-msgstr ""
+msgstr "Rozbalit první postranní panel"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128
