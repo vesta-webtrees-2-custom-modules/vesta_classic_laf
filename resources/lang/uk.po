@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2021-03-07 13:19+0100\n"
+"PO-Revision-Date: 2021-06-10 13:31+0000\n"
+"Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.7-dev\n"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
+msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
+msgstr ""
+"Цей модуль налаштовує всі теми, наближуючи вигляд до webtrees версій 1.х."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:37
+msgid "Overall width"
+msgstr "Загальна ширина"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:39
+msgid "Use available space"
+msgstr "Використати весь доступний простір"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:40
+msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
+msgstr ""
+"Стандартний макет центрує більшість сторінок, витрачаючи багато місця, "
+"особливо на широких дисплеях. Цей параметр дозволяє використовувати більшу "
+"частину доступного простору."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:47
+msgid "Individual page"
+msgstr "Особиста сторінка"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:63
+msgid "Use compact layout"
+msgstr "Компактне розміщення"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:51
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr "Кілька коригувань - Подробиці див. %1$s ."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:55
+msgid "Expand first sidebar"
+msgstr "Розгорнути першу бічну панель"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:56
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+"Поставте прапорець, щоб завжди розкривати першу бічну панель, а не бічну "
+"панель \"Сімейний навігатор\"."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:61
+msgid "Edit dialogs"
+msgstr "Редагувати діалоги"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:64
+msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
+msgstr ""
+"Показувати всі діалогові вікна редагування з використанням більш компактного "
+"макета, який також опускає стандартний верхній і нижній колонтитули."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:69
+msgid "Image Thumbnails"
+msgstr "Ескізи зображень"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:71
+msgid "Crop Thumbnails"
+msgstr "Обрізати мініатюри"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:72
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr ""
+"Webtrees обрізає ескізи, щоб створювати зображення з однаковою шириною та "
+"висотою. Це проблематично, якщо у вас є зображення окремих осіб із "
+"нестандартним співвідношенням сторін, де голова відповідної людини не "
+"розташована по центру і, отже, може бути відрізана. Зніміть прапорець для "
+"вирішення цих випадків."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:73
+#, php-format
+msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
+msgstr ""
+"При перемиканні цієї опції вам доведеться скинути кеш мініатюр вручну, "
+"видаливши папку %1$s."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:78
+msgid "XREF prefixes"
+msgstr "Префікс XREF"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:80
+msgid "Custom prefixes"
+msgstr "Користувацький префікс"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:81
+msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
+msgstr ""
+"Використовуйте власні префікси для XREF, як у webtrees 1.x, замість того, "
+"щоб префіксувати всі XREF як \"X\"."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:122
+msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
+msgstr ""
+"У сімейному дереві кожен запис має внутрішній контрольний номер (який "
+"називається \"XREF\"), такий як \"F123\" або \"R14\". Ви можете вибрати "
+"префікс, який використовуватиметься при створенні нових файлів XREF."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:125
+msgid "Nicknames"
+msgstr "Псевдоніми"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:127
+msgid "Display nicknames before surnames"
+msgstr "Показувати псевдоніми перед прізвищами"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:128
+msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
+msgstr ""
+"Обробляти псевдоніми, як у webtrees 1.x, тобто показувати їх перед прізвищем."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:129
+msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
+msgstr ""
+"Зауважте, що це не впливає на поля імен GEDCOM, які вже містять псевдонім, "
+"тобто ви завжди можете позиційно вказати псевдонім для певних імен."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:134 ClassicLAFModuleTrait.php:142
+msgid "XREFs"
+msgstr "XREF-и"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:136 ClassicLAFModuleTrait.php:144
+msgid "Append XREFs to names"
+msgstr "Додавати зовнішні посилання до імен"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:137
+msgid "Display an individual's XREF after the name."
+msgstr "Відображати зовнішнє посилання особи після імені."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:145
+msgid "Display a family's XREF after the name."
+msgstr "Відображати зовнішнє посилання родини після імені."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:160
+msgid "Layout"
+msgstr "Вкладки"
+
+#: WhatsNew/WhatsNew0.php:11
+msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
+msgstr ""
+"Vesta Classic Look & Feel: раніше відомий як Compact Themes Adjuster. Наразі "
+"є частиною Vesta suite."
+
+#: WhatsNew/WhatsNew1.php:11
+msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
+msgstr ""
+"Vesta Classic Look & Feel: можливість використовувати зовнішні посилання, як "
+"у webtrees 1.x."
