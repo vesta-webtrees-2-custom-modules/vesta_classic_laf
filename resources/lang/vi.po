@@ -8,160 +8,190 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 13:19+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-07-15 15:34+0000\n"
+"Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.7.2-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr ""
+"Một mô-đun điều chỉnh tất cả các chủ đề và các tính năng khác, cung cấp giao "
+"diện và cảm giác gần gũi hơn với phiên bản webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
 msgid "Overall width"
-msgstr ""
+msgstr "Chiều rộng tổng thể"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
 msgid "Use available space"
-msgstr ""
+msgstr "Sử dụng không gian có sẵn"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr ""
+"Bố cục tiêu chuẩn tập trung hầu hết các trang, lãng phí rất nhiều không "
+"gian, đặc biệt là trên các màn hình rộng. Tùy chọn này cho phép sử dụng hầu "
+"hết không gian có sẵn."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
-msgstr ""
+msgstr "Trang cá nhân"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:63
 msgid "Use compact layout"
-msgstr ""
+msgstr "Sử dụng bố cục nhỏ gọn"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:51
 #, php-format
 msgid "Several adjustments - See %1$s for details."
-msgstr ""
+msgstr "Một số điều chỉnh - Xem %1$s để biết chi tiết."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
-msgstr ""
+msgstr "Mở rộng thanh bên đầu tiên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
+"Chọn để luôn mở rộng thanh bên đầu tiên, thay vì thanh bên 'Trình điều hướng "
+"gia đình'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:61
 msgid "Edit dialogs"
-msgstr ""
+msgstr "Chỉnh sửa hộp thoại"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:64
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr ""
+"Hiển thị tất cả các hộp thoại chỉnh sửa bằng cách sử dụng bố cục nhỏ gọn "
+"hơn, cũng bỏ qua đầu trang và chân trang tiêu chuẩn."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:69
 msgid "Image Thumbnails"
-msgstr ""
+msgstr "Hình ảnh thu nhỏ"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:71
 msgid "Crop Thumbnails"
-msgstr ""
+msgstr "Cắt hình thu nhỏ"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr ""
+"Webtrees cắt hình thu nhỏ để tạo ra hình ảnh có chiều rộng và chiều cao nhất "
+"quán. Đây là vấn đề nếu bạn có hình ảnh của các cá nhân với tỷ lệ khung hình "
+"không chuẩn, trong đó phần đầu của người tương ứng không được căn giữa và do "
+"đó có thể bị cắt đi. Bỏ chọn tùy chọn này để xử lý các trường hợp này."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:73
 #, php-format
 msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 msgstr ""
+"Khi chuyển đổi tùy chọn này, bạn sẽ phải đặt lại bộ nhớ cache hình thu nhỏ "
+"của mình theo cách thủ công bằng cách xóa thư mục %1$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:78
 msgid "XREF prefixes"
-msgstr ""
+msgstr "Tiền tố XREF"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
 msgid "Custom prefixes"
-msgstr ""
+msgstr "Tiền tố tùy chỉnh"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:81
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr ""
+"Sử dụng tiền tố tùy chỉnh cho XREF như trong webtrees 1.x, thay vì đặt tiền "
+"tố tất cả XREF bằng 'X'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:122
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr ""
+"Trong cây họ, mỗi bản ghi có một số tham chiếu nội bộ (được gọi là \"XREF\") "
+"chẳng hạn như \"F123\" hoặc \"R14\". Bạn có thể chọn tiền tố sẽ được sử dụng "
+"bất cứ khi nào các XREF mới được tạo."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:125
 msgid "Nicknames"
-msgstr ""
+msgstr "Biệt danh"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:127
 msgid "Display nicknames before surnames"
-msgstr ""
+msgstr "Hiển thị biệt danh trước họ"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:128
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
-msgstr ""
+msgstr "Xử lý biệt hiệu như trong webtrees 1.x, tức là hiển thị chúng trước họ."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:129
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr ""
+"Lưu ý rằng điều này không ảnh hưởng đến các trường tên GEDCOM đã bao gồm "
+"biệt hiệu, tức là bạn có thể luôn định vị biệt hiệu một cách rõ ràng cho các "
+"tên cụ thể."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:134 ClassicLAFModuleTrait.php:142
 msgid "XREFs"
-msgstr ""
+msgstr "XREFs"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:136 ClassicLAFModuleTrait.php:144
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Nối XREF vào tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:137
 msgid "Display an individual's XREF after the name."
-msgstr ""
+msgstr "Hiển thị XREF của một cá nhân sau tên."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:145
 msgid "Display a family's XREF after the name."
-msgstr ""
+msgstr "Hiển thị XREF của một gia đình sau tên."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:160
 msgid "Layout"
-msgstr ""
+msgstr "Bố trí"
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
 msgstr ""
+"Vesta Classic Look & Feel: Trước đây được gọi là Bộ điều chỉnh chủ đề nhỏ "
+"gọn. Bây giờ là một phần của bộ Vesta."
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
 msgstr ""
+"Vesta Classic Look & Feel: Tùy chọn sử dụng xrefs có tiền tố tùy chỉnh, như "
+"trong webtrees 1.x."
