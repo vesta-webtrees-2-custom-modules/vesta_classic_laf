@@ -28,7 +28,6 @@ use IvoPetkov\HTML5DOMDocument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaModuleTrait;
 use function app;
@@ -38,8 +37,8 @@ class ClassicLAFModule extends AbstractModule implements
   ModuleCustomInterface,
   ModuleMetaInterface, 
   ModuleConfigInterface,
-  ModuleGlobalInterface,
-  MiddlewareInterface {
+  ModuleGlobalInterface/*,
+  MiddlewareInterface*/ {
 
   use ModuleCustomTrait, ModuleMetaTrait, ModuleConfigTrait, ModuleGlobalTrait, VestaModuleTrait {
     VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
@@ -96,6 +95,11 @@ class ClassicLAFModule extends AbstractModule implements
       View::registerCustomView('::selects/media', $this->name() . '::selects/media');
     }
 
+    $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
+    if ($strippedEdit) {
+      View::registerCustomView('::layouts/default', $this->name() . '::layouts/default');
+    }
+
     $individualNameHandler = app(IndividualNameHandler::class);
     
     $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
@@ -150,7 +154,36 @@ class ClassicLAFModule extends AbstractModule implements
     ]);
   }
   
-  public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface {
+  public static function isEditDialogToBeStripped(ServerRequestInterface $request): bool {
+    $route = $request->getAttribute('route');
+    assert($route instanceof Route);
+    $route_middleware = $route->extras['middleware'] ?? [];
+
+    //$route_handler is a string, not an instance of AuthEditor!
+    $route_handler = $route->handler;
+    if ($route_handler === SearchReplacePage::class) {
+      //special - not a regular edit dialog:
+      //more consistent look & feel if displayed just like other searches (issue #49)
+      return false;
+    }
+    
+    foreach ($route_middleware as $middleware) {
+      //all edit routes have this middleware, see WebRoutes.php
+      //$middleware is a string, not an instance of AuthEditor!
+      if ($middleware === AuthEditor::class) {
+        return true;
+      }
+    }
+    
+    return false;
+  } 
+  
+  //we use a better solution now: we make the default layout configurable
+  //(this is only problematic if another module also does this, e.g. as suggested in 
+  //https://www.webtrees.net/index.php/en/forum/help-for-2-0/36114-add-one-more-line)
+  public function process_obsolete(
+          ServerRequestInterface $request, 
+          RequestHandlerInterface $handler): ResponseInterface {
     
     /*
     if ($route->handler === EditFact::class) {
@@ -161,8 +194,8 @@ class ClassicLAFModule extends AbstractModule implements
       //not even required, $request is mutable
       //$request = $request->withAttribute('route', $route);
     }
-    //seems easier, but certainly less elegant, to strip header and footer from generated html
-    //although this is error-prone (see issue #51), better solution would be to make the default layout configurable
+    //seems easier, but certainly less elegant, to strip header and footer from generated html, and adjust some css
+    //although this is error-prone (see issue #51) 
     */
     
     $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
@@ -174,33 +207,14 @@ class ClassicLAFModule extends AbstractModule implements
     $response = $handler->handle($request);
     
     if ($strippedEdit && ($response->getStatusCode() === StatusCodeInterface::STATUS_OK)) {
-      $route = $request->getAttribute('route');
-      assert($route instanceof Route);
-      $route_middleware = $route->extras['middleware'] ?? [];
-      
-      $strip = false;
-      //$route_handler is a string, not an instance of AuthEditor!
-      $route_handler = $route->handler;
-      if ($route_handler === SearchReplacePage::class) {
-        //special - not a regular edit dialog:
-        //more consistent look & feel if displayed just like other searches (issue #49)
-      } else {
-        foreach ($route_middleware as $middleware) {
-          //all edit routes have this middleware, see WebRoutes.php
-          //$middleware is a string, not an instance of AuthEditor!
-          if ($middleware === AuthEditor::class) {
-            $strip = true;
-            break;
-          }
-        }
-      }
+      $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
       
       if ($strip) {
         //must not adjust json responses
         $contentType = $response->getHeaderLine("Content-Type");
         if (substr($contentType, 0, strlen("text/html")) === "text/html") {
           $html = $response->getBody()->__toString();
-          $content = self::strippedLayout($html);
+          $content = ClassicLAFModule::strippedLayout_obsolete($html);
           $stream_factory = app(StreamFactoryInterface::class);
           $stream = $stream_factory->createStream($content);
           $response = $response->withBody($stream);
@@ -214,7 +228,7 @@ class ClassicLAFModule extends AbstractModule implements
     return $response;
   }
   
-  public static function strippedLayout(string $html): string {
+  public static function strippedLayout_obsolete(string $html): string {
     //$dom=new DOMDocument(); //doesn't handle HTML 5 entities , such as &utilde; correctly
     //see https://stackoverflow.com/questions/43469435/phps-domdocument-appears-to-not-recognize-certain-html-entities-how-can-i-incl
     //and https://3v4l.org/tMXTt
