@@ -1,0 +1,102 @@
+<?php
+
+//[RC] this is justLight version 2.1.0
+
+/**
+ * Replace layouts/default.phtml
+ *
+ * Changes
+ * - Sticky top
+ * - Collapsable navbar for smaller screens (Genealogy and user menu)
+ * - Make the site title clickable with a header link to the homepage
+ * - Replace the default footer with our own version
+ *
+ */
+
+use Cissee\Webtrees\Module\ClassicLAF\ClassicLAFModule;
+use Fisharebest\Webtrees\DebugBar;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Module\ModuleThemeInterface;
+use Fisharebest\Webtrees\Tree;
+use Psr\Http\Message\ServerRequestInterface;
+
+/**
+ * @var string                 $content
+ * @var ServerRequestInterface $request
+ * @var string                 $title
+ * @var Tree                   $tree
+ */
+
+$palette = app(ModuleThemeInterface::class)->palette();
+
+?>
+
+<!DOCTYPE html>
+<html dir="<?= I18N::locale()->direction() ?>" lang="<?= I18N::locale()->languageTag() ?>">
+    <head>
+        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/meta', [
+            'meta_robots' => e($meta_robots ?? 'noindex'),
+            'meta_description' => $meta_description ?? ''
+        ]); ?>
+        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/title', ['tree' => $tree, 'title' => $title]); ?>
+        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/favicons'); ?>
+        <link rel="manifest" href="<?= e(asset('site.webmanifest')) ?>">
+        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/stylesheets'); ?>
+        <?= DebugBar::renderHead() ?>
+    </head>
+
+    <body class="wt-global jc-theme-justlight jc-palette-<?= $palette ?> wt-route-<?= e(substr(strrchr($request->getAttribute('route')->name, '\\'),1)) ?>">
+        
+        <?php
+          $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
+        ?>
+        
+        <?php if (!$strip) : ?>
+          <header class="wt-header-wrapper d-print-none sticky-top">
+              <div class="container wt-header-container">
+                  <div class="wt-header-content navbar navbar-expand-md <?= $palette === 'justblack' ? 'navbar-dark' : 'navbar-light' ?> d-flex justify-content-between">
+                      <div class="jc-header-content-left d-flex flex-row">
+                          <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/accessibility'); ?>
+                          <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-logo'); ?>
+                          <?php if ($tree !== null) : ?>
+                              <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-title', ['tree' => $tree]); ?>
+                          <?php endif ?>
+                          <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler'); ?>
+                      </div>
+                      <div class="jc-header-content-right d-flex flex-lg-row flex-column justify-content-end">
+                          <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/secondary-navigation', ['tree' => $tree]); ?>
+                          <?php if ($tree !== null) : ?>
+                              <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/header-search', ['tree' => $tree]); ?>
+                          <?php endif ?>
+                      </div>
+                  </div>
+                  <?php if ($tree !== null) : ?>
+                      <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/primary-navigation', ['tree' => $tree]); ?>
+                  <?php endif ?>
+              </div>
+          </header>
+        <?php endif ?>
+
+        <main id="content" class="wt-main-wrapper">
+            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/flash-messages'); ?>
+            
+            <?php if (!$strip) : ?>
+              <div class="container-lg wt-main-container">
+            <?php else : ?>
+              <div class="container-lg edit-container wt-main-container">
+            <?php endif ?>
+                <?= $content ?>
+            </div>
+        </main>
+
+        <?php if (!$strip) : ?>
+          <?= view(app(ModuleThemeInterface::class)->name() . '::theme/footer'); ?>
+        <?php endif ?>
+
+        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/scripts'); ?>
+
+        <?= DebugBar::render() ?>
+    </body>
+
+</html>
+

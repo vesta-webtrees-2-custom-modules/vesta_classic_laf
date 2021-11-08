@@ -183,8 +183,14 @@ class IndividualExt extends Individual {
         //explicitly use unicode 2011 'Non-Breaking Hyphen' if intended otherwise
         $full = preg_replace('/([^ ->]*)\*/', '<span class="starredname">\\1</span>', $full);
 
+				/*
         //'stickers'
-        /*
+        //BIRT with SOUR (before next fact starts)
+				if (preg_match('/\n1 BIRT(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $this->gedcom, $match)) {
+					//img source: "webtrees\resources\css\facts\BIRT.png"
+					$full .= '<img width="16" src="data:image/png;base64,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" />';
+				}
+				
         //CHR with SOUR (before next fact starts)
 				if (preg_match('/\n1 CHR(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $this->gedcom, $match)) {
 					//img source: "webtrees\resources\css\facts\CHR.png"

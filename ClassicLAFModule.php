@@ -22,6 +22,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
+use Fisharebest\Webtrees\Module\ModuleThemeInterface;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
 use IvoPetkov\HTML5DOMDocument;
@@ -97,7 +98,20 @@ class ClassicLAFModule extends AbstractModule implements
 
     $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
     if ($strippedEdit) {
-      View::registerCustomView('::layouts/default', $this->name() . '::layouts/default');
+      //other custom modules also replace this view
+      //namely the justLight theme
+      $defaultLayout = '::layouts/default';
+      
+      //we need a way to identify it regardless of its folder name;
+      $theme = app(ModuleThemeInterface::class); 
+      if ($theme instanceof ModuleCustomInterface) {
+        $justLightSupportUrl = 'https://github.com/justcarmen/webtrees-theme-justlight/issues';
+        if ($theme->customModuleSupportUrl() === $justLightSupportUrl) {
+          $defaultLayout = '::layouts/defaultJustLight';
+        }
+      }  
+      
+      View::registerCustomView('::layouts/default', $this->name() . $defaultLayout);
     }
 
     $individualNameHandler = app(IndividualNameHandler::class);
