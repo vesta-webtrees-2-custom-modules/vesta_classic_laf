@@ -81,6 +81,15 @@ trait ClassicLAFModuleTrait {
                 '1')));
     
     $general[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Text formatting'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Preserve GEDCOM linebreaks in markdown formatted text'),
+                /* I18N: Module Configuration */I18N::translate('Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown.') . ' '.
+                /* I18N: Module Configuration */I18N::translate('Use this option to display markdown formatted text as in earlier webtrees versions.'),
+                'MARKDOWN_PRESERVE_CONT',
+                '1')));
+            
+    $general[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('XREF prefixes'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Custom prefixes'),

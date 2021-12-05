@@ -113,7 +113,13 @@ class ClassicLAFModule extends AbstractModule implements
       
       View::registerCustomView('::layouts/default', $this->name() . $defaultLayout);
     }
-
+    
+    $markdownFixConfigured = boolval($this->getPreference('MARKDOWN_PRESERVE_CONT', '1'));
+    $markdownFixPossible = !class_exists("Fisharebest\Webtrees\Filter", false);
+    if ($markdownFixConfigured && $markdownFixPossible) {
+      require_once __DIR__ . '/replacedWebtrees/Filter.php';
+    }
+    
     $individualNameHandler = app(IndividualNameHandler::class);
     
     $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
