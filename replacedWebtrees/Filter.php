@@ -25,7 +25,9 @@ class Filter
     {
         switch ($tree->getPreference('FORMAT_TEXT')) {
             case 'markdown':
+                //[PATCHED]
                 $text = str_replace("\n","  \n", $text);
+              
                 return self::markdown($text, $tree);
             default:
                 return self::expandUrls($text, $tree);

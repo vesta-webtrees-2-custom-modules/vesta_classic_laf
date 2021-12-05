@@ -118,6 +118,7 @@ class ClassicLAFModule extends AbstractModule implements
     $markdownFixPossible = !class_exists("Fisharebest\Webtrees\Filter", false);
     if ($markdownFixConfigured && $markdownFixPossible) {
       require_once __DIR__ . '/replacedWebtrees/Filter.php';
+      require_once __DIR__ . '/replacedWebtrees/CommonMark/CensusTableParser.php';
     }
     
     $individualNameHandler = app(IndividualNameHandler::class);
