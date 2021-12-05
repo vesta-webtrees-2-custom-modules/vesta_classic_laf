@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-05 10:18+0100\n"
-"PO-Revision-Date: 2021-03-08 13:15+0000\n"
+"PO-Revision-Date: 2021-12-05 11:48+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.10-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -33,6 +34,8 @@ msgstr "XREF's toevoegen aan namen"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Let op: Deze instelling zal momenteel geen effect hebben op uw systeem, "
+"omdat het een nieuwere libxml-versie vereist (minstens %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
@@ -121,17 +124,17 @@ msgstr "Totale breedte"
 
 #: resources/views/layouts/default.phtml:180
 msgid "Play"
-msgstr ""
+msgstr "Afspelen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:86
 msgid "Preserve GEDCOM linebreaks in markdown formatted text"
-msgstr ""
+msgstr "Behoud GEDCOM-regeleindes in markdown geformatteerde tekst"
 
 #: resources/views/layouts/default.phtml:99
 #: resources/views/layouts/default.phtml:101
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:51
@@ -142,16 +145,16 @@ msgstr "Verschillende aanpassingen - Zie %1$s voor meer informatie."
 #. I18N: Skip over the headers and menus, to the main content of the page
 #: resources/views/layouts/default.phtml:85
 msgid "Skip to content"
-msgstr ""
+msgstr "Spring naar inhoud"
 
 #: resources/views/layouts/default.phtml:181
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:84
 msgid "Text formatting"
-msgstr ""
+msgstr "Tekstopmaak"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -177,6 +180,8 @@ msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in pl
 #: ClassicLAFModuleTrait.php:88
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 msgstr ""
+"Gebruik deze optie om markdown geformatteerde tekst weer te geven zoals in "
+"eerdere webtrees-versies."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -195,6 +200,8 @@ msgstr "Webtrees snijdt miniaturen bij om afbeeldingen te produceren met een con
 #: ClassicLAFModuleTrait.php:87
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
 msgstr ""
+"Webtrees behoudt niet langer regeleindes (GEDCOM CONC-tag) bij het "
+"formatteren van tekst via markdown."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -215,15 +222,15 @@ msgstr "XREF's"
 #: resources/views/layouts/default.phtml:144
 #: resources/views/layouts/default.phtml:182
 msgid "close"
-msgstr ""
+msgstr "sluiten"
 
 #: resources/views/layouts/default.phtml:179
 msgid "next"
-msgstr ""
+msgstr "volgende"
 
 #: resources/views/layouts/default.phtml:178
 msgid "previous"
-msgstr ""
+msgstr "vorige"
 
 #~ msgid "..."
 #~ msgstr "..."
