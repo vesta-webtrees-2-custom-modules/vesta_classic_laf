@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 10:18+0100\n"
+"POT-Creation-Date: 2021-12-06 18:50+0100\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -193,7 +193,7 @@ msgstr "Webtrees cắt hình thu nhỏ để tạo ra hình ảnh có chiều r�
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:87
-msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
+msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
 
 #. I18N: Module Configuration

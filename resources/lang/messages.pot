@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 10:18+0100\n"
+"POT-Creation-Date: 2021-12-06 18:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,7 +112,7 @@ msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:87
-msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
+msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
 
 #. I18N: Module Configuration

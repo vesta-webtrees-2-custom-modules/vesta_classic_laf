@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 10:18+0100\n"
+"POT-Creation-Date: 2021-12-06 18:50+0100\n"
 "PO-Revision-Date: 2021-12-05 11:48+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,9 +32,7 @@ msgstr "XREF's toevoegen aan namen"
 #: ClassicLAFModuleTrait.php:63
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
-msgstr ""
-"Let op: Deze instelling zal momenteel geen effect hebben op uw systeem, "
-"omdat het een nieuwere libxml-versie vereist (minstens %1$s)."
+msgstr "Let op: Deze instelling zal momenteel geen effect hebben op uw systeem, omdat het een nieuwere libxml-versie vereist (minstens %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
@@ -179,9 +176,7 @@ msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in pl
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:88
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
-msgstr ""
-"Gebruik deze optie om markdown geformatteerde tekst weer te geven zoals in "
-"eerdere webtrees-versies."
+msgstr "Gebruik deze optie om markdown geformatteerde tekst weer te geven zoals in eerdere webtrees-versies."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -198,10 +193,8 @@ msgstr "Webtrees snijdt miniaturen bij om afbeeldingen te produceren met een con
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:87
-msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
+msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
-"Webtrees behoudt niet langer regeleindes (GEDCOM CONC-tag) bij het "
-"formatteren van tekst via markdown."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -249,3 +242,6 @@ msgstr "vorige"
 
 #~ msgid "Vesta Classic Look & Feel"
 #~ msgstr "Vesta Klassieke uitstraling & gevoel"
+
+#~ msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
+#~ msgstr "Webtrees behoudt niet langer regeleindes (GEDCOM CONC-tag) bij het formatteren van tekst via markdown."
