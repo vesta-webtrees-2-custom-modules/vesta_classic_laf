@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-06 18:50+0100\n"
-"PO-Revision-Date: 2021-12-05 11:48+0000\n"
+"PO-Revision-Date: 2021-12-06 20:53+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,6 +196,8 @@ msgstr "Webtrees snijdt miniaturen bij om afbeeldingen te produceren met een con
 #: ClassicLAFModuleTrait.php:87
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
+"Webtrees behoudt niet langer regeleindes (GEDCOM CONT-tag) bij het "
+"formatteren van tekst via markdown."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
