@@ -6,6 +6,7 @@ use Aura\Router\Route;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
+use Cissee\WebtreesExt\CustomMarkdownFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
@@ -115,10 +116,8 @@ class ClassicLAFModule extends AbstractModule implements
     }
     
     $markdownFixConfigured = boolval($this->getPreference('MARKDOWN_PRESERVE_CONT', '1'));
-    $markdownFixPossible = !class_exists("Fisharebest\Webtrees\Filter", false);
-    if ($markdownFixConfigured && $markdownFixPossible) {
-      require_once __DIR__ . '/replacedWebtrees/Filter.php';
-      require_once __DIR__ . '/replacedWebtrees/CommonMark/CensusTableParser.php';
+    if ($markdownFixConfigured) {
+      Registry::markdownFactory(new CustomMarkdownFactory());
     }
     
     $individualNameHandler = app(IndividualNameHandler::class);

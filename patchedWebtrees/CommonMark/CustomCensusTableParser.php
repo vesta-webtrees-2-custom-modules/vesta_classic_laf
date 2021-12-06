@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fisharebest\Webtrees\CommonMark;
+namespace Cissee\WebtreesExt\CommonMark;
 
 use League\CommonMark\Block\Element\Paragraph;
 use League\CommonMark\Block\Parser\BlockParserInterface;
@@ -23,7 +23,7 @@ use function substr;
  *
  * Based on the table parser from webuni/commonmark-table-extension.
  */
-class CensusTableParser implements BlockParserInterface
+class CustomCensusTableParser implements BlockParserInterface
 {
     // Keywords used to create the webtrees 1.x census-assistant notes.
     private const CA_PREFIX = '.start_formatted_area.';
