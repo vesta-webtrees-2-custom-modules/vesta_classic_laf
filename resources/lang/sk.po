@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-05 10:18+0100\n"
-"PO-Revision-Date: 2021-03-17 12:18+0000\n"
+"PO-Revision-Date: 2021-12-06 09:50+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.10-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -33,6 +34,8 @@ msgstr "Pripojiť XREF k menám"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Pozor! Toto nastavenie nebude mať na vašom systéme žiadny účinok, lebo "
+"predpokladá novšiu verziu libxml (minimálne %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
@@ -121,17 +124,17 @@ msgstr "Celková šírka"
 
 #: resources/views/layouts/default.phtml:180
 msgid "Play"
-msgstr ""
+msgstr "Prehrať"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:86
 msgid "Preserve GEDCOM linebreaks in markdown formatted text"
-msgstr ""
+msgstr "Zachovať zalomenie riadkov v GEDCOM-e v texte s formátovaním markdown"
 
 #: resources/views/layouts/default.phtml:99
 #: resources/views/layouts/default.phtml:101
 msgid "Search"
-msgstr ""
+msgstr "Hľadať"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:51
@@ -142,16 +145,16 @@ msgstr "Rôzne úpravy - pozri %1$s pre viac detailov."
 #. I18N: Skip over the headers and menus, to the main content of the page
 #: resources/views/layouts/default.phtml:85
 msgid "Skip to content"
-msgstr ""
+msgstr "Preskočiť k obsahu"
 
 #: resources/views/layouts/default.phtml:181
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:84
 msgid "Text formatting"
-msgstr ""
+msgstr "Formátovanie textu"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -177,6 +180,8 @@ msgstr "Namiesto jednotného prefixu „X“ použite vlasné prefixy pre XREF t
 #: ClassicLAFModuleTrait.php:88
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 msgstr ""
+"Použite túto voľbu, aby sa text formátovaný pomocou markdown-u zobrazil tak, "
+"ako v predchádzajúcich verziách webtrees."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -195,6 +200,8 @@ msgstr "webtrees orezáva náhľady obrázkov tak, aby sa obrázky zobrazovali v
 #: ClassicLAFModuleTrait.php:87
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
 msgstr ""
+"webtrees od verzie 2.0.19 nezachováva koniec riadku (CEDCOM CONT-tag), keď "
+"sa používa formátovanie pomocou markdown."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -215,12 +222,12 @@ msgstr "XREF"
 #: resources/views/layouts/default.phtml:144
 #: resources/views/layouts/default.phtml:182
 msgid "close"
-msgstr ""
+msgstr "zavrieť"
 
 #: resources/views/layouts/default.phtml:179
 msgid "next"
-msgstr ""
+msgstr "ďalej"
 
 #: resources/views/layouts/default.phtml:178
 msgid "previous"
-msgstr ""
+msgstr "späť"
