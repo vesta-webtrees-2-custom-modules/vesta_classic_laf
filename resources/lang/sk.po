@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-06 18:50+0100\n"
-"PO-Revision-Date: 2021-12-06 09:50+0000\n"
+"PO-Revision-Date: 2021-12-09 15:53+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,6 +196,8 @@ msgstr "webtrees orezáva náhľady obrázkov tak, aby sa obrázky zobrazovali v
 #: ClassicLAFModuleTrait.php:87
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
+"webtrees nezachováva koniec riadku (CEDCOM CONT-tag), keď sa používa "
+"formátovanie pomocou markdown."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79

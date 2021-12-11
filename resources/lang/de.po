@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-06 18:50+0100\n"
-"PO-Revision-Date: 2021-12-05 19:51+0000\n"
+"PO-Revision-Date: 2021-12-08 08:50+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,6 +196,8 @@ msgstr "Webtrees beschneidet Vorschaubilder, um Bilder mit einer einheitlichen B
 #: ClassicLAFModuleTrait.php:87
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
+"Webtrees behält die Zeilenumbrüche (GEDCOM CONT-Tag) nicht mehr bei, wenn "
+"der Text mit Markdown formatiert wird."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
