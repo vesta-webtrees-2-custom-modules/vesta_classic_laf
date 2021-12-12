@@ -149,9 +149,18 @@ class ClassicLAFModule extends AbstractModule implements
   }
   
   public function headContent(): string {
-      return '<link rel="stylesheet" href="'.$this->assetUrl('css/theme.css').'">';
+      $html = '<link rel="stylesheet" type="text/css" href="'.$this->assetUrl('css/theme.css').'">';
+    
+      $markdownFixConfigured = boolval($this->getPreference('MARKDOWN_PRESERVE_CONT', '1'));
+      if ($markdownFixConfigured) {
+        //css fix as suggested here https://www.webtrees.net/index.php/en/forum/help-for-2-0/36162-v2-0-17-things-that-no-longer-work-after-update#88287
+        //has to be blocked because it leads to double line breaks
+        $html .= '<link rel="stylesheet" type="text/css" href="'.$this->assetUrl('css/blockMarkdownFix.css').'">';
+      }
+      
+      return $html;
   }
-  
+
   public function assetsViaViews(): array {
     return [
         'css/theme.css' => 'css/theme'];
