@@ -75,8 +75,7 @@ trait ClassicLAFModuleTrait {
             /* I18N: Module Configuration */I18N::translate('Image Thumbnails'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Crop Thumbnails'),
-                /* I18N: Module Configuration */I18N::translate('Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases.') . ' '.
-                /* I18N: Module Configuration */I18N::translate('When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s.', '\'data/media/thumbnail-cache\''),
+                /* I18N: Module Configuration */I18N::translate('Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases.'),
                 'CROP_THUMBNAILS',
                 '1')));
     

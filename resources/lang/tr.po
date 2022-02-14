@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-06 18:50+0100\n"
+"POT-Creation-Date: 2022-02-14 20:19+0100\n"
 "PO-Revision-Date: 2021-03-10 17:02+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Tüm temaları ve diğer özellikleri ayarlayan, webtrees 1.x sürümüne daha yakın bir görünüm ve his sağlayan bir modül."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:159
+#: ClassicLAFModuleTrait.php:150 ClassicLAFModuleTrait.php:158
 msgid "Append XREFs to names"
 msgstr "Adlara XREF'leri ekleyin"
 
@@ -45,12 +45,12 @@ msgid "Crop Thumbnails"
 msgstr "Küçük resimleri kırp"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:95
+#: ClassicLAFModuleTrait.php:94
 msgid "Custom prefixes"
 msgstr "Özel önekler"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:160
+#: ClassicLAFModuleTrait.php:159
 msgid "Display a family's XREF after the name."
 msgstr "Adından sonra bir ailenin XREF'ini görüntüleyin."
 
@@ -60,12 +60,12 @@ msgid "Display all edit dialogs using a more compact layout, which also omits th
 msgstr "Tüm düzenleme iletişim kutularını, standart üstbilgi ve altbilgiyi de çıkaran daha kompakt bir düzen kullanarak görüntüleyin."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:152
+#: ClassicLAFModuleTrait.php:151
 msgid "Display an individual's XREF after the name."
 msgstr "Adından sonra bir kişinin XREF'ini görüntüleyin."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:142
+#: ClassicLAFModuleTrait.php:141
 msgid "Display nicknames before surnames"
 msgstr "Soyadlarından önce takma adları göster"
 
@@ -80,7 +80,7 @@ msgid "Expand first sidebar"
 msgstr "İlk kenar çubuğunu genişlet"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:143
+#: ClassicLAFModuleTrait.php:142
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Takma adları webtrees 1.x'teki gibi kullanın, yani onları soyadından önce gösterin."
 
@@ -90,7 +90,7 @@ msgid "Image Thumbnails"
 msgstr "Küçük resim görüntüleri"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:137
+#: ClassicLAFModuleTrait.php:136
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "Soy ağacında, her kaydın \"F123\" veya \"R14\" gibi bir dahili referans numarası (\"XREF\" olarak adlandırılır) vardır. Yeni XREF'ler oluşturulduğunda kullanılacak öneki seçebilirsiniz."
 
@@ -100,17 +100,17 @@ msgid "Individual page"
 msgstr "Bireysel sayfa"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:166 ClassicLAFModuleTrait.php:175
+#: ClassicLAFModuleTrait.php:165 ClassicLAFModuleTrait.php:174
 msgid "Layout"
 msgstr "Yerleşim"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:140
+#: ClassicLAFModuleTrait.php:139
 msgid "Nicknames"
 msgstr "Takma adlar"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:144
+#: ClassicLAFModuleTrait.php:143
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Bunun, halihazırda bir takma ad içeren GEDCOM ad alanlarını etkilemediğini unutmayın; yani, belirli adlar için her zaman açık bir şekilde takma adı konumlandırabilirsiniz."
 
@@ -124,7 +124,7 @@ msgid "Play"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:86
+#: ClassicLAFModuleTrait.php:85
 msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgid "Stop"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:84
+#: ClassicLAFModuleTrait.php:83
 msgid "Text formatting"
 msgstr ""
 
@@ -169,12 +169,12 @@ msgid "Use compact layout"
 msgstr "Kompakt düzeni kullanın"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:96
+#: ClassicLAFModuleTrait.php:95
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Tüm XREF'lerin önüne 'X' koymak yerine, webtrees 1.x'teki gibi XREF'ler için özel önekler kullanın."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:88
+#: ClassicLAFModuleTrait.php:87
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 msgstr ""
 
@@ -192,23 +192,17 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees, tutarlı bir genişlik ve yüksekliğe sahip görüntüler üretmek için küçük resimleri kırpar. Bu, ilgili kişinin başının ortalanmadığı ve bu nedenle kesilebileceği standart olmayan bir en boy oranına sahip birey görüntüleriniz varsa sorunludur. Bu durumlarda işlemek için bu seçeneğin seçimini kaldırın."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:87
+#: ClassicLAFModuleTrait.php:86
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:79
-#, php-format
-msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
-msgstr "Bu seçeneği değiştirirken, %1$s klasörünü silerek küçük resim önbelleğinizi manuel olarak sıfırlamanız gerekir."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:93
+#: ClassicLAFModuleTrait.php:92
 msgid "XREF prefixes"
 msgstr "XREF önekleri"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:148 ClassicLAFModuleTrait.php:156
 msgid "XREFs"
 msgstr "XREF'ler"
 
@@ -224,3 +218,6 @@ msgstr ""
 #: resources/views/layouts/default.phtml:178
 msgid "previous"
 msgstr ""
+
+#~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
+#~ msgstr "Bu seçeneği değiştirirken, %1$s klasörünü silerek küçük resim önbelleğinizi manuel olarak sıfırlamanız gerekir."

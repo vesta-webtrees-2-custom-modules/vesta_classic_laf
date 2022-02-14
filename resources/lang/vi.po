@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-06 18:50+0100\n"
+"POT-Creation-Date: 2022-02-14 20:19+0100\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Một mô-đun điều chỉnh tất cả các chủ đề và các tính năng khác, cung cấp giao diện và cảm giác gần gũi hơn với phiên bản webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151 ClassicLAFModuleTrait.php:159
+#: ClassicLAFModuleTrait.php:150 ClassicLAFModuleTrait.php:158
 msgid "Append XREFs to names"
 msgstr "Nối XREF vào tên"
 
@@ -45,12 +45,12 @@ msgid "Crop Thumbnails"
 msgstr "Cắt hình thu nhỏ"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:95
+#: ClassicLAFModuleTrait.php:94
 msgid "Custom prefixes"
 msgstr "Tiền tố tùy chỉnh"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:160
+#: ClassicLAFModuleTrait.php:159
 msgid "Display a family's XREF after the name."
 msgstr "Hiển thị XREF của một gia đình sau tên."
 
@@ -60,12 +60,12 @@ msgid "Display all edit dialogs using a more compact layout, which also omits th
 msgstr "Hiển thị tất cả các hộp thoại chỉnh sửa bằng cách sử dụng bố cục nhỏ gọn hơn, cũng bỏ qua đầu trang và chân trang tiêu chuẩn."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:152
+#: ClassicLAFModuleTrait.php:151
 msgid "Display an individual's XREF after the name."
 msgstr "Hiển thị XREF của một cá nhân sau tên."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:142
+#: ClassicLAFModuleTrait.php:141
 msgid "Display nicknames before surnames"
 msgstr "Hiển thị biệt danh trước họ"
 
@@ -80,7 +80,7 @@ msgid "Expand first sidebar"
 msgstr "Mở rộng thanh bên đầu tiên"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:143
+#: ClassicLAFModuleTrait.php:142
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Xử lý biệt hiệu như trong webtrees 1.x, tức là hiển thị chúng trước họ."
 
@@ -90,7 +90,7 @@ msgid "Image Thumbnails"
 msgstr "Hình ảnh thu nhỏ"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:137
+#: ClassicLAFModuleTrait.php:136
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "Trong cây họ, mỗi bản ghi có một số tham chiếu nội bộ (được gọi là \"XREF\") chẳng hạn như \"F123\" hoặc \"R14\". Bạn có thể chọn tiền tố sẽ được sử dụng bất cứ khi nào các XREF mới được tạo."
 
@@ -100,17 +100,17 @@ msgid "Individual page"
 msgstr "Trang cá nhân"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:166 ClassicLAFModuleTrait.php:175
+#: ClassicLAFModuleTrait.php:165 ClassicLAFModuleTrait.php:174
 msgid "Layout"
 msgstr "Bố trí"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:140
+#: ClassicLAFModuleTrait.php:139
 msgid "Nicknames"
 msgstr "Biệt danh"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:144
+#: ClassicLAFModuleTrait.php:143
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Lưu ý rằng điều này không ảnh hưởng đến các trường tên GEDCOM đã bao gồm biệt hiệu, tức là bạn có thể luôn định vị biệt hiệu một cách rõ ràng cho các tên cụ thể."
 
@@ -124,7 +124,7 @@ msgid "Play"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:86
+#: ClassicLAFModuleTrait.php:85
 msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgid "Stop"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:84
+#: ClassicLAFModuleTrait.php:83
 msgid "Text formatting"
 msgstr ""
 
@@ -169,12 +169,12 @@ msgid "Use compact layout"
 msgstr "Sử dụng bố cục nhỏ gọn"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:96
+#: ClassicLAFModuleTrait.php:95
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Sử dụng tiền tố tùy chỉnh cho XREF như trong webtrees 1.x, thay vì đặt tiền tố tất cả XREF bằng 'X'."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:88
+#: ClassicLAFModuleTrait.php:87
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 msgstr ""
 
@@ -192,23 +192,17 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees cắt hình thu nhỏ để tạo ra hình ảnh có chiều rộng và chiều cao nhất quán. Đây là vấn đề nếu bạn có hình ảnh của các cá nhân với tỷ lệ khung hình không chuẩn, trong đó phần đầu của người tương ứng không được căn giữa và do đó có thể bị cắt đi. Bỏ chọn tùy chọn này để xử lý các trường hợp này."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:87
+#: ClassicLAFModuleTrait.php:86
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:79
-#, php-format
-msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
-msgstr "Khi chuyển đổi tùy chọn này, bạn sẽ phải đặt lại bộ nhớ cache hình thu nhỏ của mình theo cách thủ công bằng cách xóa thư mục %1$s."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:93
+#: ClassicLAFModuleTrait.php:92
 msgid "XREF prefixes"
 msgstr "Tiền tố XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:148 ClassicLAFModuleTrait.php:156
 msgid "XREFs"
 msgstr "XREFs"
 
@@ -224,3 +218,6 @@ msgstr ""
 #: resources/views/layouts/default.phtml:178
 msgid "previous"
 msgstr ""
+
+#~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
+#~ msgstr "Khi chuyển đổi tùy chọn này, bạn sẽ phải đặt lại bộ nhớ cache hình thu nhỏ của mình theo cách thủ công bằng cách xóa thư mục %1$s."
