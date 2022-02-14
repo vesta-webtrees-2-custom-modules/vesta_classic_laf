@@ -106,8 +106,7 @@ class ClassicLAFModule extends AbstractModule implements
       //we need a way to identify it regardless of its folder name;
       $theme = app(ModuleThemeInterface::class); 
       if ($theme instanceof ModuleCustomInterface) {
-        $justLightSupportUrl = 'https://github.com/justcarmen/webtrees-theme-justlight/issues';
-        if ($theme->customModuleSupportUrl() === $justLightSupportUrl) {
+        if ($theme->name() === '_jc-theme-justlight_') {
           $defaultLayout = '::layouts/defaultJustLight';
         }
       }  
