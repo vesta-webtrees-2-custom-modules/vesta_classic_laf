@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-02-14 20:19+0100\n"
-"PO-Revision-Date: 2021-03-10 17:02+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
+"PO-Revision-Date: 2022-03-12 16:59+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
@@ -33,6 +34,8 @@ msgstr "Adlara XREF'leri ekleyin"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Dikkat: Daha yeni bir libxml sürümü (en az %1$s) gerektirdiğinden, bu ayarın "
+"şu anda sisteminizde herhangi bir etkisi olmayacaktır."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
@@ -121,17 +124,17 @@ msgstr "Toplam genişlik"
 
 #: resources/views/layouts/default.phtml:180
 msgid "Play"
-msgstr ""
+msgstr "Oynat"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
 msgid "Preserve GEDCOM linebreaks in markdown formatted text"
-msgstr ""
+msgstr "Markdown biçimli metinde GEDCOM satır sonlarını koru"
 
 #: resources/views/layouts/default.phtml:99
 #: resources/views/layouts/default.phtml:101
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:51
@@ -142,16 +145,16 @@ msgstr "Çeşitli Ayarlamalar - Ayrıntılar için %1$s bölümüne bakın."
 #. I18N: Skip over the headers and menus, to the main content of the page
 #: resources/views/layouts/default.phtml:85
 msgid "Skip to content"
-msgstr ""
+msgstr "İçeriğe atla"
 
 #: resources/views/layouts/default.phtml:181
 msgid "Stop"
-msgstr ""
+msgstr "Durdur"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:83
 msgid "Text formatting"
-msgstr ""
+msgstr "Metin biçimlendirme"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -177,6 +180,8 @@ msgstr "Tüm XREF'lerin önüne 'X' koymak yerine, webtrees 1.x'teki gibi XREF'l
 #: ClassicLAFModuleTrait.php:87
 msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 msgstr ""
+"Daha önceki Webtrees sürümlerinde olduğu gibi, markdown biçimli metni "
+"görüntülemek için bu seçeneği kullanın."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -195,6 +200,8 @@ msgstr "Webtrees, tutarlı bir genişlik ve yüksekliğe sahip görüntüler ür
 #: ClassicLAFModuleTrait.php:86
 msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
 msgstr ""
+"Webtrees, metni markdown ile biçimlendirirken artık satır sonlarını (GEDCOM "
+"CONT etiketi) korumuyor."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
@@ -209,15 +216,15 @@ msgstr "XREF'ler"
 #: resources/views/layouts/default.phtml:144
 #: resources/views/layouts/default.phtml:182
 msgid "close"
-msgstr ""
+msgstr "kapat"
 
 #: resources/views/layouts/default.phtml:179
 msgid "next"
-msgstr ""
+msgstr "sonraki"
 
 #: resources/views/layouts/default.phtml:178
 msgid "previous"
-msgstr ""
+msgstr "önceki"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Bu seçeneği değiştirirken, %1$s klasörünü silerek küçük resim önbelleğinizi manuel olarak sıfırlamanız gerekir."
