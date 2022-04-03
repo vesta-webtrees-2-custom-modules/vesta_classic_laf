@@ -105,7 +105,7 @@ $id = Uuid::uuid4()->toString();
     <?php if ($individual->canShow()) : ?>
         <div class="wt-chart-box-extra d-print-none float-right ml-1">
             <div class="dropdown position-static wt-chart-box-zoom">
-                <a class="wt-chart-box-icon" href="#" role="button" id="chart-box-zoom-<?= $id ?>" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="wt-chart-box-icon" href="#" role="button" id="chart-box-zoom-<?= $id ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div ><?= view('icons/zoom-in') ?></div>
                     <div class="d-none"><?= view('icons/zoom-out') ?></div>
                     <span class="sr-only"><?= I18N::translate('Links') ?></span>
@@ -119,7 +119,7 @@ $id = Uuid::uuid4()->toString();
             </div>
 
             <div class="dropdown position-static wt-chart-box-links">
-                <a class="wt-chart-box-icon" href="#" role="button" id="chart-box-menu-<?= $id ?>" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="wt-chart-box-icon" href="#" role="button" id="chart-box-menu-<?= $id ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="icon-pedigree" title="<?= I18N::translate('Links') ?>"></i>
                     <span class="sr-only"><?= I18N::translate('Links') ?></span>
                 </a>

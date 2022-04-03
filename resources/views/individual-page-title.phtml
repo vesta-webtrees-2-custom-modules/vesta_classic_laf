@@ -1,0 +1,63 @@
+<?php
+
+use Cissee\WebtreesExt\IndividualExt;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\UserListPage;
+use Fisharebest\Webtrees\I18N;
+
+/**
+ * @var string           $age
+ * //[RC] adjusted
+ * @var IndividualExt    $record
+ * @var Collection<User> $users
+ */
+
+?>
+
+<?= $record->fullName() ?><?= ' ' ?>
+<?php
+//[RC] adjusted replaces $sex_records which are generated via IndividualPage.formatSexRecord
+foreach ($record->facts(['SEX']) as $n => $fact) {
+    $record = $fact->record();
+
+    switch ($fact->value()) {
+        case 'M':
+            $sex = I18N::translate('Male');
+            $container_class = 'male_gender';
+            $icon = view('icons/sex', ['sex' => 'M']);
+            break;
+        case 'F':
+            $sex = I18N::translate('Female');
+            $container_class = 'female_gender';
+            $icon = view('icons/sex', ['sex' => 'F']);
+            break;
+        default:
+            $sex = I18N::translateContext('unknown gender', 'Unknown');
+            $container_class = 'unknown_gender';
+            $icon = view('icons/sex', ['sex' => 'U']);
+            break;
+    }
+
+    //$container_class = 'card';
+    if ($fact->isPendingDeletion()) {
+        $container_class .= ' wt-old';
+    } elseif ($fact->isPendingAddition()) {
+        $container_class .= ' wt-new';
+    }
+
+    if ($record->canEdit()) {
+        $edit_links = '<a class="btn btn-link" href="' . e(route(EditFactPage::class, ['xref' => $record->xref(), 'fact_id' => $fact->id(), 'tree' => $record->tree()->name()])) . '" title="' . I18N::translate('Edit the gender') . '">' . view('icons/edit') . '<span class="sr-only">' . I18N::translate('Edit the gender') . '</span></a>';
+    } else {
+        $edit_links = '';
+    }
+
+    echo '<span class="vt_gender '.$container_class.'" title="'.$sex.'">'.$icon.$edit_links.'</span>, ';
+  }
+?>
+<?= $record->lifespan() ?> <?= $age ?>
+
+<?php foreach ($users as $user) : ?>
+    — <a href="<?= e(route(UserListPage::class, ['filter' => $user->email()])) ?>">
+        <?= e($user->userName()) ?>
+    </a>
+<?php endforeach ?>

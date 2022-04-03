@@ -1,0 +1,92 @@
+<?php
+
+use Cissee\WebtreesExt\IndividualExt;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Tree;
+
+/**
+ * @var string                             $age
+ * @var bool                               $can_upload_media
+ * @var Collection<Media>                  $individual_media
+ * @var Collection<Fact>                   $name_records
+ * //[RC] adjusted
+ * @var IndividualExt                      $record
+ * @var Collection<Fact>                   $sex_records
+ * @var Collection<string>                 $shares
+ * @var Collection<ModuleSidebarInterface> $sidebars
+ * @var Collection<ModuleTabInterface>     $tabs
+ * @var Tree                               $tree
+ * @var string                             $user_link
+ */
+
+  $compactIndividualPage = $record->settings()->compactIndividualPage();
+  $cropThumbnails = $record->settings()->cropThumbnails();
+?>
+
+<?php if ($individual_media->isNotEmpty() || $tree->getPreference('USE_SILHOUETTE') === '1') : ?>
+    <?php if ($compactIndividualPage) : ?>
+        <?php
+        //[RC] adjusted from
+        //<div class="col-sm-3">
+        ?>
+        <div class="col-sm-2">
+    <?php else : ?>
+        <div class="col-sm-3">
+    <?php endif ?>
+        <?php if ($individual_media->isEmpty()) : ?>
+            <div class="img-thumbnail">
+                <i class="wt-individual-silhouette wt-individual-silhouette-<?= strtolower($record->sex()) ?>"></i>
+            </div>
+        <?php elseif ($individual_media->count() === 1) : ?>
+            <?php if ($cropThumbnails) : ?>
+                <?= $individual_media->first()->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+            <?php else : ?>
+                <?php
+                //[RC] adjusted: do not 'crop'
+                ?>                
+                <?= $individual_media->first()->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+            <?php endif ?>            
+        <?php else : ?>
+            <div id="individual-images" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner">
+                    <?php foreach ($individual_media as $n => $media_file) : ?>
+                        <div class="carousel-item <?= $n === 0 ? 'active' : '' ?>">
+                            <?php if ($cropThumbnails) : ?>
+                                <?= $media_file->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                            <?php else : ?>
+                                <?php
+                                //[RC] adjusted: do not 'crop'
+                                ?>                
+                                <?= $media_file->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                            <?php endif ?>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <button type="button" class="carousel-control-prev" data-bs-target="#individual-images" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"><?= I18N::translate('previous') ?></span>
+                </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#individual-images" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"><?= I18N::translate('next') ?></span>
+                </button>
+            </div>
+        <?php endif ?>
+
+        <?php if ($compactIndividualPage) : ?>
+            <?php
+            //[RC] adjusted - why is these even here and not on the Media tab??
+            //for now moved, anyway also available in the edit menu
+            ?>
+        <?php else : ?>
+            <?php if ($can_upload_media) : ?>
+                <div class="text-center">
+                    <a href="<?= e(route(AddNewFact::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref(), 'fact' => 'OBJE'])) ?>">
+                        <?= I18N::translate('Add a media object') ?>
+                    </a>
+                </div>
+            <?php endif ?>
+        <?php endif ?>
+    </div>
+<?php endif ?>

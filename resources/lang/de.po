@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-02-14 20:19+0100\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: 2021-12-08 08:50+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
@@ -19,164 +19,149 @@ msgstr ""
 "X-Generator: Weblate 4.10-dev\n"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:27
+#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150 ClassicLAFModuleTrait.php:158
+#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
 msgid "Append XREFs to names"
 msgstr "Anfügen der XREFs zu Namen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:63
+#: ClassicLAFModuleTrait.php:61
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Achtung! Diese Einstellung wird in Ihrem System derzeit keine Wirkung haben, da sie eine neuere libxml-Version voraussetzt (mindestens %1$s)."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:56
+#: ClassicLAFModuleTrait.php:54
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Aktivieren Sie diese Option, um den ersten Seitenleistenpunkt außer den 'Familienlotsen' immer automatisch zu erweitern."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:77
+#: ClassicLAFModuleTrait.php:75
 msgid "Crop Thumbnails"
 msgstr "Vorschaubilder beschneiden"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:94
+#: ClassicLAFModuleTrait.php:95
 msgid "Custom prefixes"
 msgstr "Benutzerdefiniert"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:159
+#: ClassicLAFModuleTrait.php:158
 msgid "Display a family's XREF after the name."
 msgstr "Anzeigen des Familien-XREF nach dem Namen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:70
+#: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle Bearbeitungsdialoge in einem kompakteren Layout anzeigen, in dem u.a. die Seitenkopfzeile und -fußzeile entfällt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151
+#: ClassicLAFModuleTrait.php:150
 msgid "Display an individual's XREF after the name."
 msgstr "Anzeigen des persönlichen XREF nach dem Namen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:141
+#: ClassicLAFModuleTrait.php:140
 msgid "Display nicknames before surnames"
 msgstr "Spitznamen vor Nachnamen anzeigen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:65
 msgid "Edit dialogs"
 msgstr "Dialoge bearbeiten"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:53
 msgid "Expand first sidebar"
 msgstr "Ersten Seitenleistenpunkt erweitern"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:142
+#: ClassicLAFModuleTrait.php:141
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Spitznamen wie in Webtrees 1.x behandeln, also vor dem Nachnamen anzeigen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:75
+#: ClassicLAFModuleTrait.php:73
 msgid "Image Thumbnails"
 msgstr "Vorschaubilder"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:136
+#: ClassicLAFModuleTrait.php:135
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "In einem Stammbaum hat jeder Datensatz eine interne Referenznummer (als \"XREF\" bezeichnet) wie z.B. \"F123\" oder \"R14\". Sie können Präfixe definieren, welche dann bei der Erstellung neuer XREFs verwendet werden."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:47
+#: ClassicLAFModuleTrait.php:45
 msgid "Individual page"
 msgstr "Einzelne Seite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:165 ClassicLAFModuleTrait.php:174
+#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
 msgid "Layout"
 msgstr "Layout"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:139
+#: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
 msgstr "Spitznamen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:143
+#: ClassicLAFModuleTrait.php:142
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Beachten Sie, dass diese Einstellung keine Auswirkungen auf GEDCOM-Namensfelder hat, die bereits einen Spitznamen enthalten. Sie können den Spitznamen für einzelne Namen somit immer explizit positionieren."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:37
+#: ClassicLAFModuleTrait.php:35
 msgid "Overall width"
 msgstr "Gesamtbreite"
 
-#: resources/views/layouts/default.phtml:180
+#: resources/views/layouts/default.phtml:173
 msgid "Play"
 msgstr "Start"
 
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:85
-msgid "Preserve GEDCOM linebreaks in markdown formatted text"
-msgstr "GEDCOM-Zeilenumbrüche in mit Markdown formatiertem Text beibehalten"
-
-#: resources/views/layouts/default.phtml:99
-#: resources/views/layouts/default.phtml:101
+#: resources/views/layouts/default.phtml:94
+#: resources/views/layouts/default.phtml:96
 msgid "Search"
 msgstr "Suchen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:51
+#: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschiedene Anpassungen - Siehe %1$s für Details."
 
 #. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:85
+#: resources/views/layouts/default.phtml:80
 msgid "Skip to content"
 msgstr "Weiter zum Inhalt"
 
-#: resources/views/layouts/default.phtml:181
+#: resources/views/layouts/default.phtml:174
 msgid "Stop"
 msgstr "Stop"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:83
-msgid "Text formatting"
-msgstr "Textformatierung"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:40
+#: ClassicLAFModuleTrait.php:38
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr "Das Standardlayout zentriert die meisten Seiten und verschwendet viel Platz, besonders auf breiten Bildschirmen. Diese Option ermöglicht es, den größten Teil des verfügbaren Platzes zu nutzen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:39
+#: ClassicLAFModuleTrait.php:37
 msgid "Use available space"
 msgstr "Verfügbaren Platz nutzen"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:69
+#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:67
 msgid "Use compact layout"
 msgstr "Kompaktes Layout verwenden"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:95
+#: ClassicLAFModuleTrait.php:96
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Verwenden Sie benutzerdefinierte Präfixe für XREFs wie in Webtrees 1.x, anstatt allen XREFs das Präfix \"X\" voranzustellen."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:87
-msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
-msgstr "Verwenden Sie diese Option, um mit Markdown formatierten Text wie in früheren webtrees-Versionen anzuzeigen."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -187,37 +172,35 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Classic Look & Feel: Einstellung zur Verwendung von benutzerdefinieren Präfixen für XREFs, wie in Webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:78
+#: ClassicLAFModuleTrait.php:76
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees beschneidet Vorschaubilder, um Bilder mit einer einheitlichen Breite und Höhe zu erzeugen. Dies ist problematisch, wenn Sie Bilder von Personen mit einem nicht standardisierten Seitenverhältnis verwenden, bei denen der Kopf der jeweiligen Person nicht zentriert ist und daher möglicherweise abgeschnitten wird. Deaktivieren Sie diese Option, um solche Fälle besser zu behandeln."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:86
-msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
-msgstr "Webtrees behält die Zeilenumbrüche (GEDCOM CONT-Tag) nicht mehr bei, wenn der Text mit Markdown formatiert wird."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:92
+#: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "Präfix für XREFs"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:148 ClassicLAFModuleTrait.php:156
+#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
 msgid "XREFs"
 msgstr "XREFs"
 
-#: resources/views/layouts/default.phtml:144
-#: resources/views/layouts/default.phtml:182
+#: resources/views/layouts/default.phtml:138
+#: resources/views/layouts/default.phtml:175
 msgid "close"
 msgstr "Schließen"
 
-#: resources/views/layouts/default.phtml:179
+#: resources/views/layouts/default.phtml:172
 msgid "next"
 msgstr "Weiter"
 
-#: resources/views/layouts/default.phtml:178
+#: resources/views/layouts/default.phtml:171
 msgid "previous"
 msgstr "Zurück"
+
+#~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
+#~ msgstr "GEDCOM-Zeilenumbrüche in mit Markdown formatiertem Text beibehalten"
 
 #~ msgid "Readme"
 #~ msgstr "Readme"
@@ -225,8 +208,17 @@ msgstr "Zurück"
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Erfordert das Modul '%1$s Vesta Common'."
 
+#~ msgid "Text formatting"
+#~ msgstr "Textformatierung"
+
+#~ msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
+#~ msgstr "Verwenden Sie diese Option, um mit Markdown formatierten Text wie in früheren webtrees-Versionen anzuzeigen."
+
 #~ msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
 #~ msgstr "Webtrees behält Zeilenumbrüche nicht mehr bei (GEDCOM CONT-Tag), wenn Text über Markdown formatiert wird."
+
+#~ msgid "Webtrees no longer preserves linebreaks (GEDCOM CONT tag) when formatting text via markdown."
+#~ msgstr "Webtrees behält die Zeilenumbrüche (GEDCOM CONT-Tag) nicht mehr bei, wenn der Text mit Markdown formatiert wird."
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Wenn Sie diese Option umschalten, müssen Sie den Cache der Vorschaubilder manuell zurücksetzen, indem Sie den Ordner %1$s löschen."

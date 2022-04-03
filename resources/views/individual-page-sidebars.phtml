@@ -1,0 +1,46 @@
+<?php
+
+use Cissee\WebtreesExt\IndividualExt;
+
+/**
+ * //[RC] adjusted
+ * @var IndividualExt                      $record
+ * @var Collection<ModuleSidebarInterface> $sidebars
+ */
+
+  $compactIndividualPage = $record->settings()->compactIndividualPage();
+  $expandFirstSidebar = $record->settings()->expandFirstSidebar();
+?>
+<?php if ($compactIndividualPage) : ?>
+    <?php
+    //[RC] adjusted from
+    //<div class="col-sm-4"
+    ?>
+    <div class="col-sm-3 accordion" id="sidebar">
+<?php else : ?>
+    <div class="col-sm-4 accordion" id="sidebar">
+<?php endif ?>
+    <?php
+        //[RC] adjusted: ugly hard-coded reference to 'family_nav'
+        $first = true;
+    ?>
+    <?php foreach ($sidebars as $sidebar) : ?>
+        <div class="accordion-item">
+            <div class="accordion-header" id="sidebar-header-<?= $sidebar->name() ?>">
+                <button class="accordion-button gap-1<?= $sidebar->name() === 'family_nav' ? '' : ' collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-content-<?= $sidebar->name() ?>" aria-expanded="<?= $expandFirstSidebar ? ($first ? 'true' : 'false') : ($sidebar->name() === 'family_nav' ? 'true' : 'false') ?>" aria-controls="sidebar-content-<?= $sidebar->name() ?>">
+                    <?= view('icons/expand') ?>
+                    <?= view('icons/collapse') ?>
+                    <?= $sidebar->sidebarTitle($record) ?>
+                </button>
+            </div>
+            <div id="sidebar-content-<?= $sidebar->name() ?>" class="accordion-collapse collapse<?= $expandFirstSidebar ? ($first ? ' show' : '') : ($sidebar->name() === 'family_nav' ? ' show' : '') ?>" data-bs-parent="#sidebar" aria-labelledby="sidebar-header-<?= $sidebar->name() ?>">
+                <div class="accordion-body">
+                    <?= $sidebar->getSidebarContent($record) ?>
+                </div>
+            </div>
+        </div>
+        <?php
+            $first = false;
+        ?>
+    <?php endforeach ?>
+</div>

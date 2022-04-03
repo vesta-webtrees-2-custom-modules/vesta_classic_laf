@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Cissee\WebtreesExt;
 
 use Cissee\WebtreesExt\CommonMark\CustomCensusTableExtension;
-use Cissee\WebtreesExt\CommonMark\CustomCommonMarkConverter;
 use Fisharebest\Webtrees\CommonMark\ResponsiveTableExtension;
 use Fisharebest\Webtrees\CommonMark\XrefExtension;
 use Fisharebest\Webtrees\Contracts\MarkdownFactoryInterface;
@@ -38,7 +37,7 @@ class CustomMarkdownFactory implements MarkdownFactoryInterface
      *
      * @return CommonMarkConverter
      */
-    public function autolink(Tree $tree = null): CommonMarkConverter
+    public function autolink(string $markdown, Tree $tree = null): string
     {
         // Create a minimal commonmark processor - just add support for auto-links.
         $environment = new Environment();
@@ -53,7 +52,9 @@ class CustomMarkdownFactory implements MarkdownFactoryInterface
             $environment->addExtension(new XrefExtension($tree));
         }
 
-        return new CommonMarkConverter(static::CONFIG, $environment);
+        $converter = new MarkDownConverter($environment);
+
+        return $converter->convert($markdown)->getContent();
     }
 
     /**
@@ -61,7 +62,7 @@ class CustomMarkdownFactory implements MarkdownFactoryInterface
      *
      * @return CommonMarkConverter
      */
-    public function markdown(Tree $tree = null): CommonMarkConverter
+    public function markdown(string $markdown, Tree $tree = null): string
     {
         $environment = Environment::createCommonMarkEnvironment();
 
@@ -77,6 +78,8 @@ class CustomMarkdownFactory implements MarkdownFactoryInterface
             $environment->addExtension(new XrefExtension($tree));
         }
 
-        return new CustomCommonMarkConverter(static::CONFIG, $environment);
+        $converter = new MarkDownConverter($environment);
+
+        return $converter->convert($markdown)->getContent();
     }
 }

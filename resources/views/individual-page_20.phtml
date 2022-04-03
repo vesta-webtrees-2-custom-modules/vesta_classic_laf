@@ -1,0 +1,314 @@
+<?php
+
+use Cissee\WebtreesExt\IndividualExt;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\PendingChangesAcceptRecord;
+use Fisharebest\Webtrees\Http\RequestHandlers\PendingChangesRejectRecord;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\View;
+use Illuminate\Support\Collection;
+
+/**
+ * @var string     $age
+ * //[RC] adjusted
+ * @var IndividualExt $individual
+ * @var string     $user_link
+ * @var Collection $sidebars
+ * @var Collection $individual_media
+ * @var Collection $name_records
+ * @var Collection $sex_records
+ * @var Collection $tabs
+ * @var Tree       $tree
+ */
+
+  $compactIndividualPage = $individual->settings()->compactIndividualPage();
+  $cropThumbnails = $individual->settings()->cropThumbnails();
+  $expandFirstSidebar = $individual->settings()->expandFirstSidebar();
+
+?>
+
+<?php if ($individual->isPendingDeletion()) : ?>
+    <?php if (Auth::isModerator($individual->tree())) : ?>
+        <?= view('components/alert-warning-dismissible', [
+            'alert' => /* I18N: %1$s is “accept”, %2$s is “reject”. These are links. */
+                I18N::translate('This individual has been deleted. You should review the deletion and then %1$s or %2$s it.', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesAcceptRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'accept') . '</a>', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesRejectRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the deletion and then accept or reject it.', 'reject') . '</a>') . ' ' . view('help/link', ['topic' => 'pending_changes']),
+        ]) ?>
+    <?php elseif (Auth::isEditor($individual->tree())) : ?>
+        <?= view('components/alert-warning-dismissible', ['alert' => I18N::translate('This individual has been deleted. The deletion will need to be reviewed by a moderator.') . ' ' . view('help/link', ['topic' => 'pending_changes'])]) ?>
+    <?php endif ?>
+<?php elseif ($individual->isPendingAddition()) : ?>
+    <?php if (Auth::isModerator($individual->tree())) : ?>
+        <?= view('components/alert-warning-dismissible', [
+            'alert' => /* I18N: %1$s is “accept”, %2$s is “reject”. These are links. */
+                I18N::translate('This individual has been edited. You should review the changes and then %1$s or %2$s them.', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesAcceptRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'accept') . '</a>', '<a href="#" class="alert-link" data-post-url="' . e(route(PendingChangesRejectRecord::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) . '">' . I18N::translateContext('You should review the changes and then accept or reject them.', 'reject') . '</a>') . ' ' . view('help/link', ['topic' => 'pending_changes']),
+        ]) ?>
+    <?php elseif (Auth::isEditor($individual->tree())) : ?>
+        <?= view('components/alert-warning-dismissible', ['alert' => I18N::translate('This individual has been edited. The changes need to be reviewed by a moderator.') . ' ' . view('help/link', ['topic' => 'pending_changes'])]) ?>
+    <?php endif ?>
+<?php endif ?>
+
+<div class="d-flex mb-4">
+    <h2 class="wt-page-title mx-auto">
+        <?php if ($compactIndividualPage) : ?>
+          <?= $individual->fullName() ?><?= $user_link ?> 
+          <?php
+          //[RC] adjusted replaces $sex_records which are generated via IndividualPage.formatSexRecord
+          foreach ($individual->facts(['SEX']) as $n => $fact) {
+              $individual = $fact->record();
+
+              switch ($fact->value()) {
+                  case 'M':
+                      $sex = I18N::translate('Male');
+                      $container_class = 'male_gender';
+                      $icon = view('icons/sex', ['sex' => 'M']);
+                      break;
+                  case 'F':
+                      $sex = I18N::translate('Female');
+                      $container_class = 'female_gender';
+                      $icon = view('icons/sex', ['sex' => 'F']);
+                      break;
+                  default:
+                      $sex = I18N::translateContext('unknown gender', 'Unknown');
+                      $container_class = 'unknown_gender';
+                      $icon = view('icons/sex', ['sex' => 'U']);
+                      break;
+              }
+
+              //$container_class = 'card';
+              if ($fact->isPendingDeletion()) {
+                  $container_class .= ' wt-old';
+              } elseif ($fact->isPendingAddition()) {
+                  $container_class .= ' wt-new';
+              }
+
+              if ($individual->canEdit()) {
+                  $edit_links = '<a class="btn btn-link" href="' . e(route(EditFactPage::class, ['xref' => $individual->xref(), 'fact_id' => $fact->id(), 'tree' => $individual->tree()->name()])) . '" title="' . I18N::translate('Edit the gender') . '">' . view('icons/edit') . '<span class="sr-only">' . I18N::translate('Edit the gender') . '</span></a>';
+              } else {
+                  $edit_links = '';
+              }
+
+              echo '<span class="vt_gender '.$container_class.'" title="'.$sex.'">'.$icon.$edit_links.'</span>,';
+            }
+          ?>
+          <?= $individual->lifespan() ?> <?= $age ?>
+        <?php else : ?>
+          <?= $individual->fullName() ?><?= $user_link ?>, <?= $individual->lifespan() ?> <?= $age ?>
+        <?php endif ?>        
+    </h2>
+    <?php if ($individual->canEdit()) : ?>
+        <?= view('individual-page-menu', ['individual' => $individual, 'tree' => $tree]) ?>
+    <?php endif ?>
+</div>
+
+<div class="row">
+    <?php if ($compactIndividualPage) : ?>
+      <?php
+      //[RC] adjusted from
+      //'col-sm-12' : 'col-sm-8'
+      ?>
+      <div class="<?= $sidebars->isEmpty() ? 'col-sm-12' : 'col-sm-9' ?>">
+    <?php else : ?>
+      <div class="<?= $sidebars->isEmpty() ? 'col-sm-12' : 'col-sm-8' ?>">
+    <?php endif ?>    
+        <div class="row mb-4">
+            <!-- Individual images -->
+            <?php if ($individual_media->isNotEmpty() || $tree->getPreference('USE_SILHOUETTE') === '1') : ?>
+              <?php if ($compactIndividualPage) : ?>
+                <?php
+                //[RC] adjusted from
+                //<div class="col-sm-3">
+                ?>
+                <div class="col-sm-2">
+              <?php else : ?>
+                <div class="col-sm-3">
+              <?php endif ?>
+                    <?php if ($individual_media->isEmpty()) : ?>
+                        <div class="img-thumbnail">
+                            <i class="wt-individual-silhouette wt-individual-silhouette-<?= strtolower($individual->sex()) ?>"></i>
+                        </div>
+                    <?php elseif ($individual_media->count() === 1) : ?>
+                        <?php if ($cropThumbnails) : ?>
+                          <?= $individual_media->first()->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                        <?php else : ?>
+                          <?php
+                          //[RC] adjusted: do not 'crop'
+                          ?>                
+                          <?= $individual_media->first()->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                        <?php endif ?>
+                        
+                    <?php else : ?>
+                        <div id="individual-images" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner">
+                                <?php foreach ($individual_media as $n => $media_file) : ?>
+                                    <div class="carousel-item <?= $n === 0 ? 'active' : '' ?>">
+                                        <?php if ($cropThumbnails) : ?>
+                                          <?= $media_file->displayImage(200, 260, 'crop', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                                        <?php else : ?>
+                                          <?php
+                                          //[RC] adjusted: do not 'crop'
+                                          ?>                
+                                          <?= $media_file->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
+                                        <?php endif ?>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                            <a class="carousel-control-prev" href="#individual-images" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only"><?= I18N::translate('previous') ?></span>
+                            </a>
+                            <a class="carousel-control-next" href="#individual-images" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only"><?= I18N::translate('next') ?></span>
+                            </a>
+                        </div>
+                    <?php endif ?>
+                    
+                    <?php if ($compactIndividualPage) : ?>
+                      <?php
+                      //[RC] adjusted - why is these even here and not on the Media tab??
+                      //for now moved, anyway also available in the edit menu
+                      ?>
+                    <?php else : ?>
+                      <?php if (Auth::isEditor($individual->tree())) : ?>
+                          <div class="text-center">
+                              <a href="<?= e(route(AddNewFact::class, ['tree' => $individual->tree()->name(), 'xref' => $individual->xref(), 'fact' => 'OBJE'])) ?>">
+                                  <?= I18N::translate('Add a media object') ?>
+                              </a>
+                          </div>
+                      <?php endif ?>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
+
+            <!-- Name accordion -->
+            <div class="col-sm accordion" id="individual-names">
+                <?php if ($compactIndividualPage) : ?>
+                  <?php foreach ($name_records as $name_record) : ?>
+                      <?php
+                        //[RC] undo grid layout changes in main webtrees from 03.01.2020 (see IndividualPage.php)                    
+                        $name_record = str_replace("<dl class=\"row mb-0\">", "<dl>", $name_record);
+                        $name_record = str_replace("<dt class=\"col-md-4 col-lg-3\">", "<dt class=\"label\">", $name_record);
+                        $name_record = str_replace("<dd class=\"col-md-8 col-lg-9\">", "<dd class=\"field\">", $name_record);
+
+                        echo $name_record;
+                      ?>
+                  <?php endforeach ?>
+                  <?php
+                    //[RC] rest moved elsewhere
+                  ?>
+                <?php else : ?>
+                  <?php foreach ($name_records as $name_record) : ?>
+                      <?= $name_record ?>
+                  <?php endforeach ?>
+
+                  <?php foreach ($sex_records as $sex_record) : ?>
+                      <?= $sex_record ?>
+                  <?php endforeach ?>
+                <?php endif ?>
+            </div>
+        </div>
+
+        <div class="wt-tabs-individual" id="individual-tabs">
+            <ul class="nav nav-tabs flex-wrap" role="tablist">
+                <?php foreach ($tabs as $tab) : ?>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link<?= $tab->isGrayedOut($individual) ? ' text-muted' : '' ?>" data-toggle="tab" role="tab" data-href="<?= e(route('module', ['module' => $tab->name(), 'action' => 'Tab', 'tree' => $individual->tree()->name(), 'xref' => $individual->xref()])) ?>" href="#<?= $tab->name() ?>">
+                            <?= $tab->tabTitle() ?>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+
+            <div class="tab-content">
+                <?php foreach ($tabs as $tab) : ?>
+                    <div id="<?= $tab->name() ?>" class="tab-pane fade wt-ajax-load" role="tabpanel"><?php if (!$tab->canLoadAjax()) :
+                        ?><?= $tab->getTabContent($individual) ?><?php
+                             endif ?></div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+    <?php if ($sidebars->isNotEmpty()) : ?>
+      <?php if ($compactIndividualPage) : ?>
+        <?php
+        //[RC] adjusted from
+        //<div class="col-sm-4"
+        ?>
+        <div class="col-sm-3 accordion" id="sidebar">
+      <?php else : ?>
+        <div class="col-sm-4 accordion" id="sidebar">
+      <?php endif ?> 
+    
+      <?php
+        //[RC] adjusted: ugly hard-coded reference to 'family_nav'
+        $first = true;
+      ?>
+            
+      <?php foreach ($sidebars as $sidebar) : ?>
+          <div class="card">
+              <div class="card-header" role="tab" id="sidebar-header-<?= $sidebar->name() ?>">
+                  <div class="card-title mb-0">
+                      <a data-toggle="collapse" href="#sidebar-content-<?= $sidebar->name() ?>" aria-expanded="<?= $expandFirstSidebar ? ($first ? 'true' : 'false') : ($sidebar->name() === 'family_nav' ? 'true' : 'false') ?>" aria-controls="sidebar-content-<?= $sidebar->name() ?>">
+                          <!--
+                          <?= view('icons/expand') ?>
+                          <?= view('icons/collapse') ?>
+                          -->
+                          <?= $sidebar->sidebarTitle() ?>
+                      </a>
+                  </div>
+              </div>
+
+              <div id="sidebar-content-<?= $sidebar->name() ?>" class="collapse<?= $expandFirstSidebar ? ($first ? ' show' : '') : ($sidebar->name() === 'family_nav' ? ' show' : '') ?>" data-parent="#sidebar" aria-labelledby="sidebar-header-<?= $sidebar->name() ?>">
+                  <div class="card-body">
+                      <?= $sidebar->getSidebarContent($individual) ?></div>
+              </div>
+          </div>
+          <?php
+            $first = false;
+          ?>
+      <?php endforeach ?>
+    </div>
+    <?php endif ?>
+</div>
+
+<?php View::push('javascript') ?>
+<script>
+  "use strict";
+
+  // Bootstrap tabs - load content dynamically using AJAX
+  $('a[data-toggle="tab"][data-href]').on('show.bs.tab', function () {
+      let target = $(this.hash + ':empty');
+      if (target.length > 0) {
+          // Start the download immediately...
+          let download = fetch(this.dataset.href);
+
+          // ...but don't insert it until the tab is ready.
+          $(this).one('shown.bs.tab', () => {
+              download
+                  .then(data => data.text())
+                  .then(data => target.html(data));
+          });
+      }
+  });
+
+  // If the URL contains a fragment, then activate the corresponding tab.
+  // Use a prefix on the fragment, to prevent scrolling to the element.
+  let target = window.location.hash.replace("tab-", "");
+  let tab = $("#individual-tabs .nav-link[href='" + target + "']");
+  // If not, then activate the first tab.
+  if (tab.length === 0) {
+    tab = $("#individual-tabs .nav-link:first");
+  }
+  tab.tab("show");
+
+  // If the user selects a tab, update the URL to reflect this
+  $('#individual-tabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    window.location.hash = "tab-" + e.target.href.substring(e.target.href.indexOf('#') + 1);
+  });
+</script>
+<?php View::endpush() ?>
+
+<?= view('modals/ajax') ?>

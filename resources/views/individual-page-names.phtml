@@ -1,0 +1,19 @@
+<?php
+
+use Fisharebest\Webtrees\Individual;
+
+/**
+ * @var Individual $record
+ */
+?>
+
+<!-- Name accordion -->
+<div class="col-sm accordion" id="individual-names">
+    <?php foreach ($record->facts(['NAME']) as $fact) : ?>
+        <?= view('individual-name', ['fact' => $fact]) ?>
+    <?php endforeach ?>
+
+    <?php
+    //[RC] rest moved elsewhere
+    ?>
+</div>

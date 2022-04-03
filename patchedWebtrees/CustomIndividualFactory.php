@@ -5,7 +5,10 @@ namespace Cissee\WebtreesExt;
 use Fisharebest\Webtrees\Contracts\IndividualFactoryInterface;
 use Fisharebest\Webtrees\Factories\IndividualFactory;
 use Fisharebest\Webtrees\Individual;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Webtrees;
+use function str_starts_with;
 
 class CustomIndividualFactory extends IndividualFactory implements IndividualFactoryInterface {
     
@@ -17,13 +20,24 @@ class CustomIndividualFactory extends IndividualFactory implements IndividualFac
     public function __construct(
             IndividualExtSettings $settings)
     {
-        parent::__construct();
+        if (str_starts_with(Webtrees::VERSION, '2.1')) {
+            //no-op
+        } else {
+            parent::__construct();
+        }
+        
         $this->settings = $settings;
     }
     
     public function make(string $xref, Tree $tree, string $gedcom = null): ?Individual
     {
-        return $this->cache->remember(__CLASS__ . $xref . '@' . $tree->id(), function () use ($xref, $tree, $gedcom) {
+        if (str_starts_with(Webtrees::VERSION, '2.1')) {
+            $cache = Registry::cache()->array();
+        } else {
+            $cache = $this->cache;
+        }
+        
+        return $cache->remember(__CLASS__ . $xref . '@' . $tree->id(), function () use ($xref, $tree, $gedcom) {
             $gedcom  = $gedcom ?? $this->gedcom($xref, $tree);
             $pending = $this->pendingChanges($tree)->get($xref);
 
@@ -41,5 +55,3 @@ class CustomIndividualFactory extends IndividualFactory implements IndividualFac
         return new IndividualExt($xref, $gedcom, $pending, $tree, $this->settings);
     }
 }
-
-
