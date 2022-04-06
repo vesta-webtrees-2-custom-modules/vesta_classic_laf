@@ -1,6 +1,7 @@
 <?php
 
 use Cissee\Webtrees\Module\ClassicLAF\ClassicLAFModule;
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\Http\RequestHandlers\AppleTouchIconPng;
 use Fisharebest\Webtrees\Http\RequestHandlers\BrowserconfigXml;
@@ -77,7 +78,7 @@ use Psr\Http\Message\ServerRequestInterface;
                       <div class="wt-accessibility-links position-fixed">
                           <a class="sr-only sr-only-focusable btn btn-info btn-sm" href="#content">
                               <?= /* I18N: Skip over the headers and menus, to the main content of the page */
-                              I18N::translate('Skip to content') ?>
+                              MoreI18N::xlate('Skip to content') ?>
                           </a>
                       </div>
                       <div class="col wt-site-logo"></div>
@@ -91,9 +92,9 @@ use Psr\Http\Message\ServerRequestInterface;
                                     class="wt-header-search-form" role="search">
                                   <?= csrf_field() ?>
                                   <div class="input-group">
-                                      <label class="sr-only" for="quick-search"><?= I18N::translate('Search') ?></label>
+                                      <label class="sr-only" for="quick-search"><?= MoreI18N::xlate('Search') ?></label>
                                       <input type="search" class="form-control wt-header-search-field" id="quick-search"
-                                             name="query" size="15" placeholder="<?= I18N::translate('Search') ?>">
+                                             name="query" size="15" placeholder="<?= MoreI18N::xlate('Search') ?>">
                                       <div class="input-group-append">
                                           <button type="submit" class="btn btn-primary wt-header-search-button">
                                               <?= view('icons/search') ?>
@@ -135,7 +136,7 @@ use Psr\Http\Message\ServerRequestInterface;
                 <div class="flash-messages">
                     <?php foreach (FlashMessages::getMessages() as $message) : ?>
                         <div class="alert alert-<?= e($message->status) ?> alert-dismissible" role="alert">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="<?= I18N::translate('close') ?>">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="<?= MoreI18N::xlate('close') ?>">
                             </button>
                             <?= $message->text ?>
                         </div>
@@ -168,11 +169,11 @@ use Psr\Http\Message\ServerRequestInterface;
                     width: "85%",
                     height: "85%",
                     current: "",
-                    previous: '<i class="fas fa-arrow-left wt-icon-flip-rtl" title="<?= I18N::translate('previous') ?>"></i>',
-                    next: '<i class="fas fa-arrow-right wt-icon-flip-rtl" title="<?= I18N::translate('next') ?>"></i>',
-                    slideshowStart: '<i class="fas fa-play" title="<?= I18N::translate('Play') ?>"></i>',
-                    slideshowStop: '<i class="fas fa-stop" title="<?= I18N::translate('Stop') ?>"></i>',
-                    close: '<i class="fas fa-times" title="<?= I18N::translate('close') ?>"></i>',
+                    previous: '<i class="fas fa-arrow-left wt-icon-flip-rtl" title="<?= MoreI18N::xlate('previous') ?>"></i>',
+                    next: '<i class="fas fa-arrow-right wt-icon-flip-rtl" title="<?= MoreI18N::xlate('next') ?>"></i>',
+                    slideshowStart: '<i class="fas fa-play" title="<?= MoreI18N::xlate('Play') ?>"></i>',
+                    slideshowStop: '<i class="fas fa-stop" title="<?= MoreI18N::xlate('Stop') ?>"></i>',
+                    close: '<i class="fas fa-times" title="<?= MoreI18N::xlate('close') ?>"></i>',
                     title: function () {
                         return this.dataset.title;
                     },
