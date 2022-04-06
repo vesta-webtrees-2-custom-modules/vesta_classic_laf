@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Gedcom;
@@ -32,7 +33,7 @@ $menus = $module_service->findByComponent(ModuleChartInterface::class, $individu
 })->filter();
 
 foreach ($individual->spouseFamilies() as $family) {
-    $menus->push(new Menu('<strong>' . I18N::translate('Family with spouse') . '</strong>', $family->url()));
+    $menus->push(new Menu('<strong>' . MoreI18N::xlate('Family with spouse') . '</strong>', $family->url()));
     $spouse  = $family->spouse($individual);
     if ($spouse && $spouse->canShow()) {
         $menus->push(new Menu($spouse->fullName(), $spouse->url()));

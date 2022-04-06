@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -104,6 +104,12 @@ msgstr "Trang cá nhân"
 msgid "Layout"
 msgstr "Bố trí"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Lưu ý rằng điều này không ảnh hưởng đến các trường 
 msgid "Overall width"
 msgstr "Chiều rộng tổng thể"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr ""
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Một số điều chỉnh - Xem %1$s để biết chi tiết."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -185,19 +173,6 @@ msgstr "Tiền tố XREF"
 #: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
 msgid "XREFs"
 msgstr "XREFs"
-
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr ""
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Khi chuyển đổi tùy chọn này, bạn sẽ phải đặt lại bộ nhớ cache hình thu nhỏ của mình theo cách thủ công bằng cách xóa thư mục %1$s."

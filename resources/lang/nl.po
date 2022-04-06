@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-12-06 20:53+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
@@ -104,6 +104,12 @@ msgstr "Persoonspagina"
 msgid "Layout"
 msgstr "Indeling"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Merk op dat dit geen invloed heeft op GEDCOM-naamvelden die al een roepn
 msgid "Overall width"
 msgstr "Totale breedte"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Afspelen"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Zoeken"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschillende aanpassingen - Zie %1$s voor meer informatie."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "Spring naar inhoud"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Stop"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,21 +174,11 @@ msgstr "XREF-voorvoegsels"
 msgid "XREFs"
 msgstr "XREF's"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "sluiten"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "volgende"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "vorige"
-
 #~ msgid "..."
 #~ msgstr "..."
+
+#~ msgid "Play"
+#~ msgstr "Afspelen"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "Behoud GEDCOM-regeleindes in markdown geformatteerde tekst"
@@ -211,8 +189,17 @@ msgstr "vorige"
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Vereist de module '%1$s Vesta Algemeen'."
 
+#~ msgid "Search"
+#~ msgstr "Zoeken"
+
 #~ msgid "Several adjustments - See Readme for details."
 #~ msgstr "Verschillende aanpassingen - Zie Readme voor meer informatie."
+
+#~ msgid "Skip to content"
+#~ msgstr "Spring naar inhoud"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 #~ msgid "Text formatting"
 #~ msgstr "Tekstopmaak"
@@ -234,3 +221,12 @@ msgstr "vorige"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Wanneer u deze optie wijzigt, moet u uw miniatuurcache handmatig opnieuw instellen door de map %1$s te verwijderen."
+
+#~ msgid "close"
+#~ msgstr "sluiten"
+
+#~ msgid "next"
+#~ msgstr "volgende"
+
+#~ msgid "previous"
+#~ msgstr "vorige"

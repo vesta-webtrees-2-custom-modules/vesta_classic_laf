@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-12-28 12:27+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
@@ -104,6 +104,12 @@ msgstr "Индивидуальная страница"
 msgid "Layout"
 msgstr "Вкладки"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Обратите внимание, что это не влияет на 
 msgid "Overall width"
 msgstr "Общая ширина"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Играть в"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Поиск"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Несколько корректировок - подробности см. В %1$s."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "перейти к содержанию"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Останавливаться"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,21 +174,20 @@ msgstr "Префиксы XREF"
 msgid "XREFs"
 msgstr "Внешние ссылки"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "Закрыть"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "следующий"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "предыдущий"
+#~ msgid "Play"
+#~ msgstr "Играть в"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "Сохранять разрывы строк в тексте, отформатированном с помощью markdown"
+
+#~ msgid "Search"
+#~ msgstr "Поиск"
+
+#~ msgid "Skip to content"
+#~ msgstr "перейти к содержанию"
+
+#~ msgid "Stop"
+#~ msgstr "Останавливаться"
 
 #~ msgid "Text formatting"
 #~ msgstr "Форматирование текста"
@@ -213,3 +200,12 @@ msgstr "предыдущий"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "При переключении этой опции вам придется вручную сбросить кэш миниатюр, удалив папку %1$s."
+
+#~ msgid "close"
+#~ msgstr "Закрыть"
+
+#~ msgid "next"
+#~ msgstr "следующий"
+
+#~ msgid "previous"
+#~ msgstr "предыдущий"

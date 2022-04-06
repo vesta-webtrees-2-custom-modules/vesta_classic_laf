@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2022-03-12 16:59+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
@@ -104,6 +104,12 @@ msgstr "Bireysel sayfa"
 msgid "Layout"
 msgstr "Yerleşim"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Bunun, halihazırda bir takma ad içeren GEDCOM ad alanlarını etkileme
 msgid "Overall width"
 msgstr "Toplam genişlik"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Oynat"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Ara"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Çeşitli Ayarlamalar - Ayrıntılar için %1$s bölümüne bakın."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "İçeriğe atla"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Durdur"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,21 +174,20 @@ msgstr "XREF önekleri"
 msgid "XREFs"
 msgstr "XREF'ler"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "kapat"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "sonraki"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "önceki"
+#~ msgid "Play"
+#~ msgstr "Oynat"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "Markdown biçimli metinde GEDCOM satır sonlarını koru"
+
+#~ msgid "Search"
+#~ msgstr "Ara"
+
+#~ msgid "Skip to content"
+#~ msgstr "İçeriğe atla"
+
+#~ msgid "Stop"
+#~ msgstr "Durdur"
 
 #~ msgid "Text formatting"
 #~ msgstr "Metin biçimlendirme"
@@ -213,3 +200,12 @@ msgstr "önceki"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Bu seçeneği değiştirirken, %1$s klasörünü silerek küçük resim önbelleğinizi manuel olarak sıfırlamanız gerekir."
+
+#~ msgid "close"
+#~ msgstr "kapat"
+
+#~ msgid "next"
+#~ msgstr "sonraki"
+
+#~ msgid "previous"
+#~ msgstr "önceki"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-12-08 08:50+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
@@ -104,6 +104,12 @@ msgstr "Einzelne Seite"
 msgid "Layout"
 msgstr "Layout"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Beachten Sie, dass diese Einstellung keine Auswirkungen auf GEDCOM-Namen
 msgid "Overall width"
 msgstr "Gesamtbreite"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Start"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Suchen"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschiedene Anpassungen - Siehe %1$s für Details."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "Weiter zum Inhalt"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Stop"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,18 +174,8 @@ msgstr "Präfix für XREFs"
 msgid "XREFs"
 msgstr "XREFs"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "Schließen"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "Weiter"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "Zurück"
+#~ msgid "Play"
+#~ msgstr "Start"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "GEDCOM-Zeilenumbrüche in mit Markdown formatiertem Text beibehalten"
@@ -207,6 +185,15 @@ msgstr "Zurück"
 
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Erfordert das Modul '%1$s Vesta Common'."
+
+#~ msgid "Search"
+#~ msgstr "Suchen"
+
+#~ msgid "Skip to content"
+#~ msgstr "Weiter zum Inhalt"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 #~ msgid "Text formatting"
 #~ msgstr "Textformatierung"
@@ -222,3 +209,12 @@ msgstr "Zurück"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Wenn Sie diese Option umschalten, müssen Sie den Cache der Vorschaubilder manuell zurücksetzen, indem Sie den Ordner %1$s löschen."
+
+#~ msgid "close"
+#~ msgstr "Schließen"
+
+#~ msgid "next"
+#~ msgstr "Weiter"
+
+#~ msgid "previous"
+#~ msgstr "Zurück"

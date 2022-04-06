@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-06-08 21:33+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
@@ -104,6 +104,12 @@ msgstr "Stránka jednotlivce"
 msgid "Layout"
 msgstr "Rozvržení"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Toto se netýká těch polí jmen v GEDCOM, která už obsahují přezd�
 msgid "Overall width"
 msgstr "Celá šířka"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr ""
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Několik úprav - podrobnosti viz %1$s."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -185,19 +173,6 @@ msgstr "Předpony XREF"
 #: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
 msgid "XREFs"
 msgstr "XREF"
-
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr ""
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr ""
 
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Vyžaduje modul '%1$s Vesta Common'."

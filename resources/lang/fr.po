@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2022-03-24 09:59+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
@@ -104,6 +104,12 @@ msgstr "Page individuelle"
 msgid "Layout"
 msgstr "Disposition"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "Notez que cela n'affecte pas les champs de nom GEDCOM qui incluent déj�
 msgid "Overall width"
 msgstr "Largeur globale"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Jouer"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Rechercher"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Plusieurs ajustements - Voir %1$s pour plus de détails."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "Aller au contenu"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Arrêter"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,21 +174,20 @@ msgstr "préfixes XREF"
 msgid "XREFs"
 msgstr "XREFs"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "Fermer"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "suivant"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "précédent"
+#~ msgid "Play"
+#~ msgstr "Jouer"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "Conserver les sauts de ligne GEDCOM dans le texte au format Markdown"
+
+#~ msgid "Search"
+#~ msgstr "Rechercher"
+
+#~ msgid "Skip to content"
+#~ msgstr "Aller au contenu"
+
+#~ msgid "Stop"
+#~ msgstr "Arrêter"
 
 #~ msgid "Text formatting"
 #~ msgstr "Formatage du texte"
@@ -213,3 +200,12 @@ msgstr "précédent"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Lorsque vous basculez cette option, vous devrez réinitialiser votre cache de vignettes manuellement en supprimant le dossier %1$s ."
+
+#~ msgid "close"
+#~ msgstr "Fermer"
+
+#~ msgid "next"
+#~ msgstr "suivant"
+
+#~ msgid "previous"
+#~ msgstr "précédent"

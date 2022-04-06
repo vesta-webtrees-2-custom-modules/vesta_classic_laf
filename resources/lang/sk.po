@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 21:37+0200\n"
 "PO-Revision-Date: 2021-12-09 15:53+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
@@ -104,6 +104,12 @@ msgstr "Stránka osoby"
 msgid "Layout"
 msgstr "Rozvrhnutie"
 
+#: resources/views/chart-box_20.phtml:112
+#: resources/views/chart-box_20.phtml:124
+#: resources/views/chart-box_20.phtml:125
+msgid "Links"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
 msgid "Nicknames"
@@ -119,29 +125,11 @@ msgstr "V prípade ak pole meno v GEDCOMe už obsahuje prezývku, tak nedôjde k
 msgid "Overall width"
 msgstr "Celková šírka"
 
-#: resources/views/layouts/default.phtml:173
-msgid "Play"
-msgstr "Prehrať"
-
-#: resources/views/layouts/default.phtml:94
-#: resources/views/layouts/default.phtml:96
-msgid "Search"
-msgstr "Hľadať"
-
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:49
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Rôzne úpravy - pozri %1$s pre viac detailov."
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/default.phtml:80
-msgid "Skip to content"
-msgstr "Preskočiť k obsahu"
-
-#: resources/views/layouts/default.phtml:174
-msgid "Stop"
-msgstr "Stop"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -186,21 +174,20 @@ msgstr "XREF prefixy"
 msgid "XREFs"
 msgstr "XREF"
 
-#: resources/views/layouts/default.phtml:138
-#: resources/views/layouts/default.phtml:175
-msgid "close"
-msgstr "zavrieť"
-
-#: resources/views/layouts/default.phtml:172
-msgid "next"
-msgstr "ďalej"
-
-#: resources/views/layouts/default.phtml:171
-msgid "previous"
-msgstr "späť"
+#~ msgid "Play"
+#~ msgstr "Prehrať"
 
 #~ msgid "Preserve GEDCOM linebreaks in markdown formatted text"
 #~ msgstr "Zachovať zalomenie riadkov v GEDCOM-e v texte s formátovaním markdown"
+
+#~ msgid "Search"
+#~ msgstr "Hľadať"
+
+#~ msgid "Skip to content"
+#~ msgstr "Preskočiť k obsahu"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 #~ msgid "Text formatting"
 #~ msgstr "Formátovanie textu"
@@ -216,3 +203,12 @@ msgstr "späť"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Keď zmeníte toto nastavenie, musíte vymazať cache náhľadov manuálnym vymazaním priečinka %1$s."
+
+#~ msgid "close"
+#~ msgstr "zavrieť"
+
+#~ msgid "next"
+#~ msgstr "ďalej"
+
+#~ msgid "previous"
+#~ msgstr "späť"
