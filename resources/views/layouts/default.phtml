@@ -76,7 +76,7 @@ use Psr\Http\Message\ServerRequestInterface;
               <div class="container-lg wt-header-container">
                   <div class="row wt-header-content">
                       <div class="wt-accessibility-links position-fixed">
-                          <a class="sr-only sr-only-focusable btn btn-info btn-sm" href="#content">
+                          <a class="visually-hidden visually-hidden-focusable btn btn-info btn-sm" href="#content">
                               <?= /* I18N: Skip over the headers and menus, to the main content of the page */
                               MoreI18N::xlate('Skip to content') ?>
                           </a>
@@ -92,7 +92,7 @@ use Psr\Http\Message\ServerRequestInterface;
                                     class="wt-header-search-form" role="search">
                                   <?= csrf_field() ?>
                                   <div class="input-group">
-                                      <label class="sr-only" for="quick-search"><?= MoreI18N::xlate('Search') ?></label>
+                                      <label class="visually-hidden" for="quick-search"><?= MoreI18N::xlate('Search') ?></label>
                                       <input type="search" class="form-control wt-header-search-field" id="quick-search"
                                              name="query" size="15" placeholder="<?= MoreI18N::xlate('Search') ?>">
                                       <div class="input-group-append">
