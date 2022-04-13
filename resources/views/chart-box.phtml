@@ -47,33 +47,38 @@ foreach ($individual->spouseFamilies() as $family) {
 
 // Do not show these facts in the expanded chart boxes.
 $exclude = [
-    'ADDR',
-    'ALIA',
-    'ASSO',
-    'CHAN',
-    'CHIL',
-    'EMAIL',
-    'FAMC',
-    'FAMS',
-    'HUSB',
-    'NAME',
-    'NOTE',
-    'OBJE',
-    'PHON',
-    'RESI',
-    'RESN',
-    'SEX',
-    'SOUR',
-    'SSN',
-    'SUBM',
-    'TITL',
-    'URL',
-    'WIFE',
-    'WWW',
-    '_EMAIL',
-    '_TODO',
-    '_UID',
-    '_WT_OBJE_SORT',
+    'FAM:CHAN',
+    'FAM:CHIL',
+    'FAM:HUSB',
+    'FAM:NOTE',
+    'FAM:OBJE',
+    'FAM:RESN',
+    'FAM:SOUR',
+    'FAM:WIFE',
+    'INDI:ADDR',
+    'INDI:ALIA',
+    'INDI:ASSO',
+    'INDI:CHAN',
+    'INDI:EMAIL',
+    'INDI:FAMC',
+    'INDI:FAMS',
+    'INDI:NAME',
+    'INDI:NOTE',
+    'INDI:OBJE',
+    'INDI:PHON',
+    'INDI:RESI',
+    'INDI:RESN',
+    'INDI:SEX',
+    'INDI:SOUR',
+    'INDI:SSN',
+    'INDI:SUBM',
+    'INDI:TITL',
+    'INDI:URL',
+    'INDI:WWW',
+    'INDI:_EMAIL',
+    'INDI:_TODO',
+    'INDI:_UID',
+    'INDI:_WT_OBJE_SORT'
 ];
 
 /** @var Collection|Fact[] $all_facts */
@@ -93,9 +98,9 @@ $all_facts = Fact::sortFacts($all_facts);
 $id = Uuid::uuid4()->toString();
 ?>
 
-<div class="wt-chart-box wt-chart-box-<?= strtolower($individual->sex()) ?> <?= $individual->isPendingAddition() ? 'wt-new' : '' ?> <?= $individual->isPendingDeletion() ? 'wt-old' : '' ?> overflow-hidden" data-xref="<?= e($individual->xref()) ?>" data-tree="<?= e($individual->tree()->name()) ?>">
+<div class="wt-chart-box wt-chart-box-<?= strtolower($individual->sex()) ?> <?= $individual->isPendingAddition() ? 'wt-new' : '' ?> <?= $individual->isPendingDeletion() ? 'wt-old' : '' ?> overflow-hidden" data-wt-chart-xref="<?= e($individual->xref()) ?>" data-tree="<?= e($individual->tree()->name()) ?>">
     <?php if ($individual->canShow() && $individual->tree()->getPreference('SHOW_HIGHLIGHT_IMAGES')) : ?>
-        <div class="wt-chart-box-thumbnail float-left mr-1">
+        <div class="wt-chart-box-thumbnail float-start me-1">
             <?php
             //[RC] adjusted: do not 'crop'
             ?> 
@@ -104,7 +109,7 @@ $id = Uuid::uuid4()->toString();
     <?php endif ?>
 
     <?php if ($individual->canShow()) : ?>
-        <div class="wt-chart-box-extra d-print-none float-right ml-1">
+        <div class="wt-chart-box-extra d-print-none float-end ms-1">
             <div class="dropdown position-static wt-chart-box-zoom">
                 <a class="wt-chart-box-icon" href="#" role="button" id="chart-box-zoom-<?= $id ?>" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div ><?= view('icons/zoom-in') ?></div>
@@ -112,7 +117,7 @@ $id = Uuid::uuid4()->toString();
                     <span class="visually-hidden"><?= I18N::translate('Links') ?></span>
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-right wt-chart-box-dropdown wt-chart-box-zoom-dropdown" style="position: inherit" aria-labelledby="#chart-box-zoom-<?= $id ?>">
+                <div class="dropdown-menu dropdown-menu-end wt-chart-box-dropdown wt-chart-box-zoom-dropdown" style="position: inherit" aria-labelledby="#chart-box-zoom-<?= $id ?>">
                     <?php foreach ($all_facts as $fact) : ?>
                         <?= $fact->summary() ?>
                     <?php endforeach ?>
@@ -125,7 +130,7 @@ $id = Uuid::uuid4()->toString();
                     <span class="visually-hidden"><?= I18N::translate('Links') ?></span>
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-right wt-chart-box-dropdown wt-chart-box-links-dropdown" style="position: inherit" aria-labelledby="#chart-box-menu-<?= $id ?>">
+                <div class="dropdown-menu dropdown-menu-end wt-chart-box-dropdown wt-chart-box-links-dropdown" style="position: inherit" aria-labelledby="#chart-box-menu-<?= $id ?>">
                     <?php foreach ($menus as $menu) : ?>
                         <a class="dropdown-item p-1 <?= e($menu->getClass()) ?>" href="<?= e($menu->getLink()) ?>">
                             <?= $menu->getLabel() ?>
@@ -136,15 +141,15 @@ $id = Uuid::uuid4()->toString();
         </div>
     <?php endif ?>
 
-    <div class="wt-chart-box-name font-weight-bold">
+    <div class="wt-chart-box-name">
         <?php if ($individual->canShow()) : ?>
-            <a href="<?= e($individual->url()) ?>" class="wt-chart-box-name"><?= $individual->fullName() ?></a>
+            <a href="<?= e($individual->url()) ?>"><?= $individual->fullName() ?></a>
         <?php else : ?>
-            <span class="wt-chart-box-name"><?= $individual->fullName() ?></span>
+            <?= $individual->fullName() ?>
         <?php endif ?>
     </div>
 
-    <div class="wt-chart-box-name font-weight-bold">
+    <div class="wt-chart-box-name wt-chart-box-name-alt">
         <?= $individual->alternateName() ?>
     </div>
 
