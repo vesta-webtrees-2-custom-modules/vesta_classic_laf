@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-06 21:37+0200\n"
-"PO-Revision-Date: 2021-12-08 08:50+0000\n"
-"Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"PO-Revision-Date: 2022-04-12 23:05+0000\n"
+"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -97,7 +98,7 @@ msgstr "In einem Stammbaum hat jeder Datensatz eine interne Referenznummer (als 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:45
 msgid "Individual page"
-msgstr "Einzelne Seite"
+msgstr "Personenseite"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
@@ -108,7 +109,7 @@ msgstr "Layout"
 #: resources/views/chart-box_20.phtml:124
 #: resources/views/chart-box_20.phtml:125
 msgid "Links"
-msgstr ""
+msgstr "Verknüpfungen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
