@@ -178,10 +178,15 @@ class IndividualExt extends Individual {
         }, $full);
 
         // A suffix of “*” indicates a preferred name
-        //[RC] adjusted, rationale: '-' is a breaking-space character, therefore break preferred name as well (this is to handle names with hyphens where only the last part is the preferred name)
+        //[RC] this was originally adjusted, rationale: '-' is a breaking-space character, therefore break preferred name as well (this is to handle names with hyphens where only the last part is the preferred name)
         //(although note that 'official' german rufname must always be full hyphenated name)
         //explicitly use unicode 2011 'Non-Breaking Hyphen' if intended otherwise
-        $full = preg_replace('/([^ ->]*)\*/', '<span class="starredname">\\1</span>', $full);
+        //
+        //note: webtrees has different solution for this since fix for https://github.com/fisharebest/webtrees/issues/1010
+        //Issue #76: we'll just align with that, everything else gets too complicated
+        //(we would have to add config option whether to break on breaking-space characters)
+        //anyway the more common case seems to be the one where you want all parts as preferred name
+        $full = preg_replace('/([^ >\x{200C}]*)\*/u', '<span class="starredname">\\1</span>', $full);
         
         // Remove prefered-name indicater - they don’t go in the database
         $GIVN   = str_replace('*', '', $GIVN);
