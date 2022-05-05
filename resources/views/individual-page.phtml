@@ -1,0 +1,68 @@
+<?php
+
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Individual;
+use Fisharebest\Webtrees\Tree;
+
+/**
+ * @var string                                 $age
+ * @var bool                                   $can_upload_media
+ * @var Collection<int,Fact>                   $clipboard_facts
+ * @var Collection<int,Media>                  $individual_media
+ * @var Individual                             $record
+ * @var Collection<int,string>                 $shares
+ * @var Collection<int,ModuleSidebarInterface> $sidebars
+ * @var Collection<int,ModuleTabInterface>     $tabs
+ * @var Tree                                   $tree
+ * @var Collection<int,User>                   $users
+ */
+?>
+
+<?= view('individual-page-pending', ['record' => $record]) ?>
+
+<div class="d-flex mb-4">
+    <h2 class="wt-page-title mx-auto">
+        <?= view('individual-page-title', ['age' => $age, 'record' => $record, 'users' => $users]) ?>
+    </h2>
+
+    <?php if ($record->canEdit()) : ?>
+        <?= view('individual-page-menu', ['can_upload_media' => $can_upload_media, 'clipboard_facts' => $clipboard_facts, 'record' => $record, 'shares' => $shares]) ?>
+    <?php endif ?>
+</div>
+
+<?php if ($sidebars->isEmpty()) : ?>
+    <div class="row mb-4">
+        <?= view('individual-page-images', ['can_upload_media' => $can_upload_media, 'individual_media' => $individual_media, 'record' => $record, 'tree' => $tree]) ?>
+
+        <?= view('individual-page-names', ['record' => $record]) ?>
+    </div>
+
+    <?= view('individual-page-tabs', ['record' => $record, 'tabs' => $tabs]) ?>
+<?php else : ?>
+    <div class="row">
+        <?php
+        //[RC] adjusted from
+        //col-sm-8
+        ?>
+        <div class="col-sm-9">
+            <div class="row mb-4">
+                <?= view('individual-page-images', ['can_upload_media' => $can_upload_media, 'individual_media' => $individual_media, 'record' => $record, 'tree' => $tree]) ?>
+
+                <?= view('individual-page-names', ['record' => $record]) ?>
+            </div>
+
+            <?= view('individual-page-tabs', ['record' => $record, 'tabs' => $tabs]) ?>
+        </div>
+
+        <?php
+        //[RC] adjusted from
+        //col-sm-4
+        ?>
+        <div class="col-sm-3">
+            <?= view('individual-page-sidebars', ['record' => $record, 'sidebars' => $sidebars]) ?>
+        </div>
+    </div>
+<?php endif ?>
+
+<?= view('modals/ajax') ?>
+<?= view('modals/shares', ['shares' => $shares, 'title' => I18N::translate('Share') . ' — ' . $record->fullName()]) ?>

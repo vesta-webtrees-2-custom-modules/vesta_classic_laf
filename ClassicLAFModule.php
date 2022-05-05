@@ -87,8 +87,9 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         if ($compactIndividualPage || !$cropThumbnails) {
             // Replace an existing view with our own version.
             if (str_starts_with(Webtrees::VERSION, '2.1')) {
-                //replace sub-views, individual-page itself is ok
+                //replace sub-views, individual-page itself is no longer ok (starting webtrees 2.1.2)
                 if ($compactIndividualPage) {
+                    View::registerCustomView('::individual-page', $this->name() . '::individual-page');
                     View::registerCustomView('::individual-page-title', $this->name() . '::individual-page-title');
                 }
                 View::registerCustomView('::individual-page-images', $this->name() . '::individual-page-images');
