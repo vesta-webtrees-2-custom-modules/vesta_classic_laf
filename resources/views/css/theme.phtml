@@ -9,9 +9,12 @@ https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-su
 
 <?php if (boolval($module->getPreference('FULL_WIDTH', '1'))) : ?>
 
-@media (min-width:576px){.container-lg{max-width:540px}}
-@media (min-width:768px){.container-lg{max-width:720px}}
+@media (min-width:576px){.container-lg{max-width:540px}} /* bootstrap: col-sm */
+@media (min-width:768px){.container-lg{max-width:720px}} /* bootstrap: col-md */
+@media (min-width:900px){.container-lg{max-width:860px}} /* extra step added */
+@media (min-width:992px){.container-lg{max-width:960px}} /* extra step added, bootstrap: col-lg */
 @media (min-width:1024px){.container-lg{max-width:974px}}
+@media (min-width:1200px){.container-lg{max-width:1140px}} /* extra step added, bootstrap: col-xl */
 @media (min-width:1280px){.container-lg{max-width:1220px}}
 @media (min-width:1400px){.container-lg{max-width:1340px}}
 @media (min-width:1600px){.container-lg{max-width:1540px}}
@@ -202,6 +205,15 @@ make long names, small display sizes etc behave better - all this should probabl
 [dir] .wt-family-navigator-family th {
   /* effectively affects the first column. Can we set a more flexible width? apparently not with table layout 'fixed' */
   width: 30%;
+  overflow: hidden;
+}
+
+[dir] .wt-family-navigator-name {
+  overflow: hidden;
+}
+
+[dir] .wt-family-navigator-child > td {
+  overflow: hidden;
 }
 
 [dir] .wt-family-navigator-family .dropdown-toggle {

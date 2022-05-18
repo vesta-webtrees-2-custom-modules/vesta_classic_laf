@@ -7,6 +7,7 @@ use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
+use Cissee\WebtreesExt\GedcomRecordPageTempReplacement;
 use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
@@ -14,6 +15,7 @@ use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
+use Fisharebest\Webtrees\Http\RequestHandlers\GedcomRecordPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\SearchReplacePage;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
@@ -177,6 +179,28 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         Registry::individualFactory(new CustomIndividualFactory(
                 new IndividualExtSettings($compactIndividualPage, $cropThumbnails, $expandFirstSidebar)));
 
+        //temp workaround for #79 start
+        
+        /*
+        $router_container = app(RouterContainer::class);
+        assert($router_container instanceof RouterContainer);
+        $router = $router_container->getMap();
+        */
+        
+        $router = Registry::routeFactory()->routeMap();
+      
+        //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
+        $existingRoutes = $router->getRoutes();
+        if (array_key_exists(GedcomRecordPage::class, $existingRoutes)) {
+            unset($existingRoutes[GedcomRecordPage::class]);        
+        }
+        
+        $router->setRoutes($existingRoutes);
+        
+        $router->get(GedcomRecordPage::class, '/tree/{tree}/record/{xref}{/slug}', GedcomRecordPageTempReplacement::class);    
+
+        //temp workaround for #79 end        
+        
         Registry::familyFactory(new CustomFamilyFactory());
 
         $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
