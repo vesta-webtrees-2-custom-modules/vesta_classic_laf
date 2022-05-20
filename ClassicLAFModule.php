@@ -3,6 +3,7 @@
 namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Aura\Router\Route;
+use Aura\Router\RouterContainer;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
