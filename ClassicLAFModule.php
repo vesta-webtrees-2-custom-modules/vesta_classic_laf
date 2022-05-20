@@ -181,13 +181,13 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
 
         //temp workaround for #79 start
         
-        /*
-        $router_container = app(RouterContainer::class);
-        assert($router_container instanceof RouterContainer);
-        $router = $router_container->getMap();
-        */
-        
-        $router = Registry::routeFactory()->routeMap();
+        if (str_starts_with(Webtrees::VERSION, '2.1')) {
+            $router = Registry::routeFactory()->routeMap();
+        } else {
+            $router_container = app(RouterContainer::class);
+            assert($router_container instanceof RouterContainer);
+            $router = $router_container->getMap();            
+        }
       
         //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
         $existingRoutes = $router->getRoutes();
