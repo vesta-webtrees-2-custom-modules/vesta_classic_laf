@@ -90,7 +90,6 @@ use Psr\Http\Message\ServerRequestInterface;
                               <form method="post"
                                     action="<?= e(route(SearchQuickAction::class, ['tree' => $tree->name()])) ?>"
                                     class="wt-header-search-form" role="search">
-                                  <?= csrf_field() ?>
                                   <div class="input-group">
                                       <label class="visually-hidden" for="quick-search"><?= MoreI18N::xlate('Search') ?></label>
                                       <input type="search" class="form-control wt-header-search-field" id="quick-search"
@@ -101,6 +100,7 @@ use Psr\Http\Message\ServerRequestInterface;
                                           </button>
                                       </div>
                                   </div>
+                                  <?= csrf_field() ?>
                               </form>
                           </div>
                       <?php endif ?>

@@ -3,7 +3,6 @@
 namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Aura\Router\Route;
-use Aura\Router\RouterContainer;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
@@ -28,7 +27,6 @@ use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
 use Fisharebest\Webtrees\Module\ModuleThemeInterface;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
-use Fisharebest\Webtrees\Webtrees;
 use IvoPetkov\HTML5DOMDocument;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -37,7 +35,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaModuleTrait;
 use function app;
 use function route;
-use function str_starts_with;
 
 class ClassicLAFModule extends AbstractModule implements
 ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalInterface/* ,
@@ -89,36 +86,24 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
 
         if ($compactIndividualPage || !$cropThumbnails) {
             // Replace an existing view with our own version.
-            if (str_starts_with(Webtrees::VERSION, '2.1')) {
-                //replace sub-views, individual-page itself is no longer ok (starting webtrees 2.1.2)
-                if ($compactIndividualPage) {
-                    View::registerCustomView('::individual-page', $this->name() . '::individual-page');
-                    View::registerCustomView('::individual-page-title', $this->name() . '::individual-page-title');
-                }
-                View::registerCustomView('::individual-page-images', $this->name() . '::individual-page-images');
-                if ($compactIndividualPage) {
-                    View::registerCustomView('::individual-page-names', $this->name() . '::individual-page-names');
-                }
-                View::registerCustomView('::individual-page-sidebars', $this->name() . '::individual-page-sidebars');
-            } else {
-                View::registerCustomView('::individual-page', $this->name() . '::individual-page_20');
+            //replace sub-views, individual-page itself is no longer ok (starting webtrees 2.1.2)
+            if ($compactIndividualPage) {
+                View::registerCustomView('::individual-page', $this->name() . '::individual-page');
+                View::registerCustomView('::individual-page-title', $this->name() . '::individual-page-title');
             }
+            View::registerCustomView('::individual-page-images', $this->name() . '::individual-page-images');
+            if ($compactIndividualPage) {
+                View::registerCustomView('::individual-page-names', $this->name() . '::individual-page-names');
+            }
+            View::registerCustomView('::individual-page-sidebars', $this->name() . '::individual-page-sidebars');
         }
 
         if ($compactIndividualPage) {
-            if (str_starts_with(Webtrees::VERSION, '2.1')) {
-                View::registerCustomView('::individual-name', $this->name() . '::individual-name');
-            } else {
-                View::registerCustomView('::individual-name', $this->name() . '::individual-name_20');
-            }
+            View::registerCustomView('::individual-name', $this->name() . '::individual-name');
         }
 
         if (!$cropThumbnails) {
-            if (str_starts_with(Webtrees::VERSION, '2.1')) {
-                View::registerCustomView('::chart-box', $this->name() . '::chart-box');
-            } else {
-                View::registerCustomView('::chart-box', $this->name() . '::chart-box_20');
-            }
+            View::registerCustomView('::chart-box', $this->name() . '::chart-box');
 
             View::registerCustomView('::selects/individual', $this->name() . '::selects/individual');
             View::registerCustomView('::selects/media', $this->name() . '::selects/media');
@@ -129,11 +114,7 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             //other custom modules also replace this view
             //namely the justLight theme      
 
-            if (str_starts_with(Webtrees::VERSION, '2.1')) {
-                $defaultLayout = '::layouts/default';
-            } else {
-                $defaultLayout = '::layouts/default_20';
-            }
+            $defaultLayout = '::layouts/default';
 
             //we need a way to identify it regardless of its folder name;
             $theme = app(ModuleThemeInterface::class);
@@ -181,14 +162,8 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
                 new IndividualExtSettings($compactIndividualPage, $cropThumbnails, $expandFirstSidebar)));
 
         //temp workaround for #79 start
-        
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $router = Registry::routeFactory()->routeMap();
-        } else {
-            $router_container = app(RouterContainer::class);
-            assert($router_container instanceof RouterContainer);
-            $router = $router_container->getMap();            
-        }
+        //keep until https://github.com/fisharebest/webtrees/issues/4383 is resolved
+        $router = Registry::routeFactory()->routeMap();
       
         //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
         $existingRoutes = $router->getRoutes();

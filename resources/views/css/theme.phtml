@@ -35,6 +35,17 @@ https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-su
 @media (min-width:1920px){.edit-container{max-width:720px}}
 @media (min-width:2560px){.edit-container{max-width:720px}}
 
+/* align with edit-container */
+@media (min-width:576px){.container.card.wt-osk{max-width:540px}}
+@media (min-width:768px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1024px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1280px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1400px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1600px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1680px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:1920px){.container.card.wt-osk{max-width:720px}}
+@media (min-width:2560px){.container.card.wt-osk{max-width:720px}}
+
 /* also do not center them?
 [dir="ltr"] .edit-container, 
 [dir="rtl"] .edit-container {
@@ -351,13 +362,11 @@ padding-left: 2px;
   It seems that a cleaner solution would be to put them into a single hierarchy)
 */
 
-header {
-    z-index: 1010;
-}
-
-/*
-  We have to handle this specifically now
-*/  
-.wt-osk {
-    z-index: 9999;
-}
+//[2022/05] apparently no longer required in webtrees 2.1
+//header {
+//    z-index: 1010;
+//}
+//
+//.wt-osk {
+//    z-index: 9999;
+//}

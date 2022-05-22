@@ -7,8 +7,6 @@ use Fisharebest\Webtrees\Factories\IndividualFactory;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Tree;
-use Fisharebest\Webtrees\Webtrees;
-use function str_starts_with;
 
 class CustomIndividualFactory extends IndividualFactory implements IndividualFactoryInterface {
     
@@ -20,22 +18,12 @@ class CustomIndividualFactory extends IndividualFactory implements IndividualFac
     public function __construct(
             IndividualExtSettings $settings)
     {
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //no-op
-        } else {
-            parent::__construct();
-        }
-        
         $this->settings = $settings;
     }
     
     public function make(string $xref, Tree $tree, string $gedcom = null): ?Individual
     {
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $cache = Registry::cache()->array();
-        } else {
-            $cache = $this->cache;
-        }
+        $cache = Registry::cache()->array();
         
         return $cache->remember(__CLASS__ . $xref . '@' . $tree->id(), function () use ($xref, $tree, $gedcom) {
             $gedcom  = $gedcom ?? $this->gedcom($xref, $tree);
