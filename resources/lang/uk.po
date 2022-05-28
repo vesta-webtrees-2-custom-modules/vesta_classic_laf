@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-06 21:37+0200\n"
-"PO-Revision-Date: 2021-06-10 13:31+0000\n"
-"Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
+"PO-Revision-Date: 2022-05-28 12:18+0000\n"
+"Last-Translator: Artem <artem@molotov.work>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -33,6 +35,8 @@ msgstr "Додавати зовнішні посилання до імен"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Увага: цей параметр наразі не матиме жодного ефекту у вашій системі, "
+"оскільки для нього потрібна новіша версія libxml (принаймні %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -108,7 +112,7 @@ msgstr "Вкладки"
 #: resources/views/chart-box_20.phtml:124
 #: resources/views/chart-box_20.phtml:125
 msgid "Links"
-msgstr ""
+msgstr "Посилання"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
