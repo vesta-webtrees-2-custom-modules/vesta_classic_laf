@@ -212,5 +212,11 @@
 		"version": "2.1.4.1.0",
 		"from": "2.1.4",
 		"to": "2.1.5"
+	},
+	{
+		"version": "2.1.5.0.0",
+		"from": "2.1.4",
+		"to": "2.1.6",
+		"changelog": ["Bugfix for JustLight theme integration."]
 	}
 ]
