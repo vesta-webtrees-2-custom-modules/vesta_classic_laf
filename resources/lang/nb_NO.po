@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: 2021-03-21 16:28+0000\n"
 "Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "En modul som justerer alle temaer og andre funksjoner, og gir en utseende og opplevelse nærmere webtrees 1.x-versjonen."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Tilføy XREF-er i navn"
 
@@ -32,6 +32,11 @@ msgstr "Tilføy XREF-er i navn"
 #: ClassicLAFModuleTrait.php:61
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -50,17 +55,12 @@ msgid "Custom prefixes"
 msgstr "Egendefinerte prefikser"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr "Vis en families XREF etter navnet."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Vis alle redigeringsdialoger ved hjelp av et mer kompakt oppsett, som også utelater standard topptekst og bunntekst."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr "Vis en persons XREF etter navnet."
 
@@ -100,14 +100,13 @@ msgid "Individual page"
 msgstr "Personside"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr "Utseende"
 
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -130,6 +129,11 @@ msgstr "Total bredde"
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Flere justeringer - Se %1$s for detaljer."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -165,14 +169,22 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees beskjærer miniatyrbilder for å produsere bilder med en konsekvent bredde og høyde. Dette er problematisk hvis du har bilder av individals med et ikke-standard sideforhold, hvor hodet til den respektive personen ikke er sentrert og derfor kan kuttes av. Fjern merket for dette alternativet for å håndtere disse tilfellene."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "XREF prefikser"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREF-er"
+
+#~ msgid "Display a family's XREF after the name."
+#~ msgstr "Vis en families XREF etter navnet."
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Når du bytter til dette alternativet, må du tilbakestille miniatyrbufferen manuelt ved å slette mappen %1$s."

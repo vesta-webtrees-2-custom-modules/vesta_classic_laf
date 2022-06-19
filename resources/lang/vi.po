@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Một mô-đun điều chỉnh tất cả các chủ đề và các tính năng khác, cung cấp giao diện và cảm giác gần gũi hơn với phiên bản webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Nối XREF vào tên"
 
@@ -32,6 +32,11 @@ msgstr "Nối XREF vào tên"
 #: ClassicLAFModuleTrait.php:61
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -50,17 +55,12 @@ msgid "Custom prefixes"
 msgstr "Tiền tố tùy chỉnh"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr "Hiển thị XREF của một gia đình sau tên."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Hiển thị tất cả các hộp thoại chỉnh sửa bằng cách sử dụng bố cục nhỏ gọn hơn, cũng bỏ qua đầu trang và chân trang tiêu chuẩn."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr "Hiển thị XREF của một cá nhân sau tên."
 
@@ -100,14 +100,13 @@ msgid "Individual page"
 msgstr "Trang cá nhân"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr "Bố trí"
 
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -130,6 +129,11 @@ msgstr "Chiều rộng tổng thể"
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Một số điều chỉnh - Xem %1$s để biết chi tiết."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -165,14 +169,22 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees cắt hình thu nhỏ để tạo ra hình ảnh có chiều rộng và chiều cao nhất quán. Đây là vấn đề nếu bạn có hình ảnh của các cá nhân với tỷ lệ khung hình không chuẩn, trong đó phần đầu của người tương ứng không được căn giữa và do đó có thể bị cắt đi. Bỏ chọn tùy chọn này để xử lý các trường hợp này."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "Tiền tố XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREFs"
+
+#~ msgid "Display a family's XREF after the name."
+#~ msgstr "Hiển thị XREF của một gia đình sau tên."
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Khi chuyển đổi tùy chọn này, bạn sẽ phải đặt lại bộ nhớ cache hình thu nhỏ của mình theo cách thủ công bằng cách xóa thư mục %1$s."

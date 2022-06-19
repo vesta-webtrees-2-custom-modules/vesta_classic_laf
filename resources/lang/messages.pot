@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,27 +135,42 @@ msgid "Note that this doesn't affect GEDCOM name fields that already include a n
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
-msgid "XREFs"
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
-msgid "Append XREFs to names"
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
 msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
+msgid "XREFs"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
+msgid "Append XREFs to names"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr ""
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr ""
 
@@ -165,10 +180,4 @@ msgstr ""
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
-msgstr ""
-
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
 msgstr ""

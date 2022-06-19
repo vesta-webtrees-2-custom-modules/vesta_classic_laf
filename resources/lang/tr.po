@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: 2022-03-12 16:59+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Tüm temaları ve diğer özellikleri ayarlayan, webtrees 1.x sürümüne daha yakın bir görünüm ve his sağlayan bir modül."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Adlara XREF'leri ekleyin"
 
@@ -33,6 +33,11 @@ msgstr "Adlara XREF'leri ekleyin"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Dikkat: Daha yeni bir libxml sürümü (en az %1$s) gerektirdiğinden, bu ayarın şu anda sisteminizde herhangi bir etkisi olmayacaktır."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -50,17 +55,12 @@ msgid "Custom prefixes"
 msgstr "Özel önekler"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr "Adından sonra bir ailenin XREF'ini görüntüleyin."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Tüm düzenleme iletişim kutularını, standart üstbilgi ve altbilgiyi de çıkaran daha kompakt bir düzen kullanarak görüntüleyin."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr "Adından sonra bir kişinin XREF'ini görüntüleyin."
 
@@ -100,14 +100,13 @@ msgid "Individual page"
 msgstr "Bireysel sayfa"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr "Yerleşim"
 
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -130,6 +129,11 @@ msgstr "Toplam genişlik"
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Çeşitli Ayarlamalar - Ayrıntılar için %1$s bölümüne bakın."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -165,14 +169,22 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees, tutarlı bir genişlik ve yüksekliğe sahip görüntüler üretmek için küçük resimleri kırpar. Bu, ilgili kişinin başının ortalanmadığı ve bu nedenle kesilebileceği standart olmayan bir en boy oranına sahip birey görüntüleriniz varsa sorunludur. Bu durumlarda işlemek için bu seçeneğin seçimini kaldırın."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "XREF önekleri"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREF'ler"
+
+#~ msgid "Display a family's XREF after the name."
+#~ msgstr "Adından sonra bir ailenin XREF'ini görüntüleyin."
 
 #~ msgid "Play"
 #~ msgstr "Oynat"

@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: 2022-04-12 23:05+0000\n"
 "Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & Feel bietet, das dem der Webtrees 1.x-Version näherkommt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Anfügen der XREFs zu Namen"
 
@@ -34,6 +33,11 @@ msgstr "Anfügen der XREFs zu Namen"
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Achtung! Diese Einstellung wird in Ihrem System derzeit keine Wirkung haben, da sie eine neuere libxml-Version voraussetzt (mindestens %1$s)."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -51,17 +55,12 @@ msgid "Custom prefixes"
 msgstr "Benutzerdefiniert"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr "Anzeigen des Familien-XREF nach dem Namen."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Alle Bearbeitungsdialoge in einem kompakteren Layout anzeigen, in dem u.a. die Seitenkopfzeile und -fußzeile entfällt."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr "Anzeigen des persönlichen XREF nach dem Namen."
 
@@ -101,15 +100,14 @@ msgid "Individual page"
 msgstr "Personenseite"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr "Layout"
 
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
-msgstr "Verknüpfungen"
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
@@ -131,6 +129,11 @@ msgstr "Gesamtbreite"
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Verschiedene Anpassungen - Siehe %1$s für Details."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -166,14 +169,25 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees beschneidet Vorschaubilder, um Bilder mit einer einheitlichen Breite und Höhe zu erzeugen. Dies ist problematisch, wenn Sie Bilder von Personen mit einem nicht standardisierten Seitenverhältnis verwenden, bei denen der Kopf der jeweiligen Person nicht zentriert ist und daher möglicherweise abgeschnitten wird. Deaktivieren Sie diese Option, um solche Fälle besser zu behandeln."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "Präfix für XREFs"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREFs"
+
+#~ msgid "Display a family's XREF after the name."
+#~ msgstr "Anzeigen des Familien-XREF nach dem Namen."
+
+#~ msgid "Links"
+#~ msgstr "Verknüpfungen"
 
 #~ msgid "Play"
 #~ msgstr "Start"

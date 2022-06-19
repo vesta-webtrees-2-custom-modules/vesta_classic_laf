@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:37+0200\n"
+"POT-Creation-Date: 2022-06-19 17:05+0200\n"
 "PO-Revision-Date: 2021-06-08 21:33+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
@@ -24,7 +24,7 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Modul upravující všechny motivy a další funkce tak, aby se jejich vzhled podobal webtrees verse 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149 ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Připojit XREF ke jménům"
 
@@ -32,6 +32,11 @@ msgstr "Připojit XREF ke jménům"
 #: ClassicLAFModuleTrait.php:61
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -50,17 +55,12 @@ msgid "Custom prefixes"
 msgstr "Vlastní předpony"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158
-msgid "Display a family's XREF after the name."
-msgstr "Zobrazit XREF rodiny za jménem."
-
-#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Zobrazit všechny dialogy úprav v kompaktním rozvržení, které také vynechá standardní záhlaví a zápatí."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
 msgid "Display an individual's XREF after the name."
 msgstr "Zobrazit XREF osoby za jménem."
 
@@ -100,14 +100,13 @@ msgid "Individual page"
 msgstr "Stránka jednotlivce"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164 ClassicLAFModuleTrait.php:173
+#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
 msgid "Layout"
 msgstr "Rozvržení"
 
-#: resources/views/chart-box_20.phtml:112
-#: resources/views/chart-box_20.phtml:124
-#: resources/views/chart-box_20.phtml:125
-msgid "Links"
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -130,6 +129,11 @@ msgstr "Celá šířka"
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Několik úprav - podrobnosti viz %1$s."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Skip name type preset for single names"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -165,14 +169,22 @@ msgid "Webtrees crops thumbnails in order to produce images with a consistent wi
 msgstr "Webtrees ořezává náhledové obrázky s cílem vytvořit obrázky se stálým poměrem šířky a výšky. U portrétů osob s nestandardním poměrem stran může nastat problém, když hlava osoby není uprostřed, takže se částečně odřeže. Tomu zamezíte zrušením této volby."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:150
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
 msgid "XREF prefixes"
 msgstr "Předpony XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147 ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREF"
+
+#~ msgid "Display a family's XREF after the name."
+#~ msgstr "Zobrazit XREF rodiny za jménem."
 
 #~ msgid "Requires the '%1$s Vesta Common' module."
 #~ msgstr "Vyžaduje modul '%1$s Vesta Common'."

@@ -144,6 +144,23 @@ trait ClassicLAFModuleTrait {
                 '1')));
 
         $individuals[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Name type presets'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Skip name type preset for single names'),
+                /* I18N: Module Configuration */ I18N::translate('When adding new parents, spouses or children, webtrees presets the name type to \'birth name\'.') . ' ' .
+                /* I18N: Module Configuration */ I18N::translate('Check this option if you prefer not to use a name type in case the respective individual has a single name.'),
+                'SKIP_NAME_TYPE',
+                '0')));
+
+        $individuals[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('XREFs'),
+            array(new ControlPanelCheckbox(
+                /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
+                /* I18N: Module Configuration */ I18N::translate('Display an individual\'s XREF after the name.'),
+                'APPEND_XREF',
+                '0')));
+                
+        $families[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('XREFs'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
@@ -151,13 +168,6 @@ trait ClassicLAFModuleTrait {
                 'APPEND_XREF',
                 '0')));
 
-        $families[] = new ControlPanelSubsection(
-            /* I18N: Module Configuration */I18N::translate('XREFs'),
-            array(new ControlPanelCheckbox(
-                /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
-                /* I18N: Module Configuration */ I18N::translate('Display a family\'s XREF after the name.'),
-                'APPEND_XREF_FAM',
-                '0')));
 
         //for now not configurable
         new ControlPanelSubsection(

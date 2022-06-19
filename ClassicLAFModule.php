@@ -4,6 +4,7 @@ namespace Cissee\Webtrees\Module\ClassicLAF;
 
 use Aura\Router\Route;
 use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
+use Cissee\Webtrees\Module\ClassicLAF\SurnameTradition\SurnameTraditionWrapper;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
@@ -26,6 +27,15 @@ use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Module\ModuleGlobalTrait;
 use Fisharebest\Webtrees\Module\ModuleThemeInterface;
 use Fisharebest\Webtrees\Registry;
+use Fisharebest\Webtrees\SurnameTradition\DefaultSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\IcelandicSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\LithuanianSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\MatrilinealSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\PaternalSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\PatrilinealSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\PolishSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\PortugueseSurnameTradition;
+use Fisharebest\Webtrees\SurnameTradition\SpanishSurnameTradition;
 use Fisharebest\Webtrees\View;
 use IvoPetkov\HTML5DOMDocument;
 use Psr\Http\Message\ResponseInterface;
@@ -184,6 +194,20 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             Registry::xrefFactory(new CustomXrefFactory($this));
         }
 
+        $skipNameType = boolval($this->getPreference('SKIP_NAME_TYPE', '0'));
+        if ($skipNameType) {
+            $stf = Registry::surnameTraditionFactory();
+            $stf->register($stf::PATERNAL, new SurnameTraditionWrapper(new PaternalSurnameTradition()));
+            $stf->register($stf::PATRILINEAL, new SurnameTraditionWrapper(new PatrilinealSurnameTradition()));
+            $stf->register($stf::MATRILINEAL, new SurnameTraditionWrapper(new MatrilinealSurnameTradition()));
+            $stf->register($stf::PORTUGUESE, new SurnameTraditionWrapper(new PortugueseSurnameTradition()));
+            $stf->register($stf::SPANISH, new SurnameTraditionWrapper(new SpanishSurnameTradition()));
+            $stf->register($stf::POLISH, new SurnameTraditionWrapper(new PolishSurnameTradition()));
+            $stf->register($stf::LITHUANIAN, new SurnameTraditionWrapper(new LithuanianSurnameTradition()));
+            $stf->register($stf::ICELANDIC, new SurnameTraditionWrapper(new IcelandicSurnameTradition()));
+            $stf->register($stf::DEFAULT, new SurnameTraditionWrapper(new DefaultSurnameTradition()));
+        }
+        
         $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 4);
     }
 
