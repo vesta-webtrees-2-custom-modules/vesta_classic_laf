@@ -218,5 +218,11 @@
 		"from": "2.1.4",
 		"to": "2.1.6",
 		"changelog": ["Bugfix for JustLight theme integration."]
+	},
+	{
+		"version": "2.1.6.0.0",
+		"from": "2.1.4",
+		"to": "2.1.7",
+		"changelog": ["New config option for name types when adding new individuals."]
 	}
 ]
