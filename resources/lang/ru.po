@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-06-19 17:05+0200\n"
-"PO-Revision-Date: 2022-04-11 05:47+0000\n"
+"PO-Revision-Date: 2022-06-21 07:14+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -38,6 +40,8 @@ msgstr "Внимание: этот параметр в настоящее вре
 #: ClassicLAFModuleTrait.php:151
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Установите этот флажок, если вы предпочитаете не использовать тип имени в "
+"случае, если у соответствующего лица одно имя."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -107,7 +111,7 @@ msgstr "Вкладки"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:147
 msgid "Name type presets"
-msgstr ""
+msgstr "Предустановки типа имени"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
@@ -133,7 +137,7 @@ msgstr "Несколько корректировок - подробности �
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:149
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Пропустить предустановку типа имени для одиночных имен"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -172,6 +176,8 @@ msgstr "Webtrees обрезает эскизы, чтобы создавать и
 #: ClassicLAFModuleTrait.php:150
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"При добавлении новых родителей, супругов или детей webtrees предварительно "
+"устанавливает тип имени на «имя при рождении»."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
