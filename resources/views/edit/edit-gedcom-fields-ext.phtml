@@ -1,0 +1,109 @@
+<?php
+
+use Fisharebest\Webtrees\Elements\EmptyElement;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Registry;
+use Fisharebest\Webtrees\Tree;
+
+/**
+ * @var string        $gedcom
+ * @var array<string> $hierarchy
+ * @var string        $prefix
+ * @var Tree          $tree
+ */
+
+preg_match_all('/^(\d+) (\w+) ?(.*)/m', $gedcom, $matches);
+[, $levels, $tags, $values] = $matches;
+$levels   = array_map(static fn (string $x): int => (int) $x, $levels);
+$keys     = array_keys($levels);
+$elements = [];
+$ids      = [];
+$indent   = [];
+$collapse = [];
+
+$full_tags = [];
+
+foreach ($keys as $num => $key) {
+    $hierarchy[$levels[$key]] = $tags[$key];
+    $full_tag                 = implode(':', array_slice($hierarchy, 0, 1 + $levels[$key]));
+    
+    $full_tags[$key] = $full_tag;
+        
+    $elements[$key]           = Registry::elementFactory()->make($full_tag);
+    $ids[$key]                = Registry::idFactory()->id() . '-' . $full_tag;
+
+    // Does this element have any children?
+    $has_subtags = ($levels[$key + 1] ?? 0) > $levels[$key];
+
+    // Do these children have values?
+    $has_subtags_with_values = false;
+    for ($n = $key + 1; $n < count($keys) && $levels[$n] > $levels[$key]; ++$n) {
+        if ($values[$n] !== '') {
+            $has_subtags_with_values = true;
+            break;
+        }
+    }
+
+    $indent[$key] = $elements[$key]->collapseChildren() && $has_subtags;
+
+    $collapse[$key] = $num > 0 && $indent[$key] && !$has_subtags_with_values;
+}
+
+?>
+
+<?php foreach ($keys as $key) : ?>
+    <?php if ($indent[$key - 1] ?? false) : ?>
+        <?php if ($collapse[$key - 1] ?? false) : ?>
+            <div id="collapse-<?= $key ?>" class="collapse wt-nested-edit-fields">
+        <?php else : ?>
+                <div class="wt-nested-edit-fields">
+        <?php endif ?>
+    <?php endif ?>
+
+    <?php if ($elements[$key] instanceof EmptyElement && $values[$key] === '') : ?>
+        <input type="hidden" name="<?= e($prefix) ?>levels[]" value="<?= $levels[$key] ?>">
+        <input type="hidden" name="<?= e($prefix) ?>tags[]" value="<?= e($tags[$key]) ?>">
+        <input type="hidden" name="<?= e($prefix) ?>values[]" value="">
+    <?php else : ?>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label" for="<?= e($ids[$key]) ?>">
+                <?= view('edit/icon-config-gedcom-field', [
+                    'tag' => $full_tags[$key],
+                    'tree' => $tree,
+                    'title' => I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $full_tags[$key])
+                    ]) 
+                ?>
+                <i class="fas fa-arrow-left fa-fw vesta-config-target collapse"></i>
+                <?= $elements[$key]->label() ?>
+                <?php if ($collapse[$key]) : ?>
+                    <button class="btn btn-link" data-bs-target="#collapse-<?= $key + 1 ?>" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-<?= $key + 1 ?>" type="button">
+                        <?= view('icons/expand') ?>
+                        <?= view('icons/collapse') ?>
+                    </button>
+                <?php endif ?>
+            </label>
+
+            <div class="col-sm">
+                <input type="hidden" name="<?= e($prefix) ?>levels[]" value="<?= $levels[$key] ?>">
+                <input type="hidden" name="<?= e($prefix) ?>tags[]" value="<?= e($tags[$key]) ?>">
+                <?= $elements[$key]->edit($ids[$key], $prefix . 'values[]', strtr($values[$key], ["\r" => "\n"]), $tree) ?>
+            </div>
+        </div>
+    <?php endif ?>
+
+    <?php for ($n = $key; $levels[$n] >= ($levels[$key + 1] ?? $levels[0]); $n--) : ?>
+        <?php if ($indent[$n]) : ?>
+            <?php $indent[$n] = false ?>
+            </div>
+        <?php endif ?>
+        <?php if ($levels[$n] === ($levels[$key + 1] ?? $levels[0])) : ?>
+            <?php break; ?>
+        <?php endif ?>
+    <?php endfor ?>
+<?php endforeach ?>
+                
+<label>
+    <input id="show-vesta-config" type="checkbox" data-bs-toggle="collapse" data-bs-target=".vesta-config-target" autocomplete="off">
+    <?= I18N::translate('Configure visibility of GEDCOM tags') ?>
+</label>
+

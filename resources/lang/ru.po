@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-06-19 17:05+0200\n"
+"POT-Creation-Date: 2022-07-16 21:10+0200\n"
 "PO-Revision-Date: 2022-06-21 07:14+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.13.1-dev\n"
 
 #. I18N: Module Configuration
@@ -39,9 +37,7 @@ msgstr "Внимание: этот параметр в настоящее вре
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
-msgstr ""
-"Установите этот флажок, если вы предпочитаете не использовать тип имени в "
-"случае, если у соответствующего лица одно имя."
+msgstr "Установите этот флажок, если вы предпочитаете не использовать тип имени в случае, если у соответствующего лица одно имя."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -175,9 +171,7 @@ msgstr "Webtrees обрезает эскизы, чтобы создавать и
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:150
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
-msgstr ""
-"При добавлении новых родителей, супругов или детей webtrees предварительно "
-"устанавливает тип имени на «имя при рождении»."
+msgstr "При добавлении новых родителей, супругов или детей webtrees предварительно устанавливает тип имени на «имя при рождении»."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93

@@ -1,0 +1,48 @@
+<?php
+
+use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomFieldAction;
+use Fisharebest\Webtrees\I18N;
+
+//TODO: improve layout (better icon, preferably indicating current state)
+//also TODO: add note re this feature in control panel (GEDCOM Tags)
+//also TODO: FAM support, seems ok in general - add specific actions? add-spouse-etc
+
+$title = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag);
+
+?>
+
+<form action="<?= e(route(ConfigGedcomFieldAction::class, ['tree' => $tree->name()])) ?>" id="wt-modal-form" method="POST">
+    <input type="hidden" name="tag" value="<?= e($tag) ?>">
+
+    <?= view('modals/header', ['title' => $title]) ?>
+
+    <div class="modal-body">
+        <?= view('edit/config-gedcom-field-edit-control', [
+            'tag' => $tag,
+            'tree' => $tree]) ?>
+    </div>
+
+    <?= view('modals/footer-save-cancel') ?>
+    
+    <?= csrf_field() ?>
+</form>
+
+<script>
+    //[RC] different from other modals, we just close on success!
+    document.getElementById('wt-modal-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const form = event.target;
+        const modal = document.getElementById('wt-ajax-modal')
+        const modal_content = modal.querySelector('.modal-content');
+        const select = document.getElementById(modal_content.dataset.wtSelectId);
+
+        webtrees.httpPost(form.action, new FormData(form))
+          .then(response => response.json())
+          .then(json => {
+            $('#wt-ajax-modal').modal('hide');
+          })
+          .catch(error => {
+            modal_content.innerHTML = error;
+          });
+  });
+</script>

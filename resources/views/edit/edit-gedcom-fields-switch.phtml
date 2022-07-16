@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\Http\RequestHandlers\EditGedcomFieldsArgs;
+use Fisharebest\Webtrees\Tree;
+
+/**
+ * @var string        $gedcom
+ * @var array<string> $hierarchy
+ * @var string        $prefix
+ * @var Tree          $tree
+ */
+
+$args = app(EditGedcomFieldsArgs::class);
+
+if($args->canConfigure()) {
+    //own view
+    echo view('edit/edit-gedcom-fields-ext', [
+        'gedcom' => $gedcom,
+        'hierarchy' => $hierarchy,
+        'prefix' => $prefix,
+        'tree' => $tree]);
+    
+    return;
+}
+
+//original view
+echo view('::edit/edit-gedcom-fields', [
+    'gedcom' => $gedcom,
+    'hierarchy' => $hierarchy,
+    'prefix' => $prefix,
+    'tree' => $tree]);

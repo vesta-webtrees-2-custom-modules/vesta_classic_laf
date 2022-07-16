@@ -1,0 +1,21 @@
+<?php
+
+use Cissee\WebtreesExt\Services\GedcomEditServiceExt;
+use Fisharebest\Webtrees\I18N;
+
+$gedcom_edit_service = new GedcomEditServiceExt();
+$override = $gedcom_edit_service->getPreference($tree, $tag);
+
+?>
+    
+<div class="form-group">    
+    <?= view('components/radios', [
+        'name' => 'CONFIG_GEDCOM_FIELDS', 
+        'options' => [
+            '' => I18N::translate('no adjustment'),
+            'LEVEL0' => I18N::translate('hide always'), 
+            'LEVEL1' => I18N::translate('hide for new individuals, show otherwise'), 
+            'LEVEL2' => I18N::translate('show always')], 
+        'selected' => $override]) ?>
+</div>
+

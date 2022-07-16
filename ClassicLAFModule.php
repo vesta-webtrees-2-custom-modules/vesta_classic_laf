@@ -9,13 +9,20 @@ use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\GedcomRecordPageTempReplacement;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddNewFactExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomField;
+use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomFieldAction;
+use Cissee\WebtreesExt\Http\RequestHandlers\EditFactPageExt;
 use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
 use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
+use Fisharebest\Webtrees\Http\Middleware\AuthAdministrator;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\GedcomRecordPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\SearchReplacePage;
 use Fisharebest\Webtrees\Module\AbstractModule;
@@ -208,6 +215,47 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             $stf->register($stf::DEFAULT, new SurnameTraditionWrapper(new DefaultSurnameTradition()));
         }
         
+        //advanced configuration of fact subtags start
+        
+        //for config
+        View::registerCustomView('::edit/edit-gedcom-fields', $this->name() . '::edit/edit-gedcom-fields-switch');
+        View::registerCustomView('::edit/edit-gedcom-fields-ext', $this->name() . '::edit/edit-gedcom-fields-ext');
+        View::registerCustomView('::edit/icon-config-gedcom-field', $this->name() . '::edit/icon-config-gedcom-field');
+        View::registerCustomView('::icons/config-gedcom-field', $this->name() . '::icons/config-gedcom-field');
+        View::registerCustomView('::modals/config-gedcom-field', $this->name() . '::modals/config-gedcom-field');
+        View::registerCustomView('::edit/config-gedcom-field-edit-control', $this->name() . '::edit/config-gedcom-field-edit-control');
+        
+        $router->get(ConfigGedcomField::class, '/tree/{tree}/config-gedcom-field/{tag}', ConfigGedcomField::class)
+            ->extras(['middleware' => [AuthAdministrator::class]]);        
+        
+        $router->post(ConfigGedcomFieldAction::class, '/tree/{tree}/config-gedcom-field-action', ConfigGedcomFieldAction::class)
+            ->extras(['middleware' => [AuthAdministrator::class]]);        
+        
+        //for display
+        //(TODO others)
+        View::registerCustomView('::edit/new-individual', $this->name() . '::edit/new-individual');
+        
+        //for display and config
+        
+        //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
+        $existingRoutes = $router->getRoutes();
+        if (array_key_exists(AddNewFact::class, $existingRoutes)) {
+            unset($existingRoutes[AddNewFact::class]);        
+        }
+        if (array_key_exists(EditFactPage::class, $existingRoutes)) {
+            unset($existingRoutes[EditFactPage::class]);        
+        }
+        
+        $router->setRoutes($existingRoutes);
+        
+        $router->get(AddNewFact::class, '/tree/{tree}/add-fact/{xref}/{fact}', AddNewFactExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        $router->get(EditFactPage::class, '/tree/{tree}/edit-fact/{xref}/{fact_id}', EditFactPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //advanced configuration of fact subtags end
+        
         $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 4);
     }
 
@@ -378,5 +426,4 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         //doctype also has to be restored explicitly
         return '<!DOCTYPE html>' . $dom->saveHTML($dom->documentElement);
     }
-
 }

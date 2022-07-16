@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-06-19 17:05+0200\n"
+"POT-Creation-Date: 2022-07-16 21:10+0200\n"
 "PO-Revision-Date: 2022-06-20 17:17+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,9 +37,7 @@ msgstr "Achtung! Diese Einstellung wird in Ihrem System derzeit keine Wirkung ha
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
-msgstr ""
-"Aktivieren Sie diese Option, wenn Sie es vorziehen, keinen Namenstyp zu "
-"verwenden, falls die betreffende Person nur einen Namen hat."
+msgstr "Aktivieren Sie diese Option, wenn Sie es vorziehen, keinen Namenstyp zu verwenden, falls die betreffende Person nur einen Namen hat."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -174,9 +171,7 @@ msgstr "Webtrees beschneidet Vorschaubilder, um Bilder mit einer einheitlichen B
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:150
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
-msgstr ""
-"Wenn neue Eltern, Ehepartner oder Kinder hinzugefügt werden, setzt webtrees "
-"den Namenstyp auf \"Geburtsname\"."
+msgstr "Wenn neue Eltern, Ehepartner oder Kinder hinzugefügt werden, setzt webtrees den Namenstyp auf \"Geburtsname\"."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
