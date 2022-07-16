@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-07-16 21:10+0200\n"
+"POT-Creation-Date: 2022-07-16 21:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,4 +180,30 @@ msgstr ""
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+msgid "no adjustment"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "hide always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:17
+msgid "hide for new individuals, show otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show always"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:73
+#: resources/views/modals/config-gedcom-field.phtml:10
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:107
+msgid "Configure visibility of GEDCOM tags"
 msgstr ""

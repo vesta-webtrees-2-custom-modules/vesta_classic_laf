@@ -37,7 +37,6 @@ $title = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag);
         const select = document.getElementById(modal_content.dataset.wtSelectId);
 
         webtrees.httpPost(form.action, new FormData(form))
-          .then(response => response.json())
           .then(json => {
             $('#wt-ajax-modal').modal('hide');
           })

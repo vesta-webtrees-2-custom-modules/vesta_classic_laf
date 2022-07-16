@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-07-16 21:10+0200\n"
+"POT-Creation-Date: 2022-07-16 21:12+0200\n"
 "PO-Revision-Date: 2022-06-21 07:14+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
@@ -43,6 +43,16 @@ msgstr "Установите этот флажок, если вы предпоч
 #: ClassicLAFModuleTrait.php:54
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Установите этот флажок, чтобы всегда открывать первую боковую панель, а не боковую панель «Семейный навигатор»."
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:73
+#: resources/views/modals/config-gedcom-field.phtml:10
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:107
+msgid "Configure visibility of GEDCOM tags"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
@@ -182,6 +192,22 @@ msgstr "Префиксы XREF"
 #: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "Внешние ссылки"
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "hide always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:17
+msgid "hide for new individuals, show otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+msgid "no adjustment"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show always"
+msgstr ""
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Отображать внешнюю ссылку семьи после имени."

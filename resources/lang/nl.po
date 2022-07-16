@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-07-16 21:10+0200\n"
+"POT-Creation-Date: 2022-07-16 21:12+0200\n"
 "PO-Revision-Date: 2022-06-19 21:19+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
@@ -43,6 +43,16 @@ msgstr "Schakel deze optie in als u liever geen naamtype gebruikt in het geval d
 #: ClassicLAFModuleTrait.php:54
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Schakel dit selectievakje in om altijd de eerste zijbalk uit te vouwen in plaats van de zijbalk 'Gezinsnavigator'."
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:73
+#: resources/views/modals/config-gedcom-field.phtml:10
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:107
+msgid "Configure visibility of GEDCOM tags"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
@@ -182,6 +192,22 @@ msgstr "XREF-voorvoegsels"
 #: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "XREFs"
 msgstr "XREF's"
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "hide always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:17
+msgid "hide for new individuals, show otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+msgid "no adjustment"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show always"
+msgstr ""
 
 #~ msgid "..."
 #~ msgstr "..."
