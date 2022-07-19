@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
-use Cissee\WebtreesExt\Services\GedcomEditServiceExt;
+use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
 use Psr\Http\Message\ResponseInterface;
@@ -17,7 +17,7 @@ class EditFactPageExt extends EditFactPage
     {
         parent::__construct(
             //check overrides
-            new GedcomEditServiceExt());
+            new GedcomEditServiceExt2());
     }
     
     public function handle(ServerRequestInterface $request): ResponseInterface

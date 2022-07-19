@@ -19,7 +19,9 @@ use function str_repeat;
 use function str_starts_with;
 use function substr_count;
 
-class GedcomEditServiceExt extends GedcomEditService
+//renamed due to overlap with obsolete file from 'Shared Places' 
+//(safer this way in case the obsolete file isn't removed)
+class GedcomEditServiceExt2 extends GedcomEditService
 {
     protected bool $forNewIndividual;
     protected string $vesta_symbol;

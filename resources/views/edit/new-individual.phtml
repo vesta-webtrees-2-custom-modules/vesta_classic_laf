@@ -1,6 +1,6 @@
 <?php
 
-use Cissee\WebtreesExt\Services\GedcomEditServiceExt;
+use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Services\GedcomEditService;
 use Fisharebest\Webtrees\Tree;
 
@@ -14,7 +14,7 @@ use Fisharebest\Webtrees\Tree;
  */
 
 //[RC adjusted]
-$gedcom_edit_service = new GedcomEditServiceExt(true);
+$gedcom_edit_service = new GedcomEditServiceExt2(true);
 
 //call original view
 echo view('::edit/new-individual', [

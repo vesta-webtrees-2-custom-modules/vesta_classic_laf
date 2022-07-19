@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
-use Cissee\WebtreesExt\Services\GedcomEditServiceExt;
+use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Validator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,7 +21,7 @@ class ConfigGedcomFieldAction implements RequestHandlerInterface {
         $tag = $params['tag'];
         $value = $params['CONFIG_GEDCOM_FIELDS'];
 
-        $gedcom_edit_service = new GedcomEditServiceExt();
+        $gedcom_edit_service = new GedcomEditServiceExt2();
         $gedcom_edit_service->setPreference($tree, $tag, $value);
 
         // value and text are for autocomplete
