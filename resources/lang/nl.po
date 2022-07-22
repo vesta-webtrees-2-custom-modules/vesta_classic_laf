@@ -8,20 +8,23 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-07-16 21:12+0200\n"
-"PO-Revision-Date: 2022-06-19 21:19+0000\n"
+"PO-Revision-Date: 2022-07-22 21:19+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13.1-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
-msgstr "Een module die alle thema's en andere functies aanpast, waardoor uitstraling en gevoel dichter bij de webtrees 1.x versie komt."
+msgstr ""
+"Een module die alle thema's en andere functies aanpast, zodat uiterlijk en "
+"gevoel dichter bij de webtrees 1.x versie ligt."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
@@ -48,11 +51,11 @@ msgstr "Schakel dit selectievakje in om altijd de eerste zijbalk uit te vouwen i
 #: resources/views/modals/config-gedcom-field.phtml:10
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Zichtbaarheid instellen van GEDCOM-label '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:107
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Zichtbaarheid instellen van GEDCOM-labels"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
@@ -195,19 +198,19 @@ msgstr "XREF's"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "hide always"
-msgstr ""
+msgstr "altijd verbergen"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:17
 msgid "hide for new individuals, show otherwise"
-msgstr ""
+msgstr "verbergen voor nieuwe personen, anders tonen"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:15
 msgid "no adjustment"
-msgstr ""
+msgstr "geen aanpassing"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show always"
-msgstr ""
+msgstr "altijd tonen"
 
 #~ msgid "..."
 #~ msgstr "..."
