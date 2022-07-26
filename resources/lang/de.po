@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-07-16 21:12+0200\n"
-"PO-Revision-Date: 2022-07-26 19:19+0000\n"
+"PO-Revision-Date: 2022-07-26 20:22+0000\n"
 "Last-Translator: Markus Hemprich <hemprich@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
@@ -208,7 +208,7 @@ msgstr "keine Anpassung"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show always"
-msgstr ""
+msgstr "immer anzeigen"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Anzeigen des Familien-XREF nach dem Namen."
