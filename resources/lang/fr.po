@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-07-16 21:12+0200\n"
-"PO-Revision-Date: 2022-04-12 11:07+0000\n"
+"PO-Revision-Date: 2022-07-26 09:25+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -38,6 +39,8 @@ msgstr "Attention : Ce paramètre n'aura actuellement aucun effet sur votre sys
 #: ClassicLAFModuleTrait.php:151
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Cochez cette option si vous préférez ne pas utiliser de type de nom au cas "
+"où l'individu respectif n'aurait qu'un seul nom."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -48,11 +51,11 @@ msgstr "Cochez cette case pour toujours développer la première barre latérale
 #: resources/views/modals/config-gedcom-field.phtml:10
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Configurer la visibilité de la balise GEDCOM '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:107
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Configurer la visibilité des balises GEDCOM"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
@@ -117,7 +120,7 @@ msgstr "Disposition"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:147
 msgid "Name type presets"
-msgstr ""
+msgstr "Présélections du type de nom"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:138
@@ -143,7 +146,7 @@ msgstr "Plusieurs ajustements - Voir %1$s pour plus de détails."
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:149
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Ignorer le type de nom prédéfini pour les noms uniques"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -182,6 +185,8 @@ msgstr "Webtrees rogne les vignettes afin de produire des images avec une largeu
 #: ClassicLAFModuleTrait.php:150
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"Lors de l'ajout de nouveaux parents, conjoints ou enfants, webtrees "
+"prédéfinit le type de nom sur \"nom de naissance\"."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
@@ -195,19 +200,19 @@ msgstr "XREFs"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "hide always"
-msgstr ""
+msgstr "cacher toujours"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:17
 msgid "hide for new individuals, show otherwise"
-msgstr ""
+msgstr "cacher pour les nouveaux individus, montrer sinon"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:15
 msgid "no adjustment"
-msgstr ""
+msgstr "pas de réglage"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show always"
-msgstr ""
+msgstr "toujours afficher"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Afficher le XREF d'une famille après le nom."
