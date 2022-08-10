@@ -73,7 +73,37 @@ class IndividualNameHandler {
     if (preg_match('/\n1 _FSFTID/', $gedcom, $match)) {
       $full .= '<img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAAC6t7GFuUCFuUC6t7G6t7GblHqblHqFuUCblHqblHqblHqblHqblHqFuUCblHqblHqblHqFuUC6t7GblHq6t7G6t7GmoI26t7G6t7G2sqmuqpyNq1aFuUCFuUCHtUa6t7GFuUCblHq6t7G6t7GblHqFuUCrppaQp127S6TeAAAAJHRSTlMAgIBAQL9Av78wz4Bg7+/fjyAQz3BgIBDv36fPz8+fj3BwUDC6gAAMAAABTklEQVRIx7XT23KDIBCA4UVEA5JEc056brNp3/8Ju2wcbKoSmDH/td8AC8IUrWTbKhLIS5uMBosZtUgAM6Bmk4Od4LbRID9zKgEchVAMukOHgQIQDK7Fgr8XJ3z5EDgodXSq6+wTgUPrsk2HwT7nvqDAtoLAOqfeGYxFwBSUYaB48R6QmU8SKIEqQyC7+LKHgQ/pInB7hoOi1kNAgusKuin5QkAvEQ3fQySAJc730GscWMRqJ3xbyLhxQDtq8rNPwYUbHatGNHALXqV8GQc1Yt1NXjmQuf9v6Gm8/Txn0iB+3gFdJVpARP0PcINAI5YE4BZ0U+pnEfsgmPXglLvW9wDULfDdAxWBJgVs+Jnunr5P/mmEKwhUYPn9RaUJmBLRQmzIWYjO3dw84Xs+tYGEGuQ5QdqelimgQKpKXQKL1CXmOkHUycKkiqZybWCCfgFH7T9amDw6vQAAAABJRU5ErkJggg==" />';
     }
-    
+
+    //RESI with SOUR US Census 1910 (before next fact starts)
+    if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1910/sm', $gedcom, $match)) {
+      //img source: "https://fontawesome.com/icons/dice-one?s=solid"
+      $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0yMjQgMjg4QzIwNi40IDI4OCAxOTIgMjczLjYgMTkyIDI1NnMxNC4zOC0zMiAzMi0zMnMzMiAxNC4zOCAzMiAzMlMyNDEuNiAyODggMjI0IDI4OHoiLz48L3N2Zz4=" />';
+    }
+
+    //RESI with SOUR US Census 1920 (before next fact starts)
+    if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1920/sm', $gedcom, $match)) {
+      //img source: "https://fontawesome.com/icons/dice-two?s=solid"
+      $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTMyMCAzODRjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMzg0IDMyMCAzODR6Ii8+PC9zdmc+" />';
+    }
+
+    //RESI with SOUR US Census 1930 (before next fact starts)
+    if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1930/sm', $gedcom, $match)) {
+      //img source: "https://fontawesome.com/icons/dice-three?s=solid"
+      $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTIyNCAyODhDMjA2LjQgMjg4IDE5MiAyNzMuNiAxOTIgMjU2czE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzI0MS42IDI4OCAyMjQgMjg4ek0zMjAgMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDM4NCAzMjAgMzg0eiIvPjwvc3ZnPg==" />';
+    }
+
+    //RESI with SOUR US Census 1940 (before next fact starts)
+    if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1940/sm', $gedcom, $match)) {
+      //img source: "https://fontawesome.com/icons/dice-four?s=solid"
+      $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzE0NS42IDM4NCAxMjggMzg0ek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTMyMCAzODRjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMzg0IDMyMCAzODR6TTMyMCAxOTJjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMTkyIDMyMCAxOTJ6Ii8+PC9zdmc+" />';
+    }
+
+    //RESI with SOUR US Census 1950 (before next fact starts)
+    if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1950/sm', $gedcom, $match)) {
+      //img source: "https://fontawesome.com/icons/dice-five?s=solid"
+      $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzE0NS42IDM4NCAxMjggMzg0ek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTIyNCAyODhDMjA2LjQgMjg4IDE5MiAyNzMuNiAxOTIgMjU2czE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzI0MS42IDI4OCAyMjQgMjg4ek0zMjAgMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDM4NCAzMjAgMzg0ek0zMjAgMTkyYy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDE5MiAzMjAgMTkyeiIvPjwvc3ZnPg==" />';
+    }
+		    
     return $full;
   }
 }

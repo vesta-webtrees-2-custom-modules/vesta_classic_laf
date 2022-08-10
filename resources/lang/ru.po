@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-07-16 21:12+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2022-08-02 15:15+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14-dev\n"
 
 #. I18N: Module Configuration
@@ -29,6 +27,11 @@ msgstr "Модуль, настраивающий все темы и другие
 #: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
 msgid "Append XREFs to names"
 msgstr "Добавлять внешние ссылки к именам"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:61
@@ -67,12 +70,17 @@ msgid "Custom prefixes"
 msgstr "Пользовательские префиксы"
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:167
+msgid "Display a family's XREF after the family label."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Отобразите все диалоговые окна редактирования с использованием более компактного макета, в котором также отсутствуют стандартные верхний и нижний колонтитулы."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
+#: ClassicLAFModuleTrait.php:159
 msgid "Display an individual's XREF after the name."
 msgstr "Отображать внешнюю ссылку человека после имени."
 
@@ -195,21 +203,37 @@ msgstr "Префиксы XREF"
 msgid "XREFs"
 msgstr "Внешние ссылки"
 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "hide always"
 msgstr "прятаться всегда"
 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:20
+msgid "hide for new individuals, show and expand subtags otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:19
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:17
 msgid "hide for new individuals, show otherwise"
 msgstr "скрываться для новых людей, показывать обратное"
 
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:17
 msgid "no adjustment"
 msgstr "без корректировки"
 
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr ""
+
+#. I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:21
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:19
 msgid "show always"
 msgstr "показывать всегда"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:22
+msgid "show and expand subtags always"
+msgstr ""
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Отображать внешнюю ссылку семьи после имени."

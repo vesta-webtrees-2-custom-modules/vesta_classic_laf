@@ -7,19 +7,19 @@ $gedcom_edit_service = new GedcomEditServiceExt2();
 $override = $gedcom_edit_service->getPreference($tree, $tag);
 
 ?>
+
+<div class="form-group">
+    <?= I18N::translate('Apply the following setting to \'%1$s\' within all \'%2$s\' events, unless the event is configured explicitly:', 'PLAC', 'INDI') ?>
     
-<div class="form-group">    
     <?= view('components/radios', [
-        'name' => 'CONFIG_GEDCOM_FIELDS', 
+        'name' => 'CONFIG_GEDCOM_FIELDS_2', 
         'options' => [
-            '' => I18N::translate('no adjustment (use setting for all events as shown below)'),
+            '' => I18N::translate('no adjustment'),
             'LEVEL0' => I18N::translate('hide always'), 
             'LEVEL1' => I18N::translate('hide for new individuals, show otherwise'), 
-            //'LEVEL1a' => I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
+            'LEVEL1a' => I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
             'LEVEL2' => I18N::translate('show always'), 
-            //'LEVEL2a' => I18N::translate('show and expand subtags always')
-        ], 
+            'LEVEL2a' => I18N::translate('show and expand subtags always')], 
         'selected' => $override]) ?>
 </div>
-
 

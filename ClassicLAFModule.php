@@ -224,6 +224,7 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         View::registerCustomView('::icons/config-gedcom-field', $this->name() . '::icons/config-gedcom-field');
         View::registerCustomView('::modals/config-gedcom-field', $this->name() . '::modals/config-gedcom-field');
         View::registerCustomView('::edit/config-gedcom-field-edit-control', $this->name() . '::edit/config-gedcom-field-edit-control');
+        View::registerCustomView('::edit/config-gedcom-field-edit-control-2', $this->name() . '::edit/config-gedcom-field-edit-control-2');
         
         $router->get(ConfigGedcomField::class, '/tree/{tree}/config-gedcom-field/{tag}', ConfigGedcomField::class)
             ->extras(['middleware' => [AuthAdministrator::class]]);        
@@ -261,16 +262,6 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
 
     public function headContent(): string {
         $html = '<link rel="stylesheet" type="text/css" href="' . $this->assetUrl('css/theme.css') . '">';
-
-        //TODO cleanup
-        /*
-        $markdownFixConfigured = boolval($this->getPreference('MARKDOWN_PRESERVE_CONT', '1'));
-        if ($markdownFixConfigured) {
-            //css fix as suggested here https://www.webtrees.net/index.php/en/forum/help-for-2-0/36162-v2-0-17-things-that-no-longer-work-after-update#88287
-            //has to be blocked because it leads to double line breaks
-            $html .= '<link rel="stylesheet" type="text/css" href="' . $this->assetUrl('css/blockMarkdownFix.css') . '">';
-        }
-        */        
 
         return $html;
     }

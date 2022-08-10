@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-07-16 21:12+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2022-07-26 09:25+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,6 +28,11 @@ msgstr "Un module ajustant tous les thèmes et autres fonctionnalités, offrant 
 msgid "Append XREFs to names"
 msgstr "Ajouter les XREF aux noms"
 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:61
 #, php-format
@@ -38,9 +42,7 @@ msgstr "Attention : Ce paramètre n'aura actuellement aucun effet sur votre sys
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
-msgstr ""
-"Cochez cette option si vous préférez ne pas utiliser de type de nom au cas "
-"où l'individu respectif n'aurait qu'un seul nom."
+msgstr "Cochez cette option si vous préférez ne pas utiliser de type de nom au cas où l'individu respectif n'aurait qu'un seul nom."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -68,12 +70,17 @@ msgid "Custom prefixes"
 msgstr "préfixes personnalisés"
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:167
+msgid "Display a family's XREF after the family label."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Affichez toutes les boîtes de dialogue d'édition en utilisant une disposition plus compacte, qui omet également l'en-tête et le pied de page standard."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:159 ClassicLAFModuleTrait.php:167
+#: ClassicLAFModuleTrait.php:159
 msgid "Display an individual's XREF after the name."
 msgstr "Afficher le XREF d'un individu après son nom."
 
@@ -184,9 +191,7 @@ msgstr "Webtrees rogne les vignettes afin de produire des images avec une largeu
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:150
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
-msgstr ""
-"Lors de l'ajout de nouveaux parents, conjoints ou enfants, webtrees "
-"prédéfinit le type de nom sur \"nom de naissance\"."
+msgstr "Lors de l'ajout de nouveaux parents, conjoints ou enfants, webtrees prédéfinit le type de nom sur \"nom de naissance\"."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:93
@@ -198,21 +203,37 @@ msgstr "préfixes XREF"
 msgid "XREFs"
 msgstr "XREFs"
 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "hide always"
 msgstr "cacher toujours"
 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:20
+msgid "hide for new individuals, show and expand subtags otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:19
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:17
 msgid "hide for new individuals, show otherwise"
 msgstr "cacher pour les nouveaux individus, montrer sinon"
 
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:17
 msgid "no adjustment"
 msgstr "pas de réglage"
 
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr ""
+
+#. I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:21
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:19
 msgid "show always"
 msgstr "toujours afficher"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:22
+msgid "show and expand subtags always"
+msgstr ""
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Afficher le XREF d'une famille après le nom."

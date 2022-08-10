@@ -164,8 +164,8 @@ trait ClassicLAFModuleTrait {
             /* I18N: Module Configuration */I18N::translate('XREFs'),
             array(new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Append XREFs to names'),
-                /* I18N: Module Configuration */ I18N::translate('Display an individual\'s XREF after the name.'),
-                'APPEND_XREF',
+                /* I18N: Module Configuration */ I18N::translate('Display a family\'s XREF after the family label.'),
+                'APPEND_XREF_FAM',
                 '0')));
 
 

@@ -216,7 +216,9 @@ make long names, small display sizes etc behave better - all this should probabl
 [dir] .wt-family-navigator-family th {
   /* effectively affects the first column. Can we set a more flexible width? apparently not with table layout 'fixed' */
   width: 30%;
-  overflow: hidden;
+  
+  /* [2022/08] had to diable this because it affects the dropdown menu, apparently not possible to solve this without additional wrapper element? */
+  /* overflow: hidden; */
 }
 
 [dir] .wt-family-navigator-name {
