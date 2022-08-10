@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-07-16 21:12+0200\n"
-"PO-Revision-Date: 2022-04-29 09:11+0000\n"
+"PO-Revision-Date: 2022-07-25 19:22+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-"
-"custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -64,11 +64,11 @@ msgstr ""
 #: resources/views/modals/config-gedcom-field.phtml:10
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Konfigurovať viditeľnosť GEDCOM tagu '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:107
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Konfigurovať viditeľnosť GEDCOM tagov"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:75
@@ -258,19 +258,19 @@ msgstr "XREF"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "hide always"
-msgstr ""
+msgstr "vždy skryť"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:17
 msgid "hide for new individuals, show otherwise"
-msgstr ""
+msgstr "skryť pre nové osoby, ináč ukázať"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:15
 msgid "no adjustment"
-msgstr ""
+msgstr "žiadna úprava"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show always"
-msgstr ""
+msgstr "vždy ukázať"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Zobraziť XREF rodiny po mene."
