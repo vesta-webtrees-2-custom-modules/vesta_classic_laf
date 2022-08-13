@@ -132,7 +132,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
 
         //error_log("hidden? " . $tag . '=' . $originalRet);
         
-        //check for override
+        //check for specific override
         $tag = $this->compressTag($tag);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag;
         
@@ -164,9 +164,52 @@ class GedcomEditServiceExt2 extends GedcomEditService
             }
             
             if ($originalRet !== $overrideRet) {
-                //error_log("override to ".$overrideRet);
-                return $overrideRet;
+                //error_log($tag . "override specific to ".$overrideRet);                
             }
+            
+            return $overrideRet;
+        }
+        
+        //check for generic override
+        $tag2parts = explode(':',$tag);
+        $tag2parts[1] = '*';
+        $tag2 = implode(':',$tag2parts);
+        
+        $tag2 = $this->compressTag($tag2);
+        $pref = $this->vesta_symbol . $this->house_symbol . $tag2;
+        
+        //error_log("override? " . $pref);
+        
+        $override = $tree->getPreference($pref);
+        if ($override !== '') {
+            switch ($override) {
+                //hide always
+                case 'LEVEL0':
+                    $overrideRet = true;
+                    break;
+                //hide for new individual, show otherwise
+                case 'LEVEL1':
+                    if ($this->forNewIndividual) {
+                        $overrideRet = true;
+                    } else {
+                        $overrideRet = false;
+                    }
+                    break;
+                //show always
+                case 'LEVEL2':
+                    $overrideRet = false;
+                    break;
+                //(unexpected; hide always)
+                default:
+                    $overrideRet = true;
+                    break;
+            }
+            
+            if ($originalRet !== $overrideRet) {
+                //error_log($tag2 . " override generic to ".$overrideRet);                
+            }
+            
+            return $overrideRet;
         }
         
         return $originalRet;

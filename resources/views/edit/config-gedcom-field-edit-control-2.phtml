@@ -17,9 +17,10 @@ $override = $gedcom_edit_service->getPreference($tree, $tag);
             '' => I18N::translate('no adjustment'),
             'LEVEL0' => I18N::translate('hide always'), 
             'LEVEL1' => I18N::translate('hide for new individuals, show otherwise'), 
-            'LEVEL1a' => I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
+            //'LEVEL1a' => I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
             'LEVEL2' => I18N::translate('show always'), 
-            'LEVEL2a' => I18N::translate('show and expand subtags always')], 
+            //'LEVEL2a' => I18N::translate('show and expand subtags always')
+        ], 
         'selected' => $override]) ?>
 </div>
 

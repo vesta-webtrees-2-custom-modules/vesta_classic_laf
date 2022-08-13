@@ -240,5 +240,11 @@
 		"version": "2.1.7.0.0",
 		"from": "2.1.4",
 		"to": "2.1.8"
+	},
+	{
+		"version": "2.1.7.0.1",
+		"from": "2.1.4",
+		"to": "2.1.8",
+		"changelog": ["Bugfix (individual image display)."]
 	}
 ]

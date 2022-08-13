@@ -8,6 +8,7 @@ use Fisharebest\Webtrees\I18N;
 //also TODO: FAM support, seems ok in general - add specific actions? add-spouse-etc
 
 $title = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag);
+$title2 = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag2);
 
 ?>
 
@@ -21,20 +22,16 @@ $title = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag);
             'tag' => $tag,
             'tree' => $tree]) ?>
     </div>
-
+    
+    <?= view('modals/header', ['title' => $title2]) ?>
+    
+    <div class="modal-body">
+        <?= view('edit/config-gedcom-field-edit-control-2', [
+            'tag' => $tag2,
+            'tree' => $tree]) ?>
+    </div>
+    
     <?= view('modals/footer-save-cancel') ?>
-    
-    <?php
-    //<?= view('modals/header', ['title' => 'Configure visibility of GEDCOM tag \'INDI:*:PLAC\'']) ?_>
-    
-    //<div class="modal-body">
-    //    <?= view('edit/config-gedcom-field-edit-control-2', [
-    //        'tag' => $tag,
-    //        'tree' => $tree]) ?_>
-    //</div>
-    
-    //<?= view('modals/footer-save-cancel') ?_>
-    ?>
     
     <?= csrf_field() ?>
 </form>
