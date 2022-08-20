@@ -1,0 +1,35 @@
+<?php
+
+use Fisharebest\Webtrees\I18N;
+use Vesta\CommonI18N;
+
+//original view (easier to monkeypatch than to extend properly)
+ob_start();
+echo view('::admin/tags', [
+            'all_family_tags'        => $all_family_tags,
+            'all_individual_tags'    => $all_individual_tags,
+            'custom_family_tags'     => $custom_family_tags,
+            'custom_gedcom_l_tags'   => $custom_gedcom_l_tags,
+            'custom_individual_tags' => $custom_individual_tags,
+            'custom_time_tags'       => $custom_time_tags,
+            'element_factory'        => $element_factory,
+            'title'                  => $title,
+        ]);
+
+$parentHtml = ob_get_clean();
+
+$search = "<h1>" . $title . "</h1>";
+
+//TODO proper Readme for this!
+$link = '<a href="https://www.webtrees.net/index.php/en/forum/4-customising/37154-customization-of-gedcom-tag-visibility">'.I18N::translate('here').'</a>';
+
+$ext = I18N::translate(
+    'Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s.', 
+    CommonI18N::titleVestaCLAF(), 
+    $link);
+
+$adjustedHtml = str_replace($search, $search . $ext, $parentHtml);
+
+echo $adjustedHtml;
+
+?>
