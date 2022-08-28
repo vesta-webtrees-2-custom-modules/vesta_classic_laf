@@ -147,6 +147,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
                 //hide for new individual, show otherwise
                 case 'LEVEL1':
+                case 'LEVEL1a':
                     if ($this->forNewIndividual) {
                         $overrideRet = true;
                     } else {
@@ -155,6 +156,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
                 //show always
                 case 'LEVEL2':
+                case 'LEVEL2a':
                     $overrideRet = false;
                     break;
                 //(unexpected; hide always)
@@ -189,6 +191,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
                 //hide for new individual, show otherwise
                 case 'LEVEL1':
+                case 'LEVEL1a':                   
                     if ($this->forNewIndividual) {
                         $overrideRet = true;
                     } else {
@@ -197,6 +200,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
                 //show always
                 case 'LEVEL2':
+                case 'LEVEL2a':
                     $overrideRet = false;
                     break;
                 //(unexpected; hide always)
@@ -214,7 +218,52 @@ class GedcomEditServiceExt2 extends GedcomEditService
         
         return $originalRet;
     }
-      
+    
+    public function alwaysExpandSubtags(
+        Tree $tree, 
+        string $tag): bool {
+        
+        //check for specific override
+        $tag = $this->compressTag($tag);
+        $pref = $this->vesta_symbol . $this->house_symbol . $tag;
+        
+        //error_log("override? " . $pref);
+                
+        $override = $tree->getPreference($pref);
+        if ($override !== '') {
+            switch ($override) {
+                case 'LEVEL1a':
+                case 'LEVEL2a':
+                    return true;
+                default:
+                    break;
+            }
+        }
+        
+        //check for generic override
+        $tag2parts = explode(':',$tag);
+        $tag2parts[1] = '*';
+        $tag2 = implode(':',$tag2parts);
+        
+        $tag2 = $this->compressTag($tag2);
+        $pref = $this->vesta_symbol . $this->house_symbol . $tag2;
+        
+        //error_log("override? " . $pref);
+        
+        $override = $tree->getPreference($pref);
+        if ($override !== '') {
+            switch ($override) {
+                case 'LEVEL1a':
+                case 'LEVEL2a':
+                    return true;
+                default:
+                    break;
+            }
+        }
+        
+        return false;
+    }
+    
     protected function compressTag(string $tag): string {
         //we only have 32 chars in table column!
         //(first 2 of those are used for pref outside tag, i.e. 30 left

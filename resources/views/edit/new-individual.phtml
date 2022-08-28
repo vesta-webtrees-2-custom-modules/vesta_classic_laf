@@ -16,6 +16,9 @@ use Fisharebest\Webtrees\Tree;
 //[RC adjusted]
 $gedcom_edit_service = new GedcomEditServiceExt2(true);
 
+//explicitly register in order to re-use in views where we cannot pass via variable
+app()->instance(GedcomEditServiceExt2::class, $gedcom_edit_service);
+
 //call original view
 echo view('::edit/new-individual', [
     'cancel_url'          => $cancel_url,

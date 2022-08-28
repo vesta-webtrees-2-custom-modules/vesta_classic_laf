@@ -13,6 +13,7 @@ use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomField;
     data-wt-href="<?=
     e(route(ConfigGedcomField::class, [
         'tag' => $tag,
+        'indent' => $indent,
         'tree' => $tree->name()
     ]));
     ?>" 

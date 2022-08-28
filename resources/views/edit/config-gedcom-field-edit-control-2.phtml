@@ -6,6 +6,18 @@ use Fisharebest\Webtrees\I18N;
 $gedcom_edit_service = new GedcomEditServiceExt2();
 $override = $gedcom_edit_service->getPreference($tree, $tag);
 
+$options = [];
+$options[''] = I18N::translate('no adjustment');
+$options['LEVEL0'] = I18N::translate('hide always');
+$options['LEVEL1'] = I18N::translate('hide for new individuals, show otherwise');
+if ($indent) {
+    $options['LEVEL1a'] = I18N::translate('hide for new individuals, show and expand subtags otherwise');
+}
+$options['LEVEL2'] = I18N::translate('show always');
+if ($indent) {
+    $options['LEVEL2a'] = I18N::translate('show and expand subtags always');
+}
+
 ?>
 
 <div class="form-group">
@@ -13,14 +25,7 @@ $override = $gedcom_edit_service->getPreference($tree, $tag);
     
     <?= view('components/radios', [
         'name' => 'CONFIG_GEDCOM_FIELDS_2', 
-        'options' => [
-            '' => I18N::translate('no adjustment'),
-            'LEVEL0' => I18N::translate('hide always'), 
-            'LEVEL1' => I18N::translate('hide for new individuals, show otherwise'), 
-            //'LEVEL1a' => I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
-            'LEVEL2' => I18N::translate('show always'), 
-            //'LEVEL2a' => I18N::translate('show and expand subtags always')
-        ], 
+        'options' => $options, 
         'selected' => $override]) ?>
 </div>
 

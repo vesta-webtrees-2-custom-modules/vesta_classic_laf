@@ -131,11 +131,14 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             //other custom modules also replace this view
             //namely the justLight theme      
 
-            $defaultLayout = '::layouts/default';
-
-            //we need a way to identify it regardless of its folder name;
+            //[2022/08] actually apply the setting only in case of standard and other 'well-known' themes
+            $apply = false;
+            $isJustLight = false;
+            
             $theme = app(ModuleThemeInterface::class);
             if ($theme instanceof ModuleCustomInterface) {
+                //we need a way to identify custom modules regardless of their folder name
+                
                 //legacy  
                 $justLightSupportUrl1 = 'https://github.com/justcarmen/webtrees-theme-justlight/issues';
 
@@ -143,13 +146,27 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
                 $justLightSupportUrl2 = 'https://justcarmen.nl/modules-webtrees-2/justlight-theme/';
 
                 if ($theme->customModuleSupportUrl() === $justLightSupportUrl1) {
-                    $defaultLayout = '::layouts/defaultJustLight';
+                    $apply = true;
+                    $isJustLight = true;
                 } else if ($theme->customModuleSupportUrl() === $justLightSupportUrl2) {
+                    $apply = true;
+                    $isJustLight = true;
+                }
+                
+            } else {
+                //standard theme
+                $apply = true;
+            }
+            
+            if ($apply) {
+                $defaultLayout = '::layouts/default';
+                
+                if ($isJustLight) {
                     $defaultLayout = '::layouts/defaultJustLight';
                 }
+                
+                View::registerCustomView('::layouts/default', $this->name() . $defaultLayout);
             }
-
-            View::registerCustomView('::layouts/default', $this->name() . $defaultLayout);
         }
 
         //TODO CLEANUP
@@ -217,16 +234,20 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         
         //advanced configuration of fact subtags start
         
+        //for config (notes only)
+        View::registerCustomView('::admin/tags', $this->name() . '::admin/tags-ext');
+        
         //for config
         View::registerCustomView('::edit/edit-gedcom-fields', $this->name() . '::edit/edit-gedcom-fields-switch');
         View::registerCustomView('::edit/edit-gedcom-fields-ext', $this->name() . '::edit/edit-gedcom-fields-ext');
+        View::registerCustomView('::edit/edit-gedcom-fields-ext2', $this->name() . '::edit/edit-gedcom-fields-ext2');
         View::registerCustomView('::edit/icon-config-gedcom-field', $this->name() . '::edit/icon-config-gedcom-field');
         View::registerCustomView('::icons/config-gedcom-field', $this->name() . '::icons/config-gedcom-field');
         View::registerCustomView('::modals/config-gedcom-field', $this->name() . '::modals/config-gedcom-field');
         View::registerCustomView('::edit/config-gedcom-field-edit-control', $this->name() . '::edit/config-gedcom-field-edit-control');
         View::registerCustomView('::edit/config-gedcom-field-edit-control-2', $this->name() . '::edit/config-gedcom-field-edit-control-2');
         
-        $router->get(ConfigGedcomField::class, '/tree/{tree}/config-gedcom-field/{tag}', ConfigGedcomField::class)
+        $router->get(ConfigGedcomField::class, '/tree/{tree}/config-gedcom-field/{tag}/{indent}', ConfigGedcomField::class)
             ->extras(['middleware' => [AuthAdministrator::class]]);        
         
         $router->post(ConfigGedcomFieldAction::class, '/tree/{tree}/config-gedcom-field-action', ConfigGedcomFieldAction::class)

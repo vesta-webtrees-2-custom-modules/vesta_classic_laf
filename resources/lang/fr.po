@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-08-10 13:33+0200\n"
+"POT-Creation-Date: 2022-08-28 10:06+0200\n"
 "PO-Revision-Date: 2022-07-26 09:25+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
@@ -24,23 +24,23 @@ msgid "A module adjusting all themes and other features, providing a look & feel
 msgstr "Un module ajustant tous les thèmes et autres fonctionnalités, offrant un look & feel plus proche de la version webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:158 ClassicLAFModuleTrait.php:166
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "Append XREFs to names"
 msgstr "Ajouter les XREF aux noms"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:24
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:61
+#: ClassicLAFModuleTrait.php:59
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Attention : Ce paramètre n'aura actuellement aucun effet sur votre système, car il nécessite une version plus récente de libxml (au moins %1$s)."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151
+#: ClassicLAFModuleTrait.php:149
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr "Cochez cette option si vous préférez ne pas utiliser de type de nom au cas où l'individu respectif n'aurait qu'un seul nom."
 
@@ -49,48 +49,49 @@ msgstr "Cochez cette option si vous préférez ne pas utiliser de type de nom au
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Cochez cette case pour toujours développer la première barre latérale, plutôt que la barre latérale du \"navigateur familial\"."
 
-#: resources/views/edit/edit-gedcom-fields-ext.phtml:73
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:81
 #: resources/views/modals/config-gedcom-field.phtml:10
+#: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
 msgstr "Configurer la visibilité de la balise GEDCOM '%s'"
 
-#: resources/views/edit/edit-gedcom-fields-ext.phtml:107
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:115
 msgid "Configure visibility of GEDCOM tags"
 msgstr "Configurer la visibilité des balises GEDCOM"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:75
+#: ClassicLAFModuleTrait.php:73
 msgid "Crop Thumbnails"
 msgstr "Recadrer les vignettes"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:95
+#: ClassicLAFModuleTrait.php:93
 msgid "Custom prefixes"
 msgstr "préfixes personnalisés"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:167
+#: ClassicLAFModuleTrait.php:165
 msgid "Display a family's XREF after the family label."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:68
+#: ClassicLAFModuleTrait.php:65
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Affichez toutes les boîtes de dialogue d'édition en utilisant une disposition plus compacte, qui omet également l'en-tête et le pied de page standard."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:159
+#: ClassicLAFModuleTrait.php:157
 msgid "Display an individual's XREF after the name."
 msgstr "Afficher le XREF d'un individu après son nom."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:140
+#: ClassicLAFModuleTrait.php:138
 msgid "Display nicknames before surnames"
 msgstr "Afficher les surnoms avant les noms"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:62
 msgid "Edit dialogs"
 msgstr "Boîtes de dialogue d'édition"
 
@@ -100,17 +101,17 @@ msgid "Expand first sidebar"
 msgstr "Développer la première barre latérale"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:141
+#: ClassicLAFModuleTrait.php:139
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Gérez les surnoms comme dans webtrees 1.x, c'est-à-dire afficher avant le nom de famille."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:73
+#: ClassicLAFModuleTrait.php:71
 msgid "Image Thumbnails"
 msgstr "Vignettes d'image"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:135
+#: ClassicLAFModuleTrait.php:133
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "Dans un arbre généalogique, chaque enregistrement a un numéro de référence interne (appelé «XREF») tel que «F123» ou «R14». Vous pouvez choisir le préfixe qui sera utilisé chaque fois que de nouvelles XREF sont créées."
 
@@ -120,22 +121,27 @@ msgid "Individual page"
 msgstr "Page individuelle"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:174 ClassicLAFModuleTrait.php:183
+#: ClassicLAFModuleTrait.php:172 ClassicLAFModuleTrait.php:181
 msgid "Layout"
 msgstr "Disposition"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147
+#: ClassicLAFModuleTrait.php:145
 msgid "Name type presets"
 msgstr "Présélections du type de nom"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:138
+#: ClassicLAFModuleTrait.php:136
 msgid "Nicknames"
 msgstr "Surnoms"
 
+#: resources/views/admin/tags-ext.phtml:27
+#, php-format
+msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:142
+#: ClassicLAFModuleTrait.php:140
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Notez que cela n'affecte pas les champs de nom GEDCOM qui incluent déjà un surnom, c'est-à-dire que vous pouvez toujours positionner le surnom explicitement pour des noms spécifiques."
 
@@ -151,7 +157,7 @@ msgid "Several adjustments - See %1$s for details."
 msgstr "Plusieurs ajustements - Voir %1$s pour plus de détails."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149
+#: ClassicLAFModuleTrait.php:147
 msgid "Skip name type preset for single names"
 msgstr "Ignorer le type de nom prédéfini pour les noms uniques"
 
@@ -161,17 +167,22 @@ msgid "The standard layout centers most pages, wasting a lot of space especially
 msgstr "La mise en page standard centre la plupart des pages, gaspillant beaucoup d'espace, en particulier sur les écrans larges. Cette option permet d'utiliser la majeure partie de l'espace disponible."
 
 #. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+msgid "This only affects standard and specific custom themes."
+msgstr ""
+
+#. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
 msgid "Use available space"
 msgstr "Utiliser l'espace disponible"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:64
 msgid "Use compact layout"
 msgstr "Utiliser une mise en page compacte"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:96
+#: ClassicLAFModuleTrait.php:94
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Utilisez des préfixes personnalisés pour les XREF comme dans webtrees 1.x, au lieu de préfixer tous les XREF avec «X»."
 
@@ -184,54 +195,59 @@ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in web
 msgstr "Vesta Classic Look & Feel : Option pour utiliser des xrefs préfixées personnalisées, comme dans webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:76
+#: ClassicLAFModuleTrait.php:74
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees rogne les vignettes afin de produire des images avec une largeur et une hauteur cohérentes. Ceci est problématique si vous avez des images d'individus avec un rapport hauteur / largeur non standard, où la tête de la personne concernée n'est pas centrée et peut donc être coupée. Désélectionnez cette option pour gérer ces cas."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:150
+#: ClassicLAFModuleTrait.php:148
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr "Lors de l'ajout de nouveaux parents, conjoints ou enfants, webtrees prédéfinit le type de nom sur \"nom de naissance\"."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:93
+#: ClassicLAFModuleTrait.php:91
 msgid "XREF prefixes"
 msgstr "préfixes XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
+#: ClassicLAFModuleTrait.php:154 ClassicLAFModuleTrait.php:162
 msgid "XREFs"
 msgstr "XREFs"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+#: resources/views/admin/tags-ext.phtml:24
+msgid "here"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
 msgid "hide always"
 msgstr "cacher toujours"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:20
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide for new individuals, show and expand subtags otherwise"
 msgstr ""
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:19
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:17
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide for new individuals, show otherwise"
 msgstr "cacher pour les nouveaux individus, montrer sinon"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:17
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
 msgstr "pas de réglage"
 
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:15
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
 
-#. I18N::translate('hide for new individuals, show and expand subtags otherwise'), 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:21
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:19
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "show always"
 msgstr "toujours afficher"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:22
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
 msgstr ""
 

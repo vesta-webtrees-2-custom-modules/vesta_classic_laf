@@ -15,7 +15,7 @@ use Fisharebest\Webtrees\Tree;
 $args = app(EditGedcomFieldsArgs::class);
 
 if($args->canConfigure()) {
-    //own view
+    //own view, plus extension for 'expand subtags'
     echo view('edit/edit-gedcom-fields-ext', [
         'gedcom' => $gedcom,
         'hierarchy' => $hierarchy,
@@ -25,8 +25,8 @@ if($args->canConfigure()) {
     return;
 }
 
-//original view
-echo view('::edit/edit-gedcom-fields', [
+//original view, plus extension for 'expand subtags'
+echo view('edit/edit-gedcom-fields-ext2', [
     'gedcom' => $gedcom,
     'hierarchy' => $hierarchy,
     'prefix' => $prefix,

@@ -20,6 +20,7 @@ $title2 = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag2);
     <div class="modal-body">
         <?= view('edit/config-gedcom-field-edit-control', [
             'tag' => $tag,
+            'indent' => $indent,
             'tree' => $tree]) ?>
     </div>
     
@@ -28,6 +29,7 @@ $title2 = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag2);
     <div class="modal-body">
         <?= view('edit/config-gedcom-field-edit-control-2', [
             'tag' => $tag2,
+            'indent' => $indent,
             'tree' => $tree]) ?>
     </div>
     
