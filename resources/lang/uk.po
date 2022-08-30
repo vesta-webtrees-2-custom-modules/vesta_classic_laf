@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2022-08-30 12:19+0000\n"
+"PO-Revision-Date: 2022-08-30 17:20+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
@@ -253,7 +253,7 @@ msgstr "завжди показувати"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "завжди показувати та розгортати підтеги"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Відображати зовнішнє посилання родини після імені."
