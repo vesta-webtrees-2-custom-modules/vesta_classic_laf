@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2022-07-26 20:22+0000\n"
-"Last-Translator: Markus Hemprich <hemprich@gmx.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"PO-Revision-Date: 2022-09-02 14:17+0000\n"
+"Last-Translator: mpwt <der@bauschaffen.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -32,6 +33,8 @@ msgstr "Anfügen der XREFs zu Namen"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Wenden Sie die folgende Einstellung auf '%1$s' in allen '%2$s'-Ereignissen "
+"an, sofern das Ereignis nicht explizit konfiguriert ist:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:59
@@ -73,7 +76,7 @@ msgstr "Benutzerdefiniert"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Anzeige des XREF einer Familie nach der Familienbezeichnung."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -139,6 +142,9 @@ msgstr "Spitznamen"
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Beachten Sie zusätzlich zu den unten aufgeführten Konfigurationsoptionen: %1$"
+"s ermöglicht es Ihnen, die Sichtbarkeit jedes einzelnen Tags im Detail zu "
+"konfigurieren, wie %2$s beschrieben."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:140
@@ -169,7 +175,7 @@ msgstr "Das Standardlayout zentriert die meisten Seiten und verschwendet viel Pl
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Dies betrifft nur Standard- und spezielle benutzerdefinierte Themen."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
@@ -216,7 +222,7 @@ msgstr "XREFs"
 
 #: resources/views/admin/tags-ext.phtml:24
 msgid "here"
-msgstr ""
+msgstr "hier"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
@@ -227,6 +233,7 @@ msgstr "immer ausblenden"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide for new individuals, show and expand subtags otherwise"
 msgstr ""
+"für neue Personen ausblenden, ansonsten Unterelemente anzeigen und erweitern"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
@@ -240,6 +247,7 @@ msgstr "keine Anpassung"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
+"keine Anpassung (Einstellung für alle Ereignisse wie unten gezeigt verwenden)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
@@ -249,7 +257,7 @@ msgstr "immer anzeigen"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "Unterelemente immer anzeigen und erweitern"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Anzeigen des Familien-XREF nach dem Namen."
