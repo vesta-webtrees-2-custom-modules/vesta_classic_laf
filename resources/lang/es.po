@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2022-08-28 10:06+0200\n"
+"PO-Revision-Date: 2022-09-19 13:21+0000\n"
+"Last-Translator: Jose Antonio Corral <calducho@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
+msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
+msgstr ""
+"Un módulo que configura los temas y otras características, brindando una "
+"apariencia más cercana a la versión 1.x de webtrees."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:35
+msgid "Overall width"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:37
+msgid "Use available space"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:38
+msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:45
+msgid "Individual page"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:64
+msgid "Use compact layout"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:49
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:53
+msgid "Expand first sidebar"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:54
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:59
+#, php-format
+msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:62
+msgid "Edit dialogs"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:65
+msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+msgid "This only affects standard and specific custom themes."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:71
+msgid "Image Thumbnails"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:73
+msgid "Crop Thumbnails"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:74
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:91
+msgid "XREF prefixes"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:93
+msgid "Custom prefixes"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:94
+msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:133
+msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:136
+msgid "Nicknames"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:138
+msgid "Display nicknames before surnames"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:139
+msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:140
+msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:145
+msgid "Name type presets"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:147
+msgid "Skip name type preset for single names"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:148
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:149
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:154 ClassicLAFModuleTrait.php:162
+msgid "XREFs"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
+msgid "Append XREFs to names"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:157
+msgid "Display an individual's XREF after the name."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:165
+msgid "Display a family's XREF after the family label."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:172 ClassicLAFModuleTrait.php:181
+msgid "Layout"
+msgstr ""
+
+#: WhatsNew/WhatsNew0.php:11
+msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
+msgstr ""
+
+#: WhatsNew/WhatsNew1.php:11
+msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
+msgstr ""
+
+#: resources/views/admin/tags-ext.phtml:24
+msgid "here"
+msgstr ""
+
+#: resources/views/admin/tags-ext.phtml:27
+#, php-format
+msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
+msgid "no adjustment"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
+msgid "hide always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
+msgid "hide for new individuals, show otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
+msgid "hide for new individuals, show and expand subtags otherwise"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "show always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show and expand subtags always"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:24
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr ""
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:81
+#: resources/views/modals/config-gedcom-field.phtml:10
+#: resources/views/modals/config-gedcom-field.phtml:11
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr ""
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:115
+msgid "Configure visibility of GEDCOM tags"
+msgstr ""
