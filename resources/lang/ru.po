@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2022-08-02 15:15+0000\n"
+"PO-Revision-Date: 2022-10-03 06:58+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -32,6 +34,8 @@ msgstr "Добавлять внешние ссылки к именам"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Примените следующий параметр к '%1$s' во всех событиях '%2$s', если только "
+"событие не настроено явно:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:59
@@ -73,7 +77,7 @@ msgstr "Пользовательские префиксы"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Отображение внешней ссылки семейства после метки семейства."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -139,6 +143,9 @@ msgstr "Никнеймы"
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Обратите внимание, что в дополнение к приведенным ниже параметрам "
+"конфигурации %1$s позволяет детально настроить видимость каждого конкретного "
+"тега, как описано %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:140
@@ -169,7 +176,7 @@ msgstr "Стандартный макет центрирует большинс�
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Это влияет только на стандартные и специальные пользовательские темы."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
@@ -216,7 +223,7 @@ msgstr "Внешние ссылки"
 
 #: resources/views/admin/tags-ext.phtml:24
 msgid "here"
-msgstr ""
+msgstr "здесь"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
@@ -227,6 +234,7 @@ msgstr "прятаться всегда"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide for new individuals, show and expand subtags otherwise"
 msgstr ""
+"скрыть для новых лиц, показать и расширить вложенные теги в противном случае"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
@@ -240,6 +248,7 @@ msgstr "без корректировки"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
+"без настройки (используйте настройку для всех событий, как показано ниже)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
@@ -249,7 +258,7 @@ msgstr "показывать всегда"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "всегда показывать и разворачивать вложенные теги"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Отображать внешнюю ссылку семьи после имени."
