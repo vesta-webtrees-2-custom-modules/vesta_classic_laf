@@ -41,8 +41,8 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 ### Download<a name="download"/>
 
-* Current version: 2.1.7.1.1
-* Based on and tested with webtrees 2.1.7. Requires webtrees 2.1.4 or later.
+* Current version: 2.1.8.0.0
+* Based on and tested with webtrees 2.1.8. Requires webtrees 2.1.8 or later.
 * Requires the ⚶ Vesta Common module ('vesta_common').
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
