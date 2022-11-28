@@ -5,7 +5,6 @@ use Fisharebest\Webtrees\Services\GedcomEditService;
 use Fisharebest\Webtrees\Tree;
 
 /**
- * @var string            $cancel_url
  * @var GedcomEditService $gedcom_edit_service
  * @var string            $post_url
  * @var string            $title
@@ -21,7 +20,6 @@ app()->instance(GedcomEditServiceExt2::class, $gedcom_edit_service);
 
 //call original view
 echo view('::edit/new-individual', [
-    'cancel_url'          => $cancel_url,
     'facts'               => $facts,
     'gedcom_edit_service' => $gedcom_edit_service,
     'post_url'            => $post_url,
