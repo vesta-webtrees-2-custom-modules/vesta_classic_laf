@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2021-06-08 21:33+0000\n"
+"PO-Revision-Date: 2022-11-30 18:48+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -32,17 +33,23 @@ msgstr "Připojit XREF ke jménům"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Uplatnit následující nastavení '%1$s' uvnitř všech událostí '%2$s', pokud "
+"událost není konfigurována explicitně:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:59
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Pozor: toto nastavení nebude mít ve vašem systému žádný účinek, protože "
+"vyžaduje novou versi libxml (aspoň %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:149
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Zvolte tuto možnost, když dáváte přednost neuvádět typ jména v případě, kdy "
+"osoba má jen jedno jméno."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
@@ -54,11 +61,11 @@ msgstr "Zaškrtněte, aby se vždy rozbalil první postranní panel, nikoli post
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Konfigurovat viditelnost GEDCOM tagu '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:115
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Konfigurovat viditelnost GEDCOM tagů"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:73
@@ -73,7 +80,7 @@ msgstr "Vlastní předpony"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Za jménem rodiny zobrazit její XREF."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -128,7 +135,7 @@ msgstr "Rozvržení"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:145
 msgid "Name type presets"
-msgstr ""
+msgstr "Přednastavení typu jména"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:136
@@ -139,6 +146,8 @@ msgstr "Přezdívky"
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Všimněte si, že navíc k níže uvedeným konfiguračním volbám %1$s umožňuje "
+"konfigurovat viditelnost každého určitého tagu podrobně, jak popsáno %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:140
@@ -159,7 +168,7 @@ msgstr "Několik úprav - podrobnosti viz %1$s."
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:147
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Přeskočit přednastavení typu jména pro jednoduchá jména"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -169,7 +178,7 @@ msgstr "Standardní rozvržení centruje většinu stránek a plýtvá místem z
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "To ovlivní jen standardní a specifické uživatelské motivy."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
@@ -203,6 +212,8 @@ msgstr "Webtrees ořezává náhledové obrázky s cílem vytvořit obrázky se 
 #: ClassicLAFModuleTrait.php:148
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"Při přidávání nových rodičů, partnerů nebo dětí nastavuje webtrees typ jména "
+"na 'rodné jméno'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
@@ -216,40 +227,40 @@ msgstr "XREF"
 
 #: resources/views/admin/tags-ext.phtml:24
 msgid "here"
-msgstr ""
+msgstr "tady"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
 msgid "hide always"
-msgstr ""
+msgstr "vždy skrýt"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide for new individuals, show and expand subtags otherwise"
-msgstr ""
+msgstr "skrýt u nových jednotlivců, jinak zobrazit a rozvinout subtagy"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide for new individuals, show otherwise"
-msgstr ""
+msgstr "skrýt u nových jednotlivců, jinak zobrazit"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
-msgstr ""
+msgstr "žádná úprava"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
-msgstr ""
+msgstr "žádná úprava (použít nastavení pro všechny události jak ukázáno níže)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "show always"
-msgstr ""
+msgstr "vždy zobrazit"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "vždy zobrazit a rozvinout subtagy"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Zobrazit XREF rodiny za jménem."
