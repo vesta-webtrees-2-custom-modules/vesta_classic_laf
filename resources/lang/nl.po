@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2022-08-28 22:17+0000\n"
+"PO-Revision-Date: 2022-12-11 13:48+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
@@ -17,12 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
-msgstr "Een module die alle thema's en andere functies aanpast, zodat uiterlijk en gevoel dichter bij de webtrees 1.x versie ligt."
+msgstr ""
+"Een module die alle thema's en andere functies zo aanpast dat het meer het "
+"uiterlijk van de webtrees 1.x-versie heeft."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
@@ -193,11 +195,15 @@ msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in pl
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
-msgstr "Vesta Klassieke uitstraling & gevoel: voorheen bekend als Compact Themes Adjuster. Nu onderdeel van de Vesta-suite."
+msgstr ""
+"Vesta Klassiek uiterlijk: voorheen bekend als Compact Themes Adjuster. Nu "
+"onderdeel van de Vesta-suite."
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
-msgstr "Vesta Klassieke uitstraling & gevoel: Optie om aangepaste voorvoegsel-XREF's te gebruiken, zoals in webtrees 1.x."
+msgstr ""
+"Vesta Klassiek uiterlijk: Optie om aangepaste voorvoegsel-XREF's te "
+"gebruiken, zoals in webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
