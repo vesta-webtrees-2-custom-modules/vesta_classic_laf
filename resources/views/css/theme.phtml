@@ -274,9 +274,18 @@ also pad and border etc like a form-control
 }
 
 /*
-compact layout
+compact layout, ok foe webtrees 2.1
 */
 
+/* all rows */
+.edit-container .row.mb-3 {
+    margin-bottom: 0.25rem !important;
+    /* original value:
+    margin-bottom: 1rem !important;
+    */
+}
+
+/* e.g. date input field */
 .edit-container .form-control {
   height: calc(1.5em + 2px);
   /* original values:
@@ -284,45 +293,11 @@ compact layout
   */
 }
 
-.edit-container textarea.form-control {
-    height: auto;
-}
-
-[dir] .edit-container .form-control {
-  padding-top: 0.1rem;
-  padding-right: 0.5rem;
-  padding-bottom: 0.1rem;
-  padding-left: 0.5rem;
-  /* original values:
-  padding-top: 0.375rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.375rem;
-  padding-left: 0.75rem;
-  */
-}  
-        
-[dir] .edit-container .form-group {
-    margin-bottom: 0.1rem;
-    /* original values:
-    margin-bottom: 1rem;
-    */
-}
-
-[dir] .edit-container .col-form-label {
-    padding-top: calc(.1rem + 1px);
-    padding-bottom: calc(.1rem + 1px);
-    /* original values:
-    padding-top: calc(.375rem + 1px);
-    padding-bottom: calc(.375rem + 1px);
-    */
-    margin-bottom: 0;
-}
-
 /* icons for location, help etc */
-[dir] .edit-container .input-group-text {
-    padding-top: 0.1rem;
+.edit-container .input-group-text {
+    padding-top: 0rem;
     padding-right: 0.75rem;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0rem;
     padding-left: 0.75rem;
     /* original values:
     padding-top: 0.375rem;
@@ -332,14 +307,19 @@ compact layout
     */
 }
 
-/* text output e.g. for dates */
-[dir] .edit-container p {
-    margin-top: 0;
-    margin-bottom: 0.1rem;
+
+.edit-container textarea.form-control {
+    height: auto;
+}
+
+.edit-container .col-form-label {
+    padding-top: calc(.1rem + 1px);
+    padding-bottom: calc(.1rem + 1px);
     /* original values:
-    margin-top: 0;
-    margin-bottom: 1rem;
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
     */
+    margin-bottom: 0;
 }
 
 /* ---------------------------------------------------------------------------- */
