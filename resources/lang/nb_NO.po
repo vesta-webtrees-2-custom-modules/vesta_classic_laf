@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2021-03-21 16:28+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
+"PO-Revision-Date: 2022-12-16 15:45+0000\n"
+"Last-Translator: H R Nilsen <hogne@visitusinmaputo.com>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.15\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
@@ -32,33 +33,41 @@ msgstr "Tilføy XREF-er i navn"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Legg til følgende valg til '%1$s' i alle '%2$s' hendelser, med mindre "
+"hendelsen er konfigurert spesifikt:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:59
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Merk: Dette valget vil for øyeblikket ikke ha noen effekt i ditt system, "
+"fordi dette krever en nyere libxml-versjon (minimum %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:149
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Bruk dette valget dersom du ønsker å ikke benytte navnetype i tilfelle den "
+"respektive personen kun har et enkeltnavn."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
-msgstr "Sjekk for å alltid utvide første sidefelt, snarere enn «Familienavigator»-sidefelt."
+msgstr ""
+"Sjekk for å alltid utvide første sidefelt, snarere enn "
+"«Familienavigator»-sidefeltet."
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:81
 #: resources/views/modals/config-gedcom-field.phtml:10
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Konfigurer synlighet av GEDCOM-kode '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:115
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Konfigurer synlighet av GEDCOM-koder"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:73
@@ -73,7 +82,7 @@ msgstr "Egendefinerte prefikser"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Vis en families XREF etter familiefeltet."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:65
@@ -113,7 +122,10 @@ msgstr "Miniatyrbilder"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:133
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
-msgstr "I et slektstre har hver oppføring et internt referansenummer (kalt en \"XREF\") for eksempel \"F123\" eller \"R14\". Du kan velge prefikset som skal brukes når nye XREFs opprettes."
+msgstr ""
+"I et slektstre har hver oppføring et internt referansenummer (kalt en \"XREF"
+"\") for eksempel \"F123\" eller \"R14\". Du kan velge prefikset som skal "
+"benyttes når nye XREFs opprettes."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:45
@@ -128,7 +140,7 @@ msgstr "Utseende"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:145
 msgid "Name type presets"
-msgstr ""
+msgstr "Forvalg av navnetyper"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:136
@@ -139,6 +151,8 @@ msgstr "Kallenavn"
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Merk at i tillegg til konfigurasjonsvalgene nedenfor, vil %1$s tillate deg å "
+"konfigurere synligheten av hver spesifikk kode i detalj, som beskrevet %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:140
@@ -159,7 +173,7 @@ msgstr "Flere justeringer - Se %1$s for detaljer."
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:147
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Utelat forvalg for navnetyper for enkeltnavn"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:38
@@ -169,7 +183,7 @@ msgstr "Standardoppsettet sentrerer de fleste sider, og kaster bort mye plass, s
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Dette påvirker kun standard- og noen egendefinerte tema."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:37
@@ -179,12 +193,14 @@ msgstr "Bruk tilgjengelig plass"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:64
 msgid "Use compact layout"
-msgstr "Bruke kompakt utseende"
+msgstr "Bruk kompakt utseende"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:94
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
-msgstr "Bruk egendefinerte prefikser for XREFs som i webtrees 1.x, i stedet for å prefiks alle XREFs med 'X'."
+msgstr ""
+"Bruk egendefinerte prefikser for XREFs som i webtrees 1.x, i stedet for å "
+"bruke 'X' i alle XREFs."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -192,17 +208,26 @@ msgstr "Vesta Classic Look & Feel: Tidligere kjent som Compact Themes Adjuster. 
 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
-msgstr "Vesta Classic Look &amp; Feel: Mulighet til å bruke tilpassede prefiks xrefs, som i webtrees 1.x."
+msgstr ""
+"Vesta Classic Look & Feel: Mulighet til å bruke tilpassede prefiks xrefs, "
+"som i webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
-msgstr "Webtrees beskjærer miniatyrbilder for å produsere bilder med en konsekvent bredde og høyde. Dette er problematisk hvis du har bilder av individals med et ikke-standard sideforhold, hvor hodet til den respektive personen ikke er sentrert og derfor kan kuttes av. Fjern merket for dette alternativet for å håndtere disse tilfellene."
+msgstr ""
+"webtrees beskjærer miniatyrbilder for å lage bilder med en fast bredde og "
+"høyde. Dette er problematisk hvis du har bilder av personer med et ikke-"
+"standard sideforhold, hvor hodet til den respektive personen ikke er "
+"sentrert og derfor kan kuttes av. Velg bort dette alternativet for å "
+"håndtere disse tilfellene."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:148
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"Når det legges til nye foreldre, partnere eller barn, vil webtrees benytte "
+"navnetypen 'fødenavn'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
@@ -216,40 +241,40 @@ msgstr "XREF-er"
 
 #: resources/views/admin/tags-ext.phtml:24
 msgid "here"
-msgstr ""
+msgstr "her"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
 msgid "hide always"
-msgstr ""
+msgstr "skjul alltid"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide for new individuals, show and expand subtags otherwise"
-msgstr ""
+msgstr "skjul for nye personer, vis og utvid underkoder ellers"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide for new individuals, show otherwise"
-msgstr ""
+msgstr "skjul for nye personer, vis ellers"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
-msgstr ""
+msgstr "ingen tilpasning"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
-msgstr ""
+msgstr "ingen tilpasning (bruk for alle hendelser som vist under)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "show always"
-msgstr ""
+msgstr "vis alltid"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "vis og utvid underkoder alltid"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Vis en families XREF etter navnet."
