@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-28 10:06+0200\n"
-"PO-Revision-Date: 2022-12-16 15:45+0000\n"
+"PO-Revision-Date: 2022-12-16 15:57+0000\n"
 "Last-Translator: H R Nilsen <hogne@visitusinmaputo.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nb_NO/>\n"
@@ -27,7 +27,7 @@ msgstr "En modul som justerer alle temaer og andre funksjoner, og gir en utseend
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
 msgid "Append XREFs to names"
-msgstr "Tilføy XREF-er i navn"
+msgstr "Tilføy XREF i navn"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:24
 #, php-format
@@ -49,13 +49,13 @@ msgstr ""
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
 "Bruk dette valget dersom du ønsker å ikke benytte navnetype i tilfelle den "
-"respektive personen kun har et enkeltnavn."
+"respektive personen kun har ett enkelt navn."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
-"Sjekk for å alltid utvide første sidefelt, snarere enn "
+"Velg for å alltid utvide første sidefelt, fremfor "
 "«Familienavigator»-sidefeltet."
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:81
@@ -125,7 +125,7 @@ msgid "In a family tree, each record has an internal reference number (called an
 msgstr ""
 "I et slektstre har hver oppføring et internt referansenummer (kalt en \"XREF"
 "\") for eksempel \"F123\" eller \"R14\". Du kan velge prefikset som skal "
-"benyttes når nye XREFs opprettes."
+"benyttes når nye XREF opprettes."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:45
@@ -199,8 +199,8 @@ msgstr "Bruk kompakt utseende"
 #: ClassicLAFModuleTrait.php:94
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr ""
-"Bruk egendefinerte prefikser for XREFs som i webtrees 1.x, i stedet for å "
-"bruke 'X' i alle XREFs."
+"Bruk egendefinerte prefikser for XREF som i webtrees 1.x, i stedet for å "
+"bruke 'X' i alle XREF."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
@@ -209,8 +209,8 @@ msgstr "Vesta Classic Look & Feel: Tidligere kjent som Compact Themes Adjuster. 
 #: WhatsNew/WhatsNew1.php:11
 msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
 msgstr ""
-"Vesta Classic Look & Feel: Mulighet til å bruke tilpassede prefiks xrefs, "
-"som i webtrees 1.x."
+"Vesta Classic Look & Feel: Mulighet til å bruke tilpassede prefiks xref, som "
+"i webtrees 1.x."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
@@ -237,7 +237,7 @@ msgstr "XREF prefikser"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:154 ClassicLAFModuleTrait.php:162
 msgid "XREFs"
-msgstr "XREF-er"
+msgstr "XREF"
 
 #: resources/views/admin/tags-ext.phtml:24
 msgid "here"
