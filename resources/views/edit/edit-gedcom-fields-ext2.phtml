@@ -25,8 +25,10 @@ $collapsed = [];
 foreach ($keys as $num => $key) {
     $hierarchy[$levels[$key]] = $tags[$key];
     $full_tag                 = implode(':', array_slice($hierarchy, 0, 1 + $levels[$key]));
+    $full_tag2                = implode('-', array_slice($hierarchy, 0, 1 + $levels[$key]));
+    
     $elements[$key]           = Registry::elementFactory()->make($full_tag);
-    $ids[$key]                = Registry::idFactory()->id() . '-' . $full_tag;
+    $ids[$key]                = Registry::idFactory()->id() . '-' . $full_tag2;
 
     // Does this element have any children?
     $has_subtags = ($levels[$key + 1] ?? 0) > $levels[$key];
@@ -56,9 +58,9 @@ foreach ($keys as $num => $key) {
 <?php foreach ($keys as $key) : ?>
     <?php if ($indent[$key - 1] ?? false) : ?>
         <?php if (($collapse[$key - 1] && $collapsed[$key - 1]) ?? false) : ?>
-            <div id="collapse-<?= $key ?>" class="collapse wt-nested-edit-fields">
+            <div id="collapse-<?= $ids[$key] ?>" class="collapse wt-nested-edit-fields">
         <?php elseif ($collapse[$key - 1] ?? false) : ?>
-            <div id="collapse-<?= $key ?>" class="collapse show wt-nested-edit-fields">
+            <div id="collapse-<?= $ids[$key] ?>" class="collapse show wt-nested-edit-fields">
         <?php else : ?>
                 <div class="wt-nested-edit-fields">
         <?php endif ?>
