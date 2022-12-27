@@ -75,7 +75,7 @@ foreach ($keys as $num => $key) {
             <label class="col-sm-3 col-form-label" for="<?= e($ids[$key]) ?>">
                 <?= $elements[$key]->label() ?>
                 <?php if ($collapse[$key]) : ?>
-                    <button class="btn btn-link" data-bs-target="#collapse-<?= $key + 1 ?>" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-<?= $key + 1 ?>" type="button">
+                    <button class="btn btn-link" data-bs-target="#collapse-<?= $ids[$key + 1] ?>" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-<?= $key + 1 ?>" type="button">
                         <?= view('icons/expand') ?>
                         <?= view('icons/collapse') ?>
                     </button>
