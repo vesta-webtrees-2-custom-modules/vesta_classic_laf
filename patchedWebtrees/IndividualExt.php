@@ -151,6 +151,13 @@ class IndividualExt extends Individual {
         //[RC] adjusted
         $fullForFullNN = $full;
 
+        //Issue #115
+        //slashes in $full have special meaning, must use something else (at least for creating the html)
+        //should we revert this for display afterwards?
+        // not sure, if nickname is set as part of full by user, he wouldn't be able to use a slash either
+        //(anyway there is nothing in the spec about this case)
+        $NICK = str_replace('/', '|', $NICK);
+        
         //[RC] adjusted: logic is configurable        
         if ($NICK && strpos($full, '"' . $NICK . '"') === false) {
             // A NICK field is present, but not included in the NAME.
