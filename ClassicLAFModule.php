@@ -9,7 +9,13 @@ use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
 use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\GedcomRecordPageTempReplacement;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddChildToFamilyPageExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddChildToIndividualPageExt;
 use Cissee\WebtreesExt\Http\RequestHandlers\AddNewFactExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddParentToIndividualPageExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddSpouseToFamilyPageExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddSpouseToIndividualPageExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\AddUnlinkedPageExt;
 use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomField;
 use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomFieldAction;
 use Cissee\WebtreesExt\Http\RequestHandlers\EditFactPageExt;
@@ -21,7 +27,13 @@ use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthAdministrator;
 use Fisharebest\Webtrees\Http\Middleware\AuthEditor;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddChildToFamilyPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddChildToIndividualPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddParentToIndividualPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddSpouseToFamilyPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddSpouseToIndividualPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddUnlinkedPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\GedcomRecordPage;
 use Fisharebest\Webtrees\Http\RequestHandlers\SearchReplacePage;
@@ -253,27 +265,77 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         $router->post(ConfigGedcomFieldAction::class, '/tree/{tree}/config-gedcom-field-action', ConfigGedcomFieldAction::class)
             ->extras(['middleware' => [AuthAdministrator::class]]);        
         
-        //for display
-        //(TODO others)
-        View::registerCustomView('::edit/new-individual', $this->name() . '::edit/new-individual');
-        
-        //for display and config
-        
         //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
         $existingRoutes = $router->getRoutes();
+        //for display and config
         if (array_key_exists(AddNewFact::class, $existingRoutes)) {
             unset($existingRoutes[AddNewFact::class]);        
         }
+        //for display and config
+        if (array_key_exists(EditFactPage::class, $existingRoutes)) {
+            unset($existingRoutes[EditFactPage::class]);        
+        }
+        //for display and config
         if (array_key_exists(EditFactPage::class, $existingRoutes)) {
             unset($existingRoutes[EditFactPage::class]);        
         }
         
+        //for display
+        if (array_key_exists(AddChildToFamilyPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddChildToFamilyPage::class]);        
+        }
+        //for display
+        if (array_key_exists(AddChildToIndividualPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddChildToIndividualPage::class]);        
+        }
+        //for display
+        if (array_key_exists(AddParentToIndividualPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddParentToIndividualPage::class]);        
+        }
+        //for display
+        if (array_key_exists(AddSpouseToFamilyPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddSpouseToFamilyPage::class]);        
+        }
+        //for display
+        if (array_key_exists(AddSpouseToIndividualPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddSpouseToIndividualPage::class]);        
+        }
+        //for display
+        if (array_key_exists(AddUnlinkedPage::class, $existingRoutes)) {
+            unset($existingRoutes[AddUnlinkedPage::class]);        
+        }
+        
         $router->setRoutes($existingRoutes);
         
+        //for display and config
         $router->get(AddNewFact::class, '/tree/{tree}/add-fact/{xref}/{fact}', AddNewFactExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
         
+        //for display and config
         $router->get(EditFactPage::class, '/tree/{tree}/edit-fact/{xref}/{fact_id}', EditFactPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //for display
+        $router->get(AddChildToFamilyPage::class, '/tree/{tree}/add-child-to-family/{xref}/{sex}', AddChildToFamilyPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //for display
+        $router->get(AddChildToIndividualPage::class, '/tree/{tree}/add-child-to-individual/{xref}', AddChildToIndividualPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //for display
+        $router->get(AddParentToIndividualPage::class, '/tree/{tree}/add-parent-to-individual/{xref}/{sex}', AddParentToIndividualPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //for display
+        $router->get(AddSpouseToFamilyPage::class, '/tree/{tree}/add-spouse-to-family/{xref}/{sex}', AddSpouseToFamilyPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        //for display
+        $router->get(AddSpouseToIndividualPage::class, '/tree/{tree}/add-spouse-to-individual/{xref}', AddSpouseToIndividualPageExt::class)
+            ->extras(['middleware' => [AuthEditor::class]]);
+        
+        $router->get(AddUnlinkedPage::class, '/tree/{tree}/add-unlinked-individual', AddUnlinkedPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
         
         //advanced configuration of fact subtags end
