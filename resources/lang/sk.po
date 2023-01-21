@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-08-28 10:06+0200\n"
+"POT-Creation-Date: 2023-01-21 19:58+0100\n"
 "PO-Revision-Date: 2022-08-30 17:20+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,202 +19,219 @@ msgstr ""
 "X-Generator: Weblate 4.14.1-dev\n"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:21 ClassicLAFModuleTrait.php:26
+#: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Modul upravujúci všetky motívy a ostatné vlastnosti. Poskytuje vzhľad a použitie, ktoré sú podobnejšie verzii webtrees 1.x."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:156 ClassicLAFModuleTrait.php:164
+#: ClassicLAFModuleTrait.php:68
+msgid "Always expand initially"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
 msgid "Append XREFs to names"
 msgstr "Pripojiť XREF k menám"
 
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:24
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:59
+#: ClassicLAFModuleTrait.php:74
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Pozor! Toto nastavenie nebude mať na vašom systéme žiadny účinok, lebo predpokladá novšiu verziu libxml (minimálne %1$s)."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:149
+#: ClassicLAFModuleTrait.php:164
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr "Zvoľte túto voľbu, ak preferujete neuvádzanie druhu mena, pokiaľ má osoba len jedno meno."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:54
+#: ClassicLAFModuleTrait.php:56
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Označte, aby sa automaticky otváral prvý bočný panel a nie „Navigátor rodín“."
 
-#: resources/views/edit/edit-gedcom-fields-ext.phtml:81
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:87
 #: resources/views/modals/config-gedcom-field.phtml:10
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
 msgstr "Konfigurovať viditeľnosť GEDCOM tagu '%s'"
 
-#: resources/views/edit/edit-gedcom-fields-ext.phtml:115
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:123
 msgid "Configure visibility of GEDCOM tags"
 msgstr "Konfigurovať viditeľnosť GEDCOM tagov"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:73
+#: ClassicLAFModuleTrait.php:88
 msgid "Crop Thumbnails"
 msgstr "Orezať náhľady obrázkov"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:93
+#: ClassicLAFModuleTrait.php:108
 msgid "Custom prefixes"
 msgstr "Vlastné prefixy"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:165
+#: ClassicLAFModuleTrait.php:180
 msgid "Display a family's XREF after the family label."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:65
+#: ClassicLAFModuleTrait.php:80
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Zobraziť všetky dialógy úprav v kompaktnejšom vzhľade, ktorý súčasne vynecháva štandardnú hlavičku a pätičku."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:157
+#: ClassicLAFModuleTrait.php:172
 msgid "Display an individual's XREF after the name."
 msgstr "Zobraziť XREF osoby po mene."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:138
+#: ClassicLAFModuleTrait.php:153
 msgid "Display nicknames before surnames"
 msgstr "Zobraziť prezývku pred priezviskom"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:62
+#: ClassicLAFModuleTrait.php:77
 msgid "Edit dialogs"
 msgstr "Dialógy úprav"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:53
+#: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
 msgstr "Otvárať prvý bočný panel"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:139
+#: ClassicLAFModuleTrait.php:67
+msgid "Expand initially if name has note or source"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:154
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Zobrazovať prezývky tak, ako vo webtrees 1.x - zobraziť ich pred priezviskom."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:71
+#: ClassicLAFModuleTrait.php:86
 msgid "Image Thumbnails"
 msgstr "Náhľady obrázkov"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:133
+#: ClassicLAFModuleTrait.php:148
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "V rodokmeni má každý záznam svoje interné referenčné číslo, nazývané „XREF“. Napríklad „F123“, alebo „R14“. Môžete si zvoliť, aký prefix sa má použiť pri vytvorení nového záznamu."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:45
+#: ClassicLAFModuleTrait.php:47
 msgid "Individual page"
 msgstr "Stránka osoby"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:172 ClassicLAFModuleTrait.php:181
+#: ClassicLAFModuleTrait.php:61
+msgid "Individual page: Name blocks"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
 msgid "Layout"
 msgstr "Rozvrhnutie"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:145
+#: ClassicLAFModuleTrait.php:69
+msgid "Name blocks are always expandable/collapsible regardless of this setting."
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:160
 msgid "Name type presets"
 msgstr "Prednastavenie typu mena"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:136
+#: ClassicLAFModuleTrait.php:66
+msgid "Never expand initially"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
 msgid "Nicknames"
 msgstr "Prezývky"
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:30
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:140
+#: ClassicLAFModuleTrait.php:155
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "V prípade ak pole meno v GEDCOMe už obsahuje prezývku, tak nedôjde k žiadnej úprave mena. To znamená, že môžete hocikedy explicitne umiestniť prezývku na požadovanú pozíciu v mene."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:35
+#: ClassicLAFModuleTrait.php:37
 msgid "Overall width"
 msgstr "Celková šírka"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:49
+#: ClassicLAFModuleTrait.php:51
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Rôzne úpravy - pozri %1$s pre viac detailov."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:147
+#: ClassicLAFModuleTrait.php:162
 msgid "Skip name type preset for single names"
 msgstr "Preskočiť prednastavenie druhu mena pre jedno meno"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:38
+#: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množstvo plochy hlavne na širokých displejoch. Táto voľba umožňuje využiť väčšinu použiteľnej plochy."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:81
 msgid "This only affects standard and specific custom themes."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:37
+#: ClassicLAFModuleTrait.php:39
 msgid "Use available space"
 msgstr "Využiť priestor, ktorý je k dispozícii"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:48 ClassicLAFModuleTrait.php:64
+#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:79
 msgid "Use compact layout"
 msgstr "Použiť kompaktný vzhľad"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:94
+#: ClassicLAFModuleTrait.php:109
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Namiesto jednotného prefixu „X“ použite vlasné prefixy pre XREF tak, ako vo webtrees 1.x."
 
-#: WhatsNew/WhatsNew0.php:11
-msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
-msgstr "Vesta Classic Look & Feel: Pôvodne známy ako Compact Themes Adjuster. Teraz je súčasťou balíka Vesta."
-
-#: WhatsNew/WhatsNew1.php:11
-msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
-msgstr "Vesta Classic Look & Feel: Možnosť používať vlastné prefixy XREF, tak ako vo webtrees 1.x."
-
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:89
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "webtrees orezáva náhľady obrázkov tak, aby sa obrázky zobrazovali v konzistentnej šírke a výške. Ak máte obrázky osôb s neštandardným pomerom strán a tvár osoby nie je v strede môže prísť k nesprávnemu orezaniu. Zrušte túto voľbu, ak chcete, aby nedošlo k orezaniu náhľadu."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:148
+#: ClassicLAFModuleTrait.php:163
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr "Keď pridávate nových rodičov, partnerov alebo deti, nastavuje webtrees druh mena na „rodné meno“."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:91
+#: ClassicLAFModuleTrait.php:106
 msgid "XREF prefixes"
 msgstr "XREF prefixy"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:154 ClassicLAFModuleTrait.php:162
+#: ClassicLAFModuleTrait.php:169 ClassicLAFModuleTrait.php:177
 msgid "XREFs"
 msgstr "XREF"
 
-#: resources/views/admin/tags-ext.phtml:24
+#: resources/views/admin/tags-ext.phtml:27
 msgid "here"
 msgstr "tu"
 
@@ -278,6 +294,12 @@ msgstr ""
 
 #~ msgid "Use this option to display markdown formatted text as in earlier webtrees versions."
 #~ msgstr "Použite túto voľbu, aby sa text formátovaný pomocou markdown-u zobrazil tak, ako v predchádzajúcich verziách webtrees."
+
+#~ msgid "Vesta Classic Look & Feel: Formerly known as Compact Themes Adjuster. Now part of the Vesta suite."
+#~ msgstr "Vesta Classic Look & Feel: Pôvodne známy ako Compact Themes Adjuster. Teraz je súčasťou balíka Vesta."
+
+#~ msgid "Vesta Classic Look & Feel: Option to use custom prefixed xrefs, as in webtrees 1.x."
+#~ msgstr "Vesta Classic Look & Feel: Možnosť používať vlastné prefixy XREF, tak ako vo webtrees 1.x."
 
 #~ msgid "Webtrees no longer preserves linebreaks (GEDCOM CONC tag) when formatting text via markdown."
 #~ msgstr "webtrees od verzie 2.0.19 nezachováva koniec riadku (CEDCOM CONT-tag), keď sa používa formátovanie pomocou markdown."

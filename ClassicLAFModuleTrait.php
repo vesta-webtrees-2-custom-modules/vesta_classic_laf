@@ -7,6 +7,8 @@ use Fisharebest\Webtrees\I18N;
 use Vesta\CommonI18N;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
+use Vesta\ControlPanelUtils\Model\ControlPanelRadioButton;
+use Vesta\ControlPanelUtils\Model\ControlPanelRadioButtons;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
 use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
@@ -54,7 +56,20 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */ I18N::translate('Check to always expand the first sidebar, rather than the \'Family navigator\' sidebar.'),
                 'EXPAND_FIRST_SIDEBAR',
                 '0')));
-
+        
+        $layout[] = new ControlPanelSubsection(
+            /* I18N: Module Configuration */I18N::translate('Individual page: Name blocks'),
+            array(
+            new ControlPanelRadioButtons(
+                false,
+                array(
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Never expand initially'), null, '0'),
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Expand initially if name has note or source'), null, '1'),
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Always expand initially'), null, '2')),
+                /* I18N: Module Configuration */I18N::translate('Name blocks are always expandable/collapsible regardless of this setting.'),
+                'EXPAND_NAME',
+                '0')));
+        
         //currently solved differently
         $ext_obsolete = /* I18N: Module Configuration */I18N::translate('Attention: This setting currently won\'t have any effect in your system, because it requires a newer libxml version (at least %1$s).', '2.9.3');
 

@@ -105,6 +105,9 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
     }
 
     public function onBoot(): void {
+        //explicitly register in order to re-use in views where we cannot pass via variable
+        //(could also resolve via module service)
+        app()->instance(ClassicLAFModule::class, $this); //do not use bind()! for some reason leads to 'Illegal offset type in isset or empty'
 
         // Register a namespace for our views.
         View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
