@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 19:58+0100\n"
-"PO-Revision-Date: 2022-09-02 14:17+0000\n"
+"PO-Revision-Date: 2023-01-25 14:09+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -26,7 +27,7 @@ msgstr "Ein Modul, das alle Themen und andere Funktionen anpasst und ein Look & 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Always expand initially"
-msgstr ""
+msgstr "Anfangs immer erweitern"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
@@ -108,7 +109,7 @@ msgstr "Ersten Seitenleistenpunkt erweitern"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Anfangs erweitern, wenn der Name eine Notiz oder Quelle hat"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:154
@@ -133,7 +134,7 @@ msgstr "Personenseite"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:61
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Personenseite: Namensblöcke"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
@@ -144,6 +145,8 @@ msgstr "Layout"
 #: ClassicLAFModuleTrait.php:69
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
+"Namensblöcke sind unabhängig von dieser Einstellung immer aus-/"
+"zusammenklappbar."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:160
@@ -153,7 +156,7 @@ msgstr "Namenstyp-Voreinstellungen"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "Never expand initially"
-msgstr ""
+msgstr "Anfangs nicht erweitern"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151
