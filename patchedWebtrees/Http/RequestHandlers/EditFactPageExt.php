@@ -33,7 +33,7 @@ class EditFactPageExt extends EditFactPage
             //explicitly register in order to re-use in views where we cannot pass via variable
             app()->instance(EditGedcomFieldsArgs::class, new EditGedcomFieldsArgs(true));            
         }
-        
+
         return parent::handle($request);
     }
 }

@@ -327,5 +327,10 @@
 		"from": "2.1.15",
 		"to": "2.1.17",
 		"changelog": ["New config option for initial display of name blocks on individual page."]
+	},
+	{
+		"version": "2.1.16.1.1",
+		"from": "2.1.15",
+		"to": "2.1.17"
 	}
 ]

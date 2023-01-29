@@ -7,6 +7,7 @@ use Cissee\Webtrees\Module\ClassicLAF\Factories\CustomXrefFactory;
 use Cissee\Webtrees\Module\ClassicLAF\SurnameTradition\SurnameTraditionWrapper;
 use Cissee\WebtreesExt\CustomFamilyFactory;
 use Cissee\WebtreesExt\CustomIndividualFactory;
+use Cissee\WebtreesExt\Elements\Level1NoteStructure;
 use Cissee\WebtreesExt\FamilyNameHandler;
 use Cissee\WebtreesExt\GedcomRecordPageTempReplacement;
 use Cissee\WebtreesExt\Http\RequestHandlers\AddChildToFamilyPageExt;
@@ -23,6 +24,7 @@ use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
 use Cissee\WebtreesExt\Module\ModuleMetaTrait;
+use Cissee\WebtreesExt\MoreI18N;
 use DOMXPath;
 use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Http\Middleware\AuthAdministrator;
@@ -342,6 +344,14 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             ->extras(['middleware' => [AuthEditor::class]]);
         
         //advanced configuration of fact subtags end
+        
+        $ef = Registry::elementFactory();
+        
+        //larger textarea for level 1 notes
+        $ef->registerTags([
+            'INDI:NOTE' => new Level1NoteStructure(MoreI18N::xlate('Note')),
+            'FAM:NOTE' => new Level1NoteStructure(MoreI18N::xlate('Note')),
+        ]);    
         
         $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 4);
     }
