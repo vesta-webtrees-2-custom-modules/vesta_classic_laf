@@ -27,6 +27,14 @@ use Fisharebest\Webtrees\Http\RequestHandlers\WebmanifestJson;
  * @var Tree                   $tree
  */
 
+//Issue #122: more robust handling of variables
+if (!isset($title)) {
+    $title = "";
+}
+if (!isset($tree)) {
+    $tree = null;
+}
+
 $palette = app(ModuleThemeInterface::class)->palette();
 
 ?>

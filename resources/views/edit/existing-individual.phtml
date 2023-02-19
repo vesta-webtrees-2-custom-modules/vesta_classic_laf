@@ -1,0 +1,81 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Services\GedcomEditService;
+use Fisharebest\Webtrees\Tree;
+use Vesta\Hook\HookInterfaces\GovIdEditControlsInterface;
+use Vesta\Hook\HookInterfaces\GovIdEditControlsUtils;
+use Vesta\VestaUtils;
+
+//adapted from new-individual
+//no changes except we don't want the 'go to new individual' button here
+//also add special modal (functionality strictly should be in SharedPlaces module)
+
+/**
+ * @var GedcomEditService $gedcom_edit_service
+ * @var string            $post_url
+ * @var string            $title
+ * @var Tree              $tree
+ * @var string            $url
+ */
+
+?>
+
+<h2 class="wt-page-title"><?= $title ?></h2>
+
+<form method="post" action="<?= e($post_url) ?>">
+    <?php foreach ($facts ?? [] as $prefix => $prefix_facts) : ?>
+        <?php foreach ($prefix_facts as $n => $fact) : ?>
+            <div class="card mb-2">
+                <div class="card-header">
+                    <button class="btn btn-small btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#fact-<?= $prefix ?>-<?= $n ?>" aria-expanded="false" aria-controls="fact-<?= $prefix ?>-<?= $n ?>" data-wt-persist="<?= e($fact->tag()) ?>">
+                        <?= view('icons/expand') ?>
+                        <?= view('icons/collapse') ?>
+                    </button>
+                    <?= $fact->label() ?>
+                </div>
+                <div class="card-body pb-1 collapse" id="fact-<?= $prefix ?>-<?= $n ?>">
+                    <?= view('edit/edit-gedcom-fields', ['gedcom' => $gedcom_edit_service->insertMissingFactSubtags($fact, false), 'hierarchy' => explode(':', $fact->tag()), 'tree' => $fact->record()->tree(), 'prefix' => $prefix]) ?>
+                </div>
+            </div>
+        <?php endforeach ?>
+    <?php endforeach ?>
+
+    <div class="row mb-3">
+        <div class="col-sm-9 offset-sm-3">
+            <button class="btn btn-primary" type="submit" name="url" value="<?= e($url) ?>">
+                <?= view('icons/save') ?>
+                <?= /* I18N: A button label. */
+                MoreI18N::xlate('save') ?>
+            </button>
+            <a class="btn btn-secondary" href="<?= e($url) ?>">
+                <?= view('icons/cancel') ?>
+                <?= /* I18N: A button label. */
+                MoreI18N::xlate('cancel') ?>
+            </a>
+        </div>
+    </div>
+
+    <?= csrf_field() ?>
+</form>
+
+<?= view('modals/on-screen-keyboard') ?>
+<?= view('modals/ajax') ?>
+<?= view('edit/initialize-calendar-popup') ?>
+
+<?php
+//select initializers for modal placeholder ajax-modal-vesta.phtml used via CreateSharedPlaceModal, urgh
+$select2Initializers = GovIdEditControlsUtils::accessibleModules($tree, Auth::user())
+    ->map(function (GovIdEditControlsInterface $module) {
+        return $module->govIdEditControlSelectScriptSnippet();
+    })
+    ->toArray();
+            
+echo view(VestaUtils::vestaViewsNamespace() . '::modals/ajax-modal-vesta', [
+            'ajax' => false,
+            'select2Initializers' => $select2Initializers
+        ]);
+?>

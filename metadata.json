@@ -332,5 +332,11 @@
 		"version": "2.1.16.1.1",
 		"from": "2.1.15",
 		"to": "2.1.17"
+	},
+	{
+		"version": "2.1.16.1.3",
+		"from": "2.1.15",
+		"to": "2.1.17",
+		"changelog": ["New menu entry for individuals 'Edit main facts and events' (edit multiple facts at once, similar to functionality for new individuals)."]
 	}
 ]

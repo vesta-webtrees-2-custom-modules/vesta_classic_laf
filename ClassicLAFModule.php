@@ -20,6 +20,8 @@ use Cissee\WebtreesExt\Http\RequestHandlers\AddUnlinkedPageExt;
 use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomField;
 use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomFieldAction;
 use Cissee\WebtreesExt\Http\RequestHandlers\EditFactPageExt;
+use Cissee\WebtreesExt\Http\RequestHandlers\EditMainFieldsAction;
+use Cissee\WebtreesExt\Http\RequestHandlers\EditMainFieldsPage;
 use Cissee\WebtreesExt\IndividualExtSettings;
 use Cissee\WebtreesExt\IndividualNameHandler;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
@@ -249,6 +251,15 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
             $stf->register($stf::DEFAULT, new SurnameTraditionWrapper(new DefaultSurnameTradition()));
         }
         
+        View::registerCustomView('::individual-page-menu', $this->name() . '::individual-page-menu');
+        View::registerCustomView('::edit/existing-individual', $this->name() . '::edit/existing-individual');
+        
+        $router->get(EditMainFieldsPage::class, '/tree/{tree}/edit-main/{xref}')
+            ->extras(['middleware' => [AuthEditor::class]]);
+
+        $router->post(EditMainFieldsAction::class, '/tree/{tree}/edit-main/{xref}')
+            ->extras(['middleware' => [AuthEditor::class]]);
+                
         //advanced configuration of fact subtags start
         
         //for config (notes only)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-01-21 19:58+0100\n"
+"POT-Creation-Date: 2023-02-19 17:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,11 +209,11 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:26
 msgid "here"
 msgstr ""
 
-#: resources/views/admin/tags-ext.phtml:30
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
@@ -229,12 +229,12 @@ msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide for new individuals, show otherwise"
+msgid "hide in multi-fact dialogs, show otherwise"
 msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide for new individuals, show and expand subtags otherwise"
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
@@ -265,4 +265,13 @@ msgstr ""
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:123
 msgid "Configure visibility of GEDCOM tags"
+msgstr ""
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr ""
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""

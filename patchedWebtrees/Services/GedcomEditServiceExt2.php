@@ -46,13 +46,30 @@ class GedcomEditServiceExt2 extends GedcomEditService
         $return = array_shift($parts) ?? '';
 
         foreach ($subtags as $subtag => $occurrences) {
-            $hidden = $this->isHiddenTagExt(                
-                $tree, 
-                $tag . ':' . $subtag,
-                str_ends_with($occurrences, ':?'));
+            if (!$include_hidden) {
+                
+                $hidden = $this->isHiddenTagExt(                
+                    $tree, 
+                    $tag . ':' . $subtag,
+                    str_ends_with($occurrences, ':?'));
+            
+                if ($hidden) {
+                    
+                    //we want to preserve overall order in any case
+                    //(in particular in the 'edit main facts and events' dialog)
+                    //therefore show existing hidden at its 'normal' position, rather than at the end
+                    $existing = false;
+                    foreach ($parts as $n => $part) {
+                        if (str_starts_with($part, $next_level . ' ' . $subtag)) {
+                            $existing = true;
+                            break;
+                        }
+                    }
 
-            if (!$include_hidden && $hidden) {
-                continue;
+                    if (!$existing) {
+                        continue;
+                    }
+                }
             }
             
             [$min, $max] = explode(':', $occurrences);

@@ -24,6 +24,14 @@ use Psr\Http\Message\ServerRequestInterface;
  * @var Tree                   $tree
  */
 
+//Issue #122: more robust handling of variables
+if (!isset($title)) {
+    $title = "";
+}
+if (!isset($tree)) {
+    $tree = null;
+}
+
 ?>
 
 <!DOCTYPE html>

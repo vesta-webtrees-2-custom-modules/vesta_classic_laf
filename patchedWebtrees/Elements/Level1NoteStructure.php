@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Cissee\WebtreesExt\Elements;
 
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Elements\NoteStructure;
 use Fisharebest\Webtrees\Elements\XrefNote;
 use Fisharebest\Webtrees\Gedcom;
-use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Tree;
 use function e;
 use function view;
@@ -41,8 +41,8 @@ class Level1NoteStructure extends NoteStructure {
         }
 
         $options = [
-            'inline' => I18N::translate('inline note'),
-            'shared' => I18N::translate('shared note'),
+            'inline' => MoreI18N::xlate('inline note'),
+            'shared' => MoreI18N::xlate('shared note'),
         ];
 
         // New note - either inline or shared

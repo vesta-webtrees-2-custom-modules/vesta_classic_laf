@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-01-21 19:58+0100\n"
+"POT-Creation-Date: 2023-02-19 17:48+0100\n"
 "PO-Revision-Date: 2022-11-30 18:48+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 4.15-dev\n"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -100,6 +105,10 @@ msgstr "Zobrazovat přezdívku před příjmením"
 msgid "Edit dialogs"
 msgstr "Dialogy úprav"
 
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
@@ -160,7 +169,7 @@ msgstr ""
 msgid "Nicknames"
 msgstr "Přezdívky"
 
-#: resources/views/admin/tags-ext.phtml:30
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr "Všimněte si, že navíc k níže uvedeným konfiguračním volbám %1$s umožňuje konfigurovat viditelnost každého určitého tagu podrobně, jak popsáno %2$s."
@@ -231,7 +240,7 @@ msgstr "Předpony XREF"
 msgid "XREFs"
 msgstr "XREF"
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:26
 msgid "here"
 msgstr "tady"
 
@@ -242,13 +251,13 @@ msgstr "vždy skrýt"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide for new individuals, show and expand subtags otherwise"
-msgstr "skrýt u nových jednotlivců, jinak zobrazit a rozvinout subtagy"
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide for new individuals, show otherwise"
-msgstr "skrýt u nových jednotlivců, jinak zobrazit"
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
@@ -288,3 +297,9 @@ msgstr "vždy zobrazit a rozvinout subtagy"
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "Když změníte toto nastavení, musíte ručně vymazat cache náhledových obrázků odstraněním složky %1$s."
+
+#~ msgid "hide for new individuals, show and expand subtags otherwise"
+#~ msgstr "skrýt u nových jednotlivců, jinak zobrazit a rozvinout subtagy"
+
+#~ msgid "hide for new individuals, show otherwise"
+#~ msgstr "skrýt u nových jednotlivců, jinak zobrazit"

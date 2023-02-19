@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-01-21 19:58+0100\n"
+"POT-Creation-Date: 2023-02-19 17:48+0100\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.7.2-dev\n"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -100,6 +105,10 @@ msgstr "Hiển thị biệt danh trước họ"
 msgid "Edit dialogs"
 msgstr "Chỉnh sửa hộp thoại"
 
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
@@ -160,7 +169,7 @@ msgstr ""
 msgid "Nicknames"
 msgstr "Biệt danh"
 
-#: resources/views/admin/tags-ext.phtml:30
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
@@ -231,7 +240,7 @@ msgstr "Tiền tố XREF"
 msgid "XREFs"
 msgstr "XREFs"
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:26
 msgid "here"
 msgstr ""
 
@@ -242,12 +251,12 @@ msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide for new individuals, show and expand subtags otherwise"
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide for new individuals, show otherwise"
+msgid "hide in multi-fact dialogs, show otherwise"
 msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10

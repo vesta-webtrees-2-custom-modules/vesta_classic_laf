@@ -33,6 +33,9 @@ $title2 = I18N::translate('Configure visibility of GEDCOM tag \'%s\'', $tag2);
             'tree' => $tree]) ?>
     </div>
     
+    <div class="modal-body">
+        <?= I18N::translate('\'Multi-fact dialogs\' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog \'%1$s\'.', I18N::translate('Edit main facts and events')) ?>
+    </div>
     <?= view('modals/footer-save-cancel') ?>
     
     <?= csrf_field() ?>

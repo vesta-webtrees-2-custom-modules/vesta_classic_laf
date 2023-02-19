@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-01-21 19:58+0100\n"
+"POT-Creation-Date: 2023-02-19 17:48+0100\n"
 "PO-Revision-Date: 2022-08-30 17:20+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.1-dev\n"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -100,6 +105,10 @@ msgstr "Показувати псевдоніми перед прізвищам�
 msgid "Edit dialogs"
 msgstr "Редагувати діалоги"
 
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
@@ -160,7 +169,7 @@ msgstr ""
 msgid "Nicknames"
 msgstr "Псевдоніми"
 
-#: resources/views/admin/tags-ext.phtml:30
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
@@ -231,7 +240,7 @@ msgstr "Префікс XREF"
 msgid "XREFs"
 msgstr "XREF-и"
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:26
 msgid "here"
 msgstr "тут"
 
@@ -242,13 +251,13 @@ msgstr "завжди приховувати"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide for new individuals, show and expand subtags otherwise"
-msgstr "приховувати для нових осіб, інакше показувати та розгортати субтеги"
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide for new individuals, show otherwise"
-msgstr "приховати для нових осіб, іншим показувати"
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
@@ -282,3 +291,9 @@ msgstr "завжди показувати та розгортати підтег
 
 #~ msgid "When switching this option, you will have to reset your thumbnail cache manually by deleting the folder %1$s."
 #~ msgstr "При перемиканні цієї опції вам доведеться скинути кеш мініатюр вручну, видаливши папку %1$s."
+
+#~ msgid "hide for new individuals, show and expand subtags otherwise"
+#~ msgstr "приховувати для нових осіб, інакше показувати та розгортати субтеги"
+
+#~ msgid "hide for new individuals, show otherwise"
+#~ msgstr "приховати для нових осіб, іншим показувати"

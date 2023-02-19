@@ -9,9 +9,9 @@ $override = $gedcom_edit_service->getPreference($tree, $tag);
 $options = [];
 $options[''] = I18N::translate('no adjustment (use setting for all events as shown below)');
 $options['LEVEL0'] = I18N::translate('hide always');
-$options['LEVEL1'] = I18N::translate('hide for new individuals, show otherwise');
+$options['LEVEL1'] = I18N::translate('hide in multi-fact dialogs, show otherwise');
 if ($indent) {
-    $options['LEVEL1a'] = I18N::translate('hide for new individuals, show and expand subtags otherwise');
+    $options['LEVEL1a'] = I18N::translate('hide in multi-fact dialogs, show and expand subtags otherwise');
 }
 $options['LEVEL2'] = I18N::translate('show always');
 if ($indent) {

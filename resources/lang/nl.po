@@ -7,17 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-01-21 19:58+0100\n"
+"POT-Creation-Date: 2023-02-19 17:48+0100\n"
 "PO-Revision-Date: 2023-01-22 08:05+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15.1\n"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -101,6 +105,10 @@ msgstr "Toon roepnamen voor achternamen"
 msgid "Edit dialogs"
 msgstr "Bewerkingsdialogen"
 
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
 msgid "Expand first sidebar"
@@ -144,8 +152,7 @@ msgstr "Indeling"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:69
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
-msgstr ""
-"Naamblokken zijn altijd uitbreidbaar/inklapbaar, ongeacht deze instelling."
+msgstr "Naamblokken zijn altijd uitbreidbaar/inklapbaar, ongeacht deze instelling."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:160
@@ -162,7 +169,7 @@ msgstr "In eerste instantie nooit uitbreiden"
 msgid "Nicknames"
 msgstr "Roepnamen"
 
-#: resources/views/admin/tags-ext.phtml:30
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr "Naast de onderstaande configuratieopties kunt u met %1$s de zichtbaarheid van elke specifieke tag in detail configureren, zoals beschreven %2$s."
@@ -233,7 +240,7 @@ msgstr "XREF-voorvoegsels"
 msgid "XREFs"
 msgstr "XREF's"
 
-#: resources/views/admin/tags-ext.phtml:27
+#: resources/views/admin/tags-ext.phtml:26
 msgid "here"
 msgstr "hier"
 
@@ -244,13 +251,13 @@ msgstr "altijd verbergen"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide for new individuals, show and expand subtags otherwise"
-msgstr "verberg voor nieuwe personen, anders sublabels tonen en uitbreiden"
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide for new individuals, show otherwise"
-msgstr "verbergen voor nieuwe personen, anders tonen"
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr ""
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
@@ -332,6 +339,12 @@ msgstr "toon altijd volledige sublabels"
 
 #~ msgid "close"
 #~ msgstr "sluiten"
+
+#~ msgid "hide for new individuals, show and expand subtags otherwise"
+#~ msgstr "verberg voor nieuwe personen, anders sublabels tonen en uitbreiden"
+
+#~ msgid "hide for new individuals, show otherwise"
+#~ msgstr "verbergen voor nieuwe personen, anders tonen"
 
 #~ msgid "next"
 #~ msgstr "volgende"
