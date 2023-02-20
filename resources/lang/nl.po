@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-02-19 17:48+0100\n"
-"PO-Revision-Date: 2023-02-19 22:37+0000\n"
+"PO-Revision-Date: 2023-02-20 17:37+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
@@ -23,8 +23,8 @@ msgstr ""
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
-"'Multifeitdialogen' verwijst naar: Alle bewerkingsdialogen voor nieuwe "
-"personen, en de Vesta-specifieke dialoog '%1$s'."
+"'Multifeitdialoogvensters' verwijst naar: Alle bewerkingsdialogen voor "
+"nieuwe personen, en de Vesta-specifieke dialoogvenster '%1$s'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -255,12 +255,13 @@ msgstr "altijd verbergen"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
-msgstr "verbergen in multifeitdialogen, anders sublabels tonen en uitbreiden"
+msgstr ""
+"verbergen in multifeitdialoogvensters, anders sublabels tonen en uitbreiden"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr "verbergen in multifeitdialogen, anders tonen"
+msgstr "verbergen in multifeitdialoogvensters, anders tonen"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
