@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-02-19 17:48+0100\n"
-"PO-Revision-Date: 2023-01-25 14:09+0000\n"
-"Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
+"PO-Revision-Date: 2023-02-21 09:36+0000\n"
+"Last-Translator: Holger Eisold <kontakt@eisold.family>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,6 +23,8 @@ msgstr ""
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"'Multi-Fakten-Dialoge' bezieht sich auf: Alle Bearbeitungsdialoge für neue "
+"Personen und den Vesta-spezifischen Dialog '%1$s'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -107,7 +110,7 @@ msgstr "Dialoge bearbeiten"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Bearbeite wichtige Fakten und Ereignisse"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -253,11 +256,13 @@ msgstr "immer ausblenden"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
+"in Multi-Fakten-Dialogen ausblenden, andernfalls Subtags anzeigen und "
+"erweitern"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "in Multi-Fakten-Dialogen verbergen, sonst anzeigen"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
