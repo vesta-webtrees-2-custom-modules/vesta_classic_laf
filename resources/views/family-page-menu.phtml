@@ -1,0 +1,97 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\Http\RequestHandlers\EditMainFieldsPage;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Family;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddChildToFamilyPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddSpouseToFamilyPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\ChangeFamilyMembersPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\DeleteRecord;
+use Fisharebest\Webtrees\Http\RequestHandlers\EditRawRecordPage;
+use Fisharebest\Webtrees\Http\RequestHandlers\ReorderChildrenPage;
+use Fisharebest\Webtrees\I18N;
+
+/**
+ * @var bool                 $can_upload_media
+ * @var Collection<int,Fact> $clipboard_facts
+ * @var Family               $record
+ */
+
+?>
+
+<div class="dropdown wt-page-menu">
+    <button class="btn btn-primary dropdown-toggle wt-page-menu-button" type="button" id="page-menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?= view('icons/menu') ?>
+        <?= I18N::translate('edit') ?>
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-end wt-page-menu-items" aria-labelledby="page-menu">
+        <a class="dropdown-item" href="<?= e(route(ChangeFamilyMembersPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
+            <?= view('icons/family') ?>
+            <?= I18N::translate('Change family members') ?>
+        </a>
+
+        <?php if ($record->husband() === null) : ?>
+            <a class="dropdown-item" href="<?= e(route(AddSpouseToFamilyPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref(), 'sex' => 'M'])) ?>">
+                <?= view('icons/add') ?>
+                <?= I18N::translate('Add a husband') ?>
+            </a>
+        <?php endif ?>
+
+        <?php if ($record->wife() === null) : ?>
+            <a class="dropdown-item" href="<?= e(route(AddSpouseToFamilyPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref(), 'sex' => 'F'])) ?>">
+                <?= view('icons/add') ?>
+                <?= I18N::translate('Add a wife') ?>
+            </a>
+        <?php endif ?>
+
+        <a class="dropdown-item" href="<?= e(route(AddChildToFamilyPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref(), 'sex' => 'U'])) ?>">
+            <?= view('icons/add') ?>
+            <?= I18N::translate('Add a child') ?>
+        </a>
+
+        <?php if ($record->numberOfChildren() > 1) : ?>
+            <a class="dropdown-item" href="<?= e(route(ReorderChildrenPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
+                <?= view('icons/reorder') ?>
+                <?= I18N::translate('Re-order children') ?>
+            </a>
+        <?php endif ?>
+
+        <?php if ($can_upload_media) : ?>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="<?= e(route(AddNewFact::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref(), 'fact' => 'OBJE'])) ?>">
+                <?= view('icons/add') ?>
+                <?= I18N::translate('Add a media object') ?>
+            </a>
+        <?php endif ?>
+
+        <?php if ($clipboard_facts->isNotEmpty()) : ?>
+            <div class="dropdown-divider"></div>
+
+            <?= view('record-page-menu-clipboard', ['clipboard_facts' => $clipboard_facts, 'record' => $record]) ?>
+        <?php endif ?>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="#" data-wt-confirm="<?= I18N::translate('Deleting the family will unlink all of the individuals from each other but will leave the individuals in place. Are you sure you want to delete this family?') ?>" data-wt-post-url="<?= e(route(DeleteRecord::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
+            <?= view('icons/delete') ?>
+            <?= I18N::translate('Delete') ?>
+        </a>
+
+        <a class="dropdown-item" href="<?= e(route(EditMainFieldsPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
+            <?= view('icons/edit') ?>
+            <?= I18N::translate('Edit main facts and events') ?>
+        </a>
+        
+        <?php if (Auth::isAdmin() || $record->tree()->getPreference('SHOW_GEDCOM_RECORD') === '1') : ?>
+            <a class="dropdown-item" href="<?= e(route(EditRawRecordPage::class, ['tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
+                <?= view('icons/edit') ?>
+                <?= I18N::translate('Edit the raw GEDCOM') ?>
+            </a>
+        <?php endif ?>
+    </div>
+</div>

@@ -27,8 +27,8 @@ class EditMainFieldsAction implements RequestHandlerInterface {
     {
         $tree   = Validator::attributes($request)->tree();
         $xref   = Validator::attributes($request)->isXref()->string('xref');
-        $individual = Registry::individualFactory()->make($xref, $tree);
-        $individual = Auth::checkIndividualAccess($individual, true);
+        $record = Registry::gedcomRecordFactory()->make($xref, $tree);
+        $record = Auth::checkRecordAccess($record, true);
 
         $keep_chan = Validator::parsedBody($request)->boolean('keep_chan', false);
 
@@ -54,25 +54,25 @@ class EditMainFieldsAction implements RequestHandlerInterface {
             $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
             
             // Update (only the first copy of) an existing fact
-            foreach ($individual->facts([], false, null, true) as $fact) {
+            foreach ($record->facts([], false, null, true) as $fact) {
                 if ($fact->id() === $fact_id && $fact->canEdit()) {
-                    $individual->updateFact($fact_id, $gedcom, !$keep_chan);
+                    $record->updateFact($fact_id, $gedcom, !$keep_chan);
                     break;
                 }
             }
         }
         
         //new facts        
-        $levels = Validator::parsedBody($request)->array('ilevels');
-        $tags   = Validator::parsedBody($request)->array('itags');
-        $values = Validator::parsedBody($request)->array('ivalues');
+        $levels = Validator::parsedBody($request)->array('xlevels');
+        $tags   = Validator::parsedBody($request)->array('xtags');
+        $values = Validator::parsedBody($request)->array('xvalues');
         
         if (count($levels) > 0) {
             $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
-            $individual->updateFact('', $gedcom, !$keep_chan);            
+            $record->updateFact('', $gedcom, !$keep_chan);            
         }
         
-        $url = Validator::parsedBody($request)->isLocalUrl()->string('url', $individual->url());
+        $url = Validator::parsedBody($request)->isLocalUrl()->string('url', $record->url());
 
         return redirect($url);
     }

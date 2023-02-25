@@ -252,7 +252,8 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleGlobalI
         }
         
         View::registerCustomView('::individual-page-menu', $this->name() . '::individual-page-menu');
-        View::registerCustomView('::edit/existing-individual', $this->name() . '::edit/existing-individual');
+        View::registerCustomView('::family-page-menu', $this->name() . '::family-page-menu');
+        View::registerCustomView('::edit/existing-record', $this->name() . '::edit/existing-record');
         
         $router->get(EditMainFieldsPage::class, '/tree/{tree}/edit-main/{xref}')
             ->extras(['middleware' => [AuthEditor::class]]);

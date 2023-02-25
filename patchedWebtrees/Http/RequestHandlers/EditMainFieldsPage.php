@@ -6,7 +6,9 @@ namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
 use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
+use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\GedcomEditService;
 use Fisharebest\Webtrees\Validator;
@@ -33,22 +35,35 @@ class EditMainFieldsPage implements RequestHandlerInterface {
     {
         $tree = Validator::attributes($request)->tree();
         $xref = Validator::attributes($request)->isXref()->string('xref');
-        $individual = Registry::individualFactory()->make($xref, $tree);
-        $individual = Auth::checkIndividualAccess($individual, true);
-        $sex = $individual->sex();
+        $record = Registry::gedcomRecordFactory()->make($xref, $tree);
+        $record = Auth::checkRecordAccess($record, true);
         
         $names = array();
-
-        $newFacts = $this->gedcom_edit_service->newIndividualFacts($tree, $sex, $names);
-        //skip merging existingNames for now
+        $newFacts = array();
+        $substrLength = 0;
+        if ($record instanceof Individual) {
+            $individual = $record;
+            $sex = $individual->sex();
+            $newFacts = $this->gedcom_edit_service->newIndividualFacts($tree, $sex, $names);
+            //skip merging existingNames for now
+            
+            //strip off 'INDI:'
+            $substrLength = 5;
+        } else if ($record instanceof Family) {
+            $family = $record;
+            $newFacts = $this->gedcom_edit_service->newFamilyFacts($tree);
+            
+            //strip off 'FAM:'
+            $substrLength = 4;
+        } 
         
         $facts = array();
         $remainingFacts = array();
         
         foreach ($newFacts as $newFact) {
-            $tag = substr($newFact->tag(),5); //strip off 'INDI:'
+            $tag = substr($newFact->tag(),$substrLength); 
             //error_log("tag:".$tag);
-            $existingFacts = $individual->facts([$tag]);
+            $existingFacts = $record->facts([$tag]);
             //error_log(print_r($existingFacts, true));
             
             if (count($existingFacts) > 0) {
@@ -60,15 +75,15 @@ class EditMainFieldsPage implements RequestHandlerInterface {
             }
         }
         
-        $facts['i'] = $remainingFacts;
+        $facts['x'] = $remainingFacts;
 
-        return $this->viewResponse('edit/existing-individual', [
+        return $this->viewResponse('edit/existing-record', [
             'facts'               => $facts,
             'gedcom_edit_service' => $this->gedcom_edit_service,
             'post_url'            => route(EditMainFieldsAction::class, ['tree' => $tree->name(), 'xref' => $xref]),
-            'title'               => $individual->fullName(),
+            'title'               => $record->fullName(),
             'tree'                => $tree,
-            'url'                 => Validator::queryParams($request)->isLocalUrl()->string('url', $individual->url()),
+            'url'                 => Validator::queryParams($request)->isLocalUrl()->string('url', $record->url()),
         ]);
     }
 }
