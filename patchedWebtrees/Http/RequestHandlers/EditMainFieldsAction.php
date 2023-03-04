@@ -33,14 +33,22 @@ class EditMainFieldsAction implements RequestHandlerInterface {
         $keep_chan = Validator::parsedBody($request)->boolean('keep_chan', false);
 
         $fact_ids = array();
+        $new_ids = array();
         
         $keys = array_keys((array)$request->getParsedBody());
         foreach ($keys as $key) {
+            error_log("?".$key);
             $parts = explode("-",$key);
-            //fact-f65dc294a5d862a94b6a891b07db3d5f-levels
-            if ((count($parts) === 3) && ($parts[0] === 'fact')) {
-                $fact_ids[$parts[1]] = $parts[1];
-            }
+            
+            if (count($parts) === 3) {
+                if ($parts[0] === 'fact') {
+                    //fact-f65dc294a5d862a94b6a891b07db3d5f-levels
+                    $fact_ids[$parts[1]] = $parts[1];
+                } else if ($parts[0] === 'new') {
+                    //new-1-levels
+                    $new_ids[$parts[1]] = $parts[1];
+                }
+            } 
         }
         
         //error_log(print_r($keys, true));
@@ -62,14 +70,14 @@ class EditMainFieldsAction implements RequestHandlerInterface {
             }
         }
         
-        //new facts        
-        $levels = Validator::parsedBody($request)->array('xlevels');
-        $tags   = Validator::parsedBody($request)->array('xtags');
-        $values = Validator::parsedBody($request)->array('xvalues');
-        
-        if (count($levels) > 0) {
+        //new facts
+        foreach ($new_ids as $new_id) {
+            $levels = Validator::parsedBody($request)->array('new-'.$new_id.'-levels');
+            $tags   = Validator::parsedBody($request)->array('new-'.$new_id.'-tags');
+            $values = Validator::parsedBody($request)->array('new-'.$new_id.'-values');
             $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
-            $record->updateFact('', $gedcom, !$keep_chan);            
+            
+            $record->updateFact('', $gedcom, !$keep_chan);
         }
         
         $url = Validator::parsedBody($request)->isLocalUrl()->string('url', $record->url());

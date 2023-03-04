@@ -58,8 +58,8 @@ class EditMainFieldsPage implements RequestHandlerInterface {
         } 
         
         $facts = array();
-        $remainingFacts = array();
         
+        $counter = 1;
         foreach ($newFacts as $newFact) {
             $tag = substr($newFact->tag(),$substrLength); 
             //error_log("tag:".$tag);
@@ -71,12 +71,10 @@ class EditMainFieldsPage implements RequestHandlerInterface {
                     $facts['fact-'.$existingFact->id().'-'] = [$existingFact];
                 }
             } else {
-                $remainingFacts []= $newFact;
+                $facts['new-'.$counter++.'-'] = [$newFact];
             }
         }
         
-        $facts['x'] = $remainingFacts;
-
         return $this->viewResponse('edit/existing-record', [
             'facts'               => $facts,
             'gedcom_edit_service' => $this->gedcom_edit_service,
