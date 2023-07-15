@@ -331,24 +331,3 @@ compact layout, ok foe webtrees 2.1
 .p-1 .gallery {
 padding-left: 2px;
 }
-
-/* 
-  Put the header (including as menu items) 
-  on top of other specific z-indexed items (such as leaflet controls, which are at 1000),
-  but below modal stuff (which starts at 1040)
-
-  (do not set a z-index for main: we must keep it at auto, 
-  so that .modal and .modal-backdrop stack properly - 
-  with a z-index set on main, they currently end up in different stacking contexts,
-  which is apparently unintended. 
-  It seems that a cleaner solution would be to put them into a single hierarchy)
-*/
-
-//[2022/05] apparently no longer required in webtrees 2.1
-//header {
-//    z-index: 1010;
-//}
-//
-//.wt-osk {
-//    z-index: 9999;
-//}
