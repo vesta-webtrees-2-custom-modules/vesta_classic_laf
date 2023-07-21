@@ -8,20 +8,24 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-02-19 17:48+0100\n"
-"PO-Revision-Date: 2023-01-24 17:51+0000\n"
+"PO-Revision-Date: 2023-07-21 18:04+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"Les \"boîtes de dialogue multi-faits\" font référence à : toutes les boîtes "
+"de dialogue d'édition pour les nouveaux individus et la boîte de dialogue "
+"spécifique à Vesta \"%1$s\"."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -107,7 +111,7 @@ msgstr "Boîtes de dialogue d'édition"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Modifier les principaux faits et événements"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -253,11 +257,13 @@ msgstr "cacher toujours"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
+"masquer dans les boîtes de dialogue multi-faits, afficher et développer les "
+"sous-étiquettes autrement"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "masquer dans les boîtes de dialogue multi-faits, afficher sinon"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
