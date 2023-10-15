@@ -45,6 +45,14 @@ class IndividualNameHandler {
         return $full;
 
         //experimental!
+        //do not use <a> in the 'inner' html, which itself is used within <a> in various contexts:
+        //
+        //Nested <a> are apparently strictly not allowed, and are therefore un-nested by the browser, which may lead to unintended styling.
+        //see <https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element>
+        //spec isn't very clear here.
+        //
+        //"The a element can be wrapped around entire paragraphs, lists, tables, and so forth, even entire sections, so long as there is no interactive content within (e.g., buttons or other links)" 
+        
         //BIRT with SOUR (before next fact starts)
         if (preg_match('/\n1 BIRT(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
             //img source: "webtrees\resources\css\facts\BIRT.png"

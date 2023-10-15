@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-02-19 17:48+0100\n"
+"POT-Creation-Date: 2023-07-15 15:44+0200\n"
 "PO-Revision-Date: 2022-08-30 17:20+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
@@ -105,6 +105,8 @@ msgstr "Zobraziť prezývku pred priezviskom"
 msgid "Edit dialogs"
 msgstr "Dialógy úprav"
 
+#: resources/views/family-page-menu.phtml:87
+#: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
 msgstr ""
