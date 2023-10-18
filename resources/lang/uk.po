@@ -8,20 +8,24 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-07-15 15:44+0200\n"
-"PO-Revision-Date: 2022-08-30 17:20+0000\n"
-"Last-Translator: Artem <artem@molotov.work>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
+"PO-Revision-Date: 2023-10-17 10:13+0000\n"
+"Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.1\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"«Діалоги з кількома фактами» стосуються усіх діалогових вікон редагування "
+"для нових користувачів і специфічного для Vesta діалогового вікна '%1$s'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -31,7 +35,7 @@ msgstr "Цей модуль налаштовує всі теми, наближу
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Always expand initially"
-msgstr ""
+msgstr "Завжди розгортати одразу"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
@@ -42,6 +46,8 @@ msgstr "Додавати зовнішні посилання до імен"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Застосовувати таке налаштування до '%1$s' у всіх подіях '%2$s', якщо подію "
+"не налаштовано явно:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
@@ -83,7 +89,7 @@ msgstr "Користувацький префікс"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:180
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Відображати XREF родини після мітки родини."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
@@ -109,7 +115,7 @@ msgstr "Редагувати діалоги"
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Редагувати основні факти та події"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -119,7 +125,7 @@ msgstr "Розгорнути першу бічну панель"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Розгортати одразу, якщо в назві є примітка або джерело"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:154
@@ -144,7 +150,7 @@ msgstr "Особиста сторінка"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:61
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Індивідуальна сторінка: блоки імен"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
@@ -155,6 +161,7 @@ msgstr "Вкладки"
 #: ClassicLAFModuleTrait.php:69
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
+"Блоки імен завжди розгортаються/згортаються незалежно від цього параметра."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:160
@@ -164,7 +171,7 @@ msgstr "Попередні налаштунки типу імені"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
 msgid "Never expand initially"
-msgstr ""
+msgstr "Ніколи не розгортати одразу"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:151
@@ -175,6 +182,9 @@ msgstr "Псевдоніми"
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Зауважте, що на додаток до параметрів конфігурації, наведених нижче, %1$s "
+"дозволяє Вам детально налаштувати видимість кожного конкретного тегу, як "
+"описано в %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:155
@@ -255,11 +265,13 @@ msgstr "завжди приховувати"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
+"приховувати в багатофакторних діалогових вікнах, показувати та розгортати "
+"субтеги іншим чином"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "приховати в діалогових вікнах із кількома фактами, показати інакше"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
