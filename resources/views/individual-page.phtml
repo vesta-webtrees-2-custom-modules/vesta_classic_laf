@@ -44,7 +44,7 @@ use Fisharebest\Webtrees\Tree;
         //[RC] adjusted from
         //col-sm-8
         ?>
-        <div class="col-8 col-xl-9">
+        <div class="col-sm-8 col-xl-9">
             <div class="row mb-4">
                 <?= view('individual-page-images', ['can_upload_media' => $can_upload_media, 'individual_media' => $individual_media, 'record' => $record, 'tree' => $tree]) ?>
 
@@ -58,7 +58,7 @@ use Fisharebest\Webtrees\Tree;
         //[RC] adjusted from
         //col-sm-4
         ?>
-        <div class="col-4 col-xl-3">
+        <div class="col-sm-4 col-xl-3">
             <?= view('individual-page-sidebars', ['record' => $record, 'sidebars' => $sidebars]) ?>
         </div>
     </div>
