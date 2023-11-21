@@ -53,6 +53,12 @@ class IndividualNameHandler {
         //
         //"The a element can be wrapped around entire paragraphs, lists, tables, and so forth, even entire sections, so long as there is no interactive content within (e.g., buttons or other links)" 
         
+        //note: negative matches are problematic wrt fake INDI records used e.g. in individual-page-name.phtml
+        //exclude these altogether!
+        if (preg_match('@xref@', $gedcom, $match)) {
+            return $full;
+        }
+
         //BIRT with SOUR (before next fact starts)
         if (preg_match('/\n1 BIRT(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
             //img source: "webtrees\resources\css\facts\BIRT.png"
@@ -110,11 +116,16 @@ class IndividualNameHandler {
             //img source: "https://fontawesome.com/icons/dice-five?s=solid"
             $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzE0NS42IDM4NCAxMjggMzg0ek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTIyNCAyODhDMjA2LjQgMjg4IDE5MiAyNzMuNiAxOTIgMjU2czE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzI0MS42IDI4OCAyMjQgMjg4ek0zMjAgMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDM4NCAzMjAgMzg0ek0zMjAgMTkyYy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDE5MiAzMjAgMTkyeiIvPjwvc3ZnPg==" />';
         }
-				
-	//CUTOFF
+
+        //CUTOFF
         if (preg_match('/\n1 NOTE @N16894@/sm', $gedcom, $match)) {
             //img source: "https://fontawesome.com/icons/forward?s=solid"
             $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMy4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIzIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNTIuNSA0NDAuNmMtOS41IDcuOS0yMi44IDkuNy0zNC4xIDQuNFMwIDQyOC40IDAgNDE2Vjk2QzAgODMuNiA3LjIgNzIuMyAxOC40IDY3czI0LjUtMy42IDM0LjEgNC40TDIyNCAyMTQuM1YyNTZ2NDEuN0w1Mi41IDQ0MC42ek0yNTYgMzUyVjI1NiAxMjggOTZjMC0xMi40IDcuMi0yMy43IDE4LjQtMjlzMjQuNS0zLjYgMzQuMSA0LjRsMTkyIDE2MGM3LjMgNi4xIDExLjUgMTUuMSAxMS41IDI0LjZzLTQuMiAxOC41LTExLjUgMjQuNmwtMTkyIDE2MGMtOS41IDcuOS0yMi44IDkuNy0zNC4xIDQuNHMtMTguNC0xNi42LTE4LjQtMjlWMzUyeiIvPjwvc3ZnPg==" />';
+        }
+
+        if (!preg_match('/\n1 NOTE @N16894@/sm', $gedcom, $match) && !preg_match('/\n1 FAMS/sm', $gedcom, $match)) {
+            //img source: "https://fontawesome.com/icons/arrow-trend-down?f=classic&s=solid"
+            $full .= '&nbsp;<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMWVtJyB2aWV3Qm94PScwIDAgNTc2IDUxMic+PCEtLSEgRm9udCBBd2Vzb21lIEZyZWUgNi40LjIgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UgKENvbW1lcmNpYWwgTGljZW5zZSkgQ29weXJpZ2h0IDIwMjMgRm9udGljb25zLCBJbmMuIC0tPjxwYXRoIGQ9J00zODQgMzUyYy0xNy43IDAtMzIgMTQuMy0zMiAzMnMxNC4zIDMyIDMyIDMySDU0NGMxNy43IDAgMzItMTQuMyAzMi0zMlYyMjRjMC0xNy43LTE0LjMtMzItMzItMzJzLTMyIDE0LjMtMzIgMzJ2ODIuN0wzNDIuNiAxMzcuNGMtMTIuNS0xMi41LTMyLjgtMTIuNS00NS4zIDBMMTkyIDI0Mi43IDU0LjYgMTA1LjRjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zbDE2MCAxNjBjMTIuNSAxMi41IDMyLjggMTIuNSA0NS4zIDBMMzIwIDIwNS4zIDQ2Ni43IDM1MkgzODR6Jy8+PC9zdmc+" />';  
         }
 
         return $full;
