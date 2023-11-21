@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2023-07-15 15:44+0200\n"
+"PO-Revision-Date: 2023-11-20 17:02+0000\n"
+"Last-Translator: BernatBanyuls <bernatbanyuls@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2\n"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
+msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
+msgstr ""
+"Un mòdul que ajusta tots els temes i altres característiques, proporcionant "
+"un aspecte i sensació més proper a la versió 1.x dels arbres web."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:37
+msgid "Overall width"
+msgstr "Amplada total"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:39
+msgid "Use available space"
+msgstr "Utilitzar l'espai disponible"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:40
+msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
+msgstr ""
+"El disseny estàndard centra la majoria de pàgines, malgastant molt d'espai, "
+"especialment en pantalles àmplies. Aquesta opció permet utilitzar la major "
+"part de l'espai disponible."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:47
+msgid "Individual page"
+msgstr "Pàgina individual"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:79
+msgid "Use compact layout"
+msgstr "Utilitzeu un disseny compacte"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:51
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr "Diversos ajustos - Veure %1$s per a més detalls."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:55
+msgid "Expand first sidebar"
+msgstr "Expandir la primera barra lateral"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:56
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+"Marqueu per expandir sempre la primera barra lateral en lloc de la barra "
+"lateral \"Navegador familiar\"."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:61
+msgid "Individual page: Name blocks"
+msgstr "Pàgina individual: blocs de noms"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+msgid "Never expand initially"
+msgstr "No expandir mai inicialment"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:67
+msgid "Expand initially if name has note or source"
+msgstr "Expandiu inicialment si el nom té nota o font"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:68
+msgid "Always expand initially"
+msgstr "Ampliar sempre inicialment"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:69
+msgid "Name blocks are always expandable/collapsible regardless of this setting."
+msgstr ""
+"Els blocs de noms sempre són ampliables/plegables independentment d'aquesta "
+"configuració."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:74
+#, php-format
+msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+"Atenció: Aquesta configuració actualment no tindrà cap efecte al vostre "
+"sistema, ja que requereix una versió més nova de la libxml (com a mínim "
+"%1$s)."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:77
+msgid "Edit dialogs"
+msgstr "Editar diàlegs"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:80
+msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
+msgstr ""
+"Mostra tots els diàlegs d'edició utilitzant un disseny més compacte, que "
+"també omet la capçalera i el peu de pàgina estàndard."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:81
+msgid "This only affects standard and specific custom themes."
+msgstr "Això només afecta temes personalitzats estàndard i específics."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:86
+msgid "Image Thumbnails"
+msgstr "Miniatures d'imatges"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:88
+msgid "Crop Thumbnails"
+msgstr "Miniatures de retallar"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:89
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr ""
+"Webtrees retalla miniatures per tal de produir imatges amb una amplada i "
+"alçada consistents. Això és problemàtic si teniu imatges d'individals amb "
+"una relació d'aspecte no estàndard, on el cap de la persona respectiva no "
+"està centrat i, per tant, es pot tallar. Desmarca aquesta opció per "
+"gestionar aquests casos."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:106
+msgid "XREF prefixes"
+msgstr "Prefixos XREF"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:108
+msgid "Custom prefixes"
+msgstr "Prefixos personalitzats"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:109
+msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
+msgstr ""
+"Utilitzeu prefixos personalitzats per als XREF com en els arbres web 1.x, en "
+"lloc de prefixar tots els XREF amb \"X\"."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:148
+msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
+msgstr ""
+"En un arbre genealògic, cada registre té un número de referència intern ("
+"anomenat \"XREF\") com ara \"F123\" o \"R14\". Podeu triar el prefix que "
+"s'utilitzarà cada vegada que es creïn nous XREF."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:151
+msgid "Nicknames"
+msgstr "Sobrenoms"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:153
+msgid "Display nicknames before surnames"
+msgstr "Mostra els sobrenoms abans dels cognoms"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:154
+msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
+msgstr ""
+"Manejar sobrenoms com en webtrees 1.x, és a dir, mostrar-los abans del "
+"cognom."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:155
+msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
+msgstr ""
+"Tingueu en compte que això no afecta els camps de nom de GEDCOM que ja "
+"inclouen un àlies, és a dir, sempre podeu posicionar l'àlies explícitament "
+"per a noms específics."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:160
+msgid "Name type presets"
+msgstr "Valors predefinits del tipus de nom"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:162
+msgid "Skip name type preset for single names"
+msgstr "Omet el tipus de nom predefinit per als noms individuals"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:163
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+"Quan s'afegeixen nous pares, cònjuges o fills, els arbres web preestableixen "
+"el tipus de nom a \"nom de naixement\"."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:164
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
+"Marqueu aquesta opció si preferiu no utilitzar un tipus de nom en cas que la "
+"persona respectiva tingui un sol nom."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:169 ClassicLAFModuleTrait.php:177
+msgid "XREFs"
+msgstr "XREFs"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
+msgid "Append XREFs to names"
+msgstr "Afegir XREFs als noms"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:172
+msgid "Display an individual's XREF after the name."
+msgstr "Mostra l'XREF d'una persona després del nom."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:180
+msgid "Display a family's XREF after the family label."
+msgstr "Mostra l'XREF d'una família després de l'etiqueta familiar."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
+msgid "Layout"
+msgstr "Traçat"
+
+#: resources/views/admin/tags-ext.phtml:26
+msgid "here"
+msgstr "aquí"
+
+#: resources/views/admin/tags-ext.phtml:29
+#, php-format
+msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
+msgstr ""
+"Tingueu en compte que, a més de les opcions de configuració següents, %1$s "
+"Permet configurar la visibilitat de cada etiqueta específica en detall, tal "
+"com es descriu %2$s."
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
+msgid "no adjustment"
+msgstr "Sense ajustos"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
+msgid "hide always"
+msgstr "amagar sempre"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr "Amaga en diàlegs multifet, mostra el contrari"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr ""
+"amagar-se en diàlegs multifet, mostrar i expandir subetiquetes d'una altra "
+"manera"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "show always"
+msgstr "Mostra't sempre"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show and expand subtags always"
+msgstr "mostrar i ampliar subetiquetes sempre"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr ""
+"Apliqueu la configuració següent a '%1$s' dins de tots '%2$s' esdeveniments, "
+"llevat que l'esdeveniment estigui configurat explícitament:"
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr ""
+"Sense ajustos (utilitzeu la configuració per a tots els esdeveniments com es "
+"mostra a continuació)"
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:87
+#: resources/views/modals/config-gedcom-field.phtml:10
+#: resources/views/modals/config-gedcom-field.phtml:11
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr "Configurar la visibilitat de l'etiqueta GEDCOM '%s"
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:123
+msgid "Configure visibility of GEDCOM tags"
+msgstr "Configurar la visibilitat de les etiquetes GEDCOM"
+
+#: resources/views/family-page-menu.phtml:87
+#: resources/views/individual-page-menu.phtml:128
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr "Editar fets i esdeveniments principals"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
+"'Diàlegs multifet' es refereix a: Tots els diàlegs d'edició per a persones "
+"noves, i el diàleg específic de Vesta '%1$s'."
