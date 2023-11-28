@@ -14,11 +14,12 @@
  */
 
 use Cissee\Webtrees\Module\ClassicLAF\ClassicLAFModule;
-use Fisharebest\Webtrees\I18N;
-use Fisharebest\Webtrees\Tree;
-use Psr\Http\Message\ServerRequestInterface;
-use Fisharebest\Webtrees\Module\ModuleThemeInterface;
 use Fisharebest\Webtrees\Http\RequestHandlers\WebmanifestJson;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Module\ModuleThemeInterface;
+use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Validator;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * @var string                 $content
@@ -54,7 +55,7 @@ $palette = app(ModuleThemeInterface::class)->palette();
         <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/stylesheets'); ?>
     </head>
 
-    <body class="wt-global jc-theme-justlight jc-palette-<?= $palette ?> wt-route-<?= e(substr(strrchr($request->getAttribute('route')->name, '\\'),1)) ?>">
+    <body class="wt-global jc-theme-justlight jc-palette-<?= $palette ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
         
         <?php
             //[RC] adjusted
