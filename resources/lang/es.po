@@ -8,20 +8,23 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-07-15 15:44+0200\n"
-"PO-Revision-Date: 2022-09-19 13:21+0000\n"
-"Last-Translator: Jose Antonio Corral <calducho@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
+"PO-Revision-Date: 2024-01-22 18:01+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"'Diálogos multifactor' se refiere a: Todos los diálogos de edición para "
+"nuevos individuos, y el diálogo específico de Vesta '%1$s'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -31,59 +34,67 @@ msgstr "Un módulo que configura los temas y otras características, brindando u
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:68
 msgid "Always expand initially"
-msgstr ""
+msgstr "Expandir siempre al principio"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
 msgid "Append XREFs to names"
-msgstr ""
+msgstr "Añadir XREF a los nombres"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Aplica la siguiente configuración a '%1$s' dentro de todos los eventos '%2$"
+"s', a menos que el evento esté configurado explícitamente:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:74
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Atención: Este ajuste actualmente no tendrá ningún efecto en su sistema, "
+"porque requiere una versión más reciente de libxml (al menos %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Marque esta opción si prefiere no utilizar un tipo de nombre en caso de que "
+"el individuo correspondiente tenga un único nombre."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:56
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
+"Marque esta opción para expandir siempre la primera barra lateral, en lugar "
+"de la barra lateral del \"Navegador familiar\"."
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:87
 #: resources/views/modals/config-gedcom-field.phtml:10
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Configurar la visibilidad de la etiqueta GEDCOM '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:123
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Configurar la visibilidad de las etiquetas GEDCOM"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:88
 msgid "Crop Thumbnails"
-msgstr ""
+msgstr "Recortar miniaturas"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:108
 msgid "Custom prefixes"
-msgstr ""
+msgstr "Prefijos personalizados"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:180
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Mostrar la XREF de una familia después de la etiqueta de la familia."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
