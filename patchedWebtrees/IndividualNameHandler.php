@@ -2,10 +2,13 @@
 
 namespace Cissee\WebtreesExt;
 
+use Fisharebest\Webtrees\Tree;
+
 class IndividualNameHandler {
 
     protected $nickBeforeSurn = false;
     protected $appendXref = false;
+    protected $addBadgesCallback;
 
     public function setNickBeforeSurn(bool $nickBeforeSurn) {
         $this->nickBeforeSurn = $nickBeforeSurn;
@@ -15,6 +18,10 @@ class IndividualNameHandler {
         $this->appendXref = $appendXref;
     }
 
+    public function setAddBadgesCallback($addBadgesCallback) {
+        $this->addBadgesCallback = $addBadgesCallback;
+    }
+    
     public function addNick(string $nameForDisplay, string $nick): string {
         if ($this->nickBeforeSurn) {
             //same logic as in webtrees 1.x
@@ -40,98 +47,8 @@ class IndividualNameHandler {
         return $nameForDisplay . ' (' . $xref . ')';
     }
 
-    public function addBadges(string $gedcom): string {
-        $full = '';
-        return $full;
-
-        //experimental!
-        //do not use <a> in the 'inner' html, which itself is used within <a> in various contexts:
-        //
-        //Nested <a> are apparently strictly not allowed, and are therefore un-nested by the browser, which may lead to unintended styling.
-        //see <https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element>
-        //spec isn't very clear here.
-        //
-        //"The a element can be wrapped around entire paragraphs, lists, tables, and so forth, even entire sections, so long as there is no interactive content within (e.g., buttons or other links)" 
-        
-        //note: negative matches are problematic wrt fake INDI records used e.g. in individual-page-name.phtml
-        //exclude these altogether!
-        if (preg_match('@xref@', $gedcom, $match)) {
-            return $full;
-        }
-
-        //BIRT with SOUR (before next fact starts)
-        if (preg_match('/\n1 BIRT(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
-            //img source: "webtrees\resources\css\facts\BIRT.png"
-            $full .= '<img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAADAFBMVEVHcEwCAgEAAAABAQAAAAAAAAAAAABqXygMDBjv3SQBAADaug4FBAIAAAELCw61nRzVthPAsTwUEQUECiuchxjTsw3KrRPSsw7QtB/VtQvUtRbGqxnWtxPHqREAAAAFBAAAAB8AAAAAAAOkhwBdSxazmhBORA48OB5KSDvQsAfIrBjSsQKejTKRhUKPgC2aiS1OSjt3ah6XiDrIqwynlC3DpxCrkQaqkxnMrxjSsxDHqQwcIjmsmC6/ow2plzK3nyDSsxDauAnUtQ/OtCfauhTQshHSsgTgvwvHqxPevAbdugDQsAW0nBzLrQ+MeiDEqBDLrx24nxvJrRwAADTHrByikjnSsQVoWhLEpwu/pRkpLD3LrAV4bz6umCR+cz+vlhPQsAiwlxHXtwvjwhLIqxPPsA+6oBMFBQLWuRO1mAIAAP2cizESGkLIqhHFri3RsAVlaXnApyaJgVSqmUG2nRa3nRPMrgnWuSF7cT+cjkZ9byPVtAU6MQJST0DLryCbjULBoworM1jYtwzgvxGhkDdjbJ5VTymkkjfUtA6/piC/qCjatwHKsCkdGw/cuw7UtRO2nh6rkxW1nRnLrRDWuBvdvAywmRnKrA7WthAhJkFXVD7QshPRtR2eiBVQRAOwmR2+qDO6oyZYVDxHPQPXuRuPfieYjEehkDS9pimznjPfvxW4mwbauhCnlTmXhzGsliVwaUubii/HryvAqznZuxi5nAe1oTLDpg9XTybKsB9YTheynSrOsRxjVg3WtxTAphplYlDFqRTGqx7EqybOrwnTswnNsBdpYj3JriPdvRd0ajDErS/MrgvkxBuvnDtyZyjGqQ3IryaVhCQ9MQCwmSHFrCzBpx7hwRfHrR2rlix3aBfWuBnZuxi0mxWhjCK8oQywmyKqlCXkwg2ylwu4nhjYtwqnkh+OgDbOrga4nxaIdhvVuB3aug/oxQ9YUz2zmx+ulhdmWyGKeBixlw/LrhjlwQHkwQjfvAbbuQfNsRrFqh3QsQ/NrxLStBLZuhjfvxVz83RuAAAA9XRSTlMAHxgjIQcqAQMBL/URDROt7AIKDzDn0OXs8eTX9eEdBRYaBBUJDCQUQpOPnkYmIYxVKUvqs7s6MeTQVzeKtsaPxN/ZsfPs3fjc+d/IhOGc2e7asBvev+9az+1J72rPdpjkqeP7+uHFHBgeBnImbOmJHnJCnm1k0/dBiWj9PEO4UJ0z3ec3DzBpbrgwr/QzwfGcn7nV/dCi2PcsN/Lal0TBzLBAOtx6hp7jq+98une4unyf38e2tLmhTc5UwpxFrc1J7+b1rdb1denLjNvZ1MJPrr22LMbG4tPZpF69w6ClxLW97sXQ7MOc6dJ61NH+Xr98SW/Bxj96YdsAAAIhSURBVDjLY2BAA4KCnAw4ADtQDiTJDuLgUMWOYArrquAySV2nMFcZSCsZLRTLz8ChKDvv5w9NIN22QMLxmyZ2NWrF5aa24qUM6jYBEVu+GRdxYFNkWOnSVOdS1rtos/T2fdyBtYzCWBTx1vd9FXUS8IvatnPP9X8bFdlYlLCoajHv/t7MPX/Deofb/68dUORiRLdQEIj1Ws29fnj62x1yepsSw8rHwocZRrpdIjoMZm6i4gdvvJbxi/p4ay87ctCB1bRLzPA27TBrsBCIDkkOfP4wMsXNCt0yo57fvpMtp0/it/CQdol+Fvvk8X1JMRG0yLGfMm0C/8S5/GKu+6/KyL7nj//gc3FFlZAQiqIS96kOlnOWeLhyy0o/4pZNTXpzJ8BOg1kOKRQ4GVS1q/tnh+wO3STunpD6PfGT/YPYlRUKbMysDMiqVKxslu46dVpKKvnFS0+vV+/iYmbysLDJKaGFk+GO4+dkjgpc+eKb9jUsPFidiZlZTggjxM+HnrANkrh08+nntK/elxlYhXmxxMvaw2cunDy2Li7C/574163B2NOK898jzlKRy6zjBe4mfgsz4MWqSEtyzdmfy2ctDk9IClplbMDMg02Rsvb3PyaNfDXzVjtK/jLJYWPGllQYMrX0rZnY2NREfDr1NdK5mOWxOyuLkYsrnUFVr0CBkY1LEVeO4WFmAuvnZWRmYsWZ9ZRAaYiTg4OVlZ1hFNAKAABNKaFSPuL5kQAAAABJRU5ErkJggg==" />';
-        }
-
-        //CHR with SOUR (before next fact starts)
-        if (preg_match('/\n1 CHR(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
-            //img source: "webtrees\resources\css\facts\CHR.png"
-            $full .= '<img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAD30lEQVR4AWOgBRAMr2A0XvuMiSaGGyRWMmqUzmKSr13FJF65kqAlEgWzGFEEHv6njsMsSiYy4pLjbdnHiE8vX95sMY28fp+g8k4LmBhb4RJG6jgsIEZGs3SWu1Ldaj/58kX6+NRKpXSALWWxCFRUb1y1X6Nr+0nJjN7o9K4ZIhQ7xL2wXdewam69WtG0icrFM6eLV65YxlmzZSNz3c4exrL15vj0NkS6Sqg0rTvB27z7rVTNqtt2LUvL/8cwkB91fgX15toNK89r1K94pF6zZIFi5eJG0Yrl7bxNO/dyth74wtS49xpX/fZykdxpKuh6/zMwMJq1rJgr37jhtVzL1kOG7RvO6iTVZAKlBICYEYoJA6cJ28AKo7KKNDXqVpznrd7wi79m/TqZ7gOzJDv2rJCo37BUumbVdLGaNfO4G7bvE6jffJq3acc+7rYD3UKlSxxNPYLULAp7Q3UbV65RbFh7X7Bh6yaV1i3n3FoX95gxMMgDjVZmYmGVBdJcBB1jHRQLdsw1BgYmo7Lpc+Ratt0Va983W6XvwG7ZvsO3RToP3pJo3npYsm7dGsXG9fOkatfO5C9btpC7dvMp7rotN3lqN52QqFmzU7J61Q3JmtUPZBo3LJbsOrjDqG3dRefEfH+g0ZKMnDzaQFoRiDmJjirb0okhGnXL70h17puvP/3kDs2WdQ+NcrumayfV5ornTmvkr9tyULhl9xOxxi1XgY7bL1m2eIVo0dyNImVLDorVrtsr1Lp7t2jP0Z0yk04eVe/c8dyxenqHNguDMtBoFVY2NlUgLUycS3b9Z3Tw8JQwrZw1Q7lj51HpnkPLdFvW3bAvaC/VBWYeqEEKnGbeNmxJfXU8ZSv2KzauPavYsOaoZOXyrdKlC1aJVSzbIVy7/pxU686Hik0bHpgXdE90VJXUBOoTY2bjADlGDpT7iQ0cVp2K2eVKLZveCnccOKnZuf2aW930tlAGBlEGCJaHGsgLxDwixk5GAqk95VylK7byVa3bJd24abVy+7adKg1rTxhXzFzjFpcZrMTAIM0AwSqMjAygxC9IlEvU/v8Hpx/V6qXWgm1713E27rqv3rT2oUFCeQzYMcysqoyMjCrgXIIK2MT4eaQNbF2MDb3CXK0CY9xDwqNM/JX5QSEqBMSgBKwF1KsB8RSZ2V6iYkm5QvmC6coBqYGccup6oKgCWYAvdKG+lwRicRCG6lGBOooPnNXJBesXz+YKMFUXURDgUOIXFNIH5QxCcQ+1kAMapfxQzAPELAxUBNxALAMMcnGogwYeAB3DCo0SJoYhAUbBKBgFo2AUjIJRMApGwSgYBQDOiTUkxyOs/QAAAABJRU5ErkJggg==" />';
-        }
-
-        //DEAT with SOUR (before next fact starts)
-        if (preg_match('/\n1 DEAT(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
-            //img source: "webtrees\resources\css\facts\DEAT.png"
-            $full .= '<img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAFdElEQVR4Ac2WW4hdVxnH/+tba6+197mcyVzSmTEmE2uoEVv7YFCskrEPihAvhSrog0IRWlGxDaZFfaigD4KCF5/EGmwV9UHEFhUfBGuxpemgJOroxCRMLiGdyVzOydnn7Mve6/IZyMTnZpIe83vebH78+a/v+3C7IXADfObhD4j59+0VB+/v8M+e+TMAMG5jRp/Qw5/92N5mq75/MFiJne++BOAf/zehRx87MhGZxacFZR/23g28L056774I4BhuIQqvEaXP3Bsn/oNF0d9UUXyRZPR2LhtfWL30pmUAayMXqu3gbYmwMgR93ii9SYImh311lzb9BxYXF/8A4OIIhVho9f45a3MBERLv7KyHHA9BrQmRUK9X7zh/7tUrAAa4SQiviQNkbVnryORJovZ5b3cNh3ncbMX9QRpOXJXpAYgAiNcloYc+/WQyt+9ke+GV00MAORC8Z74AyI2iyGB04omcKnK38OyzL28AaAIoADC2OPzEAQIQtv3K3nuwEyXJ3RNv3teaj6JwkAQS59OiqosTzuLfU1N75iKdH86LVE6M7ywG6XBvd5N+0evaCyap3tpsihTCnmSm87bKjwPoYxuIRw9/VADgV15ear7r3fd8rtnKvlrVPXKOT5mYZznAhxCuEMVDhp/x3rV01LkcQjZZVcFJ2SikhCEqdpKkhrVelEX1veHwwSMA/E3Noce/fOhbKqoeqevhQmBWwftUUsSCsNcY/xZmL60VK0JQXlunh8NqU6t4NYoaXaIgSLpZkuGu4ClxtvkEgGd++7s/CQC8rQ5l2caViSnt6sxtStEUxvAewCcA4qqiQke6krIiIkwIoYM3ZkNFfjdRMWNM47IxRkO4bDjwc1lW33f0Ry8+h2tc2ZZQVZfH0n5+TJKZM1qPhcDWWn+hqqs0G/C/Io1dcSwfNHGwRKQYaq2u2PlQv8H7cr/3esp7jxCa/yxy8TcAEwDEVQoA1Q0LPf/83/8yP38PT0503jNMubO+XqVAa6Xdnln76dPHXzr0EfOJ/fvvOKQiu5FlLjq3XP7m1FJ2fHqWdt8xHXY411PeiVrKxuqJ4xcvAUgAIZg53pbQ8inYhb9+7YWjT/1x4RtP/tp0dvhd0zPtMWOkA85OdjrvvNMktlHk1jvrRbut6fSZ/3RPn+mnQKsHDB0ADSw2ADSJSIYQcgB2e6X+yvz/Cvjtb74gAbQASADVxPjdY5/81NTX253i4xBypczhizz5yS9/vvRcmr7qVITNmdk4DFJnvJOyrhl1XXsAJYAcAN+KbU9b3/gjjz805/nS933oTmqtVoWQB7Kh+dWPf7j0VG1XSgCrAOzrvTrC9VmSNGRMhD3e2ygE3yURiEhMeqcJAG0liRHtMqCfrr4x0qyI0CchUgbVJBQpKa93UY1UiLlqSBIVUWPdB104C6uUHhA1SwA0ciHnuBJECQdvBMJ4YNGSSveLOs62/kMjPdCECNPMLvLBNRFCKzhJinwBaItr8EgTkpJbIYRSSn1JySgVAo45ADBiq/hhpAkxi6C1aleVmFKKDSCa1joDrBsAPHIh5+q+czxjre0CClKGHXVVdgSs5mtCGG2prV0tC99rNJrrYHWWKLqslGp32r6Ba4iRCimVFGXJqQ9lYM4LZuo558aTRjYGQIx8MHbGGhwncgzspiOD2MQUS4mdrXakt/pDIxUqS7EBrnpChN3gZkeSmpBSkpQNC8CPXOgH3/39cl4MvmNr9KuS7037LFwdv7i+ZtcAxACikb2yx7503/Wz5KiUdJpZveP82TycXFo71u2dCQAMgCFuAQLbpwVg11Yyfuv86OEmkbhBHvn8nfShByTOLRtZFsFfpQTQB5ACYNwGCNxC/gta/Lpwww0OLQAAAABJRU5ErkJggg==" />';
-        }
-
-        //BURI with SOUR (before next fact starts)
-        if (preg_match('/\n1 BURI(?!\n1)(.(?!\n1))*\n2 SOUR/sm', $gedcom, $match)) {
-            //img source: "webtrees\resources\css\facts\BURI.png"
-            $full .= '<img width="16" src="data:image/png;base64,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" />';
-        }
-
-        if (preg_match('/\n1 _FSFTID/', $gedcom, $match)) {
-            $full .= '<img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAe1BMVEUAAAC6t7GFuUCFuUC6t7G6t7GblHqblHqFuUCblHqblHqblHqblHqblHqFuUCblHqblHqblHqFuUC6t7GblHq6t7G6t7GmoI26t7G6t7G2sqmuqpyNq1aFuUCFuUCHtUa6t7GFuUCblHq6t7G6t7GblHqFuUCrppaQp127S6TeAAAAJHRSTlMAgIBAQL9Av78wz4Bg7+/fjyAQz3BgIBDv36fPz8+fj3BwUDC6gAAMAAABTklEQVRIx7XT23KDIBCA4UVEA5JEc056brNp3/8Ju2wcbKoSmDH/td8AC8IUrWTbKhLIS5uMBosZtUgAM6Bmk4Od4LbRID9zKgEchVAMukOHgQIQDK7Fgr8XJ3z5EDgodXSq6+wTgUPrsk2HwT7nvqDAtoLAOqfeGYxFwBSUYaB48R6QmU8SKIEqQyC7+LKHgQ/pInB7hoOi1kNAgusKuin5QkAvEQ3fQySAJc730GscWMRqJ3xbyLhxQDtq8rNPwYUbHatGNHALXqV8GQc1Yt1NXjmQuf9v6Gm8/Txn0iB+3gFdJVpARP0PcINAI5YE4BZ0U+pnEfsgmPXglLvW9wDULfDdAxWBJgVs+Jnunr5P/mmEKwhUYPn9RaUJmBLRQmzIWYjO3dw84Xs+tYGEGuQ5QdqelimgQKpKXQKL1CXmOkHUycKkiqZybWCCfgFH7T9amDw6vQAAAABJRU5ErkJggg==" />';
-        }
-
-        //RESI with SOUR US Census 1910 (before next fact starts)
-        if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1910/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/dice-one?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0yMjQgMjg4QzIwNi40IDI4OCAxOTIgMjczLjYgMTkyIDI1NnMxNC4zOC0zMiAzMi0zMnMzMiAxNC4zOCAzMiAzMlMyNDEuNiAyODggMjI0IDI4OHoiLz48L3N2Zz4=" />';
-        }
-
-        //RESI with SOUR US Census 1920 (before next fact starts)
-        if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1920/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/dice-two?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTMyMCAzODRjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMzg0IDMyMCAzODR6Ii8+PC9zdmc+" />';
-        }
-
-        //RESI with SOUR US Census 1930 (before next fact starts)
-        if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1930/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/dice-three?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTIyNCAyODhDMjA2LjQgMjg4IDE5MiAyNzMuNiAxOTIgMjU2czE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzI0MS42IDI4OCAyMjQgMjg4ek0zMjAgMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDM4NCAzMjAgMzg0eiIvPjwvc3ZnPg==" />';
-        }
-
-        //RESI with SOUR US Census 1940 (before next fact starts)
-        if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1940/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/dice-four?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzE0NS42IDM4NCAxMjggMzg0ek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTMyMCAzODRjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMzg0IDMyMCAzODR6TTMyMCAxOTJjLTE3LjYyIDAtMzItMTQuMzgtMzItMzJzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMzM3LjYgMTkyIDMyMCAxOTJ6Ii8+PC9zdmc+" />';
-        }
-
-        //RESI with SOUR US Census 1950 (before next fact starts)
-        if (preg_match('/\n1 RESI(?!\n1)(.(?!\n1))*\n2 SOUR @S225@(.(?!\n2))*\n3 PAGE 1950/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/dice-five?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzg0IDMySDY0QzI4LjYyIDMyIDAgNjAuNjIgMCA5NnYzMjBjMCAzNS4zOCAyOC42MiA2NCA2NCA2NGgzMjBjMzUuMzggMCA2NC0yOC42MiA2NC02NFY5NkM0NDggNjAuNjIgNDE5LjQgMzIgMzg0IDMyek0xMjggMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzE0NS42IDM4NCAxMjggMzg0ek0xMjggMTkyQzExMC40IDE5MiA5NiAxNzcuNiA5NiAxNjBzMTQuMzgtMzIgMzItMzJzMzIgMTQuMzggMzIgMzJTMTQ1LjYgMTkyIDEyOCAxOTJ6TTIyNCAyODhDMjA2LjQgMjg4IDE5MiAyNzMuNiAxOTIgMjU2czE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzI0MS42IDI4OCAyMjQgMjg4ek0zMjAgMzg0Yy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDM4NCAzMjAgMzg0ek0zMjAgMTkyYy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzMzNy42IDE5MiAzMjAgMTkyeiIvPjwvc3ZnPg==" />';
-        }
-
-        //CUTOFF
-        if (preg_match('/\n1 NOTE @N16894@/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/forward?s=solid"
-            $full .= '<img width="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMy4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIzIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNTIuNSA0NDAuNmMtOS41IDcuOS0yMi44IDkuNy0zNC4xIDQuNFMwIDQyOC40IDAgNDE2Vjk2QzAgODMuNiA3LjIgNzIuMyAxOC40IDY3czI0LjUtMy42IDM0LjEgNC40TDIyNCAyMTQuM1YyNTZ2NDEuN0w1Mi41IDQ0MC42ek0yNTYgMzUyVjI1NiAxMjggOTZjMC0xMi40IDcuMi0yMy43IDE4LjQtMjlzMjQuNS0zLjYgMzQuMSA0LjRsMTkyIDE2MGM3LjMgNi4xIDExLjUgMTUuMSAxMS41IDI0LjZzLTQuMiAxOC41LTExLjUgMjQuNmwtMTkyIDE2MGMtOS41IDcuOS0yMi44IDkuNy0zNC4xIDQuNHMtMTguNC0xNi42LTE4LjQtMjlWMzUyeiIvPjwvc3ZnPg==" />';
-        }
-
-        if (!preg_match('/\n1 NOTE @N16894@/sm', $gedcom, $match) && !preg_match('/\n1 FAMS/sm', $gedcom, $match)) {
-            //img source: "https://fontawesome.com/icons/arrow-trend-down?f=classic&s=solid"
-            //note: html entities like &nbsp; will show in the slug, ugly!
-            //preferable use unicode characters instead
-            $nbsp = json_decode('"\u00A0"');
-            $full .= $nbsp .'<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMWVtJyB2aWV3Qm94PScwIDAgNTc2IDUxMic+PCEtLSEgRm9udCBBd2Vzb21lIEZyZWUgNi40LjIgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UgKENvbW1lcmNpYWwgTGljZW5zZSkgQ29weXJpZ2h0IDIwMjMgRm9udGljb25zLCBJbmMuIC0tPjxwYXRoIGQ9J00zODQgMzUyYy0xNy43IDAtMzIgMTQuMy0zMiAzMnMxNC4zIDMyIDMyIDMySDU0NGMxNy43IDAgMzItMTQuMyAzMi0zMlYyMjRjMC0xNy43LTE0LjMtMzItMzItMzJzLTMyIDE0LjMtMzIgMzJ2ODIuN0wzNDIuNiAxMzcuNGMtMTIuNS0xMi41LTMyLjgtMTIuNS00NS4zIDBMMTkyIDI0Mi43IDU0LjYgMTA1LjRjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zbDE2MCAxNjBjMTIuNSAxMi41IDMyLjggMTIuNSA0NS4zIDBMMzIwIDIwNS4zIDQ2Ni43IDM1MkgzODR6Jy8+PC9zdmc+" />';  
-        }
-
-        return $full;
+    public function addBadges(Tree $tree, string $gedcom): string {
+       
+        return ($this->addBadgesCallback)($tree, $gedcom);
     }
-
 }

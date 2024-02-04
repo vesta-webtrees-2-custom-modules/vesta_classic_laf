@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-07-15 15:44+0200\n"
+"POT-Creation-Date: 2024-02-04 17:48+0100\n"
 "PO-Revision-Date: 2022-11-05 12:39+0000\n"
 "Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sv/>\n"
@@ -23,18 +23,34 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
 
+#: resources/views/admin/badges/edit.phtml:45
+msgid "A label, for reference within the control panel only."
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr ""
 
+#: resources/views/admin/badges/edit.phtml:126
+msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:59
+msgid "A note, shown within within the control panel only."
+msgstr ""
+
+#: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
+msgid "Add a name badge"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:68
+#: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
+#: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
 msgid "Append XREFs to names"
 msgstr ""
 
@@ -44,18 +60,18 @@ msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless th
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:85
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164
+#: ClassicLAFModuleTrait.php:175
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:56
+#: ClassicLAFModuleTrait.php:67
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr ""
 
@@ -71,68 +87,80 @@ msgid "Configure visibility of GEDCOM tags"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:88
+#: ClassicLAFModuleTrait.php:99
 msgid "Crop Thumbnails"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:108
+#: ClassicLAFModuleTrait.php:119
 msgid "Custom prefixes"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:180
+#: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:80
+#: ClassicLAFModuleTrait.php:91
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:172
+#: ClassicLAFModuleTrait.php:183
 msgid "Display an individual's XREF after the name."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:153
+#: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:77
+#: ClassicLAFModuleTrait.php:88
 msgid "Edit dialogs"
 msgstr ""
 
-#: resources/views/family-page-menu.phtml:87
+#: resources/views/family-page-menu.phtml:88
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
 msgstr ""
 
+#: ClassicLAFModule.php:792
+msgid "Edit the name badge"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:66
 msgid "Expand first sidebar"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
 msgstr ""
 
+#: resources/views/admin/badges/edit.phtml:84
+msgid "HTML snippet"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:91
+msgid "HTML snippet to be displayed after the name, e.g. a small image."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:154
+#: ClassicLAFModuleTrait.php:165
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:86
+#: ClassicLAFModuleTrait.php:97
 msgid "Image Thumbnails"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:148
+#: ClassicLAFModuleTrait.php:159
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr ""
 
@@ -142,33 +170,52 @@ msgid "Individual page"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:61
+#: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
+#: ClassicLAFModuleTrait.php:197
 msgid "Layout"
 msgstr ""
 
+#: resources/views/admin/badges/config.phtml:63
+#: resources/views/admin/badges/edit.phtml:37
+msgid "Name badge"
+msgstr ""
+
+#: ClassicLAFModule.php:573 ClassicLAFModule.php:637
+#: resources/views/admin/badges/config.phtml:56
+#: resources/views/admin/badges/edit.phtml:28
+msgid "Name badges"
+msgstr ""
+
+#: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
+msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:69
+#: ClassicLAFModuleTrait.php:80
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:160
+#: ClassicLAFModuleTrait.php:171
 msgid "Name type presets"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151
+#: ClassicLAFModuleTrait.php:162
 msgid "Nicknames"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:75
+msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
 
 #: resources/views/admin/tags-ext.phtml:29
@@ -177,7 +224,7 @@ msgid "Note that in addition to the configuration options below, %1$s allows you
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:166
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr ""
 
@@ -186,15 +233,31 @@ msgstr ""
 msgid "Overall width"
 msgstr ""
 
+#: resources/views/admin/badges/edit.phtml:66
+msgid "Regex"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:74
+msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
+msgstr ""
+
+#: resources/views/admin/badges/config.phtml:33
+msgid "See the initial name badges for examples."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:51
+#: ClassicLAFModuleTrait.php:55
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:162
+#: ClassicLAFModuleTrait.php:173
 msgid "Skip name type preset for single names"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:76
+msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -202,8 +265,12 @@ msgstr ""
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr ""
 
+#: resources/views/admin/badges/config.phtml:31
+msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:81
+#: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
 msgstr ""
 
@@ -213,33 +280,47 @@ msgid "Use available space"
 msgstr "Använd tillgängligt utrymme"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:79
+#: ClassicLAFModuleTrait.php:53 ClassicLAFModuleTrait.php:90
 msgid "Use compact layout"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:109
+#: ClassicLAFModuleTrait.php:54
+msgid "Use compact layout except for names"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:120
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:89
+#: ClassicLAFModuleTrait.php:52
+msgid "Use original layout"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:100
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:163
+#: ClassicLAFModuleTrait.php:174
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:106
+#: ClassicLAFModuleTrait.php:117
 msgid "XREF prefixes"
 msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:169 ClassicLAFModuleTrait.php:177
+#: ClassicLAFModuleTrait.php:180 ClassicLAFModuleTrait.php:188
 msgid "XREFs"
+msgstr ""
+
+#: resources/views/admin/badges/config.phtml:32
+msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
 
 #: resources/views/admin/tags-ext.phtml:26

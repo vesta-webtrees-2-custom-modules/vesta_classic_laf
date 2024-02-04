@@ -65,7 +65,7 @@ https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-su
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
 
-<?php if (boolval($module->getPreference('COMPACT_INDI_PAGE', '1'))) : ?>
+<?php if (intval($module->getPreference('COMPACT_INDI_PAGE', '1')) > 0) : ?>
 
 /* 
 individual: title

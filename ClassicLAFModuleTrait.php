@@ -46,11 +46,22 @@ trait ClassicLAFModuleTrait {
         $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Individual page'),
             array(
+            new ControlPanelRadioButtons(
+                false,
+                array(
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Use original layout'), null, '0'),
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Use compact layout'), null, '1'),
+                    new ControlPanelRadioButton(/* I18N: Module Configuration */I18N::translate('Use compact layout except for names'), null, '2')),
+                /* I18N: Module Configuration */I18N::translate('Several adjustments - See %1$s for details.', $link),
+                'COMPACT_INDI_PAGE',
+                '1'),
+            /*    
             new ControlPanelCheckbox(
-                /* I18N: Module Configuration */I18N::translate('Use compact layout'),
-                /* I18N: Module Configuration */ I18N::translate('Several adjustments - See %1$s for details.', $link),
+                I18N::translate('Use compact layout'),
+                I18N::translate('Several adjustments - See %1$s for details.', $link),
                 'COMPACT_INDI_PAGE', //TODO: css
                 '1'),
+            */    
             new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Expand first sidebar'),
                 /* I18N: Module Configuration */ I18N::translate('Check to always expand the first sidebar, rather than the \'Family navigator\' sidebar.'),
@@ -180,16 +191,6 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */ I18N::translate('Display a family\'s XREF after the family label.'),
                 'APPEND_XREF_FAM',
                 '0')));
-
-
-        //for now not configurable
-        new ControlPanelSubsection(
-            /* I18N: Module Configuration */I18N::translate('Layout'),
-            array(new ControlPanelCheckbox(
-                /* I18N: Module Configuration */'Use compact layout for individual page',
-                /* I18N: Module Configuration */ '...',
-                'COMPACT_INDI',
-                '1')));
 
         $sections = array();
         $sections[] = new ControlPanelSection(

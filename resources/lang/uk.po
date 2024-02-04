@@ -7,61 +7,71 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2023-07-15 15:44+0200\n"
+"POT-Creation-Date: 2024-02-04 17:48+0100\n"
 "PO-Revision-Date: 2023-10-17 10:13+0000\n"
 "Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 5.1\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr "«Діалоги з кількома фактами» стосуються усіх діалогових вікон редагування для нових користувачів і специфічного для Vesta діалогового вікна '%1$s'."
+
+#: resources/views/admin/badges/edit.phtml:45
+msgid "A label, for reference within the control panel only."
 msgstr ""
-"«Діалоги з кількома фактами» стосуються усіх діалогових вікон редагування "
-"для нових користувачів і специфічного для Vesta діалогового вікна '%1$s'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Цей модуль налаштовує всі теми, наближуючи вигляд до webtrees версій 1.х."
 
+#: resources/views/admin/badges/edit.phtml:126
+msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:59
+msgid "A note, shown within within the control panel only."
+msgstr ""
+
+#: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
+msgid "Add a name badge"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:68
+#: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
 msgstr "Завжди розгортати одразу"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:171 ClassicLAFModuleTrait.php:179
+#: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
 msgid "Append XREFs to names"
 msgstr "Додавати зовнішні посилання до імен"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
-msgstr ""
-"Застосовувати таке налаштування до '%1$s' у всіх подіях '%2$s', якщо подію "
-"не налаштовано явно:"
+msgstr "Застосовувати таке налаштування до '%1$s' у всіх подіях '%2$s', якщо подію не налаштовано явно:"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:74
+#: ClassicLAFModuleTrait.php:85
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr "Увага: цей параметр наразі не матиме жодного ефекту у вашій системі, оскільки для нього потрібна новіша версія libxml (принаймні %1$s)."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164
+#: ClassicLAFModuleTrait.php:175
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr "Позначте цей параметр, якщо ви не бажаєте використовувати тип імені тоді, коли відповідна особа має одне ім'я."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:56
+#: ClassicLAFModuleTrait.php:67
 msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
 msgstr "Поставте прапорець, щоб завжди розкривати першу бічну панель, а не бічну панель \"Сімейний навігатор\"."
 
@@ -77,68 +87,80 @@ msgid "Configure visibility of GEDCOM tags"
 msgstr "Налаштувати видимість тегів GEDCOM"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:88
+#: ClassicLAFModuleTrait.php:99
 msgid "Crop Thumbnails"
 msgstr "Обрізати мініатюри"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:108
+#: ClassicLAFModuleTrait.php:119
 msgid "Custom prefixes"
 msgstr "Користувацький префікс"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:180
+#: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
 msgstr "Відображати XREF родини після мітки родини."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:80
+#: ClassicLAFModuleTrait.php:91
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
 msgstr "Показувати всі діалогові вікна редагування з використанням більш компактного макета, який також опускає стандартний верхній і нижній колонтитули."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:172
+#: ClassicLAFModuleTrait.php:183
 msgid "Display an individual's XREF after the name."
 msgstr "Відображати зовнішнє посилання особи після імені."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:153
+#: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
 msgstr "Показувати псевдоніми перед прізвищами"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:77
+#: ClassicLAFModuleTrait.php:88
 msgid "Edit dialogs"
 msgstr "Редагувати діалоги"
 
-#: resources/views/family-page-menu.phtml:87
+#: resources/views/family-page-menu.phtml:88
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
 msgstr "Редагувати основні факти та події"
 
+#: ClassicLAFModule.php:792
+msgid "Edit the name badge"
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
+#: ClassicLAFModuleTrait.php:66
 msgid "Expand first sidebar"
 msgstr "Розгорнути першу бічну панель"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
+#: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
 msgstr "Розгортати одразу, якщо в назві є примітка або джерело"
 
+#: resources/views/admin/badges/edit.phtml:84
+msgid "HTML snippet"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:91
+msgid "HTML snippet to be displayed after the name, e.g. a small image."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:154
+#: ClassicLAFModuleTrait.php:165
 msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
 msgstr "Обробляти псевдоніми, як у webtrees 1.x, тобто показувати їх перед прізвищем."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:86
+#: ClassicLAFModuleTrait.php:97
 msgid "Image Thumbnails"
 msgstr "Ескізи зображень"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:148
+#: ClassicLAFModuleTrait.php:159
 msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
 msgstr "У сімейному дереві кожен запис має внутрішній контрольний номер (який називається \"XREF\"), такий як \"F123\" або \"R14\". Ви можете вибрати префікс, який використовуватиметься при створенні нових файлів XREF."
 
@@ -148,46 +170,61 @@ msgid "Individual page"
 msgstr "Особиста сторінка"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:61
+#: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
 msgstr "Індивідуальна сторінка: блоки імен"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:187 ClassicLAFModuleTrait.php:196
+#: ClassicLAFModuleTrait.php:197
 msgid "Layout"
 msgstr "Вкладки"
 
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:69
-msgid "Name blocks are always expandable/collapsible regardless of this setting."
+#: resources/views/admin/badges/config.phtml:63
+#: resources/views/admin/badges/edit.phtml:37
+msgid "Name badge"
 msgstr ""
-"Блоки імен завжди розгортаються/згортаються незалежно від цього параметра."
+
+#: ClassicLAFModule.php:573 ClassicLAFModule.php:637
+#: resources/views/admin/badges/config.phtml:56
+#: resources/views/admin/badges/edit.phtml:28
+msgid "Name badges"
+msgstr ""
+
+#: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
+msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
+msgstr ""
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:160
+#: ClassicLAFModuleTrait.php:80
+msgid "Name blocks are always expandable/collapsible regardless of this setting."
+msgstr "Блоки імен завжди розгортаються/згортаються незалежно від цього параметра."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:171
 msgid "Name type presets"
 msgstr "Попередні налаштунки типу імені"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
+#: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
 msgstr "Ніколи не розгортати одразу"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:151
+#: ClassicLAFModuleTrait.php:162
 msgid "Nicknames"
 msgstr "Псевдоніми"
+
+#: resources/views/admin/badges/edit.phtml:75
+msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
+msgstr ""
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
-msgstr ""
-"Зауважте, що на додаток до параметрів конфігурації, наведених нижче, %1$s "
-"дозволяє Вам детально налаштувати видимість кожного конкретного тегу, як "
-"описано в %2$s."
+msgstr "Зауважте, що на додаток до параметрів конфігурації, наведених нижче, %1$s дозволяє Вам детально налаштувати видимість кожного конкретного тегу, як описано в %2$s."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:155
+#: ClassicLAFModuleTrait.php:166
 msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
 msgstr "Зауважте, що це не впливає на поля імен GEDCOM, які вже містять псевдонім, тобто ви завжди можете позиційно вказати псевдонім для певних імен."
 
@@ -196,24 +233,44 @@ msgstr "Зауважте, що це не впливає на поля імен G
 msgid "Overall width"
 msgstr "Загальна ширина"
 
+#: resources/views/admin/badges/edit.phtml:66
+msgid "Regex"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:74
+msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
+msgstr ""
+
+#: resources/views/admin/badges/config.phtml:33
+msgid "See the initial name badges for examples."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:51
+#: ClassicLAFModuleTrait.php:55
 #, php-format
 msgid "Several adjustments - See %1$s for details."
 msgstr "Кілька коригувань - Подробиці див. %1$s ."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:162
+#: ClassicLAFModuleTrait.php:173
 msgid "Skip name type preset for single names"
 msgstr "Пропустити попередній налаштунок типу імені для одинарних імен"
+
+#: resources/views/admin/badges/edit.phtml:76
+msgid "Syntactically invalid regex expressions will be silently ignored."
+msgstr ""
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
 msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
 msgstr "Стандартний макет центрує більшість сторінок, витрачаючи багато місця, особливо на широких дисплеях. Цей параметр дозволяє використовувати більшу частину доступного простору."
 
+#: resources/views/admin/badges/config.phtml:31
+msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
+msgstr ""
+
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:81
+#: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
 msgstr "Це стосується лише усталених і точних користувацьких тем."
 
@@ -223,34 +280,48 @@ msgid "Use available space"
 msgstr "Використати весь доступний простір"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:50 ClassicLAFModuleTrait.php:79
+#: ClassicLAFModuleTrait.php:53 ClassicLAFModuleTrait.php:90
 msgid "Use compact layout"
 msgstr "Компактне розміщення"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:109
+#: ClassicLAFModuleTrait.php:54
+msgid "Use compact layout except for names"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:120
 msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
 msgstr "Використовуйте власні префікси для XREF, як у webtrees 1.x, замість того, щоб префіксувати всі XREF як \"X\"."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:89
+#: ClassicLAFModuleTrait.php:52
+msgid "Use original layout"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:100
 msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
 msgstr "Webtrees обрізає ескізи, щоб створювати зображення з однаковою шириною та висотою. Це проблематично, якщо у вас є зображення окремих осіб із нестандартним співвідношенням сторін, де голова відповідної людини не розташована по центру і, отже, може бути відрізана. Зніміть прапорець для вирішення цих випадків."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:163
+#: ClassicLAFModuleTrait.php:174
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr "При додаванні нових батьків, подружжя або дітей Webtrees попередньо встановлює тип імені на «ім'я при народженні»."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:106
+#: ClassicLAFModuleTrait.php:117
 msgid "XREF prefixes"
 msgstr "Префікс XREF"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:169 ClassicLAFModuleTrait.php:177
+#: ClassicLAFModuleTrait.php:180 ClassicLAFModuleTrait.php:188
 msgid "XREFs"
 msgstr "XREF-и"
+
+#: resources/views/admin/badges/config.phtml:32
+msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
+msgstr ""
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
@@ -264,9 +335,7 @@ msgstr "завжди приховувати"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
-msgstr ""
-"приховувати в багатофакторних діалогових вікнах, показувати та розгортати "
-"субтеги іншим чином"
+msgstr "приховувати в багатофакторних діалогових вікнах, показувати та розгортати субтеги іншим чином"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12

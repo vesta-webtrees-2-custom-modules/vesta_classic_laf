@@ -230,7 +230,7 @@ class IndividualExt extends Individual {
         $handler = app(IndividualNameHandler::class);
         
         $full = parent::fullName();
-        $full .= $handler->addBadges($this->gedcom);
+        $full .= $handler->addBadges($this->tree(), $this->gedcom);
         $full = $handler->addXref($full, $this->xref());
         return $full;
     }
