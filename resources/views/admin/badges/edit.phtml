@@ -1,0 +1,141 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
+use Fisharebest\Webtrees\Http\RequestHandlers\ModulesAllPage;
+use Fisharebest\Webtrees\I18N;
+
+/**
+ * @var int               $block_id
+ * @var int               $block_order
+ * @var int               $gedcom_id
+ * @var array<int,string> $gedcom_ids
+ * @var string            $header
+ * @var string            $note
+ * @var string            $regex
+ * @var string            $snippet
+ * @var int               $access
+ * @var string            $title
+ * @var string            $module
+ *
+ */
+
+?>
+
+<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => I18N::translate('Control panel'), route(ModulesAllPage::class) => I18N::translate('Modules'), route('module', ['module' => $module, 'action' => 'Admin2']) => I18N::translate('Name badges'), $title]]) ?>
+
+<h1><?= $title ?></h1>
+
+<form method="post" name="nameBadge" class="form-horizontal">
+    <input type="hidden" name="block_id" value="<?= $block_id ?>">
+
+    <div class="row mb-3">
+        <label for="header" class="col-sm-3 col-form-label">
+            <?= I18N::translate('Name Badge') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="header" id="header"
+                value="<?= e($header) ?>">
+            
+            <div class="form-text">
+                <?= I18N::translate('A label, for reference within the control panel only.') ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="note" class="col-sm-3 col-form-label">
+            <?= MoreI18N::xlate('Note') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <textarea class="form-control" name="note" id="note" rows="3"><?= e($note) ?></textarea>
+            
+            <div class="form-text">
+                <?= I18N::translate('A note, shown within within the control panel only.') ?>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-3">
+        <label for="header" class="col-sm-3 col-form-label">
+            <?= I18N::translate('Regex') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="regex" id="regex"
+                value="<?= e($regex) ?>">
+            
+            <div class="form-text">
+                <?= I18N::translate('Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual\'s raw gedcom data.') ?>
+                <?= I18N::translate('Note that currently there is no way to match on linked objects, such as the type of a media object.') ?>
+                <?= I18N::translate('Syntactically invalid regex expressions will be silently ignored.') ?>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="body" class="col-sm-3 col-form-label">
+            <?= I18N::translate('HTML snippet') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <textarea class="form-control" name="snippet" id="snippet" rows="10"><?= e($snippet) ?></textarea>
+            
+            <div class="form-text">
+                <?= I18N::translate('HTML snippet to be displayed after the name, e.g. a small image.') ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="block_order" class="col-sm-3 col-form-label">
+            <?= MoreI18N::xlate('Sort order') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <input type="number" name="block_order" id="block_order" class="form-control" value="<?= $block_order ?>" min="1">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="block_order" class="col-sm-3 col-form-label">
+            <?= MoreI18N::xlate('Access level') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <?= view('components/select', ['name' => 'access', 'selected' => $access, 'options' => Auth::accessLevelNames()]) ?>
+        </div>
+    </div>
+    
+    
+    
+    <div class="row mb-3">
+        <label for="gedcom_id" class="col-sm-3 col-form-label">
+            <?= MoreI18N::xlate('Family tree') ?>
+        </label>
+
+        <div class="col-sm-9">
+            <?= view('components/select', ['name' => 'gedcom_id', 'selected' => $gedcom_id, 'options' => $gedcom_ids]) ?>
+            <div class="form-text">
+                <?= I18N::translate('A name badge can be displayed on just one of the family trees, or on all the family trees.') ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">
+                <?= view('icons/save') ?>
+                <?= MoreI18N::xlate('save') ?>
+            </button>
+        </div>
+    </div>
+
+    <?= csrf_field() ?>
+</form>

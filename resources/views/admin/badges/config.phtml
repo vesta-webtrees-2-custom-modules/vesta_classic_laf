@@ -1,0 +1,116 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
+use Fisharebest\Webtrees\Http\RequestHandlers\ModulesAllPage;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Tree;
+
+/**
+ * @var Collection<int,object> $nameBadges
+ * @var int                    $max_block_order
+ * @var int                    $min_block_order
+ * @var string                 $module
+ * @var string                 $title
+ * @var Tree                   $tree
+ * @var array<string,string>   $tree_names
+ */
+
+$accessLevelNames = Auth::accessLevelNames();
+?>
+
+<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => MoreI18N::xlate('Control panel'), route(ModulesAllPage::class) => MoreI18N::xlate('Modules'), $title]]) ?>
+
+<h1><?= $title ?></h1>
+
+<p>
+    <?= I18N::translate('Name badges are HTML snippets, e.g. small images, displayed after an individual\'s name.') ?>
+    <?= I18N::translate('They are based on regular expressions matching the individual\'s raw gedcom data.') ?>
+    <?= I18N::translate('You can use them e.g. to highlight individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc.') ?>
+    <?= I18N::translate('See the initial name badges for examples.') ?>
+</p>
+
+<form method="post" class="row">
+    <div class="col-auto">
+        <div class="input-group">
+            <?= view('components/select', ['name' => 'tree', 'selected' => $tree->name(), 'options' => $tree_names, 'aria_label' => MoreI18N::xlate('Family tree')]) ?>
+            <input type="submit" class="btn btn-primary" value="<?= MoreI18N::xlate('show') ?>">
+        </div>
+    </div>
+
+    <?= csrf_field() ?>
+</form>
+
+<p>
+    <a href="<?= e(route('module', ['module' => $module, 'action' => 'Admin2Edit', 'tree' => $tree->name()])) ?>" class="btn btn-link">
+        <?= view('icons/add') ?>
+        <?= I18N::translate('Add a name badge') ?>
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <caption>
+        <?= I18N::translate('Name badges') ?>
+    </caption>
+
+    <thead>
+        <tr>
+            <th><?= MoreI18N::xlate('Sort order') ?></th>
+            <th><?= MoreI18N::xlate('Family tree') ?></th>
+            <th><?= I18N::translate('Name badge') ?></th>
+            <th><?= MoreI18N::xlate('Move up') ?></th>
+            <th><?= MoreI18N::xlate('Move down') ?></th>
+            <th><?= MoreI18N::xlate('Edit') ?></th>
+            <th><?= MoreI18N::xlate('Delete') ?></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach ($nameBadges as $nameBadge) : ?>
+            <tr class="faq_edit_pos">
+                <td>
+                    <?= I18N::number($nameBadge->block_order) ?>
+                </td>
+                <td>
+                    <?php if ($nameBadge->gedcom_id === null) : ?>
+                        <?= MoreI18N::xlate('All') ?>
+                    <?php else : ?>
+                        <?= e($tree->title()) ?>
+                    <?php endif ?>
+                    <br />
+                    <?= e($accessLevelNames[$nameBadge->access]) ?>
+                </td>
+                <td>
+                    <?= e($nameBadge->header) ?>
+                </td>
+                <td>
+                    <?php if ($nameBadge->block_order !== $min_block_order) : ?>
+                        <a href="#" data-wt-post-url="<?= e(route('module', ['module' => $module, 'action' => 'Admin2MoveUp', 'block_id' => $nameBadge->block_id])) ?>" class="btn btn-secondary">
+                            <?= view('icons/arrow-up') ?>
+                        </a>
+                    <?php endif ?>
+                </td>
+                <td>
+                    <?php if ($nameBadge->block_order !== $max_block_order) : ?>
+                        <a href="#" data-wt-post-url="<?= e(route('module', ['module' => $module, 'action' => 'Admin2MoveDown', 'block_id' => $nameBadge->block_id])) ?>" class="btn btn-secondary">
+                        <?= view('icons/arrow-down') ?>
+                        </a>
+                    <?php endif ?>
+                </td>
+                <td>
+                    <a href="<?= e(route('module', ['module' => $module, 'action' => 'Admin2Edit', 'block_id' => $nameBadge->block_id, 'tree' => $tree->name()])) ?>" aria-label="<?= MoreI18N::xlate('Edit') ?>" class="btn btn-primary">
+                        <?= view('icons/edit') ?>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" data-wt-post-url="<?= e(route('module', ['module' => $module, 'action' => 'Admin2Delete', 'block_id' => $nameBadge->block_id])) ?>" data-wt-confirm="<?= MoreI18N::xlate('Are you sure you want to delete “%s”?', e($nameBadge->header)) ?>" aria-label="<?= MoreI18N::xlate('Delete') ?>" class="btn btn-danger">
+                        <?= view('icons/delete') ?>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
