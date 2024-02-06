@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2024-02-04 17:48+0100\n"
+"POT-Creation-Date: 2024-02-06 11:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,7 +259,7 @@ msgid "A label, for reference within the control panel only."
 msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:59
-msgid "A note, shown within within the control panel only."
+msgid "A note, shown within the control panel only."
 msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:66

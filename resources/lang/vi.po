@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2024-02-04 17:48+0100\n"
+"POT-Creation-Date: 2024-02-06 11:31+0100\n"
 "PO-Revision-Date: 2021-07-15 15:34+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
@@ -37,7 +37,7 @@ msgid "A name badge can be displayed on just one of the family trees, or on all 
 msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:59
-msgid "A note, shown within within the control panel only."
+msgid "A note, shown within the control panel only."
 msgstr ""
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
