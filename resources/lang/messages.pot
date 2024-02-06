@@ -259,7 +259,7 @@ msgid "A label, for reference within the control panel only."
 msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:59
-msgid "A note, shown within within the control panel only."
+msgid "A note, shown within the control panel only."
 msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:66
