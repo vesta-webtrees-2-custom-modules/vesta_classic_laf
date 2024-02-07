@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-02-06 11:31+0100\n"
-"PO-Revision-Date: 2023-02-21 09:36+0000\n"
-"Last-Translator: Holger Eisold <kontakt@eisold.family>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-"
-"custom-modules/vesta-classic-look-and-feel/de/>\n"
+"PO-Revision-Date: 2024-02-07 04:01+0000\n"
+"Last-Translator: Holger Eisold <github@eisold.family>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -51,7 +51,7 @@ msgstr ""
 
 #: resources/views/admin/badges/edit.phtml:59
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Ein Hinweis, der nur in der Verwaltung angezeigt wird."
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
