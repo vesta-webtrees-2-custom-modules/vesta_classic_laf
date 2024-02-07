@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-02-06 11:31+0100\n"
-"PO-Revision-Date: 2024-01-22 21:01+0000\n"
+"PO-Revision-Date: 2024-02-07 11:01+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgstr "'Diálogos multifactor' se refiere a: Todos los diálogos de edición pa
 
 #: resources/views/admin/badges/edit.phtml:45
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Una etiqueta, sólo para referencia dentro del panel de control."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,14 +36,16 @@ msgstr "Un módulo que configura los temas y otras características, brindando u
 #: resources/views/admin/badges/edit.phtml:126
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Una tarjeta identificativa puede mostrarse sólo en uno de los árboles "
+"genealógicos o en todos ellos."
 
 #: resources/views/admin/badges/edit.phtml:59
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Una nota, que sólo se muestra en el panel de control."
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Añadir una tarjeta identificativa"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -129,7 +132,7 @@ msgstr "Editar los principales hechos y acontecimientos"
 
 #: ClassicLAFModule.php:792
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Editar la tarjeta identificativa"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -143,11 +146,13 @@ msgstr "Expandir inicialmente si el nombre tiene nota o fuente"
 
 #: resources/views/admin/badges/edit.phtml:84
 msgid "HTML snippet"
-msgstr ""
+msgstr "Fragmento de código HTML"
 
 #: resources/views/admin/badges/edit.phtml:91
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
+"Fragmento HTML que se mostrará después del nombre, por ejemplo, una pequeña "
+"imagen."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -182,17 +187,19 @@ msgstr "Disposición"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:37
 msgid "Name badge"
-msgstr ""
+msgstr "Etiqueta de nombre"
 
 #: ClassicLAFModule.php:573 ClassicLAFModule.php:637
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
-msgstr ""
+msgstr "Tarjetas de identificación"
 
 #: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Las credenciales de nombre son fragmentos HTML, por ejemplo, imágenes "
+"pequeñas, que se muestran después del nombre de una persona."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
@@ -217,6 +224,8 @@ msgstr "Seudónimos"
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Tenga en cuenta que actualmente no hay forma de hacer coincidir objetos "
+"vinculados, como el tipo de un objeto multimedia."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
@@ -235,15 +244,17 @@ msgstr "Anchura total"
 
 #: resources/views/admin/badges/edit.phtml:66
 msgid "Regex"
-msgstr ""
+msgstr "Regex"
 
 #: resources/views/admin/badges/edit.phtml:74
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Expresión regular (sintaxis PCRE2 que incluye barras inclinadas como "
+"delimitadores) para cotejar los datos gedcom sin procesar de un individuo."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Hay ejemplos disponibles con las etiquetas de nombre preestablecidas."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -259,6 +270,7 @@ msgstr "Omitir tipo de nombre preestablecido para nombres únicos"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
+"Las expresiones regex no válidas sintácticamente se ignorarán en silencio."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -268,6 +280,8 @@ msgstr "El diseño estándar centra la mayoría de las páginas, desperdiciando 
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Se seleccionan a partir de expresiones regulares que coinciden con los datos "
+"gedcom sin procesar de un individuo."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
@@ -287,7 +301,7 @@ msgstr "Utilizar un diseño compacto"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Utilice un diseño compacto excepto para los nombres"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -297,7 +311,7 @@ msgstr "Utilizar prefijos personalizados para las XREF como en webtrees 1.x, en 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Utilice el diseño original"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -322,6 +336,11 @@ msgstr "XREF"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Puede utilizarlos para resaltar individuos, en cartas y en otros lugares, a "
+"través de diferentes criterios, tales como: Individuos que pertenecen a un "
+"grupo definido a través de una nota compartida, que tienen un evento de "
+"nacimiento aglutinado, que tienen una ocupación específica, que tienen un "
+"entierro con una imagen vinculada, etc."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"

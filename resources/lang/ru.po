@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-02-06 11:31+0100\n"
-"PO-Revision-Date: 2023-03-03 07:51+0000\n"
+"PO-Revision-Date: 2024-02-07 19:30+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -25,7 +27,7 @@ msgstr "\"Диалоги с несколькими фактами\" относя
 
 #: resources/views/admin/badges/edit.phtml:45
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Метка, предназначенная только для справки на панели управления."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,14 +37,16 @@ msgstr "Модуль, настраивающий все темы и другие
 #: resources/views/admin/badges/edit.phtml:126
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Именной значок может быть отображен только на одном из генеалогических древ "
+"или на всех генеалогических древах."
 
 #: resources/views/admin/badges/edit.phtml:59
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Примечание, отображаемое только на панели управления."
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Добавьте бейдж с именем"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -129,7 +133,7 @@ msgstr "Редактировать основные факты и события
 
 #: ClassicLAFModule.php:792
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Отредактируйте бейдж с именем"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -148,6 +152,8 @@ msgstr ""
 #: resources/views/admin/badges/edit.phtml:91
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
+"Фрагмент HTML, который будет отображаться после названия, например, "
+"небольшое изображение."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -182,17 +188,19 @@ msgstr "Вкладки"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:37
 msgid "Name badge"
-msgstr ""
+msgstr "Именной значок"
 
 #: ClassicLAFModule.php:573 ClassicLAFModule.php:637
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
-msgstr ""
+msgstr "Именные бейджи"
 
 #: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Именные бейджи - это фрагменты HTML, например, небольшие изображения, "
+"отображаемые после имени пользователя."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
@@ -217,6 +225,8 @@ msgstr "Никнеймы"
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Обратите внимание, что в настоящее время нет способа сопоставления связанных "
+"объектов, таких как тип медиаобъекта."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
@@ -235,15 +245,17 @@ msgstr "Общая ширина"
 
 #: resources/views/admin/badges/edit.phtml:66
 msgid "Regex"
-msgstr ""
+msgstr "Регулярное выражение"
 
 #: resources/views/admin/badges/edit.phtml:74
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Регулярное выражение (синтаксис PCRE2, включающий косые черты в качестве "
+"разделителей) для соответствия необработанным данным gedcom пользователя."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Примеры приведены на бейджах с первоначальными именами."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -259,6 +271,8 @@ msgstr "Пропустить предустановку типа имени дл
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
+"Синтаксически недопустимые регулярные выражения будут автоматически "
+"проигнорированы."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -268,6 +282,8 @@ msgstr "Стандартный макет центрирует большинс�
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Они выбираются на основе регулярных выражений, соответствующих "
+"необработанным данным gedcom пользователя."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
@@ -287,7 +303,7 @@ msgstr "Используйте компактный макет"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Используйте компактную компоновку, за исключением названий"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -297,7 +313,7 @@ msgstr "Используйте настраиваемые префиксы дл�
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Используйте оригинальный макет"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -322,6 +338,10 @@ msgstr "Внешние ссылки"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Вы можете использовать их для выделения отдельных лиц на диаграммах и в "
+"других местах по различным критериям, таким как: Принадлежность к группе, "
+"определенной с помощью общей заметки, наличие события рождения, "
+"определенного рода занятий, захоронения со связанным изображением и т.д."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
