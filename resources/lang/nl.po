@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-02-06 11:31+0100\n"
-"PO-Revision-Date: 2023-02-20 17:37+0000\n"
+"PO-Revision-Date: 2024-02-10 10:02+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -25,7 +26,7 @@ msgstr "'Multifeitdialoogvensters' verwijst naar: Alle bewerkingsdialogen voor n
 
 #: resources/views/admin/badges/edit.phtml:45
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Een label, alleen voor referentie in het controlepaneel."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,14 +36,16 @@ msgstr "Een module die alle thema's en andere functies zo aanpast dat het meer h
 #: resources/views/admin/badges/edit.phtml:126
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Een naamplaatje kan worden weergegeven op slechts één van de stambomen of op "
+"alle stambomen."
 
 #: resources/views/admin/badges/edit.phtml:59
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Een notitie die alleen in het controlepaneel wordt weergegeven."
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Naamplaatje toevoegen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -129,7 +132,7 @@ msgstr "Wijzig belangrijkste feiten en gebeurtenissen"
 
 #: ClassicLAFModule.php:792
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Naamplaatje bewerken"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -143,11 +146,13 @@ msgstr "In eerste instantie uitbreiden als naam een notitie of bron heeft"
 
 #: resources/views/admin/badges/edit.phtml:84
 msgid "HTML snippet"
-msgstr ""
+msgstr "HTML-fragment"
 
 #: resources/views/admin/badges/edit.phtml:91
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
+"HTML-fragment dat achter de naam moet worden weergegeven, bijvoorbeeld een "
+"kleine afbeelding."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -182,17 +187,19 @@ msgstr "Indeling"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:37
 msgid "Name badge"
-msgstr ""
+msgstr "Naamplaatje"
 
 #: ClassicLAFModule.php:573 ClassicLAFModule.php:637
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
-msgstr ""
+msgstr "Naamplaatjes"
 
 #: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Naamplaatjes zijn HTML-fragmenten, bijvoorbeeld kleine afbeeldingen, die "
+"achter de naam van een persoon worden weergegeven."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
@@ -217,6 +224,8 @@ msgstr "Roepnamen"
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Merk op dat er momenteel geen manier is om gekoppelde objecten te vinden, "
+"zoals het type van een mediaobject."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
@@ -235,15 +244,17 @@ msgstr "Totale breedte"
 
 #: resources/views/admin/badges/edit.phtml:66
 msgid "Regex"
-msgstr ""
+msgstr "Regex"
 
 #: resources/views/admin/badges/edit.phtml:74
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Reguliere expressie (PCRE2-syntaxis met slashes als scheidingstekens) om te "
+"zoeken in de onbewerkte GEDCOM-gegevens van een persoon."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Zie de eerste naamplaatjes voor voorbeelden."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -259,6 +270,7 @@ msgstr "Vooraf ingestelde naamtype overslaan voor enkele namen"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
+"Syntactisch ongeldige reguliere expressies worden stilzwijgend genegeerd."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -268,6 +280,8 @@ msgstr "De standaardindeling centreert de meeste pagina's waardoor er veel ruimt
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Ze worden geselecteerd op basis van reguliere expressies die overeenkomen "
+"met de onbewerkte GEDCOM-gegevens van een persoon."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
@@ -287,7 +301,7 @@ msgstr "Compacte indeling gebruiken"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Gebruik compacte indeling behalve voor namen"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -297,7 +311,7 @@ msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in pl
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Gebruik oorspronkelijke indeling"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -322,6 +336,11 @@ msgstr "XREF's"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"U kunt ze gebruiken om personen te markeren, in diagrammen en elders, op "
+"basis van verschillende criteria, zoals: personen die behoren tot een groep "
+"die is gedefinieerd via een gedeelde notitie, die een bepaalde "
+"geboortegebeurtenis hebben, die een specifiek beroep hebben, die een "
+"begrafenis hebben met een gekoppelde afbeelding, enz."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
