@@ -389,5 +389,10 @@
 		"from": "2.1.17",
 		"to": "2.1.19",
 		"changelog": ["New feature 'Name badges'."]
+	},
+	{
+		"version": "2.1.18.2.2",
+		"from": "2.1.17",
+		"to": "2.1.19"
 	}
 ]

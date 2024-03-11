@@ -37,7 +37,7 @@ class EditMainFieldsAction implements RequestHandlerInterface {
         
         $keys = array_keys((array)$request->getParsedBody());
         foreach ($keys as $key) {
-            error_log("?".$key);
+            //error_log("?".$key);
             $parts = explode("-",$key);
             
             if (count($parts) === 3) {
