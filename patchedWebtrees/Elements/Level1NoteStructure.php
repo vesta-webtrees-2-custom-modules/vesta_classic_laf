@@ -13,7 +13,7 @@ use function e;
 use function view;
 
 class Level1NoteStructure extends NoteStructure {
-    
+
     /**
      * An edit control for this data.
      *

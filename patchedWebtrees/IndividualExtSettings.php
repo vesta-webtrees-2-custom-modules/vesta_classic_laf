@@ -7,21 +7,21 @@ class IndividualExtSettings {
   protected $compactIndividualPage;
   protected $cropThumbnails;
   protected $expandFirstSidebar;
-    
+
   public function compactIndividualPage(): bool {
     return $this->compactIndividualPage;
   }
-  
+
   public function cropThumbnails(): bool {
     return $this->cropThumbnails;
   }
-  
+
   public function expandFirstSidebar(): bool {
     return $this->expandFirstSidebar;
   }
-  
+
   public function __construct(
-      bool $compactIndividualPage, 
+      bool $compactIndividualPage,
       bool $cropThumbnails,
       bool $expandFirstSidebar)
   {

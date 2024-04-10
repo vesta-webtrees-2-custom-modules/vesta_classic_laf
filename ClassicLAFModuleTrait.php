@@ -55,19 +55,19 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */I18N::translate('Several adjustments - See %1$s for details.', $link),
                 'COMPACT_INDI_PAGE',
                 '1'),
-            /*    
+            /*
             new ControlPanelCheckbox(
                 I18N::translate('Use compact layout'),
                 I18N::translate('Several adjustments - See %1$s for details.', $link),
                 'COMPACT_INDI_PAGE', //TODO: css
                 '1'),
-            */    
+            */
             new ControlPanelCheckbox(
                 /* I18N: Module Configuration */I18N::translate('Expand first sidebar'),
                 /* I18N: Module Configuration */ I18N::translate('Check to always expand the first sidebar, rather than the \'Family navigator\' sidebar.'),
                 'EXPAND_FIRST_SIDEBAR',
                 '0')));
-        
+
         $layout[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('Individual page: Name blocks'),
             array(
@@ -80,7 +80,7 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */I18N::translate('Name blocks are always expandable/collapsible regardless of this setting.'),
                 'EXPAND_NAME',
                 '0')));
-        
+
         //currently solved differently
         $ext_obsolete = /* I18N: Module Configuration */I18N::translate('Attention: This setting currently won\'t have any effect in your system, because it requires a newer libxml version (at least %1$s).', '2.9.3');
 
@@ -111,7 +111,7 @@ trait ClassicLAFModuleTrait {
                 I18N::translate('Use this option to display markdown formatted text as in earlier webtrees versions.'),
                 'MARKDOWN_PRESERVE_CONT',
                 '1')));
-        */    
+        */
 
         $general[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('XREF prefixes'),
@@ -183,7 +183,7 @@ trait ClassicLAFModuleTrait {
                 /* I18N: Module Configuration */ I18N::translate('Display an individual\'s XREF after the name.'),
                 'APPEND_XREF',
                 '0')));
-                
+
         $families[] = new ControlPanelSubsection(
             /* I18N: Module Configuration */I18N::translate('XREFs'),
             array(new ControlPanelCheckbox(

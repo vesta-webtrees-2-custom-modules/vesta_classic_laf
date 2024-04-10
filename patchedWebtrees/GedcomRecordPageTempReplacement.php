@@ -49,7 +49,7 @@ class GedcomRecordPageTempReplacement implements RequestHandlerInterface
         $xref   = Validator::attributes($request)->isXref()->string('xref');
         $record = Registry::gedcomRecordFactory()->make($xref, $tree);
         $record = Auth::checkRecordAccess($record);
-        
+
         // Standard genealogy records have their own pages.
         $genericRecord = Registry::gedcomRecordFactory()->new($xref, '', null, $tree);
         if ($record->url() !== $genericRecord->url()) {

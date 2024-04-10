@@ -11,26 +11,26 @@ use Fisharebest\Webtrees\Tree;
 use function app;
 
 class IndividualExt extends Individual {
-    
+
     /** @var IndividualExtSettings */
     protected $settings;
-    
+
     public function settings(): IndividualExtSettings {
       return $this->settings;
     }
-    
+
     public function __construct(
-            string $xref, 
-            string $gedcom, 
-            ?string $pending, 
-            Tree $tree, 
+            string $xref,
+            string $gedcom,
+            ?string $pending,
+            Tree $tree,
             IndividualExtSettings $settings)
     {
         parent::__construct($xref, $gedcom, $pending, $tree);
-        
+
         $this->settings = $settings;
     }
-  
+
     /**
      * Convert a name record into ‘full’ and ‘sort’ versions.
      * Use the NAME field to generate the ‘full’ version, as the
@@ -157,18 +157,18 @@ class IndividualExt extends Individual {
         // not sure, if nickname is set as part of full by user, he wouldn't be able to use a slash either
         //(anyway there is nothing in the spec about this case)
         $NICK = str_replace('/', '|', $NICK);
-        
-        //[RC] adjusted: logic is configurable        
+
+        //[RC] adjusted: logic is configurable
         if ($NICK && strpos($full, '"' . $NICK . '"') === false) {
             // A NICK field is present, but not included in the NAME.
-            // we may have to handle it specifically            
+            // we may have to handle it specifically
             $handler = app(IndividualNameHandler::class);
             $full = $handler->addNick($full, $NICK);
         }
 
         //moved to fullName(): we don't want this e.g. when using individual name for family name
         //$full = $handler->addXref($full, $this->xref());
-        
+
         // Remove slashes - they don’t get displayed
         // $fullNN keeps the @N.N. placeholders, for the database
         // $full is for display on-screen
@@ -194,7 +194,7 @@ class IndividualExt extends Individual {
         //(we would have to add config option whether to break on breaking-space characters)
         //anyway the more common case seems to be the one where you want all parts as preferred name
         $full = preg_replace('/([^ >\x{200C}]*)\*/u', '<span class="starredname">\\1</span>', $full);
-        
+
         // Remove prefered-name indicater - they don’t go in the database
         $GIVN   = str_replace('*', '', $GIVN);
         $fullNN = str_replace('*', '', $fullNN);
@@ -223,12 +223,12 @@ class IndividualExt extends Individual {
             ];
         }
     }
-    
+
     public function fullName(): string
     {
         //[RC] adjusted: logic is configurable
         $handler = app(IndividualNameHandler::class);
-        
+
         $full = parent::fullName();
         $full .= $handler->addBadges($this->tree(), $this->gedcom);
         $full = $handler->addXref($full, $this->xref());

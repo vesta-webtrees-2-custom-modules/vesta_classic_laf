@@ -75,11 +75,11 @@ if (!isset($tree)) {
     </head>
 
     <body class="wt-global wt-theme-<?= e(app(ModuleThemeInterface::class)->name()) ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
-        
+
         <?php
           $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
         ?>
-        
+
         <?php if (!$strip) : ?>
           <header class="wt-header-wrapper d-print-none">
               <div class="container-lg wt-header-container">
@@ -135,7 +135,7 @@ if (!isset($tree)) {
               </div>
           </header>
         <?php endif ?>
-        
+
         <main id="content" class="wt-main-wrapper">
             <?php if (!$strip) : ?>
               <div class="container-lg wt-main-container">
@@ -155,9 +155,9 @@ if (!isset($tree)) {
                 <?= $content ?>
             </div>
         </main>
-        
+
         <?php if (!$strip) : ?>
-        
+
           <footer class="container-lg wt-footers d-print-none">
               <?= app(ModuleService::class)->findByInterface(ModuleFooterInterface::class)->map(static function (ModuleFooterInterface $module) use ($request): string {
                   return $module->getFooter($request);

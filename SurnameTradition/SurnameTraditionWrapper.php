@@ -10,13 +10,13 @@ use Fisharebest\Webtrees\SurnameTradition\SurnameTraditionInterface;
 class SurnameTraditionWrapper implements SurnameTraditionInterface
 {
     protected SurnameTraditionInterface $actual;
-    
+
     public function __construct(
         SurnameTraditionInterface $actual) {
-        
+
         $this->actual = $actual;
     }
-    
+
     public function name(): string {
         return $this->actual->name();
     }
@@ -28,7 +28,7 @@ class SurnameTraditionWrapper implements SurnameTraditionInterface
     public function defaultName(): string {
         return $this->actual->defaultName();
     }
-    
+
     public function newChildNames(?Individual $father, ?Individual $mother, string $sex): array {
         $names = $this->actual->newChildNames($father, $mother, $sex);
         return $this->adjust($names);
@@ -41,14 +41,14 @@ class SurnameTraditionWrapper implements SurnameTraditionInterface
 
     public function newSpouseNames(Individual $spouse, string $sex): array {
         $names = $this->actual->newSpouseNames($spouse, $sex);
-        return $this->adjust($names);      
+        return $this->adjust($names);
     }
-    
+
     protected function adjust(array $names): array {
         if (sizeof($names) !== 1) {
             return $names;
         }
-        
+
         //remove NameType::VALUE_BIRTH if there is only one name!
         $name = $names[0];
         $name = str_replace("\n2 TYPE BIRTH", "", $name);

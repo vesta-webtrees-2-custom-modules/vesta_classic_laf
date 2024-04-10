@@ -44,9 +44,9 @@ use Fisharebest\Webtrees\Tree;
             <?php else : ?>
                 <?php
                 //[RC] adjusted: do not 'crop'
-                ?>                
+                ?>
                 <?= $individual_media->first()->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
-            <?php endif ?>            
+            <?php endif ?>
         <?php else : ?>
             <div id="individual-images" class="carousel slide" data-bs-interval="false">
                 <div class="carousel-inner">
@@ -57,7 +57,7 @@ use Fisharebest\Webtrees\Tree;
                             <?php else : ?>
                                 <?php
                                 //[RC] adjusted: do not 'crop'
-                                ?>                
+                                ?>
                                 <?= $media_file->displayImage(200, 260, 'contain', ['class' => 'img-thumbnail img-fluid w-100']) ?>
                             <?php endif ?>
                         </div>

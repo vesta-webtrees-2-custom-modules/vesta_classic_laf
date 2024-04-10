@@ -19,14 +19,14 @@ use function app;
 use function route;
 
 class EditMainFieldsPage implements RequestHandlerInterface {
-    
+
     use ViewResponseTrait;
 
     private GedcomEditService $gedcom_edit_service;
 
     public function __construct() {
         $this->gedcom_edit_service = new GedcomEditServiceExt2(true);
-        
+
         //explicitly register in order to re-use in views where we cannot pass via variable
         app()->instance(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
     }
@@ -37,7 +37,7 @@ class EditMainFieldsPage implements RequestHandlerInterface {
         $xref = Validator::attributes($request)->isXref()->string('xref');
         $record = Registry::gedcomRecordFactory()->make($xref, $tree);
         $record = Auth::checkRecordAccess($record, true);
-        
+
         $names = array();
         $newFacts = array();
         $substrLength = 0;
@@ -46,26 +46,26 @@ class EditMainFieldsPage implements RequestHandlerInterface {
             $sex = $individual->sex();
             $newFacts = $this->gedcom_edit_service->newIndividualFacts($tree, $sex, $names);
             //skip merging existingNames for now
-            
+
             //strip off 'INDI:'
             $substrLength = 5;
         } else if ($record instanceof Family) {
             $family = $record;
             $newFacts = $this->gedcom_edit_service->newFamilyFacts($tree);
-            
+
             //strip off 'FAM:'
             $substrLength = 4;
-        } 
-        
+        }
+
         $facts = array();
-        
+
         $counter = 1;
         foreach ($newFacts as $newFact) {
-            $tag = substr($newFact->tag(),$substrLength); 
+            $tag = substr($newFact->tag(),$substrLength);
             //error_log("tag:".$tag);
             $existingFacts = $record->facts([$tag]);
             //error_log(print_r($existingFacts, true));
-            
+
             if (count($existingFacts) > 0) {
                 foreach ($existingFacts as $existingFact) {
                     $facts['fact-'.$existingFact->id().'-'] = [$existingFact];
@@ -74,7 +74,7 @@ class EditMainFieldsPage implements RequestHandlerInterface {
                 $facts['new-'.$counter++.'-'] = [$newFact];
             }
         }
-        
+
         return $this->viewResponse('edit/existing-record', [
             'facts'               => $facts,
             'gedcom_edit_service' => $this->gedcom_edit_service,
