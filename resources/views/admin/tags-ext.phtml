@@ -11,7 +11,7 @@ echo view('::admin/tags', [
             'custom_family_tags'     => $custom_family_tags,
             'custom_gedcom_l_tags'   => $custom_gedcom_l_tags,
             'custom_individual_tags' => $custom_individual_tags,
-            'custom_fam_fact'        => $custom_fam_fact,    
+            'custom_fam_fact'        => $custom_fam_fact,
             'custom_fam_nchi'        => $custom_fam_nchi,
             'custom_resi_value'      => $custom_resi_value,
             'custom_time_tags'       => $custom_time_tags,
@@ -26,8 +26,8 @@ $search = "<h1>" . $title . "</h1>";
 $link = '<a href="https://github.com/vesta-webtrees-2-custom-modules/vesta_common/blob/master/docs/GEDCOMTags.md">'.I18N::translate('here').'</a>';
 
 $ext = I18N::translate(
-    'Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s.', 
-    CommonI18N::titleVestaCLAF(), 
+    'Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s.',
+    CommonI18N::titleVestaCLAF(),
     $link);
 
 $adjustedHtml = str_replace($search, $search . $ext, $parentHtml);

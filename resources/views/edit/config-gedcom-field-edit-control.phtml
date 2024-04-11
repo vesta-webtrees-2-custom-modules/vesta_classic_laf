@@ -19,12 +19,10 @@ if ($indent) {
 }
 
 ?>
-    
-<div class="form-group">    
+
+<div class="form-group">
     <?= view('components/radios', [
-        'name' => 'CONFIG_GEDCOM_FIELDS', 
-        'options' => $options, 
+        'name' => 'CONFIG_GEDCOM_FIELDS',
+        'options' => $options,
         'selected' => $override]) ?>
 </div>
-
-

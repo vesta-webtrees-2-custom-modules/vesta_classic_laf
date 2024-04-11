@@ -4,22 +4,21 @@ use Cissee\WebtreesExt\Http\RequestHandlers\ConfigGedcomField;
 
 ?>
 
-<button 
-    class="btn btn-link btn-sm vesta-config-target collapse" 
-    type="button" 
-    data-bs-toggle="modal" 
+<button
+    class="btn btn-link btn-sm vesta-config-target collapse"
+    type="button"
+    data-bs-toggle="modal"
     data-bs-backdrop="static"
-    data-bs-target="#wt-ajax-modal" 
+    data-bs-target="#wt-ajax-modal"
     data-wt-href="<?=
     e(route(ConfigGedcomField::class, [
         'tag' => $tag,
         'indent' => $indent,
         'tree' => $tree->name()
     ]));
-    ?>" 
-    data-wt-select-id="<?= 'UNUSED' ?>" 
+    ?>"
+    data-wt-select-id="<?= 'UNUSED' ?>"
     title="<?= $title ?>">
         <?= view('icons/config-gedcom-field') ?>
         <span class="visually-hidden"><?= $title ?></span>
 </button>
-

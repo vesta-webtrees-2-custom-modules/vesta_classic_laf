@@ -15,7 +15,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use function redirect;
 
 class EditMainFieldsAction implements RequestHandlerInterface {
-    
+
     private GedcomEditService $gedcom_edit_service;
 
     public function __construct(GedcomEditService $gedcom_edit_service)
@@ -34,12 +34,12 @@ class EditMainFieldsAction implements RequestHandlerInterface {
 
         $fact_ids = array();
         $new_ids = array();
-        
+
         $keys = array_keys((array)$request->getParsedBody());
         foreach ($keys as $key) {
             //error_log("?".$key);
             $parts = explode("-",$key);
-            
+
             if (count($parts) === 3) {
                 if ($parts[0] === 'fact') {
                     //fact-f65dc294a5d862a94b6a891b07db3d5f-levels
@@ -48,19 +48,19 @@ class EditMainFieldsAction implements RequestHandlerInterface {
                     //new-1-levels
                     $new_ids[$parts[1]] = $parts[1];
                 }
-            } 
+            }
         }
-        
+
         //error_log(print_r($keys, true));
         //error_log(print_r($fact_ids, true));
-        
+
         //existing facts
         foreach ($fact_ids as $fact_id) {
             $levels = Validator::parsedBody($request)->array('fact-'.$fact_id.'-levels');
             $tags   = Validator::parsedBody($request)->array('fact-'.$fact_id.'-tags');
             $values = Validator::parsedBody($request)->array('fact-'.$fact_id.'-values');
             $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
-            
+
             // Update (only the first copy of) an existing fact
             foreach ($record->facts([], false, null, true) as $fact) {
                 if ($fact->id() === $fact_id && $fact->canEdit()) {
@@ -69,17 +69,17 @@ class EditMainFieldsAction implements RequestHandlerInterface {
                 }
             }
         }
-        
+
         //new facts
         foreach ($new_ids as $new_id) {
             $levels = Validator::parsedBody($request)->array('new-'.$new_id.'-levels');
             $tags   = Validator::parsedBody($request)->array('new-'.$new_id.'-tags');
             $values = Validator::parsedBody($request)->array('new-'.$new_id.'-values');
             $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
-            
+
             $record->updateFact('', $gedcom, !$keep_chan);
         }
-        
+
         $url = Validator::parsedBody($request)->isLocalUrl()->string('url', $record->url());
 
         return redirect($url);

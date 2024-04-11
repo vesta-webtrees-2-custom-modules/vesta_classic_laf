@@ -29,9 +29,9 @@ foreach ($keys as $num => $key) {
     $hierarchy[$levels[$key]] = $tags[$key];
     $full_tag                 = implode(':', array_slice($hierarchy, 0, 1 + $levels[$key]));
     $full_tag2                = implode('-', array_slice($hierarchy, 0, 1 + $levels[$key]));
-    
+
     $full_tags[$key] = $full_tag;
-        
+
     $elements[$key]           = Registry::elementFactory()->make($full_tag);
     $ids[$key]                = Registry::idFactory()->id() . '-' . $full_tag2;
 
@@ -51,7 +51,7 @@ foreach ($keys as $num => $key) {
 
     $collapse[$key] = $num > 0 && $indent[$key] && !$has_subtags_with_values;
     $collapsed[$key] = $collapse[$key];
-    
+
     //[RC] adjusted: maybe override collapse
     $ges = app(GedcomEditServiceExt2::class);
     if ($ges->alwaysExpandSubtags($tree, $full_tag)) {
@@ -89,7 +89,7 @@ foreach ($keys as $num => $key) {
                     ?>
                     <i class="fas fa-arrow-left fa-fw vesta-config-target collapse"></i>
                 <?php endif ?>
-                    
+
                 <?= $elements[$key]->label() ?>
                 <?php if ($collapse[$key]) : ?>
                     <button class="btn btn-link" data-bs-target="#collapse-<?= $ids[$key + 1] ?>" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-<?= $key + 1 ?>" type="button">
@@ -117,9 +117,8 @@ foreach ($keys as $num => $key) {
         <?php endif ?>
     <?php endfor ?>
 <?php endforeach ?>
-                
+
 <label>
     <input id="show-vesta-config" type="checkbox" data-bs-toggle="collapse" data-bs-target=".vesta-config-target" autocomplete="off">
     <?= I18N::translate('Configure visibility of GEDCOM tags') ?>
 </label>
-

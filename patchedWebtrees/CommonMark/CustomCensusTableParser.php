@@ -58,7 +58,7 @@ class CustomCensusTableParser implements BlockParserInterface
 
         $lines = $container->getStrings();
         $first = array_shift($lines);
-    
+
         //[PATCHED]
         if (($first !== self::CA_PREFIX) && ($first !== self::CA_PREFIX2)) {
             return false;

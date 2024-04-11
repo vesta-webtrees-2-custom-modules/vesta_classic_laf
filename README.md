@@ -1,8 +1,8 @@
 
 # ⚶ Vesta Classic Look & Feel (Webtrees 2 Custom Module)
 
-This [webtrees](https://www.webtrees.net/) custom module adjusts all themes and other features, providing a look & feel closer to the webtrees 1.x version. 
-The project’s website is [cissee.de](https://cissee.de). 
+This [webtrees](https://www.webtrees.net/) custom module adjusts all themes and other features, providing a look & feel closer to the webtrees 1.x version.
+The project’s website is [cissee.de](https://cissee.de).
 
 This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
@@ -48,7 +48,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/vesta-webtrees-2-custom-modules/classic_laf/issues>
 * Translations may be contributed via weblate: <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/>
- 
+
 ### Installation<a name="installation"/>
 
 * Unzip the files and copy the contents of the modules_v4 folder to the respective folder of your webtrees installation. All related modules are included in the zip file. It's safe to overwrite the respective directories if they already exist (they are bundled with other custom modules as well), as long as other custom models using these dependencies are also upgraded to their respective latest versions.

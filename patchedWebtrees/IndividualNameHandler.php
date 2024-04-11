@@ -21,7 +21,7 @@ class IndividualNameHandler {
     public function setAddBadgesCallback($addBadgesCallback) {
         $this->addBadgesCallback = $addBadgesCallback;
     }
-    
+
     public function addNick(string $nameForDisplay, string $nick): string {
         if ($this->nickBeforeSurn) {
             //same logic as in webtrees 1.x
@@ -48,7 +48,7 @@ class IndividualNameHandler {
     }
 
     public function addBadges(Tree $tree, string $gedcom): string {
-       
+
         return ($this->addBadgesCallback)($tree, $gedcom);
     }
 }

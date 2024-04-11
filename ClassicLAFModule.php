@@ -83,9 +83,9 @@ use function response;
 use function route;
 
 class ClassicLAFModule extends AbstractModule implements
-    ModuleCustomInterface, 
-    ModuleMetaInterface, 
-    ModuleConfigInterface, 
+    ModuleCustomInterface,
+    ModuleMetaInterface,
+    ModuleConfigInterface,
     ModuleGlobalInterface/* ,
     MiddlewareInterface */ {
 
@@ -166,17 +166,17 @@ class ClassicLAFModule extends AbstractModule implements
         $strippedEdit = boolval($this->getPreference('COMPACT_EDIT', '1'));
         if ($strippedEdit) {
             //other custom modules also replace this view
-            //namely the justLight theme      
+            //namely the justLight theme
 
             //[2022/08] actually apply the setting only in case of standard and other 'well-known' themes
             $apply = false;
             $isJustLight = false;
-            
+
             $theme = app(ModuleThemeInterface::class);
             if ($theme instanceof ModuleCustomInterface) {
                 //we need a way to identify custom modules regardless of their folder name
-                
-                //legacy  
+
+                //legacy
                 $justLightSupportUrl1 = 'https://github.com/justcarmen/webtrees-theme-justlight/issues';
 
                 //current
@@ -189,19 +189,19 @@ class ClassicLAFModule extends AbstractModule implements
                     $apply = true;
                     $isJustLight = true;
                 }
-                
+
             } else {
                 //standard theme
                 $apply = true;
             }
-            
+
             if ($apply) {
                 $defaultLayout = '::layouts/default';
-                
+
                 if ($isJustLight) {
                     $defaultLayout = '::layouts/defaultJustLight';
                 }
-                
+
                 View::registerCustomView('::layouts/default', $this->name() . $defaultLayout);
             }
         }
@@ -225,7 +225,7 @@ class ClassicLAFModule extends AbstractModule implements
         $individualNameHandler->setAddBadgesCallback(static function (Tree $tree, string $gedcom) use ($self) {
             return $self->addBadges($tree, $gedcom);
         });
-            
+
         $familyNameHandler = app(FamilyNameHandler::class);
         $appendXrefFam = boolval($this->getPreference('APPEND_XREF_FAM', '0'));
         $familyNameHandler->setAppendXref($appendXrefFam);
@@ -240,19 +240,19 @@ class ClassicLAFModule extends AbstractModule implements
         //temp workaround for #79 start
         //keep until https://github.com/fisharebest/webtrees/issues/4383 is resolved
         $router = Registry::routeFactory()->routeMap();
-      
+
         //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
         $existingRoutes = $router->getRoutes();
         if (array_key_exists(GedcomRecordPage::class, $existingRoutes)) {
-            unset($existingRoutes[GedcomRecordPage::class]);        
+            unset($existingRoutes[GedcomRecordPage::class]);
         }
-        
-        $router->setRoutes($existingRoutes);
-        
-        $router->get(GedcomRecordPage::class, '/tree/{tree}/record/{xref}{/slug}', GedcomRecordPageTempReplacement::class);    
 
-        //temp workaround for #79 end        
-        
+        $router->setRoutes($existingRoutes);
+
+        $router->get(GedcomRecordPage::class, '/tree/{tree}/record/{xref}{/slug}', GedcomRecordPageTempReplacement::class);
+
+        //temp workaround for #79 end
+
         Registry::familyFactory(new CustomFamilyFactory());
 
         $customPrefixes = boolval($this->getPreference('CUSTOM_PREFIXES', '0'));
@@ -273,22 +273,22 @@ class ClassicLAFModule extends AbstractModule implements
             $stf->register($stf::ICELANDIC, new SurnameTraditionWrapper(new IcelandicSurnameTradition()));
             $stf->register($stf::DEFAULT, new SurnameTraditionWrapper(new DefaultSurnameTradition()));
         }
-        
+
         View::registerCustomView('::individual-page-menu', $this->name() . '::individual-page-menu');
         View::registerCustomView('::family-page-menu', $this->name() . '::family-page-menu');
         View::registerCustomView('::edit/existing-record', $this->name() . '::edit/existing-record');
-        
+
         $router->get(EditMainFieldsPage::class, '/tree/{tree}/edit-main/{xref}')
             ->extras(['middleware' => [AuthEditor::class]]);
 
         $router->post(EditMainFieldsAction::class, '/tree/{tree}/edit-main/{xref}')
             ->extras(['middleware' => [AuthEditor::class]]);
-                
+
         //advanced configuration of fact subtags start
-        
+
         //for config (notes only)
         View::registerCustomView('::admin/tags', $this->name() . '::admin/tags-ext');
-        
+
         //for config
         View::registerCustomView('::edit/edit-gedcom-fields', $this->name() . '::edit/edit-gedcom-fields-switch');
         View::registerCustomView('::edit/edit-gedcom-fields-ext', $this->name() . '::edit/edit-gedcom-fields-ext');
@@ -298,106 +298,106 @@ class ClassicLAFModule extends AbstractModule implements
         View::registerCustomView('::modals/config-gedcom-field', $this->name() . '::modals/config-gedcom-field');
         View::registerCustomView('::edit/config-gedcom-field-edit-control', $this->name() . '::edit/config-gedcom-field-edit-control');
         View::registerCustomView('::edit/config-gedcom-field-edit-control-2', $this->name() . '::edit/config-gedcom-field-edit-control-2');
-        
+
         $router->get(ConfigGedcomField::class, '/tree/{tree}/config-gedcom-field/{tag}/{indent}', ConfigGedcomField::class)
-            ->extras(['middleware' => [AuthAdministrator::class]]);        
-        
+            ->extras(['middleware' => [AuthAdministrator::class]]);
+
         $router->post(ConfigGedcomFieldAction::class, '/tree/{tree}/config-gedcom-field-action', ConfigGedcomFieldAction::class)
-            ->extras(['middleware' => [AuthAdministrator::class]]);        
-        
+            ->extras(['middleware' => [AuthAdministrator::class]]);
+
         //we have to remove the original route, otherwise: RouteAlreadyExists (meh)
         $existingRoutes = $router->getRoutes();
         //for display and config
         if (array_key_exists(AddNewFact::class, $existingRoutes)) {
-            unset($existingRoutes[AddNewFact::class]);        
+            unset($existingRoutes[AddNewFact::class]);
         }
         //for display and config
         if (array_key_exists(EditFactPage::class, $existingRoutes)) {
-            unset($existingRoutes[EditFactPage::class]);        
+            unset($existingRoutes[EditFactPage::class]);
         }
         //for display and config
         if (array_key_exists(EditFactPage::class, $existingRoutes)) {
-            unset($existingRoutes[EditFactPage::class]);        
+            unset($existingRoutes[EditFactPage::class]);
         }
-        
+
         //for display
         if (array_key_exists(AddChildToFamilyPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddChildToFamilyPage::class]);        
+            unset($existingRoutes[AddChildToFamilyPage::class]);
         }
         //for display
         if (array_key_exists(AddChildToIndividualPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddChildToIndividualPage::class]);        
+            unset($existingRoutes[AddChildToIndividualPage::class]);
         }
         //for display
         if (array_key_exists(AddParentToIndividualPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddParentToIndividualPage::class]);        
+            unset($existingRoutes[AddParentToIndividualPage::class]);
         }
         //for display
         if (array_key_exists(AddSpouseToFamilyPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddSpouseToFamilyPage::class]);        
+            unset($existingRoutes[AddSpouseToFamilyPage::class]);
         }
         //for display
         if (array_key_exists(AddSpouseToIndividualPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddSpouseToIndividualPage::class]);        
+            unset($existingRoutes[AddSpouseToIndividualPage::class]);
         }
         //for display
         if (array_key_exists(AddUnlinkedPage::class, $existingRoutes)) {
-            unset($existingRoutes[AddUnlinkedPage::class]);        
+            unset($existingRoutes[AddUnlinkedPage::class]);
         }
-        
+
         $router->setRoutes($existingRoutes);
-        
+
         //for display and config
         $router->get(AddNewFact::class, '/tree/{tree}/add-fact/{xref}/{fact}', AddNewFactExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display and config
         $router->get(EditFactPage::class, '/tree/{tree}/edit-fact/{xref}/{fact_id}', EditFactPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display
         $router->get(AddChildToFamilyPage::class, '/tree/{tree}/add-child-to-family/{xref}/{sex}', AddChildToFamilyPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display
         $router->get(AddChildToIndividualPage::class, '/tree/{tree}/add-child-to-individual/{xref}', AddChildToIndividualPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display
         $router->get(AddParentToIndividualPage::class, '/tree/{tree}/add-parent-to-individual/{xref}/{sex}', AddParentToIndividualPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display
         $router->get(AddSpouseToFamilyPage::class, '/tree/{tree}/add-spouse-to-family/{xref}/{sex}', AddSpouseToFamilyPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //for display
         $router->get(AddSpouseToIndividualPage::class, '/tree/{tree}/add-spouse-to-individual/{xref}', AddSpouseToIndividualPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         $router->get(AddUnlinkedPage::class, '/tree/{tree}/add-unlinked-individual', AddUnlinkedPageExt::class)
             ->extras(['middleware' => [AuthEditor::class]]);
-        
+
         //advanced configuration of fact subtags end
-        
+
         $ef = Registry::elementFactory();
-        
+
         //larger textarea for level 1 notes
         $ef->registerTags([
             'INDI:NOTE' => new Level1NoteStructure(MoreI18N::xlate('Note')),
             'FAM:NOTE' => new Level1NoteStructure(MoreI18N::xlate('Note')),
-        ]);    
-        
+        ]);
+
         ////
-        
+
         $pref = 'WHATS_NEW';
         $current_version = intval($this->getPreference($pref, '0'));
         if ($current_version < 5) {
             $this->setInitialNameBadges($current_version > 0);
         }
-        
+
         ////
-        
+
         $this->flashWhatsNew('\Cissee\Webtrees\Module\ClassicLAF\WhatsNew', 5);
     }
 
@@ -414,7 +414,7 @@ class ClassicLAFModule extends AbstractModule implements
 
     public function assetAdditionalHash(string $asset): string {
         //view is dynamic - we have to hash properly!
-        //$compactEdit is switched elsewhere    
+        //$compactEdit is switched elsewhere
         $fullWidth = boolval($this->getPreference('FULL_WIDTH', '1'));
         $compactIndividualPage = intval($this->getPreference('COMPACT_INDI_PAGE', '1'));
 
@@ -453,7 +453,7 @@ class ClassicLAFModule extends AbstractModule implements
     }
 
     //we use a better solution now: we make the default layout configurable
-    //(this is only problematic if another module also does this, e.g. as suggested in 
+    //(this is only problematic if another module also does this, e.g. as suggested in
     //https://www.webtrees.net/index.php/en/forum/help-for-2-0/36114-add-one-more-line)
     public function process_obsolete(
         ServerRequestInterface $request,
@@ -558,7 +558,7 @@ class ClassicLAFModule extends AbstractModule implements
         //doctype also has to be restored explicitly
         return '<!DOCTYPE html>' . $dom->saveHTML($dom->documentElement);
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
@@ -574,9 +574,9 @@ class ClassicLAFModule extends AbstractModule implements
         <p class "text-muted"><?= I18N::translate('Name badges are HTML snippets, e.g. small images, displayed after an individual\'s name.') ?></p>
         <?php
     }
-    
+
     //everything below adapted from FrequentlyAskedQuestionsModule
-    
+
     private HtmlService $html_service;
     private TreeService $tree_service;
 
@@ -598,7 +598,7 @@ class ClassicLAFModule extends AbstractModule implements
     public function getAdmin2Action(ServerRequestInterface $request): ResponseInterface
     {
         $this->layout = 'layouts/administration';
-        
+
         // This module can't run without a tree
         $tree = Validator::attributes($request)->treeOptional();
 
@@ -832,10 +832,10 @@ class ClassicLAFModule extends AbstractModule implements
                 '<span class="wt-icon-help" title="Name badges are a new Vesta feature: Configure them in the module preferences of Vesta Classic Look & Feel!"><i class="fa-solid fa-question-circle fa-fw" aria-hidden="true"></i></span>',
                 '0',
                 null,
-                1); 
-            
+                1);
+
         } //else skip - probably better no to re-add this again & again in new setups
-        
+
         $this->setInitialNameBadge(
             'Has FamilySearch ID [added by Vesta]',
             'Exemplary name badge. Change access level to display this. Image is the FamilySearch icon.',
@@ -844,7 +844,7 @@ class ClassicLAFModule extends AbstractModule implements
             '-1',
             null,
             2);
-        
+
         $this->setInitialNameBadge(
             'BIRT with SOUR [added by Vesta]',
             'Exemplary name badge. Change access level to display this. Note on regex: The negative lookahead is required to avoid matching \'2 SOUR\' of subsequent facts. Note on image: Taken from \'webtrees\resources\css\facts\BIRT.png\'',
@@ -853,7 +853,7 @@ class ClassicLAFModule extends AbstractModule implements
             '-1',
             null,
             3);
-        
+
         $this->setInitialNameBadge(
             'BURI with OBJE (tombstone?) [added by Vesta]',
             'Exemplary name badge. Change access level to display this. Note on regex: The negative lookahead is required to avoid matching \'2 SOUR\' of subsequent facts. Note on image: Taken from \'webtrees\resources\css\facts\DEAT.png\'',
@@ -863,7 +863,7 @@ class ClassicLAFModule extends AbstractModule implements
             null,
             4);
     }
-    
+
     public function setInitialNameBadge(
         $header,
         $note,
@@ -872,7 +872,7 @@ class ClassicLAFModule extends AbstractModule implements
         $access,
         $gedcom_id,
         $block_order): void {
-        
+
         DB::table('block')->insert([
             'gedcom_id'   => null,
             'module_name' => $this->name(),
@@ -880,14 +880,14 @@ class ClassicLAFModule extends AbstractModule implements
         ]);
 
         $block_id = (int) DB::connection()->getPdo()->lastInsertId();
-        
+
         $this->setBlockSetting($block_id, 'header', $header);
         $this->setBlockSetting($block_id, 'note', $note);
         $this->setBlockSetting($block_id, 'regex', $regex);
         $this->setBlockSetting($block_id, 'snippet', $snippet);
         $this->setBlockSetting($block_id, 'access', $access);
     }
-    
+
     /**
      * @param ServerRequestInterface $request
      *
@@ -911,7 +911,7 @@ class ClassicLAFModule extends AbstractModule implements
         $header  = $this->html_service->sanitize($header);
         $note    = $this->html_service->sanitize($note);
         $regex   = $this->html_service->sanitize($regex);
-        
+
         //this is too restrictive apparently
         //$snippet = $this->html_service->sanitize($snippet);
 
@@ -947,18 +947,18 @@ class ClassicLAFModule extends AbstractModule implements
     }
 
     public function addBadges(Tree $tree, string $gedcom): string {
-     
+
         $full = '';
-        
+
         //note: 'negative' matches are problematic wrt fake INDI records used e.g. in individual-page-name.phtml
         //therefore just exclude fake INDI records altogether!
         //
         if (preg_match('@xref@', $gedcom, $match)) {
             return $full;
         }
-        
+
         $nameBadges = $this->nameBadgesForTree($tree);
-        
+
         foreach ($nameBadges as $nameBadge) {
             if ($nameBadge->access >= Auth::accessLevel($tree)) {
                 try {
@@ -968,12 +968,12 @@ class ClassicLAFModule extends AbstractModule implements
                 } catch (\Exception $e) {
                     error_log("[Vesta Classic Look & Feel] error in name badge regex, check your module settings: " . $nameBadge->regex);
                 }
-            }           
+            }
         }
-        
+
         return $full;
     }
-    
+
     /**
      * @param Tree $tree
      *

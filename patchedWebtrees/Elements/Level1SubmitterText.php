@@ -7,7 +7,7 @@ namespace Cissee\WebtreesExt\Elements;
 use Fisharebest\Webtrees\Elements\SubmitterText;
 
 class Level1SubmitterText extends SubmitterText {
-            
+
     /**
      * An edit control for this data.
      *

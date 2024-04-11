@@ -47,7 +47,7 @@ https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-su
 @media (min-width:2560px){.container.card.wt-osk{max-width:720px}}
 
 /* also do not center them?
-[dir="ltr"] .edit-container, 
+[dir="ltr"] .edit-container,
 [dir="rtl"] .edit-container {
     padding-right: 15px;
     padding-left: 15px;
@@ -67,7 +67,7 @@ https://www.webtrees.net/index.php/en/forum/3-help-for-2-0-alpha/32882-solved-su
 
 <?php if (intval($module->getPreference('COMPACT_INDI_PAGE', '1')) > 0) : ?>
 
-/* 
+/*
 individual: title
 */
 
@@ -78,9 +78,9 @@ individual: title
   */
 }
 
-/* 
+/*
 individual: name parts
-IndividualController.formatNameRecord 
+IndividualController.formatNameRecord
 */
 
 [dir] .btn-link {
@@ -125,35 +125,35 @@ dl dt{
   margin-right: 2ch;
 }
 
-/* 
+/*
 everywhere: do not use sex icon images
 */
 
 .wt-icon-sex-m {
-	content: none;
-	color: #31639c;
+  content: none;
+  color: #31639c;
 }
 
 .wt-icon-sex-f {
-	content: none;
-	color: #9c3163;
+  content: none;
+  color: #9c3163;
 }
 
 .wt-icon-sex-u {
-	content: none;
+  content: none;
 }
 
-/* 
+/*
 individual: sex icon
 */
 
 .vt_gender .wt-icon-sex-m,.vt_gender .wt-icon-sex-f,.vt_gender .wt-icon-sex-u {
   width: 0.8em;
-	height: 0.8em;
+  height: 0.8em;
   font-size: 1.5rem !important;
 }
 
-/* 
+/*
 individual: tabs
 */
 
@@ -216,7 +216,7 @@ make long names, small display sizes etc behave better - all this should probabl
 [dir] .wt-family-navigator-family th {
   /* effectively affects the first column. Can we set a more flexible width? apparently not with table layout 'fixed' */
   width: 30%;
-  
+
   /* [2022/08] had to diable this because it affects the dropdown menu, apparently not possible to solve this without additional wrapper element? */
   /* overflow: hidden; */
 }
@@ -230,7 +230,7 @@ make long names, small display sizes etc behave better - all this should probabl
 }
 
 [dir] .wt-family-navigator-family .dropdown-toggle {
-  /* 
+  /*
   not sure what original 'nowrap' is supposed to accomplish,
   effect is: 'younger sister' wraps, 'younger sister (dropdown arrow)' doesn't. That's not what we want!
   probably intended to prevent wrapping of the dropdown arrow (actually some borders, WTF - this is from bootstrap),
@@ -259,9 +259,9 @@ also pad and border etc like a form-control
 */
 .edit-container input.NAME, .edit-container input._MARNM {
   width: calc(100% - 25px);
-  
+
   height: calc(1.5em + 2px);
-  
+
   padding-top: 0.1rem;
   padding-right: 0.5rem;
   padding-bottom: 0.1rem;

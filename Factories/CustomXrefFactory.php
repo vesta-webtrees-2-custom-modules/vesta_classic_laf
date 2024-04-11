@@ -7,13 +7,13 @@ namespace Cissee\Webtrees\Module\ClassicLAF\Factories;
 use Fisharebest\Webtrees\Factories\XrefFactory;
 
 class CustomXrefFactory extends XrefFactory {
-  
+
   protected $module;
-  
+
   public function __construct($module) {
     $this->module = $module;
   }
-  
+
   /** @var string[] Which module preference is used for which record type */
   static $type_to_preference = array(
     'INDI' => 'GEDCOM_ID_PREFIX',
@@ -24,7 +24,7 @@ class CustomXrefFactory extends XrefFactory {
     'REPO' => 'REPO_ID_PREFIX',
     '_LOC' => 'LOCATION_ID_PREFIX',
   );
-  
+
   public function make(string $record_type): string {
     //[RC] taken from webtrees 1.x and adjusted
     //Fallback: Use the first non-underscore character
@@ -34,7 +34,7 @@ class CustomXrefFactory extends XrefFactory {
     } else if (array_key_exists($record_type, self::$type_to_preference)) {
       $prefix = $this->module->getPreference(self::$type_to_preference[$record_type], $prefix);
     }
-        
+
     return $this->generate($prefix, '');
   }
 }

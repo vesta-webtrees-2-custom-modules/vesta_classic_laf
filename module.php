@@ -19,7 +19,7 @@ if (defined("WT_MODULES_DIR")) {
 //whenever a single module is loaded (assuming these autoload.php's are called by the respective module.php's)
 //so we aren't loading 'too much' here, as long as we properly filter 'disabled' modules, as in ModuleService.
 
-//cf ModuleService        
+//cf ModuleService
 $pattern   = Webtrees::MODULES_DIR . '*/autoload.php';
 $filenames = glob($pattern, GLOB_NOSORT);
 

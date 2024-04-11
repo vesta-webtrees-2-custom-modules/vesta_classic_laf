@@ -73,7 +73,7 @@ $select2Initializers = GovIdEditControlsUtils::accessibleModules($tree, Auth::us
         return $module->govIdEditControlSelectScriptSnippet();
     })
     ->toArray();
-            
+
 echo view(VestaUtils::vestaViewsNamespace() . '::modals/ajax-modal-vesta', [
             'ajax' => false,
             'select2Initializers' => $select2Initializers

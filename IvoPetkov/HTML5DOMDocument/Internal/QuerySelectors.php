@@ -9,7 +9,7 @@ trait QuerySelectors
 
     /**
      * Returns the first element matching the selector.
-     * 
+     *
      * @param string $selector A CSS query selector. Available values: *, tagname, tagname#id, #id, tagname.classname, .classname, tagname[attribute-selector] and [attribute-selector].
      * @return HTML5DOMElement|null The result DOMElement or null if not found
      */
@@ -21,7 +21,7 @@ trait QuerySelectors
 
     /**
      * Returns a list of document elements matching the selector.
-     * 
+     *
      * @param string $selector A CSS query selector. Available values: *, tagname, tagname#id, #id, tagname.classname, .classname, tagname[attribute-selector] and [attribute-selector].
      * @param int|null $preferredLimit Preferred maximum number of elements to return.
      * @return DOMNodeList Returns a list of DOMElements matching the criteria.

@@ -56,12 +56,12 @@ $palette = app(ModuleThemeInterface::class)->palette();
     </head>
 
     <body class="wt-global jc-theme-justlight jc-palette-<?= $palette ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
-        
+
         <?php
             //[RC] adjusted
             $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
         ?>
-        
+
         <?php if (!$strip) : ?>
             <header class="wt-header-wrapper d-print-none sticky-top">
                 <div class="container wt-header-container">
@@ -87,14 +87,14 @@ $palette = app(ModuleThemeInterface::class)->palette();
                 </div>
             </header>
         <?php endif ?>
-        
+
         <main id="content" class="wt-main-wrapper">
             <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/flash-messages'); ?>
-            
+
             <?php
-                //[RC] adjusted                
+                //[RC] adjusted
             ?>
-            
+
             <?php if (!$strip) : ?>
             <div class="container-lg wt-main-container">
             <?php else : ?>
@@ -103,9 +103,9 @@ $palette = app(ModuleThemeInterface::class)->palette();
                 <?= $content ?>
             </div>
         </main>
-        
+
         <?php
-            //[RC] adjusted                
+            //[RC] adjusted
         ?>
         <?php if (!$strip) : ?>
             <?= view(app(ModuleThemeInterface::class)->name() . '::theme/footer'); ?>

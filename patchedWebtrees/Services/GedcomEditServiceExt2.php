@@ -19,22 +19,22 @@ use function str_repeat;
 use function str_starts_with;
 use function substr_count;
 
-//renamed due to overlap with obsolete file from 'Shared Places' 
+//renamed due to overlap with obsolete file from 'Shared Places'
 //(safer this way in case the obsolete file isn't removed)
 class GedcomEditServiceExt2 extends GedcomEditService
 {
     protected bool $forNewIndividual;
     protected string $vesta_symbol;
     protected string $house_symbol;
-    
+
     public function __construct(
         bool $forNewIndividual = false) {
-        
+
         $this->forNewIndividual = $forNewIndividual;
         $this->vesta_symbol = json_decode('"\u26B6"');
         $this->house_symbol = json_decode('"\u2302"');
-    }    
-    
+    }
+
     protected function insertMissingLevels(Tree $tree, string $tag, string $gedcom, bool $include_hidden): string
     {
         $next_level = substr_count($tag, ':') + 1;
@@ -47,14 +47,14 @@ class GedcomEditServiceExt2 extends GedcomEditService
 
         foreach ($subtags as $subtag => $occurrences) {
             if (!$include_hidden) {
-                
-                $hidden = $this->isHiddenTagExt(                
-                    $tree, 
+
+                $hidden = $this->isHiddenTagExt(
+                    $tree,
                     $tag . ':' . $subtag,
                     str_ends_with($occurrences, ':?'));
-            
+
                 if ($hidden) {
-                    
+
                     //we want to preserve overall order in any case
                     //(in particular in the 'edit main facts and events' dialog)
                     //therefore show existing hidden at its 'normal' position, rather than at the end
@@ -71,7 +71,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     }
                 }
             }
-            
+
             [$min, $max] = explode(':', $occurrences);
 
             $min = (int) $min;
@@ -116,45 +116,45 @@ class GedcomEditServiceExt2 extends GedcomEditService
 
         return $return;
     }
-    
+
     public function getPreference(
-        Tree $tree, 
+        Tree $tree,
         string $tag): string {
-        
+
         $tag = $this->compressTag($tag);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag;
         $override = $tree->getPreference($pref);
         return $override;
     }
-    
+
     public function setPreference(
-        Tree $tree, 
+        Tree $tree,
         string $tag,
         string $value) {
-        
+
         $tag = $this->compressTag($tag);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag;
         //TODO would be better to delete pref in case of empty string
         $tree->setPreference($pref, $value);
     }
-    
+
     protected function isHiddenTagExt(
-        Tree $tree, 
+        Tree $tree,
         string $tag,
         bool $hiddenViaOccurrences): bool {
-        
+
         $r = new ReflectionMethod(parent::class, 'isHiddenTag');
         $r->setAccessible(true);
         $originalRet = $hiddenViaOccurrences || $r->invokeArgs($this, [$tag]);
 
         //error_log("hidden? " . $tag . '=' . $originalRet);
-        
+
         //check for specific override
         $tag = $this->compressTag($tag);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag;
-        
+
         //error_log("override? " . $pref);
-        
+
         $override = $tree->getPreference($pref);
         if ($override !== '') {
             switch ($override) {
@@ -181,24 +181,24 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     $overrideRet = true;
                     break;
             }
-            
+
             if ($originalRet !== $overrideRet) {
-                //error_log($tag . "override specific to ".$overrideRet);                
+                //error_log($tag . "override specific to ".$overrideRet);
             }
-            
+
             return $overrideRet;
         }
-        
+
         //check for generic override
         $tag2parts = explode(':',$tag);
         $tag2parts[1] = '*';
         $tag2 = implode(':',$tag2parts);
-        
+
         $tag2 = $this->compressTag($tag2);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag2;
-        
+
         //error_log("override? " . $pref);
-        
+
         $override = $tree->getPreference($pref);
         if ($override !== '') {
             switch ($override) {
@@ -208,7 +208,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
                 //hide for new individual, show otherwise
                 case 'LEVEL1':
-                case 'LEVEL1a':                   
+                case 'LEVEL1a':
                     if ($this->forNewIndividual) {
                         $overrideRet = true;
                     } else {
@@ -225,27 +225,27 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     $overrideRet = true;
                     break;
             }
-            
+
             if ($originalRet !== $overrideRet) {
-                //error_log($tag2 . " override generic to ".$overrideRet);                
+                //error_log($tag2 . " override generic to ".$overrideRet);
             }
-            
+
             return $overrideRet;
         }
-        
+
         return $originalRet;
     }
-    
+
     public function alwaysExpandSubtags(
-        Tree $tree, 
+        Tree $tree,
         string $tag): bool {
-        
+
         //check for specific override
         $tag = $this->compressTag($tag);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag;
-        
+
         //error_log("override? " . $pref);
-                
+
         $override = $tree->getPreference($pref);
         if ($override !== '') {
             switch ($override) {
@@ -256,17 +256,17 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
             }
         }
-        
+
         //check for generic override
         $tag2parts = explode(':',$tag);
         $tag2parts[1] = '*';
         $tag2 = implode(':',$tag2parts);
-        
+
         $tag2 = $this->compressTag($tag2);
         $pref = $this->vesta_symbol . $this->house_symbol . $tag2;
-        
+
         //error_log("override? " . $pref);
-        
+
         $override = $tree->getPreference($pref);
         if ($override !== '') {
             switch ($override) {
@@ -277,10 +277,10 @@ class GedcomEditServiceExt2 extends GedcomEditService
                     break;
             }
         }
-        
+
         return false;
     }
-    
+
     protected function compressTag(string $tag): string {
         //we only have 32 chars in table column!
         //(first 2 of those are used for pref outside tag, i.e. 30 left
@@ -291,7 +291,7 @@ class GedcomEditServiceExt2 extends GedcomEditService
         $tagCompressed = str_replace("ASSO","A", $tagCompressed);
         $tagCompressed = str_replace("SOUR","S", $tagCompressed);
         $tagCompressed = str_replace("PLAC","P", $tagCompressed);
-        
+
         return $tagCompressed;
     }
 }
