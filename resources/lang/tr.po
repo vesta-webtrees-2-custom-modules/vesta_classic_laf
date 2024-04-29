@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-02-06 11:31+0100\n"
-"PO-Revision-Date: 2022-03-12 16:59+0000\n"
-"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
+"PO-Revision-Date: 2024-04-28 19:07+0000\n"
+"Last-Translator: Semih <semihbrn10@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 5.5.1\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"'Çok faktörlü iletişim kutuları' şunları ifade eder: Yeni bireyler için tüm "
+"düzenleme diyalogları ve Vesta'ya özgü '%1$s' diyalogu."
 
 #: resources/views/admin/badges/edit.phtml:45
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Sadece kontrol panelinde referans olarak kullanılmak üzere bir etiket."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,19 +38,21 @@ msgstr "Tüm temaları ve diğer özellikleri ayarlayan, webtrees 1.x sürümün
 #: resources/views/admin/badges/edit.phtml:126
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Bir yaka kartı aile ağaçlarından sadece birinde veya tüm aile ağaçlarında "
+"görüntülenebilir."
 
 #: resources/views/admin/badges/edit.phtml:59
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Yalnızca kontrol panelinde gösterilen bir not."
 
 #: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Yaka kartı ekleyin"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
-msgstr ""
+msgstr "Her zaman başlangıçta genişletin"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
@@ -58,6 +63,8 @@ msgstr "Adlara XREF'leri ekleyin"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Olay açıkça yapılandırılmadığı sürece, aşağıdaki ayarı tüm '%2$s' olayları "
+"içindeki '%1$s' için uygulayın:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
@@ -69,6 +76,8 @@ msgstr "Dikkat: Daha yeni bir libxml sürümü (en az %1$s) gerektirdiğinden, b
 #: ClassicLAFModuleTrait.php:175
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"İlgili bireyin tek bir adı olması durumunda bir ad türü kullanmamayı tercih "
+"ediyorsanız bu seçeneği işaretleyin."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
@@ -80,11 +89,11 @@ msgstr "'Aile gezgini' kenar çubuğu yerine her zaman ilk kenar çubuğunu geni
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "GEDCOM '%s' etiketinin görünürlüğünü yapılandırma"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:123
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "GEDCOM etiketlerinin görünürlüğünü yapılandırma"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:99
@@ -99,7 +108,7 @@ msgstr "Özel önekler"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Aile etiketinden sonra bir ailenin XREF'ini görüntüleyin."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
@@ -125,11 +134,11 @@ msgstr "İletişim kutularını düzenle"
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Ana olguları ve olayları düzenleyin"
 
 #: ClassicLAFModule.php:792
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Yaka kartını düzenleme"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -139,15 +148,15 @@ msgstr "İlk kenar çubuğunu genişlet"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Adın notu veya kaynağı varsa başlangıçta genişletin"
 
 #: resources/views/admin/badges/edit.phtml:84
 msgid "HTML snippet"
-msgstr ""
+msgstr "HTML parçacığı"
 
 #: resources/views/admin/badges/edit.phtml:91
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr ""
+msgstr "İsimden sonra görüntülenecek HTML parçacığı, örneğin küçük bir resim."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -172,7 +181,7 @@ msgstr "Bireysel sayfa"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Bireysel sayfa: İsim blokları"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:197
@@ -182,32 +191,36 @@ msgstr "Yerleşim"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:37
 msgid "Name badge"
-msgstr ""
+msgstr "İsim rozeti"
 
 #: ClassicLAFModule.php:573 ClassicLAFModule.php:637
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
-msgstr ""
+msgstr "Yaka kartları"
 
 #: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Yaka kartları, bir kişinin adından sonra görüntülenen küçük resimler gibi "
+"HTML parçacıklarıdır."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
+"Ad blokları bu ayardan bağımsız olarak her zaman genişletilebilir/"
+"katlanabilirdir."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171
 msgid "Name type presets"
-msgstr ""
+msgstr "Ad türü ön ayarları"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
-msgstr ""
+msgstr "Asla başlangıçta genişletme"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:162
@@ -217,11 +230,16 @@ msgstr "Takma adlar"
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Şu anda bir medya nesnesinin türü gibi bağlantılı nesneler üzerinde "
+"eşleştirme yapmanın bir yolu olmadığını unutmayın."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Aşağıdaki yapılandırma seçeneklerine ek olarak, %1$s'nin %2$s'de açıklandığı "
+"gibi her bir etiketin görünürlüğünü ayrıntılı olarak yapılandırmanıza izin "
+"verdiğini unutmayın."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:166
@@ -235,15 +253,17 @@ msgstr "Toplam genişlik"
 
 #: resources/views/admin/badges/edit.phtml:66
 msgid "Regex"
-msgstr ""
+msgstr "Regex"
 
 #: resources/views/admin/badges/edit.phtml:74
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Bir bireyin ham gedcom verilerini eşleştirmek için düzenli ifade (bölü "
+"çizgilerini sınırlayıcı olarak içeren PCRE2 sözdizimi)."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Örnekler için ilk yaka kartlarına bakın."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -254,11 +274,11 @@ msgstr "Çeşitli Ayarlamalar - Ayrıntılar için %1$s bölümüne bakın."
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:173
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Tek adlar için ad türü ön ayarını atla"
 
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Syntactically invalid regex expressions will be silently ignored."
-msgstr ""
+msgstr "Sözdizimsel olarak geçersiz regex ifadeleri sessizce yok sayılır."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -268,11 +288,13 @@ msgstr "Standart düzen, çoğu sayfayı ortalar ve özellikle geniş ekranlarda
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Bunlar, bir bireyin ham gedcom verileriyle eşleşen düzenli ifadelere dayalı "
+"olarak seçilir."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Bu yalnızca standart ve belirli özel temaları etkiler."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
@@ -287,7 +309,7 @@ msgstr "Kompakt düzeni kullanın"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "İsimler dışında kompakt düzen kullanın"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -297,7 +319,7 @@ msgstr "Tüm XREF'lerin önüne 'X' koymak yerine, webtrees 1.x'teki gibi XREF'l
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Orijinal düzeni kullanın"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -308,6 +330,8 @@ msgstr "Webtrees, tutarlı bir genişlik ve yüksekliğe sahip görüntüler ür
 #: ClassicLAFModuleTrait.php:174
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"Yeni ebeveynler, eşler veya çocuklar eklenirken webtrees ad türünü 'doğum "
+"adı' olarak ayarlar."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:117
@@ -322,43 +346,51 @@ msgstr "XREF'ler"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Bunları grafiklerde ve başka yerlerde bireyleri farklı kriterlerle "
+"vurgulamak için kullanabilirsiniz, örneğin: Paylaşılan bir not aracılığıyla "
+"tanımlanan bir gruba ait bireyler, kaynaklı bir doğum olayına sahip olanlar, "
+"belirli bir mesleğe sahip olanlar, bağlantılı bir görüntüye sahip bir "
+"cenazeye sahip olanlar vb."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
-msgstr ""
+msgstr "burada"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
 msgid "hide always"
-msgstr ""
+msgstr "her zaman gizle"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
+"çok faktörlü iletişim kutularında gizle, aksi takdirde alt etiketleri göster "
+"ve genişlet"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "çok faktörlü iletişim kutularında gizle, diğer durumlarda göster"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
-msgstr ""
+msgstr "ayarlama yok"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
+"ayarlama yok (aşağıda gösterildiği gibi tüm olaylar için ayarı kullanın)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "show always"
-msgstr ""
+msgstr "her zaman göster"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "alt etiketleri her zaman göster ve genişlet"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Adından sonra bir ailenin XREF'ini görüntüleyin."
