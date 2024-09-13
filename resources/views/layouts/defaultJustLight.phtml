@@ -1,25 +1,25 @@
 <?php
 
-//[RC] this is based on justLight version 2.2.7
+//[RC] this is based on justLight version 2.2.8.1
 
 /**
  * Replace layouts/default.phtml
  *
  * Changes
  * - Sticky top
- * - Collapsable navbar for smaller screens (Genealogy and user menu)
+ * - Collapsable navbars for smaller screens (Genealogy and user menu)
  * - Make the site title clickable with a header link to the homepage
  * - Replace the default footer with our own version
  *
  */
 
 use Cissee\Webtrees\Module\ClassicLAF\ClassicLAFModule;
-use Fisharebest\Webtrees\Http\RequestHandlers\WebmanifestJson;
 use Fisharebest\Webtrees\I18N;
-use Fisharebest\Webtrees\Module\ModuleThemeInterface;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\Validator;
 use Psr\Http\Message\ServerRequestInterface;
+use Fisharebest\Webtrees\Module\ModuleThemeInterface;
+use Fisharebest\Webtrees\Http\RequestHandlers\WebmanifestJson;
 
 /**
  * @var string                 $content
@@ -28,6 +28,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * @var Tree                   $tree
  */
 
+//[RC] adjusted
 //Issue #122: more robust handling of variables
 if (!isset($title)) {
     $title = "";
@@ -37,11 +38,22 @@ if (!isset($tree)) {
 }
 
 $palette = app(ModuleThemeInterface::class)->palette();
+switch ($palette) {
+    case  'justlight':
+        $color_scheme = 'light';
+        break;
+    case 'justblack':
+        $color_scheme = 'dark';
+        break;
+    default:
+        $color_scheme = isset($_COOKIE["JL_COLOR_SCHEME"]) ? $_COOKIE["JL_COLOR_SCHEME"] : false;
+        if ($color_scheme === false) $color_scheme = 'light';  // fallback
+    }
 
 ?>
 
 <!DOCTYPE html>
-<html dir="<?= I18N::locale()->direction() ?>" lang="<?= I18N::locale()->languageTag() ?>">
+<html dir="<?= I18N::locale()->direction() ?>" lang="<?= I18N::locale()->languageTag() ?>" data-bs-theme="<?= $color_scheme ?>">
     <head>
         <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/meta', [
             'meta_robots' => e($meta_robots ?? 'noindex'),
@@ -61,18 +73,18 @@ $palette = app(ModuleThemeInterface::class)->palette();
             //[RC] adjusted
             $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
         ?>
-
         <?php if (!$strip) : ?>
             <header class="wt-header-wrapper d-print-none sticky-lg-top">
                 <div class="container wt-header-container">
                     <div class="wt-header-content navbar navbar-expand-md <?= $palette === 'justblack' ? 'navbar-dark' : 'navbar-light' ?> d-flex justify-content-between">
                         <div class="jc-header-content-start d-flex flex-row">
                             <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/accessibility'); ?>
+                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-primary'); ?>
                             <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-logo'); ?>
                             <?php if ($tree !== null) : ?>
                                 <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-title', ['tree' => $tree]); ?>
                             <?php endif ?>
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler'); ?>
+                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-secondary'); ?>
                         </div>
                         <div class="jc-header-content-end collapse navbar-collapse d-none d-flex flex-lg-row flex-column justify-content-end">
                             <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/secondary-navigation', ['tree' => $tree]); ?>
@@ -84,6 +96,7 @@ $palette = app(ModuleThemeInterface::class)->palette();
                     <?php if ($tree !== null) : ?>
                         <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/primary-navigation', ['tree' => $tree]); ?>
                     <?php endif ?>
+                    <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/mobile-navigation', ['tree' => $tree]); ?>
                 </div>
             </header>
         <?php endif ?>
@@ -94,11 +107,10 @@ $palette = app(ModuleThemeInterface::class)->palette();
             <?php
                 //[RC] adjusted
             ?>
-
             <?php if (!$strip) : ?>
-            <div class="container-lg wt-main-container">
+                <div class="container-lg wt-main-container">
             <?php else : ?>
-            <div class="container-lg edit-container wt-main-container">
+                <div class="container-lg edit-container wt-main-container">
             <?php endif ?>
                 <?= $content ?>
             </div>
