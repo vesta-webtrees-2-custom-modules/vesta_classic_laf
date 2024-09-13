@@ -176,16 +176,10 @@ class ClassicLAFModule extends AbstractModule implements
             if ($theme instanceof ModuleCustomInterface) {
                 //we need a way to identify custom modules regardless of their folder name
 
-                //legacy
-                $justLightSupportUrl1 = 'https://github.com/justcarmen/webtrees-theme-justlight/issues';
+                $justLightSupportUrl = 'https://justcarmen.nl/modules-webtrees-2/justlight-theme/';
+                $supportedVersion = version_compare($theme->customModuleVersion(), '2.2.8');
 
-                //current
-                $justLightSupportUrl2 = 'https://justcarmen.nl/modules-webtrees-2/justlight-theme/';
-
-                if ($theme->customModuleSupportUrl() === $justLightSupportUrl1) {
-                    $apply = true;
-                    $isJustLight = true;
-                } else if ($theme->customModuleSupportUrl() === $justLightSupportUrl2) {
+                if (($theme->customModuleSupportUrl() === $justLightSupportUrl) && ($supportedVersion >= 0)) {
                     $apply = true;
                     $isJustLight = true;
                 }
