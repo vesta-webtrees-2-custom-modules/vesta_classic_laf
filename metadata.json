@@ -416,5 +416,10 @@
 		"from": "2.1.17",
 		"to": "2.1.21",
 		"changelog": ["Fixed integration with 'JustLight' theme (from version 2.2.8)."]
+	},
+	{
+		"version": "2.1.20.2.0",
+		"from": "2.1.17",
+		"to": "2.1.21"
 	}
 ]
