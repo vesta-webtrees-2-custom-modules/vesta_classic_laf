@@ -5,7 +5,6 @@ namespace Cissee\Webtrees\Module\ClassicLAF;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\Webtrees;
 use Illuminate\Support\Collection;
-use function app;
 use function str_contains;
 
 //webtrees major version switch
@@ -48,5 +47,5 @@ if (!$ok) {
   return;
 }
 
-$placeholder = app(PlaceholderModule::class);
-return $placeholder->ifIncompatible() ?? app(ClassicLAFModule::class);
+$placeholder = \Vesta\VestaUtils::get(PlaceholderModule::class);
+return $placeholder->ifIncompatible() ?? \Vesta\VestaUtils::get(ClassicLAFModule::class);

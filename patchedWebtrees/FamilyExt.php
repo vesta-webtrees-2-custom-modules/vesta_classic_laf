@@ -4,7 +4,6 @@ namespace Cissee\WebtreesExt;
 
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Tree;
-use function app;
 
 class FamilyExt extends Family {
 
@@ -20,7 +19,7 @@ class FamilyExt extends Family {
   public function fullName(): string
     {
         //[RC] adjusted: logic is configurable
-        $handler = app(FamilyNameHandler::class);
+        $handler = \Vesta\VestaUtils::get(FamilyNameHandler::class);
 
         $full = parent::fullName();
         $full = $handler->addXref($full, $this->xref());

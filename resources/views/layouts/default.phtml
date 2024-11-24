@@ -63,18 +63,18 @@ if (!isset($tree)) {
         <link rel="manifest" href="<?= e(route(WebmanifestJson::class)) ?>">
 
         <link rel="stylesheet" href="<?= e(asset('css/vendor.min.css')) ?>">
-        <?php foreach (app(ModuleThemeInterface::class)->stylesheets() as $stylesheet) : ?>
+        <?php foreach (\Vesta\VestaUtils::get(ModuleThemeInterface::class)->stylesheets() as $stylesheet) : ?>
             <link rel="stylesheet" href="<?= e($stylesheet) ?>">
         <?php endforeach ?>
 
         <?= View::stack('styles') ?>
 
-        <?= app(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
+        <?= \Vesta\VestaUtils::get(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
             return $module->headContent();
         })->implode('') ?>
     </head>
 
-    <body class="wt-global wt-theme-<?= e(app(ModuleThemeInterface::class)->name()) ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
+    <body class="wt-global wt-theme-<?= e(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name()) ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
 
         <?php
           $strip = ClassicLAFModule::isEditDialogToBeStripped($request);
@@ -116,7 +116,7 @@ if (!isset($tree)) {
 
                       <div class="col wt-secondary-navigation">
                           <ul class="nav wt-user-menu">
-                              <?php foreach (app(ModuleThemeInterface::class)->userMenu($tree) as $menu) : ?>
+                              <?php foreach (\Vesta\VestaUtils::get(ModuleThemeInterface::class)->userMenu($tree) as $menu) : ?>
                                   <?= view('components/menu-item', ['menu' => $menu]) ?>
                               <?php endforeach ?>
                           </ul>
@@ -125,7 +125,7 @@ if (!isset($tree)) {
                       <?php if ($tree !== null) : ?>
                           <nav class="col wt-primary-navigation">
                               <ul class="nav wt-genealogy-menu">
-                                  <?php foreach (app(ModuleThemeInterface::class)->genealogyMenu($tree) as $menu) : ?>
+                                  <?php foreach (\Vesta\VestaUtils::get(ModuleThemeInterface::class)->genealogyMenu($tree) as $menu) : ?>
                                       <?= view('components/menu-item', ['menu' => $menu]) ?>
                                   <?php endforeach ?>
                               </ul>
@@ -159,7 +159,7 @@ if (!isset($tree)) {
         <?php if (!$strip) : ?>
 
           <footer class="container-lg wt-footers d-print-none">
-              <?= app(ModuleService::class)->findByInterface(ModuleFooterInterface::class)->map(static function (ModuleFooterInterface $module) use ($request): string {
+              <?= \Vesta\VestaUtils::get(ModuleService::class)->findByInterface(ModuleFooterInterface::class)->map(static function (ModuleFooterInterface $module) use ($request): string {
                   return $module->getFooter($request);
               })->implode('') ?>
           </footer>
@@ -204,7 +204,7 @@ if (!isset($tree)) {
 
         <?= View::stack('javascript') ?>
 
-        <?= app(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
+        <?= \Vesta\VestaUtils::get(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
             return $module->bodyContent();
         })->implode('') ?>
     </body>

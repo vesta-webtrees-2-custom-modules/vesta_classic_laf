@@ -8,7 +8,6 @@ use Cissee\WebtreesExt\IndividualNameHandler;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Tree;
-use function app;
 
 class IndividualExt extends Individual {
 
@@ -162,7 +161,7 @@ class IndividualExt extends Individual {
         if ($NICK && strpos($full, '"' . $NICK . '"') === false) {
             // A NICK field is present, but not included in the NAME.
             // we may have to handle it specifically
-            $handler = app(IndividualNameHandler::class);
+            $handler = \Vesta\VestaUtils::get(IndividualNameHandler::class);
             $full = $handler->addNick($full, $NICK);
         }
 
@@ -227,7 +226,7 @@ class IndividualExt extends Individual {
     public function fullName(): string
     {
         //[RC] adjusted: logic is configurable
-        $handler = app(IndividualNameHandler::class);
+        $handler = \Vesta\VestaUtils::get(IndividualNameHandler::class);
 
         $full = parent::fullName();
         $full .= $handler->addBadges($this->tree(), $this->gedcom);

@@ -9,7 +9,6 @@ use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use function app;
 
 class AddNewFactExt extends AddNewFact
 {
@@ -23,7 +22,7 @@ class AddNewFactExt extends AddNewFact
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         //explicitly register in order to re-use in views where we cannot pass via variable
-        app()->instance(GedcomEditServiceExt2::class, new GedcomEditServiceExt2());
+        \Vesta\VestaUtils::set(GedcomEditServiceExt2::class, new GedcomEditServiceExt2());
 
         $include_hidden = (bool) ($request->getQueryParams()['include_hidden'] ?? false);
 
@@ -31,7 +30,7 @@ class AddNewFactExt extends AddNewFact
 
         if ($can_configure) {
             //explicitly register in order to re-use in views where we cannot pass via variable
-            app()->instance(EditGedcomFieldsArgs::class, new EditGedcomFieldsArgs(true));
+            \Vesta\VestaUtils::set(EditGedcomFieldsArgs::class, new EditGedcomFieldsArgs(true));
         }
 
         return parent::handle($request);

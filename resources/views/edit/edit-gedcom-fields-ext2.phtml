@@ -48,7 +48,7 @@ foreach ($keys as $num => $key) {
     $collapsed[$key] = $collapse[$key];
 
     //[RC] adjusted: maybe override collapse
-    $ges = app(GedcomEditServiceExt2::class);
+    $ges = \Vesta\VestaUtils::get(GedcomEditServiceExt2::class);
     if ($ges->alwaysExpandSubtags($tree, $full_tag)) {
         $collapsed[$key] = false;
     }

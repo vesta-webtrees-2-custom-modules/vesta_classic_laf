@@ -12,7 +12,7 @@ use Fisharebest\Webtrees\Tree;
  * @var Tree          $tree
  */
 
-$args = app(EditGedcomFieldsArgs::class);
+$args = \Vesta\VestaUtils::get(EditGedcomFieldsArgs::class);
 
 if($args->canConfigure()) {
     //own view, plus extension for 'expand subtags'

@@ -37,7 +37,7 @@ if (!isset($tree)) {
     $tree = null;
 }
 
-$palette = app(ModuleThemeInterface::class)->palette();
+$palette = \Vesta\VestaUtils::get(ModuleThemeInterface::class)->palette();
 switch ($palette) {
     case  'justlight':
         $color_scheme = 'light';
@@ -55,16 +55,16 @@ switch ($palette) {
 <!DOCTYPE html>
 <html dir="<?= I18N::locale()->direction() ?>" lang="<?= I18N::locale()->languageTag() ?>" data-bs-theme="<?= $color_scheme ?>">
     <head>
-        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/meta', [
+        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/head/meta', [
             'meta_robots' => e($meta_robots ?? 'noindex'),
             'meta_description' => $meta_description ?? ''
         ]); ?>
-        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/title', ['tree' => $tree, 'title' => $title]); ?>
-        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/favicons'); ?>
+        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/head/title', ['tree' => $tree, 'title' => $title]); ?>
+        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/head/favicons'); ?>
 
         <link rel="manifest" href="<?= e(route(WebmanifestJson::class)) ?>">
 
-        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/head/stylesheets'); ?>
+        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/head/stylesheets'); ?>
     </head>
 
     <body class="wt-global jc-theme-justlight jc-palette-<?= $palette ?> wt-route-<?= e(basename(strtr(Validator::attributes($request)->route()->name ?? '/', ['\\' => '/']))) ?>">
@@ -78,31 +78,31 @@ switch ($palette) {
                 <div class="container wt-header-container">
                     <div class="wt-header-content navbar navbar-expand-md <?= $palette === 'justblack' ? 'navbar-dark' : 'navbar-light' ?> d-flex justify-content-between">
                         <div class="jc-header-content-start d-flex flex-row">
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/accessibility'); ?>
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-primary'); ?>
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-logo'); ?>
+                            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/accessibility'); ?>
+                            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-primary'); ?>
+                            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/site-logo'); ?>
                             <?php if ($tree !== null) : ?>
-                                <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/site-title', ['tree' => $tree]); ?>
+                                <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/site-title', ['tree' => $tree]); ?>
                             <?php endif ?>
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-secondary'); ?>
+                            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/navbar-toggler-secondary'); ?>
                         </div>
                         <div class="jc-header-content-end collapse navbar-collapse d-none d-flex flex-lg-row flex-column justify-content-end">
-                            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/secondary-navigation', ['tree' => $tree]); ?>
+                            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/secondary-navigation', ['tree' => $tree]); ?>
                             <?php if ($tree !== null) : ?>
-                                <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/header-search', ['tree' => $tree]); ?>
+                                <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/header-search', ['tree' => $tree]); ?>
                             <?php endif ?>
                         </div>
                     </div>
                     <?php if ($tree !== null) : ?>
-                        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/primary-navigation', ['tree' => $tree]); ?>
+                        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/primary-navigation', ['tree' => $tree]); ?>
                     <?php endif ?>
-                    <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/mobile-navigation', ['tree' => $tree]); ?>
+                    <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/mobile-navigation', ['tree' => $tree]); ?>
                 </div>
             </header>
         <?php endif ?>
 
         <main id="content" class="wt-main-wrapper">
-            <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/flash-messages'); ?>
+            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/flash-messages'); ?>
 
             <?php
                 //[RC] adjusted
@@ -120,10 +120,10 @@ switch ($palette) {
             //[RC] adjusted
         ?>
         <?php if (!$strip) : ?>
-            <?= view(app(ModuleThemeInterface::class)->name() . '::theme/footer'); ?>
+            <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::theme/footer'); ?>
         <?php endif ?>
 
-        <?= view(app(ModuleThemeInterface::class)->name() . '::layouts/body/scripts'); ?>
+        <?= view(\Vesta\VestaUtils::get(ModuleThemeInterface::class)->name() . '::layouts/body/scripts'); ?>
     </body>
 
 </html>

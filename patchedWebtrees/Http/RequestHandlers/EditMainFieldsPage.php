@@ -15,7 +15,6 @@ use Fisharebest\Webtrees\Validator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function app;
 use function route;
 
 class EditMainFieldsPage implements RequestHandlerInterface {
@@ -28,7 +27,7 @@ class EditMainFieldsPage implements RequestHandlerInterface {
         $this->gedcom_edit_service = new GedcomEditServiceExt2(true);
 
         //explicitly register in order to re-use in views where we cannot pass via variable
-        app()->instance(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
+        \Vesta\VestaUtils::set(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface

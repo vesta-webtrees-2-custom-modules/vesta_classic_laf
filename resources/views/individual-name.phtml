@@ -32,7 +32,7 @@ if ($fact->isPendingDeletion()) {
     $container_class = 'wt-new';
 }
 
-$module = app(ClassicLAFModule::class);
+$module = \Vesta\VestaUtils::get(ClassicLAFModule::class);
 $autoExpandValue = intval($module->getPreference('EXPAND_NAME', '0'));
 
 $autoExpand = false;

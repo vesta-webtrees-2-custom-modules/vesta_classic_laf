@@ -26,7 +26,7 @@ if ($individual === null) {
     return;
 }
 
-$module_service = app(ModuleService::class);
+$module_service = \Vesta\VestaUtils::get(ModuleService::class);
 
 $menus = $module_service->findByComponent(ModuleChartInterface::class, $individual->tree(), Auth::user())->map(static function (ModuleChartInterface $module) use ($individual): ?Menu {
     return $module->chartBoxMenu($individual);

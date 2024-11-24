@@ -77,7 +77,6 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaModuleTrait;
-use function app;
 use function redirect;
 use function response;
 use function route;
@@ -127,7 +126,7 @@ class ClassicLAFModule extends AbstractModule implements
     public function onBoot(): void {
         //explicitly register in order to re-use in views where we cannot pass via variable
         //(could also resolve via module service)
-        app()->instance(ClassicLAFModule::class, $this); //do not use bind()! for some reason leads to 'Illegal offset type in isset or empty'
+        \Vesta\VestaUtils::set(ClassicLAFModule::class, $this);
 
         // Register a namespace for our views.
         View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
@@ -172,7 +171,7 @@ class ClassicLAFModule extends AbstractModule implements
             $apply = false;
             $isJustLight = false;
 
-            $theme = app(ModuleThemeInterface::class);
+            $theme = \Vesta\VestaUtils::get(ModuleThemeInterface::class);
             if ($theme instanceof ModuleCustomInterface) {
                 //we need a way to identify custom modules regardless of their folder name
 
@@ -208,7 +207,7 @@ class ClassicLAFModule extends AbstractModule implements
           }
          */
 
-        $individualNameHandler = app(IndividualNameHandler::class);
+        $individualNameHandler = \Vesta\VestaUtils::get(IndividualNameHandler::class);
 
         $nickBeforeSurn = boolval($this->getPreference('NICK_BEFORE_SURN', '1'));
         $individualNameHandler->setNickBeforeSurn($nickBeforeSurn);
@@ -220,13 +219,13 @@ class ClassicLAFModule extends AbstractModule implements
             return $self->addBadges($tree, $gedcom);
         });
 
-        $familyNameHandler = app(FamilyNameHandler::class);
+        $familyNameHandler = \Vesta\VestaUtils::get(FamilyNameHandler::class);
         $appendXrefFam = boolval($this->getPreference('APPEND_XREF_FAM', '0'));
         $familyNameHandler->setAppendXref($appendXrefFam);
 
         //must explicitly register in order to re-use elsewhere! (see webtrees #3085)
-        app()->instance(IndividualNameHandler::class, $individualNameHandler);
-        app()->instance(FamilyNameHandler::class, $familyNameHandler);
+        \Vesta\VestaUtils::set(IndividualNameHandler::class, $individualNameHandler);
+        \Vesta\VestaUtils::set(FamilyNameHandler::class, $familyNameHandler);
 
         Registry::individualFactory(new CustomIndividualFactory(
                 new IndividualExtSettings(($compactIndividualPage > 0), $cropThumbnails, $expandFirstSidebar)));
@@ -483,7 +482,7 @@ class ClassicLAFModule extends AbstractModule implements
                 if (substr($contentType, 0, strlen("text/html")) === "text/html") {
                     $html = $response->getBody()->__toString();
                     $content = ClassicLAFModule::strippedLayout_obsolete($html);
-                    $stream_factory = app(StreamFactoryInterface::class);
+                    $stream_factory = \Vesta\VestaUtils::get(StreamFactoryInterface::class);
                     $stream = $stream_factory->createStream($content);
                     $response = $response->withBody($stream);
 

@@ -14,6 +14,6 @@ class AddChildToFamilyPageExt extends AddChildToFamilyPage {
             new GedcomEditServiceExt2(true));
 
         //explicitly register in order to re-use in views where we cannot pass via variable
-        app()->instance(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
+        \Vesta\VestaUtils::set(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
     }
 }
