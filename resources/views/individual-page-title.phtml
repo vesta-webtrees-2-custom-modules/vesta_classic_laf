@@ -46,7 +46,7 @@ foreach ($record->facts(['SEX']) as $n => $fact) {
     }
 
     if ($record->canEdit()) {
-        $edit_links = '<a class="btn btn-link" href="' . e(route(EditFactPage::class, ['xref' => $record->xref(), 'fact_id' => $fact->id(), 'tree' => $record->tree()->name()])) . '" title="' . MoreI18N::xlate('Edit the gender') . '">' . view('icons/edit') . '<span class="visually-hidden">' . MoreI18N::xlate('Edit the gender') . '</span></a>';
+        $edit_links = '<a class="btn btn-link" href="' . e(route(EditFactPage::class, ['xref' => $record->xref(), 'fact_id' => $fact->id(), 'tree' => $record->tree()->name()])) . '" title="' . MoreI18N::xlate('Edit the sex') . '">' . view('icons/edit') . '<span class="visually-hidden">' . MoreI18N::xlate('Edit the sex') . '</span></a>';
     } else {
         $edit_links = '';
     }

@@ -62,7 +62,7 @@ use Fisharebest\Webtrees\Individual;
         <?php if ($record->facts(['SEX'], false, null, true)->isEmpty()) : ?>
             <a class="dropdown-item" href="<?= e(route(AddNewFact::class, ['fact' => 'SEX', 'tree' => $record->tree()->name(), 'xref' => $record->xref()])) ?>">
                 <?= view('icons/edit') ?>
-                <?= MoreI18N::xlate('Edit the gender') ?>
+                <?= MoreI18N::xlate('Edit the sex') ?>
             </a>
         <?php endif ?>
 
@@ -70,7 +70,7 @@ use Fisharebest\Webtrees\Individual;
             <?php if ($fact->canEdit()) : ?>
                 <a class="dropdown-item" href="<?= e(route(EditFactPage::class, ['xref' => $record->xref(), 'fact_id' => $fact->id(), 'tree' => $record->tree()->name()])) ?>">
                     <?= view('icons/edit') ?>
-                    <?= MoreI18N::xlate('Edit the gender') ?>
+                    <?= MoreI18N::xlate('Edit the sex') ?>
                 </a>
             <?php endif ?>
         <?php endforeach ?>
