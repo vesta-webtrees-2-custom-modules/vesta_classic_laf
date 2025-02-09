@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2024-02-06 11:31+0100\n"
+"POT-Creation-Date: 2025-02-08 17:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ClassicLAFModule.php:573 ClassicLAFModule.php:637
+#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
 msgstr ""
 
-#: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
 
-#: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr ""
 
-#: ClassicLAFModule.php:792
+#: ClassicLAFModule.php:785
 msgid "Edit the name badge"
 msgstr ""
 
@@ -282,11 +282,16 @@ msgstr ""
 msgid "HTML snippet"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:91
+#: resources/views/admin/badges/edit.phtml:92
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:126
+#: resources/views/admin/badges/edit.phtml:93
+#, php-format
+msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:128
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
 

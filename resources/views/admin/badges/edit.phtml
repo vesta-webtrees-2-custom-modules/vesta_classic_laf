@@ -88,7 +88,9 @@ use Fisharebest\Webtrees\I18N;
             <textarea class="form-control" name="snippet" id="snippet" rows="10"><?= e($snippet) ?></textarea>
 
             <div class="form-text">
-                <?= I18N::translate('HTML snippet to be displayed after the name, e.g. a small image.') ?>
+                <?=
+                    I18N::translate('HTML snippet to be displayed after the name, e.g. a small image.') . ' ' .
+                    I18N::translate('Use the pseudo-tag \'%s\' as a back reference to the first captured parenthesized subpattern in the regex.','&lt;ref/&gt;') ?>
             </div>
         </div>
     </div>

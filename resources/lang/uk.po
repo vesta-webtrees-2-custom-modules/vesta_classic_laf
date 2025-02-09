@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2024-02-06 11:31+0100\n"
+"POT-Creation-Date: 2025-02-08 17:36+0100\n"
 "PO-Revision-Date: 2023-10-17 10:13+0000\n"
 "Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/uk/>\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Цей модуль налаштовує всі теми, наближуючи вигляд до webtrees версій 1.х."
 
-#: resources/views/admin/badges/edit.phtml:126
+#: resources/views/admin/badges/edit.phtml:128
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
 
@@ -40,7 +40,7 @@ msgstr ""
 msgid "A note, shown within the control panel only."
 msgstr ""
 
-#: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr "Редагувати діалоги"
 msgid "Edit main facts and events"
 msgstr "Редагувати основні факти та події"
 
-#: ClassicLAFModule.php:792
+#: ClassicLAFModule.php:785
 msgid "Edit the name badge"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr "Розгортати одразу, якщо в назві є примі�
 msgid "HTML snippet"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:91
+#: resources/views/admin/badges/edit.phtml:92
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
 
@@ -184,13 +184,13 @@ msgstr "Вкладки"
 msgid "Name badge"
 msgstr ""
 
-#: ClassicLAFModule.php:573 ClassicLAFModule.php:637
+#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:28
 msgid "Name badges"
 msgstr ""
 
-#: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
 
@@ -297,6 +297,11 @@ msgstr "Використовуйте власні префікси для XREF, 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
+msgstr ""
+
+#: resources/views/admin/badges/edit.phtml:93
+#, php-format
+msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""
 
 #. I18N: Module Configuration

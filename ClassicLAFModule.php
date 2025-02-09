@@ -956,7 +956,12 @@ class ClassicLAFModule extends AbstractModule implements
             if ($nameBadge->access >= Auth::accessLevel($tree)) {
                 try {
                     if (preg_match($nameBadge->regex, $gedcom, $match)) {
-                        $full .= $nameBadge->snippet;
+                        if (array_key_exists(1,$match)) {
+                            $ref = $match[1];
+                            $full .= str_replace('<ref/>',$ref,$nameBadge->snippet);
+                        } else {
+                            $full .= $nameBadge->snippet;
+                        }
                     }
                 } catch (\Exception $e) {
                     error_log("[Vesta Classic Look & Feel] error in name badge regex, check your module settings: " . $nameBadge->regex);
