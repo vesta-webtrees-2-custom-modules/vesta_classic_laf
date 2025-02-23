@@ -447,5 +447,10 @@
 		"from": "2.2.1",
 		"to": "2.2.2",
 		"changelog": ["Support back reference in name badges."]
+	},
+	{
+		"version": "2.2.1.3.0",
+		"from": "2.2.1",
+		"to": "2.2.2"
 	}
 ]
