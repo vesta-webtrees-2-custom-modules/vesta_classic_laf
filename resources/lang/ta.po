@@ -1,0 +1,425 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"PO-Revision-Date: 2025-03-27 05:01+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ta/>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: resources/views/admin/badges/config.phtml:56
+#: resources/views/admin/badges/edit.phtml:28
+msgid "Name badges"
+msgstr "பெயர் பேட்ச்கள்"
+
+#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
+msgstr ""
+"பெயர் பேட்ச்கள் உஉகுமொ துணுக்குகள், எ.கா. சிறிய படங்கள், ஒரு நபரின் பெயருக்குப் பிறகு "
+"காட்டப்படும்."
+
+#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+msgid "Add a name badge"
+msgstr "ஒரு பெயர் ஒட்டு சேர்க்கவும்"
+
+#: ClassicLAFModule.php:785
+msgid "Edit the name badge"
+msgstr "ஒட்டு என்ற பெயர் திருத்தவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
+msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
+msgstr ""
+"அனைத்து கருப்பொருள்களையும் பிற அம்சங்களையும் சரிசெய்யும் ஒரு தொகுதி, ஒரு தோற்றத்தை "
+"வழங்கும் மற்றும் வெப் ட்ரீச் 1.x பதிப்பிற்கு நெருக்கமாக உணர்கிறது."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:37
+msgid "Overall width"
+msgstr "ஒட்டுமொத்த அகலம்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:39
+msgid "Use available space"
+msgstr "கிடைக்கக்கூடிய இடத்தைப் பயன்படுத்தவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:40
+msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
+msgstr ""
+"நிலையான தளவமைப்பு பெரும்பாலான பக்கங்களை மையமாகக் கொண்டுள்ளது, குறிப்பாக பரந்த "
+"காட்சிகளில் நிறைய இடத்தை வீணாக்குகிறது. இந்த விருப்பம் கிடைக்கக்கூடிய பெரும்பாலான "
+"இடங்களைப் பயன்படுத்த அனுமதிக்கிறது."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:47
+msgid "Individual page"
+msgstr "தனிப்பட்ட பக்கம்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:52
+msgid "Use original layout"
+msgstr "அசல் தளவமைப்பைப் பயன்படுத்தவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:53 ClassicLAFModuleTrait.php:90
+msgid "Use compact layout"
+msgstr "சிறிய தளவமைப்பைப் பயன்படுத்தவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:54
+msgid "Use compact layout except for names"
+msgstr "பெயர்களைத் தவிர சிறிய தளவமைப்பைப் பயன்படுத்தவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:55
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr "பல மாற்றங்கள் - விவரங்களுக்கு %1$s ஐப் பார்க்கவும்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+msgid "Expand first sidebar"
+msgstr "முதல் பக்கப்பட்டியை விரிவாக்குங்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:67
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr ""
+"'குடும்ப நேவிகேட்டர்' பக்கப்பட்டியை விட, முதல் பக்கப்பட்டியை எப்போதும் விரிவாக்க "
+"சரிபார்க்கவும்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:72
+msgid "Individual page: Name blocks"
+msgstr "தனிப்பட்ட பக்கம்: பெயர் தொகுதிகள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:77
+msgid "Never expand initially"
+msgstr "ஆரம்பத்தில் ஒருபோதும் விரிவடைய வேண்டாம்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:78
+msgid "Expand initially if name has note or source"
+msgstr ""
+"பெயர் குறிப்பு அல்லது மூலத்தைக் கொண்டிருந்தால் ஆரம்பத்தில் விரிவாக்குங்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:79
+msgid "Always expand initially"
+msgstr "எப்போதும் ஆரம்பத்தில் விரிவாக்குங்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:80
+msgid "Name blocks are always expandable/collapsible regardless of this setting."
+msgstr ""
+"இந்த அமைப்பைப் பொருட்படுத்தாமல் பெயர் தொகுதிகள் எப்போதும் "
+"விரிவாக்கக்கூடியவை/மடக்கக்கூடியவை."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:85
+#, php-format
+msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
+msgstr ""
+"கவனம்: இந்த அமைப்பு தற்போது உங்கள் கணினியில் எந்த விளைவையும் ஏற்படுத்தாது, ஏனெனில் இதற்கு "
+"புதிய LIBXML பதிப்பு தேவைப்படுகிறது (குறைந்தது %1$s)."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:88
+msgid "Edit dialogs"
+msgstr "உரையாடல்களைத் திருத்து"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:91
+msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
+msgstr ""
+"மேலும் சிறிய தளவமைப்பைப் பயன்படுத்தி அனைத்து திருத்து உரையாடல்களையும் காண்பி, இது "
+"நிலையான தலைப்பு மற்றும் அடிக்குறிப்பையும் தவிர்க்கிறது."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:92
+msgid "This only affects standard and specific custom themes."
+msgstr ""
+"இது நிலையான மற்றும் குறிப்பிட்ட தனிப்பயன் கருப்பொருள்களை மட்டுமே பாதிக்கிறது."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:97
+msgid "Image Thumbnails"
+msgstr "பட சிறு உருவங்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:99
+msgid "Crop Thumbnails"
+msgstr "பயிர் சிறு உருவங்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:100
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr ""
+"நிலையான அகலம் மற்றும் உயரத்துடன் படங்களை உருவாக்குவதற்காக வெப் ட்ரீச் சிறு உருவங்களை "
+"பயிர்கள். தரமற்ற விகிதத்துடன் தனிநபர்களின் படங்கள் உங்களிடம் இருந்தால் இது சிக்கலானது, அங்கு"
+" அந்தந்த நபரின் தலை மையப்படுத்தப்படவில்லை, எனவே துண்டிக்கப்படலாம். இந்த வழக்குகளை கையாள இந்"
+"த விருப்பத்தை தேர்வுநீக்கவும்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:117
+msgid "XREF prefixes"
+msgstr "XREF முன்னொட்டுகள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:119
+msgid "Custom prefixes"
+msgstr "தனிப்பயன் முன்னொட்டுகள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:120
+msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
+msgstr ""
+"எல்லா XREF களையும் 'ஃச்' உடன் முன்னொட்டுவதற்கு பதிலாக, வெப் ட்ரீச் 1.x இல் உள்ளதைப் போல "
+"XREFS க்கான தனிப்பயன் முன்னொட்டுகளைப் பயன்படுத்தவும்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:159
+msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
+msgstr ""
+"ஒரு குடும்ப மரத்தில், ஒவ்வொரு பதிவிலும் \"F123\" அல்லது \"R14\" போன்ற உள் குறிப்பு எண் "
+"(\"XREF\" என்று அழைக்கப்படுகிறது) உள்ளது. புதிய XREF கள் உருவாக்கப்படும்போதெல்லாம் "
+"பயன்படுத்தப்படும் முன்னொட்டை நீங்கள் தேர்வு செய்யலாம்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:162
+msgid "Nicknames"
+msgstr "புனைப்பெயர்கள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:164
+msgid "Display nicknames before surnames"
+msgstr "குடும்பப்பெயர்களுக்கு முன் புனைப்பெயர்களைக் காண்பி"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:165
+msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
+msgstr ""
+"வெப் ட்ரீச் 1.x ஐப் போல புனைப்பெயர்களைக் கையாளுங்கள், அதாவது அவற்றை குடும்பப்பெயருக்கு முன் "
+"காட்டுங்கள்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:166
+msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
+msgstr ""
+"இது ஏற்கனவே ஒரு புனைப்பெயரை உள்ளடக்கிய GEDCOM பெயர் புலங்களை பாதிக்காது என்பதை "
+"நினைவில் கொள்க, அதாவது குறிப்பிட்ட பெயர்களுக்கு நீங்கள் எப்போதும் புனைப்பெயரை வெளிப்படையா"
+"க வைக்கலாம்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:171
+msgid "Name type presets"
+msgstr "பெயர் வகை முன்னமைவுகள்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:173
+msgid "Skip name type preset for single names"
+msgstr "ஒற்றை பெயர்களுக்கு பெயர் வகை முன்னமைவைத் தவிர்க்கவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:174
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr ""
+"புதிய பெற்றோர், வாழ்க்கைத் துணைவர்கள் அல்லது குழந்தைகளைச் சேர்க்கும்போது, வெப் ட்ரீச் பெயர் "
+"வகையை 'பிறந்த பெயர்' என்று முன்னமைக்கிறது."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:175
+msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
+msgstr ""
+"அந்தந்த நபருக்கு ஒற்றை பெயர் இருந்தால் ஒரு பெயர் வகையைப் பயன்படுத்த வேண்டாம் என்று நீங்கள் "
+"விரும்பினால் இந்த விருப்பத்தை சரிபார்க்கவும்."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:180 ClassicLAFModuleTrait.php:188
+msgid "XREFs"
+msgstr "Xrefs"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
+msgid "Append XREFs to names"
+msgstr "XREFS ஐ பெயர்களுடன் சேர்க்கவும்"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:183
+msgid "Display an individual's XREF after the name."
+msgstr "பெயருக்குப் பிறகு ஒரு நபரின் XREF ஐக் காண்பி."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:191
+msgid "Display a family's XREF after the family label."
+msgstr "குடும்ப லேபிளுக்குப் பிறகு ஒரு குடும்பத்தின் XREF ஐக் காண்பி."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:197
+msgid "Layout"
+msgstr "மனையமைவு"
+
+#: resources/views/admin/badges/config.phtml:31
+msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
+msgstr ""
+"ஒரு நபரின் ரா கெட்காம் தரவைப் பொருத்தும் வழக்கமான வெளிப்பாடுகளின் அடிப்படையில் அவை "
+"தேர்ந்தெடுக்கப்படுகின்றன."
+
+#: resources/views/admin/badges/config.phtml:32
+msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
+msgstr ""
+"தனிநபர்கள், விளக்கப்படங்கள் மற்றும் பிற இடங்களில், வெவ்வேறு அளவுகோல்கள் வழியாக "
+"முன்னிலைப்படுத்த நீங்கள் அவற்றைப் பயன்படுத்தலாம்: பகிரப்பட்ட குறிப்பு மூலம் வரையறுக்கப்பட்ட ஒரு"
+" குழுவிற்கு சொந்தமான நபர்கள், ஒரு குறிப்பிட்ட பிறப்பு நிகழ்வைக் கொண்டிருப்பது, ஒரு "
+"குறிப்பிட்ட தொழிலைக் கொண்டிருப்பது, இணைக்கப்பட்ட படத்துடன் அடக்கம் செய்வது போன்றவை."
+
+#: resources/views/admin/badges/config.phtml:33
+msgid "See the initial name badges for examples."
+msgstr "எடுத்துக்காட்டுகளுக்கு ஆரம்ப பெயர் பேட்ச்களைப் பார்க்கவும்."
+
+#: resources/views/admin/badges/config.phtml:63
+#: resources/views/admin/badges/edit.phtml:37
+msgid "Name badge"
+msgstr "பெயர் ஒட்டு"
+
+#: resources/views/admin/badges/edit.phtml:45
+msgid "A label, for reference within the control panel only."
+msgstr "ஒரு சிட்டை, கட்டுப்பாட்டு குழுவில் மட்டுமே குறிப்புக்கு."
+
+#: resources/views/admin/badges/edit.phtml:59
+msgid "A note, shown within the control panel only."
+msgstr "ஒரு குறிப்பு, கட்டுப்பாட்டு குழுவில் மட்டுமே காட்டப்பட்டுள்ளது."
+
+#: resources/views/admin/badges/edit.phtml:66
+msgid "Regex"
+msgstr "வழக்கவெளி"
+
+#: resources/views/admin/badges/edit.phtml:74
+msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
+msgstr ""
+"ஒரு நபரின் மூல GEDCOM தரவைப் பொருத்த வழக்கமான வெளிப்பாடு (பி.சி.ஆர்.இ 2 தொடரியல் "
+"டிலிமிட்டர்களாக ச்லாச்கள் உட்பட)."
+
+#: resources/views/admin/badges/edit.phtml:75
+msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
+msgstr ""
+"மீடியா பொருளின் வகை போன்ற இணைக்கப்பட்ட பொருள்களில் பொருத்த தற்போது வழி இல்லை என்பதை "
+"நினைவில் கொள்க."
+
+#: resources/views/admin/badges/edit.phtml:76
+msgid "Syntactically invalid regex expressions will be silently ignored."
+msgstr "செயற்கையாக தவறான ரீசெக்ச் வெளிப்பாடுகள் அமைதியாக புறக்கணிக்கப்படும்."
+
+#: resources/views/admin/badges/edit.phtml:84
+msgid "HTML snippet"
+msgstr "உஉகுமொ துணுக்கை"
+
+#: resources/views/admin/badges/edit.phtml:92
+msgid "HTML snippet to be displayed after the name, e.g. a small image."
+msgstr ""
+"உஉகுமொ துணுக்கை பெயருக்குப் பிறகு காண்பிக்கப்பட வேண்டும், எ.கா. ஒரு சிறிய படம்."
+
+#: resources/views/admin/badges/edit.phtml:93
+#, php-format
+msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
+msgstr ""
+"ரீசெக்சில் முதல் கைப்பற்றப்பட்ட அடைப்புக்குறிப்பு துணைப்பிரிவுக்கான பின் குறிப்பாக போலி-டேக் "
+"'%s' ஐப் பயன்படுத்தவும்."
+
+#: resources/views/admin/badges/edit.phtml:128
+msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
+msgstr ""
+"குடும்ப மரங்களில் ஒன்றில் அல்லது அனைத்து குடும்ப மரங்களிலும் ஒரு பெயர் ஒட்டு காட்டப்படலாம்."
+
+#: resources/views/admin/tags-ext.phtml:26
+msgid "here"
+msgstr "இங்கே"
+
+#: resources/views/admin/tags-ext.phtml:29
+#, php-format
+msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
+msgstr ""
+"கீழே உள்ள உள்ளமைவு விருப்பங்களுக்கு மேலதிகமாக, %2$s விவரிக்கப்பட்டுள்ளபடி, ஒவ்வொரு "
+"குறிப்பிட்ட குறிச்சொல்லின் தெரிவுநிலையையும் விரிவாக உள்ளமைக்க %1$s உங்களை அனுமதிக்கிறது"
+" என்பதை நினைவில் கொள்க."
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
+msgid "no adjustment"
+msgstr "சரிசெய்தல் இல்லை"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
+msgid "hide always"
+msgstr "எப்போதும் மறை"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr "பல-உண்மை உரையாடல்களில் மறைக்கவும், வேறுவிதமாகக் காட்டவும்"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr ""
+"மல்டி-ஃபாக் உரையாடல்களில் மறைக்கவும், இல்லையெனில் சப்டாக்குகளைக் காட்டவும் விரிவுபடுத்தவும்"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "show always"
+msgstr "எப்போதும் காட்டு"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show and expand subtags always"
+msgstr "சப்டேக்குகளை எப்போதும் காட்டவும் விரிவுபடுத்தவும்"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr ""
+"நிகழ்வு வெளிப்படையாக கட்டமைக்கப்படாவிட்டால், பின்வரும் அமைப்பை அனைத்து '%2$s' "
+"நிகழ்வுகளுக்கும்ள் '%1$s' க்கு பயன்படுத்துங்கள்:"
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr ""
+"சரிசெய்தல் இல்லை (கீழே காட்டப்பட்டுள்ளபடி அனைத்து நிகழ்வுகளுக்கும் அமைப்பைப் பயன்படுத்தவும்)"
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:87
+#: resources/views/modals/config-gedcom-field.phtml:10
+#: resources/views/modals/config-gedcom-field.phtml:11
+#, php-format
+msgid "Configure visibility of GEDCOM tag '%s'"
+msgstr "GEDCOM TAG '%s' இன் தெரிவுநிலையை உள்ளமைக்கவும்"
+
+#: resources/views/edit/edit-gedcom-fields-ext.phtml:123
+msgid "Configure visibility of GEDCOM tags"
+msgstr "GEDCOM குறிச்சொற்களின் தெரிவுநிலையை உள்ளமைக்கவும்"
+
+#: resources/views/family-page-menu.phtml:88
+#: resources/views/individual-page-menu.phtml:128
+#: resources/views/modals/config-gedcom-field.phtml:37
+msgid "Edit main facts and events"
+msgstr "முக்கிய உண்மைகள் மற்றும் நிகழ்வுகளைத் திருத்தவும்"
+
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr ""
+"'மல்டி-ஃபாக் உரையாடல்' குறிக்கிறது: புதிய நபர்களுக்கான அனைத்து திருத்தும் உரையாடலும், "
+"வெச்டா-குறிப்பிட்ட உரையாடல் '%1$s'."
