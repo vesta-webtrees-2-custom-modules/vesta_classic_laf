@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-02-08 17:36+0100\n"
-"PO-Revision-Date: 2024-03-04 17:01+0000\n"
+"PO-Revision-Date: 2025-04-17 18:01+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -303,6 +304,8 @@ msgstr "Utiliser la mise en page originale"
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""
+"Utilisez le pseudo-tag '%s' comme référence arrière du premier sous-pattern "
+"entre parenthèse capturé dans le regex."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
