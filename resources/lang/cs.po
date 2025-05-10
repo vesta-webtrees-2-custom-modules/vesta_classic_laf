@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2022-11-30 18:48+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/cs/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:45
+#: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
 msgstr ""
 
@@ -32,15 +32,15 @@ msgstr ""
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Modul upravující všechny motivy a další funkce tak, aby se jejich vzhled podobal webtrees verse 1.x."
 
-#: resources/views/admin/badges/edit.phtml:128
+#: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:59
+#: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
 msgstr ""
 
-#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr ""
 
@@ -111,6 +111,10 @@ msgstr "Zobrazit všechny dialogy úprav v kompaktním rozvržení, které také
 msgid "Display an individual's XREF after the name."
 msgstr "Zobrazit XREF osoby za jménem."
 
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
@@ -127,7 +131,7 @@ msgstr "Dialogy úprav"
 msgid "Edit main facts and events"
 msgstr ""
 
-#: ClassicLAFModule.php:785
+#: ClassicLAFModule.php:788
 msgid "Edit the name badge"
 msgstr ""
 
@@ -141,11 +145,11 @@ msgstr "Rozbalit první postranní panel"
 msgid "Expand initially if name has note or source"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:84
+#: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:92
+#: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
 
@@ -180,17 +184,17 @@ msgid "Layout"
 msgstr "Rozvržení"
 
 #: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
+#: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
 msgstr ""
 
-#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
+#: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
 msgstr ""
 
-#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
 
@@ -214,7 +218,7 @@ msgstr ""
 msgid "Nicknames"
 msgstr "Přezdívky"
 
-#: resources/views/admin/badges/edit.phtml:75
+#: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
 
@@ -233,11 +237,11 @@ msgstr "Toto se netýká těch polí jmen v GEDCOM, která už obsahují přezd�
 msgid "Overall width"
 msgstr "Celá šířka"
 
-#: resources/views/admin/badges/edit.phtml:66
+#: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:74
+#: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
 
@@ -256,7 +260,7 @@ msgstr "Několik úprav - podrobnosti viz %1$s."
 msgid "Skip name type preset for single names"
 msgstr "Přeskočit přednastavení typu jména pro jednoduchá jména"
 
-#: resources/views/admin/badges/edit.phtml:76
+#: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
 
@@ -299,7 +303,7 @@ msgstr "Použít vlastní předpony pro XREF jako ve webtrees 1.x, namísto pře
 msgid "Use original layout"
 msgstr ""
 
-#: resources/views/admin/badges/edit.phtml:93
+#: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""

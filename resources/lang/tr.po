@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2024-04-28 19:07+0000\n"
 "Last-Translator: Semih <semihbrn10@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/tr/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr "'Çok faktörlü iletişim kutuları' şunları ifade eder: Yeni bireyler için tüm düzenleme diyalogları ve Vesta'ya özgü '%1$s' diyalogu."
 
-#: resources/views/admin/badges/edit.phtml:45
+#: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
 msgstr "Sadece kontrol panelinde referans olarak kullanılmak üzere bir etiket."
 
@@ -32,15 +32,15 @@ msgstr "Sadece kontrol panelinde referans olarak kullanılmak üzere bir etiket.
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Tüm temaları ve diğer özellikleri ayarlayan, webtrees 1.x sürümüne daha yakın bir görünüm ve his sağlayan bir modül."
 
-#: resources/views/admin/badges/edit.phtml:128
+#: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr "Bir yaka kartı aile ağaçlarından sadece birinde veya tüm aile ağaçlarında görüntülenebilir."
 
-#: resources/views/admin/badges/edit.phtml:59
+#: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
 msgstr "Yalnızca kontrol panelinde gösterilen bir not."
 
-#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr "Yaka kartı ekleyin"
 
@@ -111,6 +111,10 @@ msgstr "Tüm düzenleme iletişim kutularını, standart üstbilgi ve altbilgiyi
 msgid "Display an individual's XREF after the name."
 msgstr "Adından sonra bir kişinin XREF'ini görüntüleyin."
 
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
@@ -127,7 +131,7 @@ msgstr "İletişim kutularını düzenle"
 msgid "Edit main facts and events"
 msgstr "Ana olguları ve olayları düzenleyin"
 
-#: ClassicLAFModule.php:785
+#: ClassicLAFModule.php:788
 msgid "Edit the name badge"
 msgstr "Yaka kartını düzenleme"
 
@@ -141,11 +145,11 @@ msgstr "İlk kenar çubuğunu genişlet"
 msgid "Expand initially if name has note or source"
 msgstr "Adın notu veya kaynağı varsa başlangıçta genişletin"
 
-#: resources/views/admin/badges/edit.phtml:84
+#: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
 msgstr "HTML parçacığı"
 
-#: resources/views/admin/badges/edit.phtml:92
+#: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr "İsimden sonra görüntülenecek HTML parçacığı, örneğin küçük bir resim."
 
@@ -180,17 +184,17 @@ msgid "Layout"
 msgstr "Yerleşim"
 
 #: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
+#: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
 msgstr "İsim rozeti"
 
-#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
+#: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
 msgstr "Yaka kartları"
 
-#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr "Yaka kartları, bir kişinin adından sonra görüntülenen küçük resimler gibi HTML parçacıklarıdır."
 
@@ -214,7 +218,7 @@ msgstr "Asla başlangıçta genişletme"
 msgid "Nicknames"
 msgstr "Takma adlar"
 
-#: resources/views/admin/badges/edit.phtml:75
+#: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr "Şu anda bir medya nesnesinin türü gibi bağlantılı nesneler üzerinde eşleştirme yapmanın bir yolu olmadığını unutmayın."
 
@@ -233,11 +237,11 @@ msgstr "Bunun, halihazırda bir takma ad içeren GEDCOM ad alanlarını etkileme
 msgid "Overall width"
 msgstr "Toplam genişlik"
 
-#: resources/views/admin/badges/edit.phtml:66
+#: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
 msgstr "Regex"
 
-#: resources/views/admin/badges/edit.phtml:74
+#: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr "Bir bireyin ham gedcom verilerini eşleştirmek için düzenli ifade (bölü çizgilerini sınırlayıcı olarak içeren PCRE2 sözdizimi)."
 
@@ -256,7 +260,7 @@ msgstr "Çeşitli Ayarlamalar - Ayrıntılar için %1$s bölümüne bakın."
 msgid "Skip name type preset for single names"
 msgstr "Tek adlar için ad türü ön ayarını atla"
 
-#: resources/views/admin/badges/edit.phtml:76
+#: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr "Sözdizimsel olarak geçersiz regex ifadeleri sessizce yok sayılır."
 
@@ -299,7 +303,7 @@ msgstr "Tüm XREF'lerin önüne 'X' koymak yerine, webtrees 1.x'teki gibi XREF'l
 msgid "Use original layout"
 msgstr "Orijinal düzeni kullanın"
 
-#: resources/views/admin/badges/edit.phtml:93
+#: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""

@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2024-02-06 11:31+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2025-02-24 22:10+0000\n"
 "Last-Translator: bangsheim <renelindberg@gmail.com>\n"
-"Language-Team: Danish <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/da/>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,103 +18,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.2-dev\n"
 
-#: ClassicLAFModule.php:573 ClassicLAFModule.php:637
-#: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
-msgid "Name badges"
-msgstr "Navneskilte"
+#: resources/views/modals/config-gedcom-field.phtml:37
+#, php-format
+msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgstr "'Multi-fakta-dialoger' refererer til: Alle redigeringsdialoger for nye individer og den Vesta-specifikke dialog '%1$s'."
 
-#: ClassicLAFModule.php:574 resources/views/admin/badges/config.phtml:30
-msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
-msgstr ""
-"Navneskilte er HTML-snippets, f.eks. små billeder, der vises efter en "
-"persons navn."
-
-#: ClassicLAFModule.php:781 resources/views/admin/badges/config.phtml:50
-msgid "Add a name badge"
-msgstr "Tilføj et navneskilt"
-
-#: ClassicLAFModule.php:792
-msgid "Edit the name badge"
-msgstr "Redigér navneskiltet"
+#: resources/views/admin/badges/edit.phtml:46
+msgid "A label, for reference within the control panel only."
+msgstr "Et mærkat, kun til reference i kontrolpanelet."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
-msgstr ""
-"Et modul, der justerer alle temaer og andre funktioner, og giver et udseende "
-"og en oplevelse, der er tættere på webtrees 1.x-versionen."
+msgstr "Et modul, der justerer alle temaer og andre funktioner, og giver et udseende og en oplevelse, der er tættere på webtrees 1.x-versionen."
 
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:37
-msgid "Overall width"
-msgstr "Samlet bredde"
+#: resources/views/admin/badges/edit.phtml:139
+msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
+msgstr "Navneskilte kan vises på et enkelt slægtstræ eller på alle slægtstræer."
 
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:39
-msgid "Use available space"
-msgstr "Brug tilgængelig plads"
+#: resources/views/admin/badges/edit.phtml:60
+msgid "A note, shown within the control panel only."
+msgstr "En note, der kun vises i kontrolpanelet."
 
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:40
-msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
-msgstr ""
-"Den standardlayout centrerer de fleste sider, hvilket spilder en del plads, "
-"især på brede skærme. Denne mulighed gør det muligt at bruge det meste af "
-"den tilgængelige plads."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:47
-msgid "Individual page"
-msgstr "Individuel side"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:52
-msgid "Use original layout"
-msgstr "Brug originalt layout"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:53 ClassicLAFModuleTrait.php:90
-msgid "Use compact layout"
-msgstr "Brug kompakt layout"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:54
-msgid "Use compact layout except for names"
-msgstr "Brug kompakt layout undtagen for navne"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:55
-#, php-format
-msgid "Several adjustments - See %1$s for details."
-msgstr "Flere justeringer - Se %1$s for detaljer."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:66
-msgid "Expand first sidebar"
-msgstr "Udvid første sidebar"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:67
-msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
-msgstr ""
-"Marker for altid at udvide den første sidebar i stedet for "
-"'Familienavigator'-sidebaren."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:72
-msgid "Individual page: Name blocks"
-msgstr "Individuel side: Navneblokke"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:77
-msgid "Never expand initially"
-msgstr "Udvid aldrig som standard"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:78
-msgid "Expand initially if name has note or source"
-msgstr "Vis udvidet, hvis navnet indeholder en note eller kilde"
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
+msgid "Add a name badge"
+msgstr "Tilføj et navneskilt"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -123,268 +50,30 @@ msgid "Always expand initially"
 msgstr "Udvid altid som standard"
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:80
-msgid "Name blocks are always expandable/collapsible regardless of this setting."
-msgstr ""
-"Navneblokke er altid udvidelige/sammenklappelige uanset denne indstilling."
+#: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
+msgid "Append XREFs to names"
+msgstr "Tilføj XREF til navne"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
+#, php-format
+msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
+msgstr "Anvend følgende indstilling på '%1$s' inden for alle '%2$s' hændelser, medmindre hændelsen er konfigureret eksplicit:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
-msgstr ""
-"Opmærksomhed: Denne indstilling vil i øjeblikket ikke have nogen effekt i "
-"dit system, da den kræver en nyere libxml-version (mindst %1$s)."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:88
-msgid "Edit dialogs"
-msgstr "Redigér dialogbokse"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:91
-msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
-msgstr ""
-"Vis alle redigeringsdialoger med et mere kompakt layout, som også udelader "
-"den standard header og footer."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:92
-msgid "This only affects standard and specific custom themes."
-msgstr "Dette påvirker kun standard- og specifikke tilpassede temaer."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:97
-msgid "Image Thumbnails"
-msgstr "Billede miniaturebilleder"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:99
-msgid "Crop Thumbnails"
-msgstr "Beskær miniaturebilleder"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:100
-msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
-msgstr ""
-"Webtrees beskærer miniaturebilleder for at producere billeder med en "
-"konsekvent bredde og højde. Dette kan være problematisk, hvis du har "
-"billeder af individer med et ikke-standard aspektforhold, hvor hovedet af "
-"den pågældende person ikke er centreret og derfor kan blive skåret af. Fjern "
-"markeringen af denne mulighed for at håndtere disse tilfælde."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:117
-msgid "XREF prefixes"
-msgstr "XREF præfikser"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:119
-msgid "Custom prefixes"
-msgstr "Brugerdefinerede præfikser"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:120
-msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
-msgstr ""
-"Brug brugerdefinerede præfikser til XREFs som i webtrees 1.x, i stedet for "
-"at præfikse alle XREFs med 'X'."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:159
-msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
-msgstr ""
-"I et slægtstræ har hver post et internt reference nummer (kaldet en \"XREF\")"
-", såsom \"F123\" eller \"R14\". Du kan vælge det præfiks, der skal bruges, "
-"når nye XREFs oprettes."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:162
-msgid "Nicknames"
-msgstr "Kaldenavne"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:164
-msgid "Display nicknames before surnames"
-msgstr "Vis kaldenavne før efternavne"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:165
-msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
-msgstr "Håndter kaldenavne som i webtrees 1.x, dvs. vis dem før efternavnet."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:166
-msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
-msgstr ""
-"Bemærk, at dette ikke påvirker GEDCOM-navnefelter, der allerede inkluderer "
-"et kaldenavn, dvs. du kan altid placere kaldenavnet eksplicit for specifikke "
-"navne."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:171
-msgid "Name type presets"
-msgstr "Navnetypeindstillinger"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:173
-msgid "Skip name type preset for single names"
-msgstr "Udelad forvalg af navnetyper for enkeltnavne"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:174
-msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
-msgstr ""
-"Når der tilføjes nye forældre, ægtefæller eller børn, indstiller webtrees "
-"navnetypen til 'fødenavn'."
+msgstr "Opmærksomhed: Denne indstilling vil i øjeblikket ikke have nogen effekt i dit system, da den kræver en nyere libxml-version (mindst %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:175
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
-msgstr ""
-"Marker denne mulighed, hvis du foretrækker ikke at bruge en navnetype, hvis "
-"den pågældende person har et enkelt navn."
+msgstr "Marker denne mulighed, hvis du foretrækker ikke at bruge en navnetype, hvis den pågældende person har et enkelt navn."
 
 #. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:180 ClassicLAFModuleTrait.php:188
-msgid "XREFs"
-msgstr "XREFs"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
-msgid "Append XREFs to names"
-msgstr "Tilføj XREF til navne"
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:183
-msgid "Display an individual's XREF after the name."
-msgstr "Vis en persons XREF efter navnet."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:191
-msgid "Display a family's XREF after the family label."
-msgstr "Vis en families XREF efter familiefeltet."
-
-#. I18N: Module Configuration
-#: ClassicLAFModuleTrait.php:197
-msgid "Layout"
-msgstr "Layout"
-
-#: resources/views/admin/badges/config.phtml:31
-msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
-msgstr ""
-"De vælges baseret på regulære udtryk, der matcher et individs rå GEDCOM-data."
-
-#: resources/views/admin/badges/config.phtml:32
-msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
-msgstr ""
-"Du kan bruge dem til at fremhæve individer i diagrammer og andre steder via "
-"forskellige kriterier, såsom: Individer der tilhører en gruppe defineret via "
-"en delt note, har en kildebaseret fødselshændelse, har et specifikt erhverv, "
-"har en begravelse med et tilknyttet billede osv."
-
-#: resources/views/admin/badges/config.phtml:33
-msgid "See the initial name badges for examples."
-msgstr "Se de oprindelige navneskilte for eksempler."
-
-#: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
-msgid "Name badge"
-msgstr "Navneskilt"
-
-#: resources/views/admin/badges/edit.phtml:45
-msgid "A label, for reference within the control panel only."
-msgstr "Et mærkat, kun til reference i kontrolpanelet."
-
-#: resources/views/admin/badges/edit.phtml:59
-msgid "A note, shown within the control panel only."
-msgstr "En note, der kun vises i kontrolpanelet."
-
-#: resources/views/admin/badges/edit.phtml:66
-msgid "Regex"
-msgstr "Regulært udtryk"
-
-#: resources/views/admin/badges/edit.phtml:74
-msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
-msgstr ""
-"Regulært udtryk (PCRE2-syntaks inklusiv skråstreger som afgrænsere) til at "
-"matche et individs rå GEDCOM-data."
-
-#: resources/views/admin/badges/edit.phtml:75
-msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
-msgstr ""
-"Bemærk, at der i øjeblikket ikke er nogen måde at matche på tilknyttede "
-"objekter, såsom typen af et medieobjekt."
-
-#: resources/views/admin/badges/edit.phtml:76
-msgid "Syntactically invalid regex expressions will be silently ignored."
-msgstr "Fejl i regulære udtryk bliver automatisk ignoreret."
-
-#: resources/views/admin/badges/edit.phtml:84
-msgid "HTML snippet"
-msgstr "HTML-snippet"
-
-#: resources/views/admin/badges/edit.phtml:91
-msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr "HTML-snippet, der vises efter navnet, f.eks. et lille billede."
-
-#: resources/views/admin/badges/edit.phtml:126
-msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
-msgstr "Navneskilte kan vises på et enkelt slægtstræ eller på alle slægtstræer."
-
-#: resources/views/admin/tags-ext.phtml:26
-msgid "here"
-msgstr "her"
-
-#: resources/views/admin/tags-ext.phtml:29
-#, php-format
-msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
-msgstr ""
-"Bemærk, at udover nedenstående konfigurationsmuligheder, giver %1$s dig "
-"mulighed for at konfigurere synligheden af hvert specifikke tag i detaljer, "
-"som beskrevet %2$s."
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
-msgid "no adjustment"
-msgstr "Ingen tilpasning"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
-msgid "hide always"
-msgstr "skjul altid"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
-msgid "hide in multi-fact dialogs, show otherwise"
-msgstr "Skjul i multi-hændelses-dialoger ellers vis"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
-msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
-msgstr ""
-"Skjul i dialoger med flere hændelser, vis og udvid subtags i andre tilfælde"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
-msgid "show always"
-msgstr "vis altid"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
-msgid "show and expand subtags always"
-msgstr "Vis og udvid altid subtags"
-
-#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
-#, php-format
-msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
-msgstr ""
-"Anvend følgende indstilling på '%1$s' inden for alle '%2$s' hændelser, "
-"medmindre hændelsen er konfigureret eksplicit:"
-
-#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
-msgid "no adjustment (use setting for all events as shown below)"
-msgstr ""
-"ingen tilpasning (brug indstilling for alle hændelser som vist nedenfor)"
+#: ClassicLAFModuleTrait.php:67
+msgid "Check to always expand the first sidebar, rather than the 'Family navigator' sidebar."
+msgstr "Marker for altid at udvide den første sidebar i stedet for 'Familienavigator'-sidebaren."
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:87
 #: resources/views/modals/config-gedcom-field.phtml:10
@@ -397,15 +86,285 @@ msgstr "Konfigurer synlighed af GEDCOM-tag '%s'"
 msgid "Configure visibility of GEDCOM tags"
 msgstr "Konfigurer synlighed af GEDCOM-tags"
 
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:99
+msgid "Crop Thumbnails"
+msgstr "Beskær miniaturebilleder"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:119
+msgid "Custom prefixes"
+msgstr "Brugerdefinerede præfikser"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:191
+msgid "Display a family's XREF after the family label."
+msgstr "Vis en families XREF efter familiefeltet."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:91
+msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
+msgstr "Vis alle redigeringsdialoger med et mere kompakt layout, som også udelader den standard header og footer."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:183
+msgid "Display an individual's XREF after the name."
+msgstr "Vis en persons XREF efter navnet."
+
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:164
+msgid "Display nicknames before surnames"
+msgstr "Vis kaldenavne før efternavne"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:88
+msgid "Edit dialogs"
+msgstr "Redigér dialogbokse"
+
 #: resources/views/family-page-menu.phtml:88
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
 msgstr "Redigér overordnede fakta og hændelser"
 
-#: resources/views/modals/config-gedcom-field.phtml:37
+#: ClassicLAFModule.php:788
+msgid "Edit the name badge"
+msgstr "Redigér navneskiltet"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:66
+msgid "Expand first sidebar"
+msgstr "Udvid første sidebar"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:78
+msgid "Expand initially if name has note or source"
+msgstr "Vis udvidet, hvis navnet indeholder en note eller kilde"
+
+#: resources/views/admin/badges/edit.phtml:85
+msgid "HTML snippet"
+msgstr "HTML-snippet"
+
+#: resources/views/admin/badges/edit.phtml:93
+msgid "HTML snippet to be displayed after the name, e.g. a small image."
+msgstr "HTML-snippet, der vises efter navnet, f.eks. et lille billede."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:165
+msgid "Handle nicknames as in webtrees 1.x, i.e. show them before the surname."
+msgstr "Håndter kaldenavne som i webtrees 1.x, dvs. vis dem før efternavnet."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:97
+msgid "Image Thumbnails"
+msgstr "Billede miniaturebilleder"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:159
+msgid "In a family tree, each record has an internal reference number (called an \"XREF\") such as \"F123\" or \"R14\". You can choose the prefix that will be used whenever new XREFs are created."
+msgstr "I et slægtstræ har hver post et internt reference nummer (kaldet en \"XREF\"), såsom \"F123\" eller \"R14\". Du kan vælge det præfiks, der skal bruges, når nye XREFs oprettes."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:47
+msgid "Individual page"
+msgstr "Individuel side"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:72
+msgid "Individual page: Name blocks"
+msgstr "Individuel side: Navneblokke"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:197
+msgid "Layout"
+msgstr "Layout"
+
+#: resources/views/admin/badges/config.phtml:63
+#: resources/views/admin/badges/edit.phtml:38
+msgid "Name badge"
+msgstr "Navneskilt"
+
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
+#: resources/views/admin/badges/config.phtml:56
+#: resources/views/admin/badges/edit.phtml:29
+msgid "Name badges"
+msgstr "Navneskilte"
+
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
+msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
+msgstr "Navneskilte er HTML-snippets, f.eks. små billeder, der vises efter en persons navn."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:80
+msgid "Name blocks are always expandable/collapsible regardless of this setting."
+msgstr "Navneblokke er altid udvidelige/sammenklappelige uanset denne indstilling."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:171
+msgid "Name type presets"
+msgstr "Navnetypeindstillinger"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:77
+msgid "Never expand initially"
+msgstr "Udvid aldrig som standard"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:162
+msgid "Nicknames"
+msgstr "Kaldenavne"
+
+#: resources/views/admin/badges/edit.phtml:76
+msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
+msgstr "Bemærk, at der i øjeblikket ikke er nogen måde at matche på tilknyttede objekter, såsom typen af et medieobjekt."
+
+#: resources/views/admin/tags-ext.phtml:29
 #, php-format
-msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
+msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
+msgstr "Bemærk, at udover nedenstående konfigurationsmuligheder, giver %1$s dig mulighed for at konfigurere synligheden af hvert specifikke tag i detaljer, som beskrevet %2$s."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:166
+msgid "Note that this doesn't affect GEDCOM name fields that already include a nickname, i.e. you may always position the nickname explicitly for specific names."
+msgstr "Bemærk, at dette ikke påvirker GEDCOM-navnefelter, der allerede inkluderer et kaldenavn, dvs. du kan altid placere kaldenavnet eksplicit for specifikke navne."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:37
+msgid "Overall width"
+msgstr "Samlet bredde"
+
+#: resources/views/admin/badges/edit.phtml:67
+msgid "Regex"
+msgstr "Regulært udtryk"
+
+#: resources/views/admin/badges/edit.phtml:75
+msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
+msgstr "Regulært udtryk (PCRE2-syntaks inklusiv skråstreger som afgrænsere) til at matche et individs rå GEDCOM-data."
+
+#: resources/views/admin/badges/config.phtml:33
+msgid "See the initial name badges for examples."
+msgstr "Se de oprindelige navneskilte for eksempler."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:55
+#, php-format
+msgid "Several adjustments - See %1$s for details."
+msgstr "Flere justeringer - Se %1$s for detaljer."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:173
+msgid "Skip name type preset for single names"
+msgstr "Udelad forvalg af navnetyper for enkeltnavne"
+
+#: resources/views/admin/badges/edit.phtml:77
+msgid "Syntactically invalid regex expressions will be silently ignored."
+msgstr "Fejl i regulære udtryk bliver automatisk ignoreret."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:40
+msgid "The standard layout centers most pages, wasting a lot of space especially on wide displays. This option allows to use most of the available space."
+msgstr "Den standardlayout centrerer de fleste sider, hvilket spilder en del plads, især på brede skærme. Denne mulighed gør det muligt at bruge det meste af den tilgængelige plads."
+
+#: resources/views/admin/badges/config.phtml:31
+msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
+msgstr "De vælges baseret på regulære udtryk, der matcher et individs rå GEDCOM-data."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:92
+msgid "This only affects standard and specific custom themes."
+msgstr "Dette påvirker kun standard- og specifikke tilpassede temaer."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:39
+msgid "Use available space"
+msgstr "Brug tilgængelig plads"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:53 ClassicLAFModuleTrait.php:90
+msgid "Use compact layout"
+msgstr "Brug kompakt layout"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:54
+msgid "Use compact layout except for names"
+msgstr "Brug kompakt layout undtagen for navne"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:120
+msgid "Use custom prefixes for XREFs as in webtrees 1.x, instead of prefixing all XREFs with 'X'."
+msgstr "Brug brugerdefinerede præfikser til XREFs som i webtrees 1.x, i stedet for at præfikse alle XREFs med 'X'."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:52
+msgid "Use original layout"
+msgstr "Brug originalt layout"
+
+#: resources/views/admin/badges/edit.phtml:94
+#, php-format
+msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""
-"'Multi-fakta-dialoger' refererer til: Alle redigeringsdialoger for nye "
-"individer og den Vesta-specifikke dialog '%1$s'."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:100
+msgid "Webtrees crops thumbnails in order to produce images with a consistent width and height. This is problematic if you have images of individals with a non-standard aspect ratio, where the head of the respective person is not centered and may therefore be cut off. Deselect this option to handle these cases."
+msgstr "Webtrees beskærer miniaturebilleder for at producere billeder med en konsekvent bredde og højde. Dette kan være problematisk, hvis du har billeder af individer med et ikke-standard aspektforhold, hvor hovedet af den pågældende person ikke er centreret og derfor kan blive skåret af. Fjern markeringen af denne mulighed for at håndtere disse tilfælde."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:174
+msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
+msgstr "Når der tilføjes nye forældre, ægtefæller eller børn, indstiller webtrees navnetypen til 'fødenavn'."
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:117
+msgid "XREF prefixes"
+msgstr "XREF præfikser"
+
+#. I18N: Module Configuration
+#: ClassicLAFModuleTrait.php:180 ClassicLAFModuleTrait.php:188
+msgid "XREFs"
+msgstr "XREFs"
+
+#: resources/views/admin/badges/config.phtml:32
+msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
+msgstr "Du kan bruge dem til at fremhæve individer i diagrammer og andre steder via forskellige kriterier, såsom: Individer der tilhører en gruppe defineret via en delt note, har en kildebaseret fødselshændelse, har et specifikt erhverv, har en begravelse med et tilknyttet billede osv."
+
+#: resources/views/admin/tags-ext.phtml:26
+msgid "here"
+msgstr "her"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:11
+msgid "hide always"
+msgstr "skjul altid"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:14
+msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
+msgstr "Skjul i dialoger med flere hændelser, vis og udvid subtags i andre tilfælde"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:12
+msgid "hide in multi-fact dialogs, show otherwise"
+msgstr "Skjul i multi-hændelses-dialoger ellers vis"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
+msgid "no adjustment"
+msgstr "Ingen tilpasning"
+
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:10
+msgid "no adjustment (use setting for all events as shown below)"
+msgstr "ingen tilpasning (brug indstilling for alle hændelser som vist nedenfor)"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:16
+msgid "show always"
+msgstr "vis altid"
+
+#: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
+#: resources/views/edit/config-gedcom-field-edit-control.phtml:18
+msgid "show and expand subtags always"
+msgstr "Vis og udvid altid subtags"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2024-12-02 00:00+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ru/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr "\"Диалоги с несколькими фактами\" относятся ко всем диалогам редактирования для новых пользователей и специфичному для Vesta диалогу \"%1$s\"."
 
-#: resources/views/admin/badges/edit.phtml:45
+#: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
 msgstr "Метка, предназначенная только для справки на панели управления."
 
@@ -32,15 +32,15 @@ msgstr "Метка, предназначенная только для спра�
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Модуль, настраивающий все темы и другие возможности, обеспечивающий внешний вид и ощущения, приближенные к версии webtrees 1.x."
 
-#: resources/views/admin/badges/edit.phtml:128
+#: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr "Именной значок может быть отображен только на одном из генеалогических древ или на всех генеалогических древах."
 
-#: resources/views/admin/badges/edit.phtml:59
+#: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
 msgstr "Примечание, отображаемое только на панели управления."
 
-#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr "Добавьте бейдж с именем"
 
@@ -111,6 +111,10 @@ msgstr "Отобразите все диалоговые окна редакти
 msgid "Display an individual's XREF after the name."
 msgstr "Отображать внешнюю ссылку человека после имени."
 
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
@@ -127,7 +131,7 @@ msgstr "Редактировать диалоги"
 msgid "Edit main facts and events"
 msgstr "Редактировать основные факты и события"
 
-#: ClassicLAFModule.php:785
+#: ClassicLAFModule.php:788
 msgid "Edit the name badge"
 msgstr "Отредактируйте бейдж с именем"
 
@@ -141,11 +145,11 @@ msgstr "Разверните первую боковую панель"
 msgid "Expand initially if name has note or source"
 msgstr "Разверните изначально, если в названии есть примечание или источник"
 
-#: resources/views/admin/badges/edit.phtml:84
+#: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
 msgstr "Сниппет HTML"
 
-#: resources/views/admin/badges/edit.phtml:92
+#: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr "Фрагмент HTML, который будет отображаться после названия, например, небольшое изображение."
 
@@ -180,17 +184,17 @@ msgid "Layout"
 msgstr "Вкладки"
 
 #: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
+#: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
 msgstr "Именной значок"
 
-#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
+#: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
 msgstr "Именные бейджи"
 
-#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr "Именные бейджи - это фрагменты HTML, например, небольшие изображения, отображаемые после имени пользователя."
 
@@ -214,7 +218,7 @@ msgstr "Никогда не расширяйтесь изначально"
 msgid "Nicknames"
 msgstr "Никнеймы"
 
-#: resources/views/admin/badges/edit.phtml:75
+#: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr "Обратите внимание, что в настоящее время нет способа сопоставления связанных объектов, таких как тип медиаобъекта."
 
@@ -233,11 +237,11 @@ msgstr "Обратите внимание, что это не влияет на 
 msgid "Overall width"
 msgstr "Общая ширина"
 
-#: resources/views/admin/badges/edit.phtml:66
+#: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
 msgstr "Регулярное выражение"
 
-#: resources/views/admin/badges/edit.phtml:74
+#: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr "Регулярное выражение (синтаксис PCRE2, включающий косые черты в качестве разделителей) для соответствия необработанным данным gedcom пользователя."
 
@@ -256,7 +260,7 @@ msgstr "Несколько корректировок - подробности �
 msgid "Skip name type preset for single names"
 msgstr "Пропустить предустановку типа имени для одиночных имен"
 
-#: resources/views/admin/badges/edit.phtml:76
+#: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr "Синтаксически недопустимые регулярные выражения будут автоматически проигнорированы."
 
@@ -299,7 +303,7 @@ msgstr "Используйте настраиваемые префиксы дл�
 msgid "Use original layout"
 msgstr "Используйте оригинальный макет"
 
-#: resources/views/admin/badges/edit.phtml:93
+#: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""

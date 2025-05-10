@@ -47,8 +47,8 @@ class IndividualNameHandler {
         return $nameForDisplay . ' (' . $xref . ')';
     }
 
-    public function addBadges(Tree $tree, string $gedcom): string {
+    public function addBadges(string $name, Tree $tree, string $gedcom): string {
 
-        return ($this->addBadgesCallback)($tree, $gedcom);
+        return ($this->addBadgesCallback)($name, $tree, $gedcom);
     }
 }

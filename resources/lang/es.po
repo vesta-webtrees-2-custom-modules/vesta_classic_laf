@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2024-02-07 11:01+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/es/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr "'Diálogos multifactor' se refiere a: Todos los diálogos de edición para nuevos individuos, y el diálogo específico de Vesta '%1$s'."
 
-#: resources/views/admin/badges/edit.phtml:45
+#: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
 msgstr "Una etiqueta, sólo para referencia dentro del panel de control."
 
@@ -32,15 +32,15 @@ msgstr "Una etiqueta, sólo para referencia dentro del panel de control."
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Un módulo que configura los temas y otras características, brindando una apariencia más cercana a la versión 1.x de webtrees."
 
-#: resources/views/admin/badges/edit.phtml:128
+#: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr "Una tarjeta identificativa puede mostrarse sólo en uno de los árboles genealógicos o en todos ellos."
 
-#: resources/views/admin/badges/edit.phtml:59
+#: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
 msgstr "Una nota, que sólo se muestra en el panel de control."
 
-#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr "Añadir una tarjeta identificativa"
 
@@ -111,6 +111,10 @@ msgstr "Muestra todos los diálogos de edición utilizando un diseño más compa
 msgid "Display an individual's XREF after the name."
 msgstr "Mostrar la XREF de un individuo después del nombre."
 
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
@@ -127,7 +131,7 @@ msgstr "Editar diálogos"
 msgid "Edit main facts and events"
 msgstr "Editar los principales hechos y acontecimientos"
 
-#: ClassicLAFModule.php:785
+#: ClassicLAFModule.php:788
 msgid "Edit the name badge"
 msgstr "Editar la tarjeta identificativa"
 
@@ -141,11 +145,11 @@ msgstr "Ampliar la primera barra lateral"
 msgid "Expand initially if name has note or source"
 msgstr "Expandir inicialmente si el nombre tiene nota o fuente"
 
-#: resources/views/admin/badges/edit.phtml:84
+#: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
 msgstr "Fragmento de código HTML"
 
-#: resources/views/admin/badges/edit.phtml:92
+#: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr "Fragmento HTML que se mostrará después del nombre, por ejemplo, una pequeña imagen."
 
@@ -180,17 +184,17 @@ msgid "Layout"
 msgstr "Disposición"
 
 #: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
+#: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
 msgstr "Etiqueta de nombre"
 
-#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
+#: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
 msgstr "Tarjetas de identificación"
 
-#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr "Las credenciales de nombre son fragmentos HTML, por ejemplo, imágenes pequeñas, que se muestran después del nombre de una persona."
 
@@ -214,7 +218,7 @@ msgstr "Nunca expandirse inicialmente"
 msgid "Nicknames"
 msgstr "Seudónimos"
 
-#: resources/views/admin/badges/edit.phtml:75
+#: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr "Tenga en cuenta que actualmente no hay forma de hacer coincidir objetos vinculados, como el tipo de un objeto multimedia."
 
@@ -233,11 +237,11 @@ msgstr "Tenga en cuenta que esto no afecta a los campos de nombre GEDCOM que ya 
 msgid "Overall width"
 msgstr "Anchura total"
 
-#: resources/views/admin/badges/edit.phtml:66
+#: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
 msgstr "Regex"
 
-#: resources/views/admin/badges/edit.phtml:74
+#: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr "Expresión regular (sintaxis PCRE2 que incluye barras inclinadas como delimitadores) para cotejar los datos gedcom sin procesar de un individuo."
 
@@ -256,7 +260,7 @@ msgstr "Varios ajustes - Ver %1$s para más detalles."
 msgid "Skip name type preset for single names"
 msgstr "Omitir tipo de nombre preestablecido para nombres únicos"
 
-#: resources/views/admin/badges/edit.phtml:76
+#: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr "Las expresiones regex no válidas sintácticamente se ignorarán en silencio."
 
@@ -299,7 +303,7 @@ msgstr "Utilizar prefijos personalizados para las XREF como en webtrees 1.x, en 
 msgid "Use original layout"
 msgstr "Utilice el diseño original"
 
-#: resources/views/admin/badges/edit.phtml:93
+#: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""

@@ -70,6 +70,7 @@ use Fisharebest\Webtrees\Validator;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use IvoPetkov\HTML5DOMDocument;
 use Psr\Http\Message\ResponseInterface;
@@ -215,8 +216,8 @@ class ClassicLAFModule extends AbstractModule implements
         $individualNameHandler->setAppendXref($appendXrefIndi);
 
         $self = $this;
-        $individualNameHandler->setAddBadgesCallback(static function (Tree $tree, string $gedcom) use ($self) {
-            return $self->addBadges($tree, $gedcom);
+        $individualNameHandler->setAddBadgesCallback(static function (string $name, Tree $tree, string $gedcom) use ($self) {
+            return $self->addBadges($name, $tree, $gedcom);
         });
 
         $familyNameHandler = \Vesta\VestaUtils::get(FamilyNameHandler::class);
@@ -386,7 +387,7 @@ class ClassicLAFModule extends AbstractModule implements
         $pref = 'WHATS_NEW';
         $current_version = intval($this->getPreference($pref, '0'));
         if ($current_version < 5) {
-            $this->setInitialNameBadges($current_version > 0);
+            $this->setInitialNameBadges(true);
         }
 
         ////
@@ -766,6 +767,7 @@ class ClassicLAFModule extends AbstractModule implements
             $regex       = '';
             $snippet     = '';
             $access      = ''.Auth::PRIV_NONE; //managers
+            $prefix      = false;
             $gedcom_id   = null;
             $block_order = 1 + (int) DB::table('block')->where('module_name', '=', $this->name())->max('block_order');
 
@@ -779,6 +781,7 @@ class ClassicLAFModule extends AbstractModule implements
             $regex       = $this->getBlockSetting($block_id, 'regex');
             $snippet     = $this->getBlockSetting($block_id, 'snippet');
             $access      = (int)$this->getBlockSetting($block_id, 'access');
+            $prefix      = (bool)$this->getBlockSetting($block_id, 'prefix');
             $gedcom_id   = DB::table('block')->where('block_id', '=', $block_id)->value('gedcom_id');
             $block_order = DB::table('block')->where('block_id', '=', $block_id)->value('block_order');
 
@@ -801,6 +804,7 @@ class ClassicLAFModule extends AbstractModule implements
             'regex'       => $regex,
             'snippet'     => $snippet,
             'access'      => $access,
+            'prefix'      => $prefix,
             'title'       => $title,
             'gedcom_id'   => $gedcom_id,
             'gedcom_ids'  => $gedcom_ids,
@@ -818,23 +822,25 @@ class ClassicLAFModule extends AbstractModule implements
         */
 
         if ($includePlaceholder) {
-           $this->setInitialNameBadge(
+            $this->setInitialNameBadge(
                 'Placeholder [added by Vesta]',
-                'An initial placeholder to promote this new feature - just delete it!',
+                'An initial placeholder to promote this feature - just delete it!',
                 '/.*/',
-                '<span class="wt-icon-help" title="Name badges are a new Vesta feature: Configure them in the module preferences of Vesta Classic Look & Feel!"><i class="fa-solid fa-question-circle fa-fw" aria-hidden="true"></i></span>',
+                '<span class="wt-icon-help" title="Name badges, like this one, are a Vesta feature: Configure them in the module preferences of Vesta Classic Look & Feel!"><i class="fa-solid fa-question-circle fa-fw" aria-hidden="true"></i></span>',
                 '0',
+                true,
                 null,
                 1);
 
-        } //else skip - probably better no to re-add this again & again in new setups
+        } //else skip - probably better not to re-add this again & again in new setups?
 
         $this->setInitialNameBadge(
             'Has FamilySearch ID [added by Vesta]',
-            'Exemplary name badge. Change access level to display this. Image is the FamilySearch icon.',
-            '/\n1 _FSFTID/',
-            '<img width="16" src="https://edge.fscdn.org/assets/docs/fs_logo_favicon_sq.png" />',
+            'Exemplary name badge, with a back reference. Change access level to display this. Image is the FamilySearch icon.',
+            '/\n1 _FSFTID (.*)/',
+            '<a href="https://www.familysearch.org/tree/person/details/<ref/>"><img width="16" src="https://edge.fscdn.org/assets/docs/fs_logo_favicon_sq.png" /></a>',
             '-1',
+            false,
             null,
             2);
 
@@ -844,6 +850,7 @@ class ClassicLAFModule extends AbstractModule implements
             '/\n1 BIRT(?!\n1)(.(?!\n1))*\n2 SOUR/sm',
             '<img width="16" src="data:image/png;base64,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" />',
             '-1',
+            false,
             null,
             3);
 
@@ -853,6 +860,7 @@ class ClassicLAFModule extends AbstractModule implements
             '/\n1 BURI(?!\n1)(.(?!\n1))*\n2 OBJE/sm',
             '<img width="16" src="data:image/png;base64,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" />',
             '-1',
+            false,
             null,
             4);
     }
@@ -863,6 +871,7 @@ class ClassicLAFModule extends AbstractModule implements
         $regex,
         $snippet,
         $access,
+        $prefix,
         $gedcom_id,
         $block_order): void {
 
@@ -879,6 +888,7 @@ class ClassicLAFModule extends AbstractModule implements
         $this->setBlockSetting($block_id, 'regex', $regex);
         $this->setBlockSetting($block_id, 'snippet', $snippet);
         $this->setBlockSetting($block_id, 'access', $access);
+        $this->setBlockSetting($block_id, 'prefix', $prefix);
     }
 
     /**
@@ -894,6 +904,7 @@ class ClassicLAFModule extends AbstractModule implements
         $regex       = Validator::parsedBody($request)->string('regex');
         $snippet     = Validator::parsedBody($request)->string('snippet');
         $access      = Validator::parsedBody($request)->string('access');
+        $prefix      = Validator::parsedBody($request)->boolean('prefix', false);
         $gedcom_id   = Validator::parsedBody($request)->string('gedcom_id');
         $block_order = Validator::parsedBody($request)->integer('block_order');
 
@@ -930,6 +941,7 @@ class ClassicLAFModule extends AbstractModule implements
         $this->setBlockSetting($block_id, 'regex', $regex);
         $this->setBlockSetting($block_id, 'snippet', $snippet);
         $this->setBlockSetting($block_id, 'access', $access);
+        $this->setBlockSetting($block_id, 'prefix', (string)$prefix);
 
         $url = route('module', [
             'module' => $this->name(),
@@ -939,9 +951,9 @@ class ClassicLAFModule extends AbstractModule implements
         return redirect($url);
     }
 
-    public function addBadges(Tree $tree, string $gedcom): string {
+    public function addBadges(string $name, Tree $tree, string $gedcom): string {
 
-        $full = '';
+        $full = $name;
 
         //note: 'negative' matches are problematic wrt fake INDI records used e.g. in individual-page-name.phtml
         //therefore just exclude fake INDI records altogether!
@@ -958,9 +970,20 @@ class ClassicLAFModule extends AbstractModule implements
                     if (preg_match($nameBadge->regex, $gedcom, $match)) {
                         if (array_key_exists(1,$match)) {
                             $ref = $match[1];
-                            $full .= str_replace('<ref/>',$ref,$nameBadge->snippet);
+                            $badge = str_replace('<ref/>',$ref,$nameBadge->snippet);
                         } else {
-                            $full .= $nameBadge->snippet;
+                            $badge = $nameBadge->snippet;
+                        }
+                        //property introduced later = not always set
+                        if (property_exists($nameBadge, "prefix")) {
+                            $prefix = $nameBadge->prefix;
+                        } else {
+                            $prefix = false;
+                        }
+                        if ($prefix) {
+                            $full = $badge . $full;
+                        } else {
+                            $full .= $badge;
                         }
                     }
                 } catch (\Exception $e) {
@@ -984,20 +1007,27 @@ class ClassicLAFModule extends AbstractModule implements
             ->join('block_setting AS bs2', 'bs2.block_id', '=', 'block.block_id')
             ->join('block_setting AS bs3', 'bs3.block_id', '=', 'block.block_id')
             ->join('block_setting AS bs4', 'bs4.block_id', '=', 'block.block_id')
-            ->join('block_setting AS bs5', 'bs5.block_id', '=', 'block.block_id')
+            //property introduced later = not always set
+            ->leftJoin('block_setting AS bs5', static function (JoinClause $join): void {
+                $join
+                    ->on('bs5.block_id', '=', 'block.block_id')
+                    ->where('bs5.setting_name', '=', 'prefix');
+            })
+            ->join('block_setting AS bs6', 'bs6.block_id', '=', 'block.block_id')
             ->where('module_name', '=', $this->name())
             ->where('bs1.setting_name', '=', 'header')
             ->where('bs2.setting_name', '=', 'note')
             ->where('bs3.setting_name', '=', 'regex')
             ->where('bs4.setting_name', '=', 'snippet')
-            ->where('bs5.setting_name', '=', 'access')
+            //->where('bs5.setting_name', '=', 'prefix') //must be left join condition
+            ->where('bs6.setting_name', '=', 'access')
             ->where(static function (Builder $query) use ($tree): void {
                 $query
                     ->whereNull('gedcom_id')
                     ->orWhere('gedcom_id', '=', $tree->id());
             })
             ->orderBy('block_order')
-            ->select(['block.block_id', 'block_order', 'gedcom_id', 'bs1.setting_value AS header', 'bs2.setting_value AS note', 'bs3.setting_value AS regex', 'bs4.setting_value AS snippet', 'bs5.setting_value AS access'])
+            ->select(['block.block_id', 'block_order', 'gedcom_id', 'bs1.setting_value AS header', 'bs2.setting_value AS note', 'bs3.setting_value AS regex', 'bs4.setting_value AS snippet', 'bs5.setting_value AS prefix', 'bs6.setting_value AS access'])
             ->get()
             ->map(static function (object $row): object {
                 $row->block_id    = (int) $row->block_id;

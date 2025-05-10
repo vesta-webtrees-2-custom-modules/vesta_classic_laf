@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2025-02-08 17:36+0100\n"
+"POT-Creation-Date: 2025-05-10 14:21+0200\n"
 "PO-Revision-Date: 2025-02-25 07:02+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +23,7 @@ msgstr ""
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr "'Multifeitdialoogvensters' verwijst naar: Alle bewerkingsdialogen voor nieuwe personen, en de Vesta-specifieke dialoogvenster '%1$s'."
 
-#: resources/views/admin/badges/edit.phtml:45
+#: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
 msgstr "Een label, alleen voor referentie in het controlepaneel."
 
@@ -33,15 +32,15 @@ msgstr "Een label, alleen voor referentie in het controlepaneel."
 msgid "A module adjusting all themes and other features, providing a look & feel closer to the webtrees 1.x version."
 msgstr "Een module die alle thema's en andere functies zo aanpast dat het meer het uiterlijk van de webtrees 1.x-versie heeft."
 
-#: resources/views/admin/badges/edit.phtml:128
+#: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr "Een naamplaatje kan worden weergegeven op slechts één van de stambomen of op alle stambomen."
 
-#: resources/views/admin/badges/edit.phtml:59
+#: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
 msgstr "Een notitie die alleen in het controlepaneel wordt weergegeven."
 
-#: ClassicLAFModule.php:774 resources/views/admin/badges/config.phtml:50
+#: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
 msgstr "Naamplaatje toevoegen"
 
@@ -112,6 +111,10 @@ msgstr "Alle bewerkingsdialogen weergeven met een compactere indeling, waarbij o
 msgid "Display an individual's XREF after the name."
 msgstr "Toon een persoons-XREF achter de naam."
 
+#: resources/views/admin/badges/edit.phtml:111
+msgid "Display in front of name"
+msgstr ""
+
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
 msgid "Display nicknames before surnames"
@@ -128,7 +131,7 @@ msgstr "Bewerkingsdialogen"
 msgid "Edit main facts and events"
 msgstr "Wijzig belangrijkste feiten en gebeurtenissen"
 
-#: ClassicLAFModule.php:785
+#: ClassicLAFModule.php:788
 msgid "Edit the name badge"
 msgstr "Naamplaatje bewerken"
 
@@ -142,11 +145,11 @@ msgstr "Eerste zijbalk uitvouwen"
 msgid "Expand initially if name has note or source"
 msgstr "In eerste instantie uitbreiden als naam een notitie of bron heeft"
 
-#: resources/views/admin/badges/edit.phtml:84
+#: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
 msgstr "HTML-fragment"
 
-#: resources/views/admin/badges/edit.phtml:92
+#: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr "HTML-fragment dat achter de naam moet worden weergegeven, bijvoorbeeld een kleine afbeelding."
 
@@ -181,17 +184,17 @@ msgid "Layout"
 msgstr "Indeling"
 
 #: resources/views/admin/badges/config.phtml:63
-#: resources/views/admin/badges/edit.phtml:37
+#: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
 msgstr "Naamplaatje"
 
-#: ClassicLAFModule.php:566 ClassicLAFModule.php:630
+#: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
-#: resources/views/admin/badges/edit.phtml:28
+#: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
 msgstr "Naamplaatjes"
 
-#: ClassicLAFModule.php:567 resources/views/admin/badges/config.phtml:30
+#: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr "Naamplaatjes zijn HTML-fragmenten, bijvoorbeeld kleine afbeeldingen, die achter de naam van een persoon worden weergegeven."
 
@@ -215,7 +218,7 @@ msgstr "In eerste instantie nooit uitbreiden"
 msgid "Nicknames"
 msgstr "Roepnamen"
 
-#: resources/views/admin/badges/edit.phtml:75
+#: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr "Merk op dat er momenteel geen manier is om gekoppelde objecten te vinden, zoals het type van een mediaobject."
 
@@ -234,11 +237,11 @@ msgstr "Merk op dat dit geen invloed heeft op GEDCOM-naamvelden die al een roepn
 msgid "Overall width"
 msgstr "Totale breedte"
 
-#: resources/views/admin/badges/edit.phtml:66
+#: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
 msgstr "Regex"
 
-#: resources/views/admin/badges/edit.phtml:74
+#: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr "Reguliere expressie (PCRE2-syntaxis met slashes als scheidingstekens) om te zoeken in de onbewerkte GEDCOM-gegevens van een persoon."
 
@@ -257,7 +260,7 @@ msgstr "Verschillende aanpassingen - Zie %1$s voor meer informatie."
 msgid "Skip name type preset for single names"
 msgstr "Vooraf ingestelde naamtype overslaan voor enkele namen"
 
-#: resources/views/admin/badges/edit.phtml:76
+#: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr "Syntactisch ongeldige reguliere expressies worden stilzwijgend genegeerd."
 
@@ -300,12 +303,10 @@ msgstr "Gebruik aangepaste voorvoegsels voor XREF's zoals in webtrees 1.x, in pl
 msgid "Use original layout"
 msgstr "Gebruik oorspronkelijke indeling"
 
-#: resources/views/admin/badges/edit.phtml:93
+#: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
-msgstr ""
-"Gebruik de pseudo-tag '%s' als een terugverwijzing naar het eerste "
-"vastgelegde subpatroon tussen haakjes in de regex."
+msgstr "Gebruik de pseudo-tag '%s' als een terugverwijzing naar het eerste vastgelegde subpatroon tussen haakjes in de regex."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
