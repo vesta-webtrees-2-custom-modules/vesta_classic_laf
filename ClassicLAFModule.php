@@ -964,6 +964,7 @@ class ClassicLAFModule extends AbstractModule implements
 
         $nameBadges = $this->nameBadgesForTree($tree);
 
+        $prefixed = '';
         foreach ($nameBadges as $nameBadge) {
             if ($nameBadge->access >= Auth::accessLevel($tree)) {
                 try {
@@ -981,7 +982,7 @@ class ClassicLAFModule extends AbstractModule implements
                             $prefix = false;
                         }
                         if ($prefix) {
-                            $full = $badge . $full;
+                            $prefixed .= $badge;
                         } else {
                             $full .= $badge;
                         }
@@ -992,7 +993,7 @@ class ClassicLAFModule extends AbstractModule implements
             }
         }
 
-        return $full;
+        return $prefixed . $full;
     }
 
     /**
