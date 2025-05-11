@@ -463,5 +463,11 @@
 		"from": "2.2.1",
 		"to": "2.2.2",
 		"changelog": ["Added option to display specific name badges in front of names."]
+	},
+	{
+		"version": "2.2.1.4.1",
+		"from": "2.2.1",
+		"to": "2.2.2",
+		"changelog": ["Fixed name badges display order."]
 	}
 ]
