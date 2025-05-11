@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2025-02-25 07:02+0000\n"
+"PO-Revision-Date: 2025-05-11 08:01+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -99,12 +100,14 @@ msgstr "Aangepaste voorvoegsels"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
-msgstr "Geef een gezins-XREF weer na het gezinslabel."
+msgstr "Toon een gezins-XREF na het gezinslabel."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
-msgstr "Alle bewerkingsdialogen weergeven met een compactere indeling, waarbij ook de standaard kop- en voettekst wordt weggelaten."
+msgstr ""
+"Toon alle bewerkingsdialogen met een compactere indeling, waarbij ook de "
+"standaard kop- en voettekst wordt weggelaten."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:183
@@ -113,7 +116,7 @@ msgstr "Toon een persoons-XREF achter de naam."
 
 #: resources/views/admin/badges/edit.phtml:111
 msgid "Display in front of name"
-msgstr ""
+msgstr "Toon voor naam"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
