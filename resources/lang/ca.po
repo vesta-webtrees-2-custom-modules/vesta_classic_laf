@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2023-11-20 17:02+0000\n"
+"PO-Revision-Date: 2025-05-12 10:01+0000\n"
 "Last-Translator: BernatBanyuls <bernatbanyuls@gmail.com>\n"
-"Language-Team: Catalan <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ca/>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -25,7 +26,7 @@ msgstr "'Diàlegs multifet' es refereix a: Tots els diàlegs d'edició per a per
 
 #: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Una etiqueta, només com a referència dins del tauler de control."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,14 +36,16 @@ msgstr "Un mòdul que ajusta tots els temes i altres característiques, proporci
 #: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Es pot mostrar una insígnia amb el nom només en un dels arbres genealògics o "
+"en tots els arbres genealògics."
 
 #: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Una nota, que només es mostra al tauler de control."
 
 #: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Afegir una insígnia"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
@@ -113,7 +116,7 @@ msgstr "Mostra l'XREF d'una persona després del nom."
 
 #: resources/views/admin/badges/edit.phtml:111
 msgid "Display in front of name"
-msgstr ""
+msgstr "Visualització davant del nom"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
@@ -133,7 +136,7 @@ msgstr "Editar fets i esdeveniments principals"
 
 #: ClassicLAFModule.php:788
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Editar la insígnia"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -147,11 +150,13 @@ msgstr "Expandiu inicialment si el nom té nota o font"
 
 #: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
-msgstr ""
+msgstr "Fragment HTML"
 
 #: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
 msgstr ""
+"Fragment HTML que es mostrarà després del nom, per exemple, una imatge "
+"petita."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -186,17 +191,19 @@ msgstr "Traçat"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
-msgstr ""
+msgstr "Insígnia"
 
 #: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
-msgstr ""
+msgstr "Insígnies"
 
 #: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Les insígnies són fragments HTML, per exemple, imatges petites, que es "
+"mostren després del nom d'una persona."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
@@ -221,6 +228,8 @@ msgstr "Sobrenoms"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Tingueu en compte que actualment no hi ha manera de coincidir amb objectes "
+"enllaçats, com ara el tipus d'un objecte multimèdia."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
@@ -239,15 +248,17 @@ msgstr "Amplada total"
 
 #: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
-msgstr ""
+msgstr "Expressió regular (REGEX)"
 
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Expressió regular (sintaxi PCRE2 que inclou barres inclinades com a "
+"delimitadors) per coincidir amb les dades gedcom en brut d'un individu."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Vegeu les insígnies inicials per veure exemples."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -263,6 +274,8 @@ msgstr "Omet el tipus de nom predefinit per als noms individuals"
 #: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
+"Les expressions regex sintàcticament no vàlides seran ignorades "
+"silenciosament."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -272,6 +285,8 @@ msgstr "El disseny estàndard centra la majoria de pàgines, malgastant molt d'e
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Es seleccionen en funció d'expressions regulars que coincideixen amb les "
+"dades gedcom en brut d'un individu."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
@@ -291,7 +306,7 @@ msgstr "Utilitzeu un disseny compacte"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Utilitzar el disseny compacte excepte els noms"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -301,12 +316,14 @@ msgstr "Utilitzeu prefixos personalitzats per als XREF com en els arbres web 1.x
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Utilitza el disseny original"
 
 #: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""
+"Utilitze la pseudoetiqueta '%s' com a referència inversa al primer subpatró "
+"entre parèntesis capturat a l'expressió regular."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -331,6 +348,11 @@ msgstr "XREFs"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Podeu utilitzar-los per destacar persones, en gràfics i en altres llocs, "
+"mitjançant diferents criteris, com ara: Persones que pertanyen a un grup "
+"definit mitjançant una nota compartida, que tenen un esdeveniment de "
+"naixement, que tenen una ocupació específica, tenen un enterrament amb una "
+"imatge enllaçada, etc."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
