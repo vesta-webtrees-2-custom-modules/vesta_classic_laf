@@ -469,5 +469,11 @@
 		"from": "2.2.1",
 		"to": "2.2.2",
 		"changelog": ["Fixed name badges display order."]
+	},
+	{
+		"version": "2.2.1.5.0",
+		"from": "2.2.1",
+		"to": "2.2.2",
+		"changelog": ["Fixed issue #168 (configuration of visibility of GEDCOM tags)."]
 	}
 ]
