@@ -48,10 +48,28 @@ class GedcomEditServiceExt2 extends GedcomEditService
         foreach ($subtags as $subtag => $occurrences) {
             if (!$include_hidden) {
 
-                $hidden = $this->isHiddenTagExt(
-                    $tree,
-                    $tag . ':' . $subtag,
-                    str_ends_with($occurrences, ':?'));
+                if ("MAP" == $subtag) {
+                    //Issue #168: MAP is special (it has no own edit control)
+                    //hide only if both its subtags are hidden
+                    //(cannot unhide unconditionally: that strategy would show PLAC with empty dropdown if all others are hidden)
+                    $longHidden = $this->isHiddenTagExt(
+                        $tree,
+                        $tag . ':' . $subtag . ':LONG',
+                        false);
+
+                    $latiHidden = $this->isHiddenTagExt(
+                        $tree,
+                        $tag . ':' . $subtag . ':LATI',
+                        false);
+
+                    $hidden = $longHidden && $latiHidden;
+                } else {
+                    $hidden = $this->isHiddenTagExt(
+                        $tree,
+                        $tag . ':' . $subtag,
+                        str_ends_with($occurrences, ':?'));
+                }
+
 
                 if ($hidden) {
 
