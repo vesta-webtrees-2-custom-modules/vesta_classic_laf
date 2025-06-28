@@ -156,7 +156,7 @@ msgstr "HTML snippet"
 
 #: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr ""
+msgstr "HTML snippet, ktorý sa sa zobrazí za menom, napr. malý obrázok."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
