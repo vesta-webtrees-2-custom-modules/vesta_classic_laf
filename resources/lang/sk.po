@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2025-06-28 11:30+0000\n"
+"PO-Revision-Date: 2025-06-28 14:01+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
@@ -41,16 +41,16 @@ msgstr "Menovka sa môže použiť buď na jednom rodokmeni, alebo na všetkých
 
 #: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Poznámka, ktorá sa zobrazuje len v riadiacom paneli."
 
 #: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Pridať menovku"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
-msgstr ""
+msgstr "Na začiatku vždy rozbaliť"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
@@ -61,6 +61,8 @@ msgstr "Pripojiť XREF k menám"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Použiť nasledovné nastavenia tagu „%1$s“ pri všetkých udalostiach „%2$s“, "
+"pokiaľ nie je udalosť explicitne nakonfigurovaná inak."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
