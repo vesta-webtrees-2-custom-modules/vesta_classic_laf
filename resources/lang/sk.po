@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2025-06-28 14:01+0000\n"
+"PO-Revision-Date: 2025-06-28 16:03+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
@@ -236,6 +236,9 @@ msgstr ""
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Upozorňujeme, že ako doplnok k nižšie uvedeným možnostiam konfigurácie, "
+"modul %1$s umožňuje podrobne nastaviť viditeľnosť každého jednotlivého tagu, "
+"ako je popísané %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:166
@@ -249,11 +252,13 @@ msgstr "Celková šírka"
 
 #: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
-msgstr ""
+msgstr "Regex"
 
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Regulárny výraz (syntax PCRE2 včítane lomiek ako oddeľovačov) pre zistenie "
+"zhody s nespracovanými údajmi GEDCOM."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
@@ -272,7 +277,7 @@ msgstr "Preskočiť prednastavenie druhu mena pre jedno meno"
 
 #: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
-msgstr ""
+msgstr "Syntakticky nesprávne regex-výrazy budú bez upozornenia ignorované."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -281,7 +286,7 @@ msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množ
 
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
-msgstr ""
+msgstr "Zobrazia sa na základe regulárneho výrazu"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
