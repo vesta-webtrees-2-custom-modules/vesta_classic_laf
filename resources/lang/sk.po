@@ -104,7 +104,7 @@ msgstr "Vlastné prefixy"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Za menom rodiny zobraziť príslušné XREF."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
@@ -118,7 +118,7 @@ msgstr "Zobraziť XREF osoby po mene."
 
 #: resources/views/admin/badges/edit.phtml:111
 msgid "Display in front of name"
-msgstr ""
+msgstr "Zobraziť pred menom"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
@@ -138,7 +138,7 @@ msgstr "Upraviť hlavné fakty a udalosti"
 
 #: ClassicLAFModule.php:788
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Upraviť menovku"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -148,7 +148,7 @@ msgstr "Otvárať prvý bočný panel"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Rozbaliť na začiatku, ak meno obsahuje poznámku, alebo zdroj"
 
 #: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
@@ -286,12 +286,14 @@ msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množ
 
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
-msgstr "Zobrazia sa na základe regulárneho výrazu."
+msgstr ""
+"Zobrazia sa na základe regulárneho výrazu, ktorý zistí zhodu s "
+"nespracovanými údajmi GEDCOM osoby."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Toto ovplyvní len štandardné a špecifické užívateľské motívy."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
@@ -306,7 +308,7 @@ msgstr "Použiť kompaktný vzhľad"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Použiť kompaktný vzhľad, okrem mien"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -316,7 +318,7 @@ msgstr "Namiesto jednotného prefixu „X“ použite vlasné prefixy pre XREF t
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Použiť originálny vzhľad"
 
 #: resources/views/admin/badges/edit.phtml:94
 #, php-format
@@ -346,6 +348,10 @@ msgstr "XREF"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Môžu sa použiť na zvýraznenie osôb v schémach, ale aj inde, na základe "
+"rôznych kritérií, napr.: osoby, ktoré patria do jednej skupiny, ktorá bola "
+"definovaná na základe zdieľanej poznámky, ktoré majú zadanú udalosť "
+"narodenia, konkrétne povolanie, pochovanie s pripojeným obrázkom, a pod."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
@@ -384,7 +390,7 @@ msgstr "vždy ukázať"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "vždy ukázať a rozbaliť subtagy"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Zobraziť XREF rodiny po mene."
