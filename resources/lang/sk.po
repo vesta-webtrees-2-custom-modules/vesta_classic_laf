@@ -156,7 +156,7 @@ msgstr "HTML snippet"
 
 #: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr "HTML snippet, ktorý sa sa zobrazí za menom, napr. malý obrázok."
+msgstr "HTML snippet, ktorý sa zobrazí za menom, napr. malý obrázok."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -181,7 +181,7 @@ msgstr "Stránka osoby"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Stránka osoby: bloky s menami"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:197
@@ -191,7 +191,7 @@ msgstr "Rozvrhnutie"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
-msgstr ""
+msgstr "Menovka"
 
 #: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
@@ -209,6 +209,7 @@ msgstr ""
 #: ClassicLAFModuleTrait.php:80
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
+"Bloky s menami sa dajú vždy rozbaliť a zbaliť, bez ohľadu na toto nastavenie."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171
@@ -218,7 +219,7 @@ msgstr "Prednastavenie typu mena"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
-msgstr ""
+msgstr "Pri prvom zobrazení nerozbaliť"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:162
@@ -228,6 +229,8 @@ msgstr "Prezývky"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Upozornenie: v súčasnosti nie je možnosť porovnať pripojené objekty, napr. "
+"typ mediálneho objektu."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
