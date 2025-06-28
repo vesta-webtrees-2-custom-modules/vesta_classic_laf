@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2022-08-30 17:20+0000\n"
+"PO-Revision-Date: 2025-06-28 16:03+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"„Viac údajové dialógy“ sa vzťahujú na dialógy pri vytváraní novej osoby a "
+"dialóg, špecifický pre Vesta moduly „%1$s“."
 
 #: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Návestie, ktorá je použité len v riadiacom paneli ako odkaz."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -34,20 +37,20 @@ msgstr "Modul upravujúci všetky motívy a ostatné vlastnosti. Poskytuje vzhľ
 
 #: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
-msgstr ""
+msgstr "Menovka sa môže použiť buď na jednom rodokmeni, alebo na všetkých."
 
 #: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Poznámka, ktorá sa zobrazuje len v riadiacom paneli."
 
 #: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Pridať menovku"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
-msgstr ""
+msgstr "Na začiatku vždy rozbaliť"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
@@ -58,6 +61,8 @@ msgstr "Pripojiť XREF k menám"
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Použiť nasledovné nastavenia tagu „%1$s“ pri všetkých udalostiach „%2$s“, "
+"pokiaľ nie je udalosť explicitne nakonfigurovaná inak:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
@@ -99,7 +104,7 @@ msgstr "Vlastné prefixy"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Za menom rodiny zobraziť príslušné XREF."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
@@ -113,7 +118,7 @@ msgstr "Zobraziť XREF osoby po mene."
 
 #: resources/views/admin/badges/edit.phtml:111
 msgid "Display in front of name"
-msgstr ""
+msgstr "Zobraziť pred menom"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
@@ -129,11 +134,11 @@ msgstr "Dialógy úprav"
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Upraviť hlavné fakty a udalosti"
 
 #: ClassicLAFModule.php:788
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Upraviť menovku"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -143,15 +148,15 @@ msgstr "Otvárať prvý bočný panel"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Rozbaliť na začiatku, ak meno obsahuje poznámku, alebo zdroj"
 
 #: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
-msgstr ""
+msgstr "HTML snippet"
 
 #: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr ""
+msgstr "HTML snippet, ktorý sa zobrazí za menom, napr. malý obrázok."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -176,7 +181,7 @@ msgstr "Stránka osoby"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Stránka osoby: bloky s menami"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:197
@@ -186,22 +191,25 @@ msgstr "Rozvrhnutie"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
-msgstr ""
+msgstr "Menovka"
 
 #: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
-msgstr ""
+msgstr "Menovky"
 
 #: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Menovky (Name badges) sú HTML snippety, t.j. malé ikonky, ktoré sa zobrazujú "
+"za menom osoby."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
 msgstr ""
+"Bloky s menami sa dajú vždy rozbaliť a zbaliť, bez ohľadu na toto nastavenie."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171
@@ -211,7 +219,7 @@ msgstr "Prednastavenie typu mena"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
-msgstr ""
+msgstr "Pri prvom zobrazení nerozbaliť"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:162
@@ -221,11 +229,16 @@ msgstr "Prezývky"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Upozornenie: v súčasnosti nie je možnosť porovnať pripojené objekty, napr. "
+"typ mediálneho objektu."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Upozorňujeme, že ako doplnok k nižšie uvedeným možnostiam konfigurácie, "
+"modul %1$s umožňuje podrobne nastaviť viditeľnosť každého jednotlivého tagu, "
+"ako je popísané %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:166
@@ -239,15 +252,17 @@ msgstr "Celková šírka"
 
 #: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
-msgstr ""
+msgstr "Regex"
 
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Regulárny výraz (syntax PCRE2 včítane lomiek ako oddeľovačov) pre zistenie "
+"zhody s nespracovanými údajmi GEDCOM."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Ako ukážka je prednastavené menovka."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -262,7 +277,7 @@ msgstr "Preskočiť prednastavenie druhu mena pre jedno meno"
 
 #: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
-msgstr ""
+msgstr "Syntakticky nesprávne regex-výrazy budú bez upozornenia ignorované."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -272,11 +287,13 @@ msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množ
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Zobrazia sa na základe regulárneho výrazu, ktorý zistí zhodu s "
+"nespracovanými údajmi GEDCOM osoby."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
-msgstr ""
+msgstr "Toto ovplyvní len štandardné a špecifické užívateľské motívy."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
@@ -291,7 +308,7 @@ msgstr "Použiť kompaktný vzhľad"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Použiť kompaktný vzhľad, okrem mien"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -301,7 +318,7 @@ msgstr "Namiesto jednotného prefixu „X“ použite vlasné prefixy pre XREF t
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Použiť originálny vzhľad"
 
 #: resources/views/admin/badges/edit.phtml:94
 #, php-format
@@ -331,6 +348,10 @@ msgstr "XREF"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Môžu sa použiť na zvýraznenie osôb v schémach, ale aj inde, na základe "
+"rôznych kritérií, napr.: osoby, ktoré patria do jednej skupiny, ktorá bola "
+"definovaná na základe zdieľanej poznámky, ktoré majú zadanú udalosť "
+"narodenia, konkrétne povolanie, pochovanie s pripojeným obrázkom, a pod."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
@@ -344,12 +365,12 @@ msgstr "vždy skryť"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
-msgstr ""
+msgstr "skryť vo viacúdajových dialógoch, inak ukázať a rozbaliť subtagy"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "skryť vo viacúdajových dialógoch, inak ukázať"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
@@ -358,6 +379,8 @@ msgstr "žiadna úprava"
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
+"žiadna úprava (použiť nastavenia pre všetky udalosti, tak ako je uvedené "
+"nižšie)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
@@ -367,7 +390,7 @@ msgstr "vždy ukázať"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "vždy ukázať a rozbaliť subtagy"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Zobraziť XREF rodiny po mene."
