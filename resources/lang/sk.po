@@ -286,7 +286,7 @@ msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množ
 
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
-msgstr "Zobrazia sa na základe regulárneho výrazu"
+msgstr "Zobrazia sa na základe regulárneho výrazu."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
