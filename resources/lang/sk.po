@@ -349,7 +349,7 @@ msgstr "vždy skryť"
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
-msgstr "skryť vo viacúdajových dialógoch, inak ukázať a"
+msgstr "skryť vo viacúdajových dialógoch, inak ukázať a rozbaliť subtagy"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
