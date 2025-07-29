@@ -475,5 +475,10 @@
 		"from": "2.2.1",
 		"to": "2.2.2",
 		"changelog": ["Fixed issue #168 (configuration of visibility of GEDCOM tags)."]
+	},
+	{
+		"version": "2.2.2.0.0",
+		"from": "2.2.1",
+		"to": "2.2.3"
 	}
 ]
