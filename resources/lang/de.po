@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2025-08-02 11:02+0000\n"
-"Last-Translator: Holger Eisold <github@eisold.family>\n"
+"PO-Revision-Date: 2025-08-02 18:38+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-classic-look-and-feel/de/>\n"
 "Language: de\n"
@@ -277,7 +277,9 @@ msgstr "Diese werden auf der Grundlage regulärer Ausdrücke ausgewählt, die mi
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
-msgstr "Dies betrifft nur Standard- und spezielle benutzerdefinierte Themen."
+msgstr ""
+"Dies betrifft nur Standardthemen und bestimmte Themen aus "
+"Erweiterungsmodulen."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
