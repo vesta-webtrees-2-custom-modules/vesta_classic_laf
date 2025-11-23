@@ -29,6 +29,9 @@ class CustomFamilyFactory extends FamilyFactory implements FamilyFactoryInterfac
 
             $xref = $this->extractXref($gedcom ?? $pending, $xref);
 
+            //https://www.webtrees.net/index.php/forum/help-for-release-2-2-x/40264-stack-overflow-solved
+            //note: removing this alone doesn't help wrt stack overflow/ memoty exhaustion
+            //e.g. in descendany report in case of loops
             // Preload all the family members using a single database query.
             preg_match_all('/\n1 (?:HUSB|WIFE|CHIL) @(' . Gedcom::REGEX_XREF . ')@/', $gedcom . "\n" . $pending, $match);
             DB::table('individuals')
