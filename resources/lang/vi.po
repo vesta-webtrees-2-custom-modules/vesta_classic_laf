@@ -8,24 +8,27 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2021-07-15 15:34+0000\n"
+"PO-Revision-Date: 2025-12-31 04:00+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-"
+"webtrees-custom-modules/vesta-classic-look-and-feel/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.7.2-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
 msgid "'Multi-fact dialogs' refers to: All edit dialogs for new individuals, and the Vesta-specific dialog '%1$s'."
 msgstr ""
+"'Hộp thoại đa thông tin' đề cập đến: Tất cả các hộp thoại chỉnh sửa dành cho "
+"cá nhân mới và hộp thoại '%1$s' dành riêng cho Vesta."
 
 #: resources/views/admin/badges/edit.phtml:46
 msgid "A label, for reference within the control panel only."
-msgstr ""
+msgstr "Nhãn này chỉ dùng để tham khảo trong bảng điều khiển."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:23 ClassicLAFModuleTrait.php:28
@@ -35,40 +38,48 @@ msgstr "Một mô-đun điều chỉnh tất cả các chủ đề và các tín
 #: resources/views/admin/badges/edit.phtml:139
 msgid "A name badge can be displayed on just one of the family trees, or on all the family trees."
 msgstr ""
+"Thẻ tên có thể được gắn trên một trong các cây gia phả, hoặc trên tất cả các "
+"cây gia phả."
 
 #: resources/views/admin/badges/edit.phtml:60
 msgid "A note, shown within the control panel only."
-msgstr ""
+msgstr "Một ghi chú, chỉ hiển thị trong bảng điều khiển."
 
 #: ClassicLAFModule.php:776 resources/views/admin/badges/config.phtml:50
 msgid "Add a name badge"
-msgstr ""
+msgstr "Thêm một thẻ tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:79
 msgid "Always expand initially"
-msgstr ""
+msgstr "Luôn mở rộng ban đầu"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:182 ClassicLAFModuleTrait.php:190
 msgid "Append XREFs to names"
-msgstr "Nối XREF vào tên"
+msgstr "Thêm các tham chiếu XREF vào tên"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:29
 #, php-format
 msgid "Apply the following setting to '%1$s' within all '%2$s' events, unless the event is configured explicitly:"
 msgstr ""
+"Áp dụng cài đặt sau cho '%1$s' trong tất cả các sự kiện '%2$s', trừ khi sự "
+"kiện đó được cấu hình rõ ràng:"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:85
 #, php-format
 msgid "Attention: This setting currently won't have any effect in your system, because it requires a newer libxml version (at least %1$s)."
 msgstr ""
+"Lưu ý: Cài đặt này hiện không có tác dụng trên hệ thống của bạn vì nó yêu "
+"cầu phiên bản libxml mới hơn (ít nhất là %1$s)."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:175
 msgid "Check this option if you prefer not to use a name type in case the respective individual has a single name."
 msgstr ""
+"Chọn tùy chọn này nếu bạn không muốn sử dụng loại tên trong trường hợp cá "
+"nhân đó chỉ có một tên duy nhất."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:67
@@ -80,11 +91,11 @@ msgstr "Chọn để luôn mở rộng thanh bên đầu tiên, thay vì thanh b
 #: resources/views/modals/config-gedcom-field.phtml:11
 #, php-format
 msgid "Configure visibility of GEDCOM tag '%s'"
-msgstr ""
+msgstr "Cấu hình quyền hiển thị của thẻ GEDCOM '%s'"
 
 #: resources/views/edit/edit-gedcom-fields-ext.phtml:123
 msgid "Configure visibility of GEDCOM tags"
-msgstr ""
+msgstr "Cấu hình quyền hiển thị của các thẻ GEDCOM"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:99
@@ -99,21 +110,23 @@ msgstr "Tiền tố tùy chỉnh"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:191
 msgid "Display a family's XREF after the family label."
-msgstr ""
+msgstr "Hiển thị XREF của gia đình sau nhãn gia đình."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:91
 msgid "Display all edit dialogs using a more compact layout, which also omits the standard header and footer."
-msgstr "Hiển thị tất cả các hộp thoại chỉnh sửa bằng cách sử dụng bố cục nhỏ gọn hơn, cũng bỏ qua đầu trang và chân trang tiêu chuẩn."
+msgstr ""
+"Hiển thị tất cả các hộp thoại chỉnh sửa bằng cách sử dụng bố cục gọn gàng "
+"hơn, đồng thời loại bỏ tiêu đề và chân trang tiêu chuẩn."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:183
 msgid "Display an individual's XREF after the name."
-msgstr "Hiển thị XREF của một cá nhân sau tên."
+msgstr "Hiển thị mã XREF của một người sau tên."
 
 #: resources/views/admin/badges/edit.phtml:111
 msgid "Display in front of name"
-msgstr ""
+msgstr "Hiển thị phía trước tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:164
@@ -129,11 +142,11 @@ msgstr "Chỉnh sửa hộp thoại"
 #: resources/views/individual-page-menu.phtml:128
 #: resources/views/modals/config-gedcom-field.phtml:37
 msgid "Edit main facts and events"
-msgstr ""
+msgstr "Chỉnh sửa các sự kiện và thông tin chính"
 
 #: ClassicLAFModule.php:788
 msgid "Edit the name badge"
-msgstr ""
+msgstr "Chỉnh sửa tên trên thẻ tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:66
@@ -143,15 +156,15 @@ msgstr "Mở rộng thanh bên đầu tiên"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:78
 msgid "Expand initially if name has note or source"
-msgstr ""
+msgstr "Mở rộng ban đầu nếu tên có ghi chú hoặc nguồn"
 
 #: resources/views/admin/badges/edit.phtml:85
 msgid "HTML snippet"
-msgstr ""
+msgstr "Đoạn mã HTML"
 
 #: resources/views/admin/badges/edit.phtml:93
 msgid "HTML snippet to be displayed after the name, e.g. a small image."
-msgstr ""
+msgstr "Đoạn mã HTML sẽ được hiển thị sau tên, ví dụ như một hình ảnh nhỏ."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:165
@@ -176,7 +189,7 @@ msgstr "Trang cá nhân"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:72
 msgid "Individual page: Name blocks"
-msgstr ""
+msgstr "Trang cá nhân: Khối tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:197
@@ -186,32 +199,34 @@ msgstr "Bố trí"
 #: resources/views/admin/badges/config.phtml:63
 #: resources/views/admin/badges/edit.phtml:38
 msgid "Name badge"
-msgstr ""
+msgstr "Thẻ tên"
 
 #: ClassicLAFModule.php:567 ClassicLAFModule.php:631
 #: resources/views/admin/badges/config.phtml:56
 #: resources/views/admin/badges/edit.phtml:29
 msgid "Name badges"
-msgstr ""
+msgstr "Thẻ tên"
 
 #: ClassicLAFModule.php:568 resources/views/admin/badges/config.phtml:30
 msgid "Name badges are HTML snippets, e.g. small images, displayed after an individual's name."
 msgstr ""
+"Thẻ tên là những đoạn mã HTML, ví dụ như những hình ảnh nhỏ, được hiển thị "
+"sau tên của một cá nhân."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:80
 msgid "Name blocks are always expandable/collapsible regardless of this setting."
-msgstr ""
+msgstr "Các khối tên luôn có thể mở rộng/thu gọn bất kể cài đặt này."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:171
 msgid "Name type presets"
-msgstr ""
+msgstr "Đặt tên theo kiểu mẫu"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:77
 msgid "Never expand initially"
-msgstr ""
+msgstr "Không mở rộng ban đầu"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:162
@@ -221,11 +236,15 @@ msgstr "Biệt danh"
 #: resources/views/admin/badges/edit.phtml:76
 msgid "Note that currently there is no way to match on linked objects, such as the type of a media object."
 msgstr ""
+"Xin lưu ý rằng hiện tại không có cách nào để khớp các đối tượng được liên "
+"kết, chẳng hạn như loại đối tượng phương tiện."
 
 #: resources/views/admin/tags-ext.phtml:29
 #, php-format
 msgid "Note that in addition to the configuration options below, %1$s allows you to configure the visibility of each specific tag in detail, as described %2$s."
 msgstr ""
+"Lưu ý rằng ngoài các tùy chọn cấu hình dưới đây, %1$s cho phép bạn cấu hình "
+"chi tiết mức độ hiển thị của từng thẻ cụ thể, như đã mô tả %2$s."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:166
@@ -239,15 +258,17 @@ msgstr "Chiều rộng tổng thể"
 
 #: resources/views/admin/badges/edit.phtml:67
 msgid "Regex"
-msgstr ""
+msgstr "Biểu thức chính quy"
 
 #: resources/views/admin/badges/edit.phtml:75
 msgid "Regular expression (PCRE2 syntax including slashes as delimiters) to match an individual's raw gedcom data."
 msgstr ""
+"Biểu thức chính quy (cú pháp PCRE2 bao gồm dấu gạch chéo làm dấu phân cách) "
+"để khớp với dữ liệu GEDCOM thô của một cá nhân."
 
 #: resources/views/admin/badges/config.phtml:33
 msgid "See the initial name badges for examples."
-msgstr ""
+msgstr "Xem các mẫu thẻ tên ban đầu để tham khảo."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:55
@@ -258,11 +279,13 @@ msgstr "Một số điều chỉnh - Xem %1$s để biết chi tiết."
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:173
 msgid "Skip name type preset for single names"
-msgstr ""
+msgstr "Bỏ qua kiểu tên mặc định cho tên đơn lẻ"
 
 #: resources/views/admin/badges/edit.phtml:77
 msgid "Syntactically invalid regex expressions will be silently ignored."
 msgstr ""
+"Các biểu thức chính quy (regex) không hợp lệ về mặt cú pháp sẽ bị bỏ qua mà "
+"không có thông báo."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:40
@@ -272,11 +295,14 @@ msgstr "Bố cục tiêu chuẩn tập trung hầu hết các trang, lãng phí 
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
+"Họ được chọn dựa trên các biểu thức chính quy khớp với dữ liệu gedcom thô "
+"của một cá nhân."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
 msgid "This only affects standard and specific custom themes."
 msgstr ""
+"Điều này chỉ áp dụng cho các chủ đề tiêu chuẩn và chủ đề tùy chỉnh cụ thể."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:39
@@ -291,7 +317,7 @@ msgstr "Sử dụng bố cục nhỏ gọn"
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:54
 msgid "Use compact layout except for names"
-msgstr ""
+msgstr "Sử dụng bố cục nhỏ gọn, ngoại trừ phần tên"
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:120
@@ -301,12 +327,14 @@ msgstr "Sử dụng tiền tố tùy chỉnh cho XREF như trong webtrees 1.x, t
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:52
 msgid "Use original layout"
-msgstr ""
+msgstr "Sử dụng bố cục gốc"
 
 #: resources/views/admin/badges/edit.phtml:94
 #, php-format
 msgid "Use the pseudo-tag '%s' as a back reference to the first captured parenthesized subpattern in the regex."
 msgstr ""
+"Sử dụng thẻ giả '%s' làm tham chiếu ngược đến mẫu con được bắt giữ đầu tiên "
+"nằm trong ngoặc đơn trong biểu thức chính quy."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:100
@@ -317,6 +345,8 @@ msgstr "Webtrees cắt hình thu nhỏ để tạo ra hình ảnh có chiều r�
 #: ClassicLAFModuleTrait.php:174
 msgid "When adding new parents, spouses or children, webtrees presets the name type to 'birth name'."
 msgstr ""
+"Khi thêm cha mẹ, vợ/chồng hoặc con cái mới, Webtrees mặc định loại tên là "
+"'tên khai sinh'."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:117
@@ -331,43 +361,52 @@ msgstr "XREFs"
 #: resources/views/admin/badges/config.phtml:32
 msgid "You can use them to highlight individuals, in charts and elsewhere, via different criteria, such as: Individuals belonging to a group defined via a shared note, having a sourced birth event, having a specific occupation, having a burial with a linked image, etc."
 msgstr ""
+"Bạn có thể sử dụng chúng để làm nổi bật các cá nhân, trong biểu đồ và các "
+"nơi khác, dựa trên các tiêu chí khác nhau, chẳng hạn như: Cá nhân thuộc một "
+"nhóm được xác định thông qua ghi chú chung, có sự kiện sinh được xác định "
+"nguồn gốc, có nghề nghiệp cụ thể, có nơi chôn cất với hình ảnh được liên "
+"kết, v.v."
 
 #: resources/views/admin/tags-ext.phtml:26
 msgid "here"
-msgstr ""
+msgstr "ở đây"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:11
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:11
 msgid "hide always"
-msgstr ""
+msgstr "luôn ẩn"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:14
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:14
 msgid "hide in multi-fact dialogs, show and expand subtags otherwise"
 msgstr ""
+"ẩn trong hộp thoại đa thông tin, hiển thị và mở rộng các thẻ phụ trong các "
+"trường hợp khác"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:12
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:12
 msgid "hide in multi-fact dialogs, show otherwise"
-msgstr ""
+msgstr "ẩn trong hộp thoại đa thông tin, hiển thị trong các trường hợp khác"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:10
 msgid "no adjustment"
-msgstr ""
+msgstr "không điều chỉnh"
 
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:10
 msgid "no adjustment (use setting for all events as shown below)"
 msgstr ""
+"không cần điều chỉnh (sử dụng cài đặt cho tất cả các sự kiện như hiển thị "
+"bên dưới)"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:16
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:16
 msgid "show always"
-msgstr ""
+msgstr "luôn hiển thị"
 
 #: resources/views/edit/config-gedcom-field-edit-control-2.phtml:18
 #: resources/views/edit/config-gedcom-field-edit-control.phtml:18
 msgid "show and expand subtags always"
-msgstr ""
+msgstr "luôn hiển thị và mở rộng các thẻ con"
 
 #~ msgid "Display a family's XREF after the name."
 #~ msgstr "Hiển thị XREF của một gia đình sau tên."
