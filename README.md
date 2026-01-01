@@ -39,7 +39,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 
 ### Download<a name="download"/>
 
-* Current version: 2.2.4.1.0
+* Current version: 2.2.4.2.0
 * Based on and tested with webtrees 2.2.4. Requires webtrees 2.2.1 or later.
 * Requires the ⚶ Vesta Common module ('vesta_common').
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
@@ -55,7 +55,7 @@ default 'webtrees' theme   |  adjusted 'webtrees' theme
 ### License<a name="license"/>
 
 * **vesta_classic_look_and_feel: a webtrees custom module**
-* Copyright (C) 2020 – 2025 Richard Cissée
+* Copyright (C) 2020 – 2026 Richard Cissée
 * Derived from **webtrees** - Copyright 2022 webtrees development team.
 * Dutch translations provided by TheDutchJewel.
 * Czech translations provided by Josef Prause.
