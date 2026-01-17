@@ -1,0 +1,10 @@
+<script>
+  if (!window.__helpAlertBound) {
+    window.__helpAlertBound = true;
+    document.querySelectorAll('.vesta-badge-alert').forEach(el => {
+      el.addEventListener('click', function () {
+        window.alert(this.title);
+      });
+    });
+  }
+</script>

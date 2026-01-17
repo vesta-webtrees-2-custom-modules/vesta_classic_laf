@@ -6,11 +6,10 @@ namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
 use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Auth;
-use Fisharebest\Webtrees\Http\RequestHandlers\EditFactPage;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class EditFactPageExt extends EditFactPage
+class EditFactPageExt extends EditFactPagePatched
 {
     public function __construct()
     {

@@ -8,6 +8,6 @@ class WhatsNew4 implements WhatsNewInterface {
 
     public function getMessage(): string {
         //no I18N: I18N considered unnecessary, this is a one-off message.
-        return "Vesta Classic Look & Feel: Option to configure name badges - See control panel for details.";
+        return "Vesta Classic Look & Feel: Option to configure name badges - See control panel for details. An exemplary initial name badge is displayed as '?' in front of names.";
     }
 }

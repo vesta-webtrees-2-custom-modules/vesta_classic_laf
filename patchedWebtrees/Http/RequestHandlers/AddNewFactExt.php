@@ -6,11 +6,11 @@ namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
 use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
 use Fisharebest\Webtrees\Auth;
-use Fisharebest\Webtrees\Http\RequestHandlers\AddNewFact;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Vesta\VestaUtils;
 
-class AddNewFactExt extends AddNewFact
+class AddNewFactExt extends AddNewFactPatched
 {
     public function __construct()
     {
@@ -22,7 +22,7 @@ class AddNewFactExt extends AddNewFact
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         //explicitly register in order to re-use in views where we cannot pass via variable
-        \Vesta\VestaUtils::set(GedcomEditServiceExt2::class, new GedcomEditServiceExt2());
+        VestaUtils::set(GedcomEditServiceExt2::class, new GedcomEditServiceExt2());
 
         $include_hidden = (bool) ($request->getQueryParams()['include_hidden'] ?? false);
 
@@ -30,7 +30,7 @@ class AddNewFactExt extends AddNewFact
 
         if ($can_configure) {
             //explicitly register in order to re-use in views where we cannot pass via variable
-            \Vesta\VestaUtils::set(EditGedcomFieldsArgs::class, new EditGedcomFieldsArgs(true));
+            VestaUtils::set(EditGedcomFieldsArgs::class, new EditGedcomFieldsArgs(true));
         }
 
         return parent::handle($request);

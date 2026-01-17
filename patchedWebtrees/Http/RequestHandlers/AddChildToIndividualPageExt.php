@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
 use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
-use Fisharebest\Webtrees\Http\RequestHandlers\AddChildToIndividualPage;
 
-class AddChildToIndividualPageExt extends AddChildToIndividualPage {
+class AddChildToIndividualPageExt extends AddChildToIndividualPagePatched {
 
     public function __construct() {
         parent::__construct(
