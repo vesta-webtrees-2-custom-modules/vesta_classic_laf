@@ -59,7 +59,7 @@ class EditMainFieldsAction implements RequestHandlerInterface {
             $levels = Validator::parsedBody($request)->array('fact-'.$fact_id.'-levels');
             $tags   = Validator::parsedBody($request)->array('fact-'.$fact_id.'-tags');
             $values = Validator::parsedBody($request)->array('fact-'.$fact_id.'-values');
-            $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
+            $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values, false);
 
             // Update (only the first copy of) an existing fact
             foreach ($record->facts([], false, null, true) as $fact) {
@@ -75,9 +75,11 @@ class EditMainFieldsAction implements RequestHandlerInterface {
             $levels = Validator::parsedBody($request)->array('new-'.$new_id.'-levels');
             $tags   = Validator::parsedBody($request)->array('new-'.$new_id.'-tags');
             $values = Validator::parsedBody($request)->array('new-'.$new_id.'-values');
-            $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values);
+            $gedcom = $this->gedcom_edit_service->editLinesToGedcom(Individual::RECORD_TYPE, $levels, $tags, $values, false);
 
-            $record->updateFact('', $gedcom, !$keep_chan);
+            if ($gedcom !== '') {
+                $record->createFact($gedcom, !$keep_chan);
+            }
         }
 
         $url = Validator::parsedBody($request)->isLocalUrl()->string('url', $record->url());
