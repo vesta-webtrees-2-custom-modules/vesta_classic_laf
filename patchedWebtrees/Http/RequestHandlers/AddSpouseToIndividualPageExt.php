@@ -5,15 +5,21 @@ declare(strict_types=1);
 namespace Cissee\WebtreesExt\Http\RequestHandlers;
 
 use Cissee\WebtreesExt\Services\GedcomEditServiceExt2;
+use Fisharebest\Webtrees\Http\RequestHandlers\AddSpouseToIndividualPage;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Vesta\VestaUtils;
 
-class AddSpouseToIndividualPageExt extends AddSpouseToIndividualPagePatched {
-
-    public function __construct() {
-        parent::__construct(
-            new GedcomEditServiceExt2(true));
-
+class AddSpouseToIndividualPageExt implements RequestHandlerInterface {
+    
+    public function handle(ServerRequestInterface $request): ResponseInterface {
+        $ext = new GedcomEditServiceExt2(true);
+        
         //explicitly register in order to re-use in views where we cannot pass via variable
-        VestaUtils::get(GedcomEditServiceExt2::class, new GedcomEditServiceExt2(true));
+        VestaUtils::set(GedcomEditServiceExt2::class, $ext);
+        
+        $handler = new AddSpouseToIndividualPage($ext);
+        return $handler->handle($request);
     }
 }
