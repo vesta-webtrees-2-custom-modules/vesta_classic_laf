@@ -9,6 +9,7 @@ use Fisharebest\Webtrees\Http\RequestHandlers\AddChildToIndividualPage;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Vesta\VestaUtils;
 
 class AddChildToIndividualPageExt implements RequestHandlerInterface {
     
