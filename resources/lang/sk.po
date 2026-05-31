@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2025-05-10 14:21+0200\n"
-"PO-Revision-Date: 2025-11-16 20:51+0000\n"
+"PO-Revision-Date: 2026-05-29 17:01+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-classic-look-and-feel/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-"
+"custom-modules/vesta-classic-look-and-feel/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: resources/views/modals/config-gedcom-field.phtml:37
 #, php-format
@@ -287,8 +287,8 @@ msgstr "Štandardný vzhľad centruje väčšinu stránok, nevyužívajúc množ
 #: resources/views/admin/badges/config.phtml:31
 msgid "They are selected based on regular expressions matching an individual's raw gedcom data."
 msgstr ""
-"Zobrazia sa na základe regulárneho výrazu, ktorý zistí zhodu s "
-"nespracovanými údajmi GEDCOM osoby."
+"Zobrazia sa na základe regulárneho výrazu, ktorý zistí zhodu s údajmi v "
+"GEDCOM súbore osoby."
 
 #. I18N: Module Configuration
 #: ClassicLAFModuleTrait.php:92
