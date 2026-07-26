@@ -15,7 +15,7 @@ use Vesta\VestaUtils;
 class EditFactPageExt implements RequestHandlerInterface {
     
     public function handle(ServerRequestInterface $request): ResponseInterface {
-        $ext = new GedcomEditServiceExt2(true);
+        $ext = new GedcomEditServiceExt2(false);
         
         //explicitly register in order to re-use in views where we cannot pass via variable
         VestaUtils::set(GedcomEditServiceExt2::class, $ext);
